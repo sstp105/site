@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components'
 import { FlexLayout } from 'layout/SectionLayout'
 import navigationData from 'data/navigation.json'
 import { HamburgerMenu } from 'components/molecules/Gesture/HamburgerMenu'
-import { MobileMenuModal } from 'components/organisms/Drawer'
+import { Drawer } from 'components/molecules/Gesture/Drawer'
 import { useToggle } from 'hooks/useToggle'
 import { Typography } from 'components/atoms/Typography'
 import { NavList } from './NavigationList'
@@ -41,9 +41,9 @@ export const Header: React.FC = () => {
       <MobileHeader>
         <Typography variant="overline">Hey! This is Yang</Typography>
         <HamburgerMenu show={show} toggleShow={toggleShow} />
-        <MobileMenuModal show={show}>
+        <Drawer open={show} onClose={toggleShow}>
           <NavList mobile={true} />
-        </MobileMenuModal>
+        </Drawer>
       </MobileHeader>
     </StyledSectionLayout>
   )
