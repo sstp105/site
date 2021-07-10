@@ -1,5 +1,5 @@
 import React from 'react'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import { style } from 'components/molecules/Gesture/Drawer/style'
 import { IDefaultProps, IProps } from 'components/molecules/Gesture/Drawer/type'
 import { Overlay } from 'components/atoms/Overlay'

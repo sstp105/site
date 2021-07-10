@@ -1,6 +1,5 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-import { WelcomeChip } from 'components/molecules/Chip/WelcomeChip'
 import { RotateAvater } from 'components/organisms/RoutateAvatar'
 import { FlexLayout } from 'layout/SectionLayout'
 import { Typography } from 'components/atoms/Typography'
@@ -8,6 +7,8 @@ import { Link } from 'components/atoms/Link'
 import socialMediaData from 'data/socialMedia.json'
 import contractData from 'data/contract.json'
 import { TextIcon } from 'components/molecules/TextIcon'
+
+import { Chip } from 'components/molecules/Chip'
 
 const override = css`
   justify-content: space-around;
@@ -19,14 +20,25 @@ const StyledSocialMediaList = styled.div`
   transform: translateX(-20px);
 `
 
+const welcomeChipStyle = css`
+  border-radius: 30px 35px 35px 0px;
+`
+
 export const HomeIntro: React.FC = () => {
   return (
     <>
       <FlexLayout otherStyles={override}>
         <div>
-          <WelcomeChip content="Hey There, I'm" />
+          <Chip
+            label="Hey There, I'm "
+            size="normal"
+            hoverable={false}
+            css={welcomeChipStyle}
+          />
           <Typography variant="h2">YANG LI</Typography>
-          <Typography variant="h5">Frontend Developer</Typography>
+          <Typography variant="h5" color="primary">
+            Frontend Developer
+          </Typography>
           {contractData.map((elem) => (
             <TextIcon key={elem.text} icon={elem.icon} text={elem.text} />
           ))}
