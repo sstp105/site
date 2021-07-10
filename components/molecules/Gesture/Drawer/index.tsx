@@ -1,35 +1,24 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
+import { style } from 'components/molecules/Gesture/Drawer/style'
+import { IDefaultProps, IProps } from 'components/molecules/Gesture/Drawer/type'
+import { Overlay } from 'components/atoms/Overlay'
 
-const Overlay = styled.div<{ open: boolean }>`
-  z-index: 1;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  opacity: 0;
-  transition: all 0.5s;
-  ${(props) =>
-    props.open &&
-    css`
-      opacity: 1;
-    `}
-`
-
-const ModalContainer = styled.div<IProps>`
+const StyledDrawer = styled.div<IProps>`
   z-index: 2;
   position: fixed;
   top: 0;
-  left: 0;
   width: 70%;
   height: 100%;
   background-color: ${(props) => props.theme.colors.surface};
-  border-radius: 0 15px 15px 0; // variant
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  transform: translateX(-100%);
-  transition: all 0.5s;
+  transition: all ${(props) => props.theme.animation.duration.medium};
+
+  ${(props) => props.theme.shadow.medium}
+  ${(props) => style.anchor[props.anchor]}
+
+  // The rounded corner depends on the anchor position
+  ${(props) => style.variant[props.variant][props.anchor]} 
+
   ${(props) =>
     props.open &&
     css`
@@ -37,21 +26,20 @@ const ModalContainer = styled.div<IProps>`
     `}
 `
 
-interface IProps {
-  open: boolean
-  onClose: () => void
-  children?: React.ReactNode
-  anchor?: 'left' | 'right'
-  variant?: 'square' | 'rounded'
-}
-
 export const Drawer: React.FC<IProps> = (props) => {
   const { open, onClose, children } = props
 
   return (
     <>
-      <Overlay open={open} onClick={onClose} />
-      <ModalContainer {...props}>{children}</ModalContainer>
+      <Overlay open={open} onClose={onClose} />
+      <StyledDrawer {...props}>{children}</StyledDrawer>
     </>
   )
 }
+
+const defaultProps: IDefaultProps = {
+  anchor: 'left',
+  variant: 'round'
+}
+
+Drawer.defaultProps = defaultProps
