@@ -10,13 +10,16 @@ const StyledOverlay = styled.div<{ open: boolean }>`
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  opacity: 0;
-  transition: all ${(props) => props.theme.animation.duration.medium};
-  ${(props) =>
-    props.open &&
-    css`
+  animation: fadeIn ${({ theme }) => theme.animation.duration.medium} ease;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
       opacity: 1;
-    `}
+    }
+  }
 `
 
 export const Overlay: React.FC<IProps> = (props) => {

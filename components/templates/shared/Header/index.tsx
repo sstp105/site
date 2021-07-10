@@ -1,12 +1,17 @@
 import React from 'react'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import { FlexLayout } from 'layout/SectionLayout'
-import navigationData from 'data/navigation.json'
 import { HamburgerMenu } from 'components/molecules/Gesture/HamburgerMenu'
-import { Drawer } from 'components/molecules/Gesture/Drawer'
 import { useToggle } from 'hooks/useToggle'
 import { Typography } from 'components/atoms/Typography'
 import { NavList } from './NavigationList'
+import dynamic from 'next/dynamic'
+
+const DynamicDrawer = dynamic(() =>
+  import('components/molecules/Gesture/Drawer').then(
+    (component) => component.Drawer
+  )
+)
 
 const StyledSectionLayout = styled(FlexLayout)`
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
@@ -27,6 +32,7 @@ const MobileHeader = styled.div`
     justify-content: space-between;
     padding: 0 20px;
     align-items: center;
+    transition: all 0.5s;
   }
 `
 
@@ -41,9 +47,10 @@ export const Header: React.FC = () => {
       <MobileHeader>
         <Typography variant="overline">Hey! This is Yang</Typography>
         <HamburgerMenu show={show} toggleShow={toggleShow} />
-        <Drawer open={show} onClose={toggleShow}>
+
+        <DynamicDrawer open={show} onClose={toggleShow}>
           <NavList mobile={true} />
-        </Drawer>
+        </DynamicDrawer>
       </MobileHeader>
     </StyledSectionLayout>
   )

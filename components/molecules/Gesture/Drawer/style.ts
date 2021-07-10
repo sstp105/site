@@ -6,12 +6,26 @@ import { css } from 'styled-components'
  */
 const anchorLeft = css`
   left: 0;
-  transform: translateX(-100%);
+  @keyframes slideIn {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
 `
 
 const anchorRight = css`
   right: 0;
-  transform: translateX(100%);
+  @keyframes slideIn {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
 `
 
 /**
