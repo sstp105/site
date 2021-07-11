@@ -6,5 +6,6 @@ export const colors = {
   caption: '#A7A7A7',
   background: '#F7F7F7',
   surface: '#FFFFFF',
-  error: '#B00020'
+  error: '#B00020',
+  link: '#464646'
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { styles } from 'components/atoms/Image/styles'
-import { IProps } from 'components/atoms/Image/types'
+import { IDefaultProps, IProps } from 'components/atoms/Image/type'
 
 const StyledImage = styled.img<IProps>`
   display: block;
@@ -10,17 +10,21 @@ const StyledImage = styled.img<IProps>`
   height: ${(props) => props.height};
   object-fit: ${(props) => props.cover};
 
+  ${(props) => props.shadow && props.theme.shadow.medium}
+
   ${(props) => styles.variant[props.variant]}
-  ${(props) => props.shadow && styles.shadow}
 `
 
 export const Image: React.FC<IProps> = (props) => {
   return <StyledImage {...props} />
 }
 
-Image.defaultProps = {
+const defaultProps: IDefaultProps = {
   width: '100%',
   height: '100%',
   cover: 'cover',
-  variant: 'rounded'
+  variant: 'rounded',
+  shadow: false
 }
+
+Image.defaultProps = defaultProps

@@ -1,7 +1,12 @@
-import { css } from 'styled-components'
+import { css, CSSProp, CSSObject } from 'styled-components'
 
-export const shadow = {
+type ShadowVariant = 'light' | 'normal' | 'medium' | 'strong'
+
+export const shadow: Record<ShadowVariant, any> = {
+  light: '',
+  normal: '',
   medium: css`
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  `
+  `,
+  strong: ''
 }

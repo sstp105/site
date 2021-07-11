@@ -3,7 +3,7 @@ import { css, keyframes } from 'styled-components'
 /**
  * Navigation link style
  */
-const NavLinkStyle = css`
+const navLinkStyle = css`
   text-transform: uppercase;
   letter-spacing: 0.2rem;
   padding-bottom: 20px;
@@ -49,7 +49,7 @@ const scaleAnimation = keyframes`
      left: -10%;
  }
 `
-const SocialLinkStyle = css`
+const socialLinkStyle = css`
   text-align: center;
   display: inline-block;
   overflow: hidden;
@@ -90,6 +90,6 @@ const SocialLinkStyle = css`
 `
 
 export const style = {
-  navigation: NavLinkStyle,
-  social: SocialLinkStyle
+  navigation: navLinkStyle,
+  social: socialLinkStyle
 }

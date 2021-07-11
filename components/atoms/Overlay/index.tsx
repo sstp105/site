@@ -1,5 +1,5 @@
 import React from 'react'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import { IProps } from 'components/atoms/Overlay/type'
 
 const StyledOverlay = styled.div<{ open: boolean }>`
@@ -12,14 +12,7 @@ const StyledOverlay = styled.div<{ open: boolean }>`
   background-color: rgba(0, 0, 0, 0.5);
   animation: fadeIn ${({ theme }) => theme.animation.duration.medium} ease;
 
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
+  ${(props) => props.theme.animation.animation.fadeIn}
 `
 
 export const Overlay: React.FC<IProps> = (props) => {
