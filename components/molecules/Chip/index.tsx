@@ -9,7 +9,7 @@ const StyledChip = styled.div<IProps>`
   align-items: center;
   width: fit-content;
   cursor: pointer;
-  transition: all ${({ theme }) => theme.animation.duration.medium};
+  transition: all ${({ theme }) => theme.animation.duration.normal};
 
   & > i {
     margin-right: 10px;

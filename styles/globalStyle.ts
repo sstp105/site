@@ -8,7 +8,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   @font-face {
     font-family: 'Gilroy-UltraLight';
-    src: url('static/fonts/Gilroy-Heavy.otf') format('opentype');
+    src: url('static/fonts/Gilroy-UltraLight.otf') format('opentype');
     font-display: swap;
   }
   @font-face {

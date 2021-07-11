@@ -7,7 +7,7 @@ const HeadlineOne = css`
 `
 
 const HeadlineTwo = css`
-  font-family: Gilroy-Regular;
+  font-family: ${({ theme }) => theme.font.family.gilroy_regular};
   font-size: 65px;
   letter-spacing: 4px;
 `
