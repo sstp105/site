@@ -12,7 +12,7 @@ const StyledDrawer = styled.div<IProps>`
   height: 100%;
   background-color: ${(props) => props.theme.color.surface};
 
-  ${(props) => props.theme.shadow.medium}
+  ${(props) => props.theme.shadow.normal}
 
   ${(props) => style.anchor[props.anchor]}
   ${(props) => style.variant[props.variant][props.anchor]} 

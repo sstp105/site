@@ -1,22 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
-import { FlexLayout } from 'layout/SectionLayout'
 import { HamburgerMenu } from 'components/molecules/Gesture/HamburgerMenu'
 import { useToggle } from 'hooks/useToggle'
 import { Typography } from 'components/atoms/Typography'
 import { NavList } from './NavigationList'
 import dynamic from 'next/dynamic'
+import { Flex } from 'layout/Flex'
 
 const DynamicDrawer = dynamic(() =>
   import('components/molecules/Gesture/Drawer').then(
     (component) => component.Drawer
   )
 )
-
-const StyledSectionLayout = styled(FlexLayout)`
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  height: 75px;
-`
 
 const DesktopHeader = styled.div`
   ${(props) => props.theme.media.tablet} {
@@ -40,7 +35,7 @@ export const Header: React.FC = () => {
   const [show, toggleShow] = useToggle(false)
 
   return (
-    <StyledSectionLayout>
+    <Flex height="75px" shadow justify="center">
       <DesktopHeader>
         <NavList mobile={false} />
       </DesktopHeader>
@@ -52,6 +47,6 @@ export const Header: React.FC = () => {
           <NavList mobile={true} />
         </DynamicDrawer>
       </MobileHeader>
-    </StyledSectionLayout>
+    </Flex>
   )
 }

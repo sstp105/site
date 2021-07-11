@@ -10,7 +10,7 @@ const StyledImage = styled.img<IProps>`
   height: ${(props) => props.height};
   object-fit: ${(props) => props.cover};
 
-  ${(props) => props.shadow && props.theme.shadow.medium}
+  ${(props) => props.shadow && props.theme.shadow.normal}
 
   ${(props) => styles.variant[props.variant]}
 `

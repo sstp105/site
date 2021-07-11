@@ -1,16 +1,15 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 import { RotateAvater } from 'components/organisms/RoutateAvatar'
-import { FlexLayout } from 'layout/SectionLayout'
 import { Typography } from 'components/atoms/Typography'
 import { Link } from 'components/atoms/Link'
 import socialMediaData from 'data/socialMedia.json'
 import contractData from 'data/contract.json'
 import { TextIcon } from 'components/molecules/TextIcon'
 import { Chip } from 'components/molecules/Chip'
+import { Flex } from 'layout/Flex'
 
 const override = css`
-  justify-content: space-around;
   margin-top: 150px;
 
   ${(props) => props.theme.media.tablet} {
@@ -53,7 +52,7 @@ const welcomeChipStyle = css`
 export const HomeIntro: React.FC = () => {
   return (
     <>
-      <FlexLayout css={override}>
+      <Flex justify="space-around" align="center" css={override}>
         <StyledWrapper>
           <Chip
             label="Hey There, I'm "
@@ -81,7 +80,7 @@ export const HomeIntro: React.FC = () => {
           </StyledSocialMediaList>
         </StyledWrapper>
         <RotateAvater />
-      </FlexLayout>
+      </Flex>
     </>
   )
 }
