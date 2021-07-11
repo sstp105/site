@@ -10,7 +10,7 @@ const StyledDrawer = styled.div<IProps>`
   top: 0;
   width: 70%;
   height: 100%;
-  background-color: ${(props) => props.theme.colors.surface};
+  background-color: ${(props) => props.theme.color.surface};
 
   ${(props) => props.theme.shadow.medium}
 

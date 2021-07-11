@@ -1,3 +1,3 @@
-import { colors } from 'styles/theme/colors'
+import { color } from 'styles/theme/color'
 
-export type Colors = keyof typeof colors
+export type Colors = keyof typeof color

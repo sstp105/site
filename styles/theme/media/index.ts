@@ -1,12 +1,18 @@
 import { customMediaQuery } from 'utils/customMediaQuery'
 
-type ScreenBreakPoints = 'xxs' | 'xs' | 's' | 'm' | 'l' | 'xl'
+type ScreenBreakPoints =
+  | 'mobile_sm'
+  | 'mobile'
+  | 'tablet_sm'
+  | 'tablet'
+  | 'desktop_sm'
+  | 'desktop'
 
 export const media: Record<ScreenBreakPoints, string> = {
-  xxs: customMediaQuery(320),
-  xs: customMediaQuery(480),
-  s: customMediaQuery(640),
-  m: customMediaQuery(768),
-  l: customMediaQuery(1024),
-  xl: customMediaQuery(1440)
+  mobile_sm: customMediaQuery(320),
+  mobile: customMediaQuery(480),
+  tablet_sm: customMediaQuery(640),
+  tablet: customMediaQuery(768),
+  desktop_sm: customMediaQuery(1024),
+  desktop: customMediaQuery(1440)
 }

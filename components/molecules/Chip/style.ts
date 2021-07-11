@@ -5,13 +5,13 @@ import { css } from 'styled-components'
  * default | outlined (non-bg)
  */
 const defaultVariant = css`
-  color: ${({ theme }) => theme.colors.secondary};
-  background-color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.color.secondary};
+  background-color: ${({ theme }) => theme.color.primary};
 `
 
 const outlinedVariant = css`
-  border: 1px solid ${(props) => props.theme.colors.primary};
-  color: ${({ theme }) => theme.colors.primary};
+  border: 1px solid ${(props) => props.theme.color.primary};
+  color: ${({ theme }) => theme.color.primary};
 `
 
 /**

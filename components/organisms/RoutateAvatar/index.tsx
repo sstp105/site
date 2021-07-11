@@ -20,7 +20,7 @@ const Wrapper = styled.div`
   height: 300px;
   transform: translateX(-45px);
 
-  ${(props) => props.theme.media.m} {
+  ${(props) => props.theme.media.tablet} {
     transform: translateX(0);
     width: 250px;
     order: -1;
@@ -29,7 +29,7 @@ const Wrapper = styled.div`
     }
   }
 
-  ${(props) => props.theme.media.xs} {
+  ${(props) => props.theme.media.mobile} {
     width: 200px;
     height: 250px;
     img {
@@ -42,7 +42,7 @@ const override = css`
   position: absolute;
   top: 0;
   left: 0;
-  border: 1px solid ${(props) => props.theme.colors.primary};
+  border: 1px solid ${(props) => props.theme.color.primary};
   transform: rotate(-360deg);
   animation: ${rotateAnimation} 4s infinite;
 `

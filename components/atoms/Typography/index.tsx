@@ -6,8 +6,8 @@ import { IProps } from 'components/atoms/Typography/types'
 const Component = styled.h1<IProps>`
   color: ${(props) =>
     props.color
-      ? props.theme.colors[props.color]
-      : props.theme.colors.typography};
+      ? props.theme.color[props.color]
+      : props.theme.color.typography};
   text-align: ${(props) => props.align};
   display: ${(props) => props.display};
 

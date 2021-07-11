@@ -6,7 +6,7 @@ import { style } from 'components/atoms/Link/style'
 
 const StyledLink = styled.a<IProps>`
   text-decoration: none;
-  color: ${(props) => props.theme.colors.link};
+  color: ${(props) => props.theme.color.link};
   cursor: pointer;
 
   ${(props) => style[props.variant]}

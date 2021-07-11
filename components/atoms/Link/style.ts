@@ -14,7 +14,7 @@ const navLinkStyle = css`
 
   &:hover {
     opacity: 1;
-    color: ${(props) => props.theme.colors.primary};
+    color: ${(props) => props.theme.color.primary};
   }
 
   &:before {
@@ -22,7 +22,7 @@ const navLinkStyle = css`
     height: 2px;
     content: '';
     position: absolute;
-    background-color: ${(props) => props.theme.colors.primary};
+    background-color: ${(props) => props.theme.color.primary};
     width: 0%;
     bottom: 10px;
   }
@@ -66,7 +66,7 @@ const socialLinkStyle = css`
     position: absolute;
     width: 120%;
     height: 120%;
-    background: ${(props) => props.theme.colors.primary};
+    background: ${(props) => props.theme.color.primary};
     transform: rotate(45deg);
     left: -110%;
     top: 90%;

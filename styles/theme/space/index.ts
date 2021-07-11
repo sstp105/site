@@ -1,10 +1,11 @@
-type SpaceSize = 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl'
+import { SizeLarge } from 'types/Size'
 
-export const space: Record<SpaceSize, string> = {
-  xs: '5px',
-  s: '10px',
-  m: '15px',
-  l: '20px',
-  xl: '25px',
-  xxl: '30px'
+export const space: Record<SizeLarge, string> = {
+  xxs: '5px',
+  xs: '10px',
+  s: '15px',
+  m: '20px',
+  l: '25px',
+  xl: '30px',
+  xxl: '35px'
 }

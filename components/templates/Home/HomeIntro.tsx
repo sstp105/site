@@ -13,16 +13,16 @@ const override = css`
   justify-content: space-around;
   margin-top: 150px;
 
-  ${(props) => props.theme.media.m} {
+  ${(props) => props.theme.media.tablet} {
     margin-top: 80px;
     flex-direction: column;
   }
 `
 
 const StyledSocialMediaList = styled.div`
-  margin: ${(props) => props.theme.space.l} 0;
+  margin: ${(props) => props.theme.space.m} 0;
   transform: translateX(-20px);
-  ${(props) => props.theme.media.m} {
+  ${(props) => props.theme.media.tablet} {
     transform: translateX(0px);
     & > a {
       margin: 0 20px;
@@ -31,13 +31,13 @@ const StyledSocialMediaList = styled.div`
 `
 
 const StyledWrapper = styled.div`
-  ${(props) => props.theme.media.m} {
+  ${(props) => props.theme.media.tablet} {
     text-align: center;
   }
 `
 
 const ContractWrapper = styled.div`
-  ${(props) => props.theme.media.m} {
+  ${(props) => props.theme.media.tablet} {
     width: fit-content;
     margin: 0 auto;
   }
@@ -45,7 +45,7 @@ const ContractWrapper = styled.div`
 
 const welcomeChipStyle = css`
   border-radius: 30px 35px 35px 0px;
-  ${(props) => props.theme.media.m} {
+  ${(props) => props.theme.media.tablet} {
     margin: 0 auto;
   }
 `
