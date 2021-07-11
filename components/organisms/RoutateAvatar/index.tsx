@@ -18,6 +18,24 @@ const Wrapper = styled.div`
   position: relative;
   width: 300px;
   height: 300px;
+  transform: translateX(-45px);
+
+  ${(props) => props.theme.media.m} {
+    transform: translateX(0);
+    width: 250px;
+    order: -1;
+    img {
+      width: 250px;
+    }
+  }
+
+  ${(props) => props.theme.media.xs} {
+    width: 200px;
+    height: 250px;
+    img {
+      width: 200px;
+    }
+  }
 `
 
 const override = css`

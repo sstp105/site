@@ -19,14 +19,14 @@ const StyledSectionLayout = styled(FlexLayout)`
 `
 
 const DesktopHeader = styled.div`
-  ${(props) => props.theme.media.s} {
+  ${(props) => props.theme.media.m} {
     display: none;
   }
 `
 
 const MobileHeader = styled.div`
   display: none;
-  ${(props) => props.theme.media.s} {
+  ${(props) => props.theme.media.m} {
     display: flex;
     width: 100%;
     justify-content: space-between;

@@ -1,11 +1,12 @@
 import React from 'react'
 import { IProps } from 'components/atoms/Icon/type'
 
-// TODO: As icon use font-awesome classname for icon name
-// There will be collasion with styled-components and className
-// currently use otherStyle as prop
+/**
+ * Render Font-awesome icon
+ * @iconName font-awesome className
+ */
 export const Icon: React.FC<IProps> = (props) => {
-  const { iconName, otherStyles } = props
+  const { iconName } = props
 
-  return <i className={iconName} css={otherStyles} />
+  return <i className={iconName} />
 }

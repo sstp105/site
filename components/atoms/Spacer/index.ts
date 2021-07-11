@@ -1,1 +1,0 @@
-// eitehr Horizontal or vertical
