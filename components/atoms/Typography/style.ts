@@ -47,7 +47,6 @@ const Overline = css`
   font-size: 18px;
   text-transform: uppercase;
   letter-spacing: 0.2rem;
-  font-weight: bold;
 `
 
 const Caption = css`

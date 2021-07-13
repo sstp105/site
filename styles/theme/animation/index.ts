@@ -1,7 +1,7 @@
 import { css } from 'styled-components'
 
 type DurationType = 'slow' | 'normal' | 'fast'
-type KeyframeType = 'fadeIn'
+type KeyframeType = 'fadeIn' | 'wiggleRotate'
 
 const duration: Record<DurationType, string> = {
   slow: '0.8s',
@@ -10,6 +10,7 @@ const duration: Record<DurationType, string> = {
 }
 
 const keyframes: Record<KeyframeType, any> = {
+  // 透明度缓入
   fadeIn: css`
     @keyframes fadeIn {
       from {
@@ -17,6 +18,21 @@ const keyframes: Record<KeyframeType, any> = {
       }
       to {
         opacity: 1;
+      }
+    }
+  `,
+
+  // 摇摆旋转动画
+  wiggleRotate: css`
+    @keyframes wiggleRotate {
+      0% {
+        transform: rotate(0deg) scale(1.12);
+      }
+      50% {
+        transform: rotate(180deg) scale(1.15);
+      }
+      100% {
+        transform: rotate(0deg) scale(1.12);
       }
     }
   `

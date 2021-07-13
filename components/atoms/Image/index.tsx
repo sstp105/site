@@ -21,7 +21,7 @@ export const Image: React.FC<IProps> = (props) => {
 
 const defaultProps: IDefaultProps = {
   width: '100%',
-  height: '100%',
+  height: 'auto',
   cover: 'cover',
   variant: 'rounded',
   shadow: false

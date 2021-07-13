@@ -5,7 +5,7 @@ import { IDefaultProps, IProps } from 'layout/Flex/type'
 const FlexContainer = styled.div<IProps>`
   display: flex;
   flex-direction: row;
-  flex-wrap: ${(props) => (props.wrap ? 'wrap' : 'non-wrap')};
+  flex-wrap: wrap;
   justify-content: ${(props) => props.justify};
   align-items: ${(props) => props.align};
 
@@ -31,7 +31,6 @@ export const Flex: React.FC<IProps> = (props) => {
 }
 
 const defaultProps: Omit<IDefaultProps, 'width' | 'height'> = {
-  wrap: true,
   justify: 'flex-start',
   align: 'center',
   shadow: false

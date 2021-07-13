@@ -1,5 +1,5 @@
 import React from 'react'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import { IProps } from 'components/molecules/TextIcon/type'
 import { style } from 'components/molecules/TextIcon/style'
 import { Icon } from 'components/atoms/Icon'
