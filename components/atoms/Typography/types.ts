@@ -1,6 +1,21 @@
 import { Colors } from 'types/Color'
 
-export interface IProps {
+export interface IDefaultProps {
+  color: Colors
+  align: 'inherit' | 'left' | 'center' | 'right' | 'justify'
+  display: 'initial' | 'block' | 'inline'
+  margin: boolean
+  transform:
+    | 'capitalize'
+    | 'lowercase'
+    | 'uppercase'
+    | 'none'
+    | 'inherit'
+    | 'initial'
+    | 'unset'
+}
+
+export interface IProps extends Partial<IDefaultProps> {
   variant:
     | 'h1'
     | 'h2'
@@ -12,8 +27,4 @@ export interface IProps {
     | 'caption'
     | 'overline'
   children: React.ReactNode
-  color?: Colors
-  align?: 'inherit' | 'left' | 'center' | 'right' | 'justify'
-  display?: 'initial' | 'block' | 'inline'
-  margin?: boolean
 }

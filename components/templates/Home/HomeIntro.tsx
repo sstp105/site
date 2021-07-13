@@ -12,6 +12,7 @@ import contractData from 'data/contract.json'
 // component css overrides
 const flexContainerStyle = css`
   margin-top: 150px;
+  border: 1px solid blue; // TODO: Remove
 
   ${(props) => props.theme.media.tablet} {
     margin-top: 80px;

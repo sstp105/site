@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 import React from 'react'
 import { styles } from 'components/atoms/Typography/style'
-import { IProps } from 'components/atoms/Typography/types'
+import { IDefaultProps, IProps } from 'components/atoms/Typography/types'
 
 const Component = styled.h1<IProps>`
   color: ${(props) =>
@@ -10,6 +10,7 @@ const Component = styled.h1<IProps>`
       : props.theme.color.typography};
   text-align: ${(props) => props.align};
   display: ${(props) => props.display};
+  text-transform: ${(props) => props.transform};
 
   ${(props) =>
     props.margin &&
@@ -33,8 +34,11 @@ export const Typography: React.FC<IProps> = (props) => {
   )
 }
 
-Typography.defaultProps = {
-  align: 'inherit',
+const defaultProps: Omit<IDefaultProps, 'color'> = {
   display: 'block',
-  margin: true
+  align: 'inherit',
+  margin: true,
+  transform: 'none'
 }
+
+Typography.defaultProps = defaultProps
