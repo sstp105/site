@@ -3,7 +3,7 @@ export const color = {
    * 品牌
    */
   // 主题色
-  primary: '#3DA3F4',
+  primary: '#1190F5',
   // 主题色 样式2
   primary_variant: '#BBE4F9',
   // 辅助色
@@ -53,5 +53,5 @@ export const color = {
    * 边框
    */
   border_base: '#CCCCCC',
-  border_primary: '#3DA3F4'
+  border_primary: '#1190F5'
 }

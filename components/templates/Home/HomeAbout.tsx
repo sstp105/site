@@ -2,11 +2,19 @@ import React from 'react'
 import styled from 'styled-components'
 import { Typography } from 'components/atoms/Typography'
 import { Flex } from 'layout/Flex'
-
+import { Button } from 'components/atoms/Button'
+import { Icon } from 'components/atoms/Icon'
 const Wrapper = styled.div`
   border: 1px solid red;
-  margin: 0 auto;
+  padding: 0 20px;
 `
+
+const Spacer = styled.div`
+  height: 20px;
+  display: block;
+`
+
+const MyIcon = <Icon iconName="fas fa-download" />
 
 export const HomeAbout: React.FC = () => {
   return (
