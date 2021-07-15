@@ -52,7 +52,6 @@ const Overline = css`
 const Caption = css`
   font-family: Gilroy-Regular;
   font-size: 18px;
-  color: ${({ theme }) => theme.color.caption};
 `
 
 export const styles = {

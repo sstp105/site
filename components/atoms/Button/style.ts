@@ -33,7 +33,7 @@ const s_size = css`
 `
 const m_size = css`
   font-size: 18px;
-  padding: 12px 40px;
+  padding: 12px 20px;
 `
 const l_size = css`
   font-size: 20px;

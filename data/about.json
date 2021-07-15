@@ -1,0 +1,54 @@
+[
+  {
+    "icon": "fab fa-html5",
+    "label": "HTML5"
+  },
+  {
+    "icon": "fab fa-css3-alt",
+    "label": "CSS3"
+  },
+  {
+    "icon": "fab fa-js",
+    "label": "JavaScript"
+  },
+  {
+    "icon": "fab fa-node",
+    "label": "Node"
+  },
+  {
+    "icon": "fab fa-react",
+    "label": "React"
+  },
+  {
+    "icon": "fab fa-vuejs",
+    "label": "Vue"
+  },
+  {
+    "icon": "fab fa-angular",
+    "label": "Angular"
+  },
+  {
+    "icon": "fab fa-less",
+    "label": "Less"
+  },
+  {
+    "icon": "fab fa-sass",
+    "label": "Sass"
+  },
+  {
+    "icon": "fas fa-database",
+    "label": "MongoDB"
+  },
+  {
+    "icon": "fas fa-code-branch",
+    "label": "Git"
+  },
+  {
+    "icon": "fab fa-java",
+    "label": "Java"
+  },
+  {
+    "icon": "fab fa-python",
+    "label": "Python"
+  }
+]
