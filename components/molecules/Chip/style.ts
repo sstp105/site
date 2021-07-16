@@ -20,7 +20,7 @@ const outlinedVariant = css`
  */
 const smallSize = css`
   font-size: 13px;
-  padding: 10px 10px;
+  padding: 8px 10px;
 `
 const normalSize = css`
   font-size: 16px;

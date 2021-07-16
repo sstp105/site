@@ -6,6 +6,7 @@ type Device =
   | 'tablet_sm'
   | 'tablet'
   | 'desktop_sm'
+  | 'desktop_md'
   | 'desktop'
 
 // Return break points
@@ -15,6 +16,7 @@ export const breakPoints: Record<Device, number> = {
   tablet_sm: 640,
   tablet: 768,
   desktop_sm: 1024,
+  desktop_md: 1280,
   desktop: 1440
 }
 
@@ -25,5 +27,6 @@ export const media: Record<Device, string> = {
   tablet_sm: customMediaQuery(640),
   tablet: customMediaQuery(768),
   desktop_sm: customMediaQuery(1024),
+  desktop_md: customMediaQuery(1280),
   desktop: customMediaQuery(1440)
 }

@@ -5,8 +5,8 @@ import { style } from 'components/molecules/RotateAvatar/style'
 
 const StyledWrapper = styled.div`
   position: relative;
-  width: 300px;
-  height: 300px;
+  width: 310px;
+  height: 310px;
   transform: translateX(-45px);
 
   ${(props) => props.theme.media.tablet} {
@@ -34,13 +34,13 @@ export const RotateAvater: React.FC = () => {
       <Image
         src="static/images/avatar.jpg"
         alt="yang avatar"
-        width="300px"
+        width="310px"
         variant="circle"
       />
       <Image
         src="static/images/avatar-outline.png"
         alt="rotate animation avatar frame"
-        width="300px"
+        width="310px"
         variant="circle"
         css={override}
       />

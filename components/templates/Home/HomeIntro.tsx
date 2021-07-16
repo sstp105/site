@@ -9,14 +9,12 @@ import { Flex } from 'layout/Flex'
 import socialMediaData from 'data/socialMedia.json'
 import contractData from 'data/contract.json'
 
-// component css overrides
 const flexContainerStyle = css`
-  margin-top: 150px;
-  border: 1px solid blue; // TODO: Remove
-
+  height: calc(100vh - 75px);
   ${(props) => props.theme.media.tablet} {
-    margin-top: 80px;
+    padding-top: 50px;
     flex-direction: column;
+    height: auto;
   }
 `
 
@@ -54,7 +52,7 @@ const StyledSocialMediaList = styled.div`
   }
 `
 
-export const HomeIntro: React.FC = () => {
+export const HomeHero: React.FC = () => {
   return (
     <Flex justify="space-around" align="center" css={flexContainerStyle}>
       <StyledWrapper>
