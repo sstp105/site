@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import styled, { css } from 'styled-components'
 import { Typography } from 'components/atoms/Typography'
 import { Icon } from 'components/atoms/Icon'
@@ -10,7 +10,7 @@ import { Flex } from 'layout/Flex'
 import { SectionHeader } from 'components/molecules/SectionHeader'
 
 const Wrapper = styled.div`
-  /* border: 1px solid red; */
+  border: 1px solid red;
   margin: 0 auto;
   position: relative;
   max-width: 1440px;
@@ -55,7 +55,7 @@ const aboutImgStyle = css`
 
 export const HomeAbout: React.FC = () => {
   return (
-    <Wrapper>
+    <Wrapper id="about">
       <SectionHeader
         title="About Me"
         subtitle="Love Coding, Competitive Powerlifter, ACG fans."

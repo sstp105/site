@@ -10,6 +10,7 @@ import socialMediaData from 'data/socialMedia.json'
 import contractData from 'data/contract.json'
 
 const flexContainerStyle = css`
+  border: 1px solid blue;
   height: calc(100vh - 75px);
   ${(props) => props.theme.media.tablet} {
     padding-top: 50px;
