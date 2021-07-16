@@ -11,7 +11,7 @@ const DynamicMobileHeader = dynamic(() =>
   )
 )
 
-const demo = css`
+const flexStyle = css`
   position: fixed;
   top: 0;
   left: 0;
@@ -24,7 +24,7 @@ export const Header: React.FC = () => {
   const width = useMediaQuery()
 
   return (
-    <Flex height="75px" shadow justify="center" css={demo}>
+    <Flex height="75px" shadow justify="center" css={flexStyle}>
       {width <= 768 ? <DynamicMobileHeader /> : <NavigationList />}
     </Flex>
   )

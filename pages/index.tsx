@@ -4,6 +4,7 @@ import { Header } from 'components/templates/shared/Header'
 import { Spacer } from 'components/atoms/Spacer'
 import { HomeHero } from 'components/templates/Home/HomeHero'
 import { HomeAbout } from 'components/templates/Home/HomeAbout'
+import { Paper } from 'components/molecules/Paper'
 
 const homeComponents = [<HomeHero />, <HomeAbout />]
 
@@ -21,6 +22,13 @@ const Home: React.FC = () => {
       <Header />
       {components}
       <Spacer verticalSpace="200px" />
+
+      <div style={{ marginLeft: '100px', marginBottom: '100px' }}>
+        <Paper>
+          UI/UX Design
+          <h1>dd</h1>
+        </Paper>
+      </div>
     </>
   )
 }
