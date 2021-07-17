@@ -36,6 +36,11 @@ const HeadlineSix = css`
   letter-spacing: 0.15px;
 `
 
+const Subtitle = css`
+  font-family: Gilroy-Medium;
+  font-size: 18px;
+`
+
 const Body = css`
   font-family: Gilroy-Regular;
   font-size: 16px;
@@ -54,6 +59,12 @@ const Caption = css`
   font-size: 18px;
 `
 
+const Note = css`
+  font-family: Gilroy-Regular;
+  font-size: 14px;
+  line-height: 1.3rem;
+`
+
 export const styles = {
   h1: HeadlineOne,
   h2: HeadlineTwo,
@@ -61,7 +72,9 @@ export const styles = {
   h4: HeadlineFour,
   h5: HeadlineFive,
   h6: HeadlineSix,
+  subtitle: Subtitle,
   body: Body,
   overline: Overline,
-  caption: Caption
+  caption: Caption,
+  note: Note
 }

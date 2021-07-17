@@ -23,8 +23,10 @@ export interface IProps extends Partial<IDefaultProps> {
     | 'h4'
     | 'h5'
     | 'h6'
+    | 'subtitle'
     | 'body'
     | 'caption'
     | 'overline'
+    | 'note'
   children: React.ReactNode
 }

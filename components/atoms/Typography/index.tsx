@@ -24,8 +24,8 @@ export const Typography: React.FC<IProps> = (props) => {
   const { variant, children } = props
 
   // non-HTML tag name convert to p element
-  const nonHTMLElements = ['body', 'caption', 'overline']
-  const variantElement = nonHTMLElements.includes(variant) ? 'p' : variant
+  const HTMLElements = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6']
+  const variantElement = HTMLElements.includes(variant) ? variant : 'p'
 
   return (
     <Component as={variantElement} {...props}>
