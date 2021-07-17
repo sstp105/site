@@ -20,8 +20,8 @@ const StyledWrapper = styled.div`
 const skillList = skillData.map((elem) => (
   <Paper key={elem.title}>
     <Image src={elem.imgUrl} alt={elem.alt} width="70px" height="70px" />
-    <Typography variant="h5">{elem.title}</Typography>
-    <Typography variant="body" align="center">
+    <Typography variant="h6">{elem.title}</Typography>
+    <Typography variant="body" align="center" margin={false}>
       {elem.subtitle}
     </Typography>
   </Paper>

@@ -31,7 +31,7 @@ const HeadlineFive = css`
 `
 
 const HeadlineSix = css`
-  font-family: Gilroy-Medium;
+  font-family: Gilroy-Regular;
   font-size: 20px;
   letter-spacing: 0.15px;
 `

@@ -1,104 +1,99 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+import { Typography } from 'components/atoms/Typography'
 
-interface Props {
-  title: any
-  position: any
-  duty: any
-  time: any
-}
-
-const StyledContent = styled.div`
+const StyledContent = styled.div<{ float: 'left' | 'right' }>`
   padding: 20px;
   position: relative;
   background: #ecf7fd;
   border-radius: 0.4em;
+
   &:after {
-    /* content: '';
+    content: '';
     position: absolute;
-    left: 0;
     top: 15%;
     width: 0;
     height: 0;
     border: 16px solid transparent;
-    border-right-color: #ecf7fd;
-    border-left: 0;
+    margin-top: -8px;
     border-top: 0;
-    margin-top: -8px;
-    margin-left: -16px; */
 
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 15%;
-    width: 0;
-    height: 0;
-    border: 20px solid transparent;
-    border-right-color: #ecf7fd;
-    border-left: 0;
-    border-bottom: 0;
-    margin-top: -8px;
-    margin-left: -16px;
+    ${(props) =>
+      props.float === 'left' &&
+      css`
+        right: 0;
+        border-left-color: #ecf7fd;
+        border-right: 0;
+        margin-right: -16px;
+      `}
+
+    ${(props) =>
+      props.float === 'right' &&
+      css`
+        left: 0;
+        border-right-color: #ecf7fd;
+        border-left: 0;
+        margin-left: -16px;
+      `}
+
+    ${(props) => props.theme.media.tablet} {
+      display: none;
+    }
   }
-`
-
-const StyledTitle = styled.h3`
-  padding: 0;
-  margin: 0;
-  color: rgb(21, 21, 21);
-  font-weight: bold;
-  font-size: 18px;
-`
-
-const StyledPosition = styled.p`
-  margin: 10px 0 0;
-  padding: 0;
-  color: rgb(29, 29, 29);
-  font-size: 15px;
-`
-
-const StyledDuty = styled.p`
-  margin: 10px 0 0;
-  padding: 0;
-  color: rgb(99, 98, 98);
-  font-size: 13px;
-  line-height: 1.3rem;
-`
-const StyledTime = styled.h4`
-  margin: 0;
-  padding: 0;
-  font-size: 13px;
-  color: rgb(21, 21, 21);
 `
 
 const StyledTimeContainer = styled.div``
 
-export const ExperienceTimeLineItem: React.FC<Props> = ({
-  title,
-  position,
-  duty,
-  time
-}) => {
+interface IExperienceProps extends WorkExperience {
+  float: 'left' | 'right'
+}
+
+export const ExperienceTimeLineItem: React.FC<IExperienceProps> = (props) => {
+  const { title, company, startDate, endDate, description, float } = props
   return (
-    <div data-aos="fade-up">
-      <StyledContent>
-        <StyledTitle>{title}</StyledTitle>
-        <StyledPosition>{position}</StyledPosition>
-        <StyledDuty>{duty}</StyledDuty>
+    <>
+      <StyledContent float={float}>
+        <Typography variant="h6" margin={false}>
+          {company}
+        </Typography>
+        <Typography variant="body" margin={false}>
+          {title}
+        </Typography>
+        <Typography
+          variant="body"
+          margin={false}
+          css={css`
+            color: rgb(99, 98, 98);
+            font-size: 13px;
+            line-height: 1.3rem;
+          `}
+        >
+          {description}
+        </Typography>
       </StyledContent>
 
       <StyledTimeContainer className="time">
-        <StyledTime>{time}</StyledTime>
+        <Typography
+          variant="caption"
+          margin={false}
+          css={css`
+            font-size: 13px;
+          `}
+        >
+          {startDate} - {endDate}
+        </Typography>
       </StyledTimeContainer>
-    </div>
+    </>
   )
 }
 
+//------------------------------------------------------------------------
+
 const StyledTimeline = styled.div`
   position: relative;
-  margin: 50px auto;
-  padding: 40px 0;
-  width: 1000px;
-  box-sizing: border-box;
+  max-width: 1000px;
+  margin: 0 auto;
+
+  // Center line
   &:before {
     content: '';
     position: absolute;
@@ -107,10 +102,12 @@ const StyledTimeline = styled.div`
     height: 100%;
     background: #c5c5c5;
   }
-  @media (max-width: 1000px) {
+
+  ${(props) => props.theme.media.desktop_sm} {
     width: 100%;
   }
-  @media (max-width: 768px) {
+
+  ${(props) => props.theme.media.tablet} {
     padding-bottom: 0;
     &:before {
       left: 20px;
@@ -139,7 +136,7 @@ const StyledTimelineItem = styled.li`
   &:nth-child(odd) .time {
     position: absolute;
     top: 19px;
-    transform: translateX(500px);
+    right: -163px;
     margin: 0;
     padding: 8px 16px;
     background: #bbe4f9;
@@ -149,7 +146,7 @@ const StyledTimelineItem = styled.li`
   &:nth-child(even) .time {
     position: absolute;
     top: 19px;
-    transform: translateX(-280px);
+    left: -163px;
     margin: 0;
     padding: 8px 16px;
     background: #bbe4f9;
@@ -176,7 +173,8 @@ const StyledTimelineItem = styled.li`
     background: #bbe4f9;
     border-radius: 50%;
   }
-  @media (max-width: 768px) {
+
+  ${(props) => props.theme.media.tablet} {
     &:nth-child(odd),
     &:nth-child(even) {
       width: 100%;
@@ -198,58 +196,36 @@ const StyledTimelineItem = styled.li`
   }
 `
 
-export const Timeline: React.FC = () => {
+interface WorkExperience {
+  title: string
+  company: string
+  startDate: string
+  endDate: string
+  description: string
+}
+
+interface IProps {
+  data: Array<WorkExperience>
+}
+
+export const Timeline: React.FC<IProps> = (props) => {
+  const { data } = props
+
   return (
-    <StyledTimeline data-aos="fade-up">
+    <StyledTimeline>
       <ul>
-        <StyledTimelineItem>
-          <ExperienceTimeLineItem
-            title="Fabric.inc"
-            position="Software Development Engineer"
-            duty="Built large scale project with serverless compuation, collaborate with other teams to produce high quality code."
-            time="September 2019 - June 2021"
-          />
-        </StyledTimelineItem>
-
-        <StyledTimelineItem>
-          <ExperienceTimeLineItem
-            title="British Columbia Institute of Technology"
-            position="Computer System Technology Diploma"
-            duty="Created multiple web porjects with peers by using html, css,
-                            and javascript. Proficient programming with C and Java."
-            time="September 2019 - June 2021"
-          />
-        </StyledTimelineItem>
-
-        <StyledTimelineItem>
-          <ExperienceTimeLineItem
-            title="Victor Immigration Inc."
-            position="Immigration Consult"
-            duty="Help clients to renew their status in Canana by filling the form and
-                            connect CIC for clients"
-            time="December 2018 - July 2019"
-          />
-        </StyledTimelineItem>
-        <StyledTimelineItem>
-          <ExperienceTimeLineItem
-            title="Simon Fraser University"
-            position="Bachelor of Arts in Economics"
-            duty="Achieved 3 times Dean's Honor Roll with excellent academic records.
-                            Enhanced my critical thinking by taking advance Economics courses."
-            time="September 2015 - August 2018"
-          />
-        </StyledTimelineItem>
-        <StyledTimelineItem>
-          <ExperienceTimeLineItem
-            title="T&amp;T Supermarket"
-            position="Grocery Assistant"
-            duty="Provided excellent customer service by helping customers efficiently
-                            in a timely and friendly manner,
-                            and received good feedback from customer survey"
-            time="September 2015 - August 2018"
-          />
-        </StyledTimelineItem>
-
+        {data.map((elem, index) => {
+          const float = index % 2 == 0 ? 'left' : 'right'
+          return (
+            <StyledTimelineItem>
+              <ExperienceTimeLineItem
+                key={elem.company}
+                float={float}
+                {...elem}
+              />
+            </StyledTimelineItem>
+          )
+        })}
         <div style={{ clear: 'both' }}></div>
       </ul>
     </StyledTimeline>
