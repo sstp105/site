@@ -9,12 +9,13 @@ const StyledPaper = styled.div<IProps>`
   flex-direction: column;
   width: 300px;
   min-height: 300px;
-  padding: 40px 16px;
+  padding: 40px 30px;
   background-color: white;
   transition: all 0.3s ease 0s;
   border-radius: 20px;
+  margin-bottom: 40px;
   &:hover {
-    transform: translate3d(0, -15px, 0);
+    transform: translate3d(0, -10px, 0);
   }
 
   ${(props) =>

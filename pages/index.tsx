@@ -4,14 +4,15 @@ import { Header } from 'components/templates/shared/Header'
 import { Spacer } from 'components/atoms/Spacer'
 import { HomeHero } from 'components/templates/Home/HomeHero'
 import { HomeAbout } from 'components/templates/Home/HomeAbout'
-import { Paper } from 'components/molecules/Paper'
+import { HomeSkill } from 'components/templates/Home/HomeSkill'
+import { HomeExperience } from 'components/templates/Home/HomeExperience'
 
-const homeComponents = [<HomeHero />, <HomeAbout />]
+const homeComponents = [<HomeAbout />, <HomeSkill />, <HomeExperience />]
 
 const components = homeComponents.map((c, index) => (
   <React.Fragment key={index}>
     {c}
-    {/* <Spacer verticalSpace="200px" /> */}
+    <Spacer verticalSpace="200px" />
   </React.Fragment>
 ))
 
@@ -20,15 +21,8 @@ const Home: React.FC = () => {
     <>
       <Seo />
       <Header />
+      <HomeHero />
       {components}
-      <Spacer verticalSpace="200px" />
-
-      <div style={{ marginLeft: '100px', marginBottom: '100px' }}>
-        <Paper>
-          UI/UX Design
-          <h1>dd</h1>
-        </Paper>
-      </div>
     </>
   )
 }

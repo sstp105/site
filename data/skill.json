@@ -1,0 +1,20 @@
+[
+  {
+    "title": "UI/UX Design",
+    "subtitle": "I am proficient with Adobe Illustrator, Photoshop, Xd to design elegent responsive layout. I also have a lot of music video project experience with Adobe Affects.",
+    "imgUrl": "static/images/skill-ui.png",
+    "alt": "UI UX icon"
+  },
+  {
+    "title": "Web Development",
+    "subtitle": "I am a full stack web developer with expereince of basic html, css, javascript, MySQL, MongoDB, React, and others tools to create dynamic websites.",
+    "imgUrl": "static/images/skill-web.png",
+    "alt": "Web icon"
+  },
+  {
+    "title": "Mobile Development",
+    "subtitle": "I am familiar with React Natvie for cross-platform development, and also have some project experience with Android and Swift ios development",
+    "imgUrl": "static/images/skill-cloud.png",
+    "alt": "Mobile icon"
+  }
+]
