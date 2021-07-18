@@ -4,6 +4,7 @@ export interface IDefaultProps {
   variant: 'circle' | 'rounded' | 'square'
   cover: 'cover' | 'contain'
   shadow: boolean
+  onClick: () => void
 }
 
 export interface IProps extends Partial<IDefaultProps> {

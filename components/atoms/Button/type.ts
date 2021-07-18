@@ -5,6 +5,7 @@ export interface IDefaultProps {
   endIcon: React.ReactNode
   fullWidth: boolean
   size: SizeBase
+  verticalSpace: number
   onClick: () => void
 }
 

@@ -5,12 +5,12 @@ import {
   StyledTimelineItem,
   StyledContent,
   StyledDate
-} from 'components/molecules/Timeline/style'
+} from 'components/organisms/Timeline/style'
 import {
   IExperience,
   IThemeProps,
   IProps
-} from 'components/molecules/Timeline/type'
+} from 'components/organisms/Timeline/type'
 
 export const Timeline: React.FC<IProps> = (props) => {
   const { data } = props

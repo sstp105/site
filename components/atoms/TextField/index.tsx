@@ -1,31 +1,5 @@
-import styled, { css } from 'styled-components'
-
-export interface IThemeProps {
-  size: 'small' | 'medium' | 'large'
-  fullWidth: boolean
-}
-
-export interface IDefaultProps extends IThemeProps {
-  placeholder: string
-  autocomplete: 'on' | 'off'
-}
-
-export interface IProps extends Partial<IDefaultProps> {
-  type:
-    | 'text'
-    | 'email'
-    | 'tel'
-    | 'checkbox'
-    | 'button'
-    | 'color'
-    | 'file'
-    | 'number'
-    | 'password'
-  name: string
-  value: string
-  required: boolean
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
-}
+import styled from 'styled-components'
+import { IDefaultProps, IProps } from 'components/atoms/TextField/type'
 
 const StyledInput = styled.input`
   width: calc(100% - 42px); // minus the padding and border

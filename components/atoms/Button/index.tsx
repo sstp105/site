@@ -26,6 +26,9 @@ const StyledButton = styled.button<IProps>`
     css`
       width: 100%;
     `}
+
+  margin: ${(props) => props.verticalSpace}px 0;
+
   ${(props) => style.variant[props.variant]}
   ${(props) => style.size[props.size]}
 `
@@ -47,7 +50,8 @@ const defaultProps: IDefaultProps = {
   endIcon: <></>,
   fullWidth: false,
   size: 'm',
-  onClick: () => {}
+  onClick: () => {},
+  verticalSpace: 0
 }
 
 Button.defaultProps = defaultProps

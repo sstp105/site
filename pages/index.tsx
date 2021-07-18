@@ -8,11 +8,13 @@ import { HomeAbout } from 'components/templates/Home/HomeAbout'
 import { HomeSkill } from 'components/templates/Home/HomeSkill'
 import { HomeExperience } from 'components/templates/Home/HomeExperience'
 import { HomeContact } from 'components/templates/Home/HomeContact'
+import { HomePortfolio } from 'components/templates/Home/HomePortfolio'
 
 const homeComponents = [
   <HomeAbout />,
   <HomeSkill />,
   <HomeExperience />,
+  <HomePortfolio />,
   <HomeContact />
 ]
 

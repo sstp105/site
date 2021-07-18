@@ -3,6 +3,8 @@ import styled, { css } from 'styled-components'
 import { SectionHeader } from 'components/molecules/SectionHeader'
 import { TextField } from 'components/atoms/TextField'
 import { Button } from 'components/atoms/Button'
+import { IForm } from 'types/Input'
+import { initContactFormState } from 'data/contactForm'
 
 const Wrapper = styled.div`
   border: 1px solid purple;
@@ -15,60 +17,8 @@ const StyledForm = styled.form`
   margin: 0 auto;
 `
 
-interface IInputState {
-  name: string
-  label: string
-  type:
-    | 'text'
-    | 'email'
-    | 'tel'
-    | 'checkbox'
-    | 'button'
-    | 'color'
-    | 'file'
-    | 'number'
-    | 'password'
-  required: boolean
-  value: string
-}
-
-interface IState {
-  [key: string]: IInputState
-}
-
-const contactFormState: IState = {
-  firstName: {
-    name: 'firstName',
-    label: 'First Name',
-    type: 'text',
-    required: true,
-    value: ''
-  },
-  lastName: {
-    name: 'lastName',
-    label: 'Last Name',
-    type: 'text',
-    required: true,
-    value: ''
-  },
-  phoneNumber: {
-    name: 'phoneNumber',
-    label: 'Phone Number',
-    type: 'tel',
-    required: false,
-    value: ''
-  },
-  email: {
-    name: 'email',
-    label: 'Email',
-    type: 'email',
-    required: true,
-    value: ''
-  }
-}
-
 export const HomeContact: React.FC = () => {
-  const [contact, setContact] = useState<IState>(contactFormState)
+  const [contact, setContact] = useState<IForm>(initContactFormState)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
@@ -88,7 +38,6 @@ export const HomeContact: React.FC = () => {
 
   const inputList = Object.keys(contact).map((elem) => {
     const { name, type, value, required, label } = contact[elem]
-
     return (
       <React.Fragment key={name}>
         <TextField
@@ -113,9 +62,7 @@ export const HomeContact: React.FC = () => {
           size="l"
           fullWidth
           onClick={handleSubmitForm}
-          css={css`
-            margin-top: 30px;
-          `}
+          verticalSpace={30}
         >
           Submit
         </Button>

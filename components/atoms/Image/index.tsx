@@ -24,7 +24,8 @@ const defaultProps: IDefaultProps = {
   height: 'auto',
   cover: 'cover',
   variant: 'rounded',
-  shadow: false
+  shadow: false,
+  onClick: () => null
 }
 
 Image.defaultProps = defaultProps
