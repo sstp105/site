@@ -5,7 +5,7 @@ import { Typography } from 'components/atoms/Typography'
 import { Link } from 'components/atoms/Link'
 import { TextIcon } from 'components/molecules/TextIcon'
 import { Chip } from 'components/molecules/Chip'
-import { Flex } from 'layout/Flex'
+import { Flex } from 'components/atoms/Layout/Flex'
 import socialMediaData from 'data/socialMedia.json'
 import contractData from 'data/contract.json'
 

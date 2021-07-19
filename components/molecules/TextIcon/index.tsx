@@ -4,7 +4,7 @@ import { IProps } from 'components/molecules/TextIcon/type'
 import { style } from 'components/molecules/TextIcon/style'
 import { Icon } from 'components/atoms/Icon'
 import { Typography } from 'components/atoms/Typography'
-import { Flex } from 'layout/Flex'
+import { Flex } from 'components/atoms/Layout/Flex'
 
 const FlexContainer = styled(Flex)<IProps>`
   padding: 10px 0;

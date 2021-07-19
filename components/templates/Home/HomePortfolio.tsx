@@ -2,15 +2,14 @@ import React, { useState } from 'react'
 import styled, { css } from 'styled-components'
 import { SectionHeader } from 'components/molecules/SectionHeader'
 import { Card } from 'components/organisms/Card'
-import { Image } from 'components/atoms/Image'
 import portfolioData from 'data/portfolio.json'
 import { Button } from 'components/atoms/Button'
 import { Typography } from 'components/atoms/Typography'
 import { Chip } from 'components/molecules/Chip'
-import { Flex } from 'layout/Flex'
+import { Flex } from 'components/atoms/Layout/Flex'
 
 const Wrapper = styled.div`
-  /* border: 1px solid green; */
+  border: 1px solid green;
   margin: 0 auto;
   max-width: 1440px;
 `
@@ -19,9 +18,9 @@ export const HomePortfolio: React.FC = () => {
   return (
     <Wrapper id="portfolio">
       <SectionHeader title="Portfolio" subtitle="Learn by Doing." />
-
       {portfolioData.map((elem, index) => (
         <Card
+          key={elem.banner}
           cardBanner={{ url: elem.banner, alt: elem.title }}
           float={index % 2 == 0 ? 'left' : 'right'}
         >

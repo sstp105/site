@@ -11,11 +11,11 @@ import { HomeContact } from 'components/templates/Home/HomeContact'
 import { HomePortfolio } from 'components/templates/Home/HomePortfolio'
 
 const homeComponents = [
-  <HomeAbout />,
-  <HomeSkill />,
-  <HomeExperience />,
-  <HomePortfolio />,
-  <HomeContact />
+  <HomeAbout key={1} />,
+  <HomeSkill key={2} />,
+  <HomeExperience key={3} />,
+  <HomePortfolio key={4} />,
+  <HomeContact key={5} />
 ]
 
 const components = homeComponents.map((c, index) => (

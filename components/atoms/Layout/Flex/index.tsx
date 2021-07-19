@@ -1,6 +1,6 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-import { IDefaultProps, IProps } from 'layout/Flex/type'
+import { IDefaultProps, IProps } from 'components/atoms/Layout/Flex/type'
 
 const FlexContainer = styled.div<IProps>`
   display: flex;
