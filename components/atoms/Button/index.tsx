@@ -50,8 +50,8 @@ const defaultProps: IDefaultProps = {
   endIcon: <></>,
   fullWidth: false,
   size: 'm',
-  onClick: () => {},
-  verticalSpace: 0
+  verticalSpace: 0,
+  onClick: () => {}
 }
 
 Button.defaultProps = defaultProps

@@ -1,72 +1,115 @@
 import styled, { css } from 'styled-components'
 import { Image } from 'components/atoms/Image'
-import React from 'react'
 
-export interface IThemeProps {}
+export interface IThemeProps {
+  variant: 'flex' | 'stack'
+  float: 'left' | 'right'
+}
 
-export interface IDefaultProps {}
+export interface IDefaultProps extends IThemeProps {
+  hoverable: boolean
+}
 
-interface IProps {
+interface IProps extends Partial<IDefaultProps> {
   cardBanner: {
     url: string
     alt: string
   }
-  float: 'left' | 'right'
   children: React.ReactNode
 }
 
-const StyledCard = styled.div<{ float: 'left' | 'right' }>`
-  display: flex;
-  box-shadow: rgb(115 127 143 / 16%) 0px 6px 16px;
-  width: 85%;
-  min-height: 400px;
-  margin: 100px auto;
-  position: relative;
+const style = {
+  variant: {
+    flex: css`
+      flex-direction: row;
+      img {
+        width: 60%;
+      }
 
-  img {
-    ${(props) =>
-      props.float === 'right' &&
-      css`
-        order: 2;
-      `}
-  }
-
-  ${(props) => props.theme.media.desktop_sm} {
-    flex-direction: column;
-    width: 70%;
-    img {
+      ${(props) => props.theme.media.desktop_sm} {
+        flex-direction: column;
+        width: 70%;
+        img {
+          width: 100%;
+          order: -1;
+        }
+      }
+      ${(props) => props.theme.media.tablet} {
+        width: 95%;
+      }
+    `,
+    stack: css`
+      flex-direction: column;
       width: 100%;
-      order: -1;
-    }
+      img {
+        height: 250px;
+      }
+      ${(props) => props.theme.media.tablet} {
+        width: 90% !important;
+      }
+    `
+  },
+  float: {
+    left: css`
+      img {
+        order: -1;
+      }
+    `,
+    right: css`
+      img {
+        order: 2;
+      }
+    `
   }
-  ${(props) => props.theme.media.tablet} {
-    width: 95%;
-  }
+}
+
+const StyledCard = styled.div<IProps>`
+  display: flex;
+  position: relative;
+  box-shadow: rgb(115 127 143 / 16%) 0px 6px 16px;
+  width: 100%;
+  transition: all 0.5s;
+  ${(props) =>
+    props.hoverable &&
+    css`
+      &:hover {
+        transform: translateY(-15px);
+      }
+    `}
+
+  ${(props) => style.variant[props.variant]}
+  ${(props) => style.float[props.float]}
 `
 
 const StyledCardContent = styled.div`
   position: relative;
-  padding: 0 25px;
-  width: 40%;
-
+  padding: 25px;
   ${(props) => props.theme.media.desktop_sm} {
-    padding: 25px;
     width: calc(100% - 50px);
   }
 `
 
 export const Card: React.FC<IProps> = (props) => {
-  const { cardBanner, children, float } = props
+  const { cardBanner, children } = props
 
   return (
-    <StyledCard float={float}>
+    <StyledCard {...props}>
       <Image
         src={cardBanner.url}
         alt={cardBanner.alt}
-        width="60%"
+        width="100%"
+        height="100%"
         variant="square"
       />
       <StyledCardContent>{children}</StyledCardContent>
     </StyledCard>
   )
 }
+
+const defaultProps: IDefaultProps = {
+  variant: 'stack',
+  float: 'left',
+  hoverable: false
+}
+
+Card.defaultProps = defaultProps

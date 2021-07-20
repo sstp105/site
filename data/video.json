@@ -1,0 +1,44 @@
+[
+  {
+    "id": "magiclove",
+    "title": "The Magic Love",
+    "desc": "Sometimes you like a person but dont know what to do, and she knows all your little tricks. That's the magic of love",
+    "demo": "https://www.bilibili.com/video/av33816992",
+    "tags": ["Anime Music Video", "Romantic", "60 FPS", "Editing", "Chunibyo"]
+  },
+  {
+    "id": "kon",
+    "title": "Tea Time & Good Time!",
+    "desc": "The tea time with all band friends during the high school is always the best memory.",
+    "demo": "https://www.bilibili.com/video/av2488254",
+    "tags": ["MAD", "Good Time", "AE", "K-On"]
+  },
+  {
+    "id": "blackbox",
+    "title": "Black Box",
+    "desc": "Animation and Game remix with all the graphics effects. A lot of memes too.",
+    "demo": "https://www.bilibili.com/video/av3180594",
+    "tags": ["MAD", "Visiual Effect", "Speed", "AE", "Remix"]
+  },
+  {
+    "id": "sky",
+    "title": "AIR",
+    "desc": "Practice wised video as I was new to After effects at that time. Learned a lot of layout and text animation.",
+    "demo": "https://www.bilibili.com/video/av3143668",
+    "tags": ["MAD", "Romantic", "Images", "Elegent", "Remix"]
+  },
+  {
+    "id": "thisisme",
+    "title": "This is me",
+    "desc": "You might look weird to other people, but you dont have to act differently. This is your style.",
+    "demo": "https://www.bilibili.com/video/av19729783",
+    "tags": ["Anime Music Video", "MAD", "60 FPS", "Editing", "Chunibyo"]
+  },
+  {
+    "id": "sakura",
+    "title": "Love SAKURASOU",
+    "desc": "My first editing video by using Sony vegas and inspired by ilove apartment TV show.",
+    "demo": "https://www.bilibili.com/video/av2417940",
+    "tags": ["Anime Music Video", "Comedy", "Practice", "Editing", "Sakurasou"]
+  }
+]

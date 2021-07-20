@@ -18,45 +18,51 @@ export const HomePortfolio: React.FC = () => {
   return (
     <Wrapper id="portfolio">
       <SectionHeader title="Portfolio" subtitle="Learn by Doing." />
-      {portfolioData.map((elem, index) => (
-        <Card
-          key={elem.banner}
-          cardBanner={{ url: elem.banner, alt: elem.title }}
-          float={index % 2 == 0 ? 'left' : 'right'}
-        >
-          <Typography variant="h5">{elem.title}</Typography>
-          <Typography variant="body">{elem.desc}</Typography>
-          <Flex
+      <div style={{ padding: '0 50px' }}>
+        {portfolioData.map((elem, index) => (
+          <Card
+            key={elem.banner}
+            cardBanner={{ url: elem.banner, alt: elem.title }}
+            variant="flex"
+            float={index % 2 == 0 ? 'left' : 'right'}
             css={css`
-              margin: 20px 0;
+              margin-bottom: 50px;
             `}
           >
-            {elem.tags.map((t) => (
-              <Chip
-                key={t}
-                label={t}
-                variant="outlined"
-                size="small"
-                css={css`
-                  margin-right: 10px;
-                  margin-bottom: 10px;
-                `}
-              />
-            ))}
-          </Flex>
-          <Button
-            variant="contained"
-            fullWidth
-            css={css`
-              position: absolute;
-              bottom: 25px;
-              width: calc(100% - 50px);
-            `}
-          >
-            Read More
-          </Button>
-        </Card>
-      ))}
+            <Typography variant="h5">{elem.title}</Typography>
+            <Typography variant="body">{elem.desc}</Typography>
+            <Flex
+              css={css`
+                margin: 20px 0;
+              `}
+            >
+              {elem.tags.map((t) => (
+                <Chip
+                  key={t}
+                  label={t}
+                  variant="outlined"
+                  size="small"
+                  css={css`
+                    margin-right: 10px;
+                    margin-bottom: 10px;
+                  `}
+                />
+              ))}
+            </Flex>
+            <Button
+              variant="contained"
+              fullWidth
+              css={css`
+                position: absolute;
+                bottom: 25px;
+                width: calc(100% - 50px);
+              `}
+            >
+              Read More
+            </Button>
+          </Card>
+        ))}
+      </div>
     </Wrapper>
   )
 }
