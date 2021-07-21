@@ -1,43 +1,44 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-import { style } from 'components/atoms/Button/style'
-import { IDefaultProps, IProps } from 'components/atoms/Button/type'
+import { style } from 'components/atoms/Button/Button.style'
+import {
+  IThemeProps,
+  IDefaultProps,
+  IProps
+} from 'components/atoms/Button/Button.type'
 
-const StyledButton = styled.button<IProps>`
+const StyledButton = styled.button<Partial<IThemeProps>>`
   display: block;
   cursor: pointer;
-  background-color: rgba(0, 0, 0, 0);
+  font-family: ${({ theme }) => theme.font.family.gilroy_regular};
+  background-color: transparent;
   border: none;
   border-radius: 30px;
-  font-family: ${(props) => props.theme.font.family.gilroy_regular};
-  transition: all 0.5s;
+  transition: all ${({ theme }) => theme.animation.duration.normal};
 
-  // startIcon space
   & > i:nth-child(1) {
     margin-right: 20px;
   }
-  // endIcon space
   & > i:nth-child(2) {
     margin-left: 20px;
   }
 
-  ${(props) =>
-    props.fullWidth &&
+  // variant
+  margin: ${({ verticalSpace }) => verticalSpace}px 0;
+  ${({ fullWidth }) =>
+    fullWidth &&
     css`
       width: 100%;
     `}
-
-  margin: ${(props) => props.verticalSpace}px 0;
-
-  ${(props) => style.variant[props.variant]}
-  ${(props) => style.size[props.size]}
+  ${({ variant }) => style.variant[variant]}
+  ${({ size }) => style.size[size]}
 `
 
 export const Button: React.FC<IProps> = (props) => {
-  const { children, startIcon, endIcon, ...rest } = props
+  const { children, startIcon, endIcon, testId, ...themeProps } = props
 
   return (
-    <StyledButton {...rest}>
+    <StyledButton {...themeProps} data-testid={testId}>
       {startIcon && startIcon}
       <span>{children}</span>
       {endIcon && endIcon}
@@ -45,12 +46,13 @@ export const Button: React.FC<IProps> = (props) => {
   )
 }
 
-const defaultProps: IDefaultProps = {
+const defaultProps: Omit<IDefaultProps, 'testId'> = {
+  variant: 'contained',
+  size: 'm',
+  fullWidth: false,
+  verticalSpace: 0,
   startIcon: <></>,
   endIcon: <></>,
-  fullWidth: false,
-  size: 'm',
-  verticalSpace: 0,
   onClick: () => {}
 }
 

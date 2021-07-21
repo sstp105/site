@@ -1,14 +1,16 @@
-import { SizeMedium } from 'types/Size'
+import { SizeLarge } from 'types/Size'
 
 interface Radius {
-  variant: SizeMedium | 'circle'
+  variant: SizeLarge | 'circle'
 }
 
 export const radius: Record<Radius['variant'], string> = {
-  xs: '5px',
-  s: '10px',
-  m: '15px',
-  l: '20px',
-  xl: '25px',
+  xxs: '5px',
+  xs: '10px',
+  s: '15px',
+  m: '20px',
+  l: '25px',
+  xl: '30px',
+  xxl: '35px',
   circle: '50%'
 }
