@@ -1,11 +1,16 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-import { IDefaultProps, IProps } from 'components/atoms/Layout/Flex/type'
+import {
+  IThemeProps,
+  IDefaultProps,
+  IProps
+} from 'components/atoms/Layout/Flex/Flex.type'
 
-const FlexContainer = styled.div<IProps>`
+const FlexContainer = styled.div<Partial<IThemeProps>>`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+
   justify-content: ${(props) => props.justify};
   align-items: ${(props) => props.align};
 
@@ -25,9 +30,9 @@ const FlexContainer = styled.div<IProps>`
 `
 
 export const Flex: React.FC<IProps> = (props) => {
-  const { children, ...rest } = props
+  const { children, ...themeProps } = props
 
-  return <FlexContainer {...rest}>{children}</FlexContainer>
+  return <FlexContainer {...themeProps}>{children}</FlexContainer>
 }
 
 const defaultProps: Omit<IDefaultProps, 'width' | 'height'> = {

@@ -1,4 +1,3 @@
-import React from 'react'
 import styled, { css } from 'styled-components'
 import { style } from 'components/atoms/Button/Button.style'
 import {

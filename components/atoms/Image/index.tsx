@@ -1,9 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
-import { styles } from 'components/atoms/Image/styles'
-import { IDefaultProps, IProps } from 'components/atoms/Image/type'
+import { styles } from 'components/atoms/Image/Image.style'
+import {
+  IThemeProps,
+  IDefaultProps,
+  IProps
+} from 'components/atoms/Image/Image.type'
 
-const StyledImage = styled.img<IProps>`
+const StyledImage = styled.img<Partial<IThemeProps>>`
   display: block;
 
   width: ${(props) => props.width};
@@ -11,7 +15,6 @@ const StyledImage = styled.img<IProps>`
   object-fit: ${(props) => props.cover};
 
   ${(props) => props.shadow && props.theme.shadow.normal}
-
   ${(props) => styles.variant[props.variant]}
 `
 
@@ -24,8 +27,7 @@ const defaultProps: IDefaultProps = {
   height: 'auto',
   cover: 'cover',
   variant: 'rounded',
-  shadow: false,
-  onClick: () => null
+  shadow: false
 }
 
 Image.defaultProps = defaultProps
