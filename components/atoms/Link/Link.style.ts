@@ -90,6 +90,9 @@ const socialLinkStyle = css`
 `
 
 export const style = {
-  navigation: navLinkStyle,
-  social: socialLinkStyle
+  variant: {
+    default: null,
+    navigation: navLinkStyle,
+    social: socialLinkStyle
+  }
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { IProps } from 'components/atoms/Overlay/type'
+import { IProps } from 'components/atoms/Overlay/Overlay.type'
 
 const StyledOverlay = styled.div<{ open: boolean }>`
   z-index: 1;

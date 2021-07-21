@@ -1,23 +1,27 @@
 import React from 'react'
 import styled from 'styled-components'
 import { default as NextLink } from 'next/link'
-import { IDefaultProps, IProps } from 'components/atoms/Link/type'
-import { style } from 'components/atoms/Link/style'
+import {
+  IThemeProps,
+  IDefaultProps,
+  IProps
+} from 'components/atoms/Link/Link.type'
+import { style } from 'components/atoms/Link/Link.style'
 
-const StyledLink = styled.a<IProps>`
+const StyledLink = styled.a<Partial<IThemeProps>>`
   text-decoration: none;
   color: ${(props) => props.theme.color.link};
   cursor: pointer;
 
-  ${(props) => style[props.variant]}
+  ${(props) => style.variant[props.variant]}
 `
 
 export const Link: React.FC<IProps> = (props) => {
-  const { href, children } = props
+  const { href, children, ...themeProps } = props
 
   return (
     <NextLink href={href} passHref>
-      <StyledLink {...props}>{children}</StyledLink>
+      <StyledLink {...themeProps}>{children}</StyledLink>
     </NextLink>
   )
 }

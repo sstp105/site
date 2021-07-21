@@ -1,17 +1,12 @@
 import React from 'react'
-import styled, { css } from 'styled-components'
-
-export interface IDefaultProps {
-  verticalSpace: string
-  horizontalSpace: string
-}
-
-export interface IProps extends Partial<IDefaultProps> {}
+import styled from 'styled-components'
+import { IDefaultProps, IProps } from 'components/atoms/Spacer/Spacer.type'
 
 const StyledSpacer = styled.div<IProps>`
   width: ${(props) => props.horizontalSpace};
   height: ${(props) => props.verticalSpace};
-  background-color: 'red';
+
+  background-color: purple;
 `
 
 export const Spacer: React.FC<IProps> = (props) => {
