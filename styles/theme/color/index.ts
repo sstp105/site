@@ -28,7 +28,7 @@ export const color = {
    * 平面
    */
   // 背景
-  background: '#F7F7F7',
+  background: '#FFFFFF',
   background_dark: '#121212',
 
   // 平面: 卡片, Sheet
@@ -53,5 +53,17 @@ export const color = {
    * 边框
    */
   border_base: '#CCCCCC',
-  border_primary: '#1190F5'
+  border_primary: '#1190F5',
+
+  /**
+   * 黑夜模式
+   */
+  dark: {
+    primary: '#FFFFFF',
+    secondary: '#1190F5',
+    background: '#333333',
+    headline: '#FFFFFF',
+    typography: '#FFFFFF',
+    surface: '#333333'
+  }
 }

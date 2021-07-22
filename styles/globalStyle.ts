@@ -44,7 +44,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-color: white;
+    background-color: ${(props) => props.theme.color.background};
     font-family: ${(props) => props.theme.font.family.gilroy_regular}, "system";
   }
 `

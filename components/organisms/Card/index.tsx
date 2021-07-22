@@ -77,8 +77,8 @@ const StyledCard = styled.div<IProps>`
       }
     `}
 
-  ${(props) => style.variant[props.variant]}
   ${(props) => style.float[props.float]}
+  ${(props) => style.variant[props.variant]}
 `
 
 const StyledCardContent = styled.div`
