@@ -1,69 +1,59 @@
 export const color = {
-  /**
-   * 品牌
-   */
-  // 主题色
   primary: '#1190F5',
-  // 主题色 样式2
-  primary_variant: '#BBE4F9',
-  // 辅助色
   secondary: '#FFFFFF',
-
-  /**
-   * 字体
-   */
-  // 标题, 副标题
-  headline: '#242424',
-  headline_dark: '#FFFFFF',
-
-  // 文本
-  typography: '#464646',
-  typography_dark: '#FFFFFF',
-
-  // 说明, 引用
-  caption: '#A7A7A7',
-  caption_dark: '#FFFFFFB3',
-
-  /**
-   * 平面
-   */
-  // 背景
   background: '#FFFFFF',
-  background_dark: '#121212',
-
-  // 平面: 卡片, Sheet
+  background_primary: '#BBE4F9',
+  icon: '#464646',
+  headline: '#242424',
+  typography: '#464646',
+  caption: '#A7A7A7',
   surface: '#FFFFFF',
-  surface_dark: '#333333',
-
-  // 遮罩
+  surface_variant: '#ECF7FD',
   overlay: '#0000008A',
-
-  /**
-   * 状态
-   */
-  // 错误
   error: '#B00020',
-
-  // 链接
   link: '#464646',
-  link_highlighed: '#2EA6FF',
-  link_dark: '#2EA6FF',
-
-  /**
-   * 边框
-   */
   border_base: '#CCCCCC',
   border_primary: '#1190F5',
+
+  /**
+   * 浅色模式
+   */
+  light: {
+    primary: '#1190F5',
+    secondary: '#FFFFFF',
+    background: '#FFFFFF',
+    background_primary: '#BBE4F9',
+    icon: '#464646',
+    headline: '#242424',
+    typography: '#464646',
+    caption: '#A7A7A7',
+    surface: '#F7F7F7',
+    surface_variant: '#ECF7FD',
+    overlay: '#0000008A',
+    error: '#B00020',
+    link: '#464646',
+    border_base: '#CCCCCC',
+    border_primary: '#1190F5'
+  },
 
   /**
    * 黑夜模式
    */
   dark: {
-    primary: '#FFFFFF',
-    secondary: '#1190F5',
-    background: '#333333',
-    headline: '#FFFFFF',
-    typography: '#FFFFFF',
-    surface: '#333333'
+    primary: '#1190F5',
+    secondary: '#FFFFFF',
+    background: '#22272E',
+    background_primary: '#4B5563',
+    icon: '#CDD9E5',
+    headline: '#CDD9E5',
+    typography: '#CDD9E5',
+    caption: '#FFFFFFB3',
+    surface: '#2D333B',
+    surface_variant: '#2D333B',
+    overlay: '#0000008A',
+    error: '#B00020',
+    link: '#2EA6FF',
+    border_base: '#6D6D6D',
+    border_primary: '#1190F5'
   }
 }

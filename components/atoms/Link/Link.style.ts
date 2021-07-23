@@ -59,7 +59,7 @@ const socialLinkStyle = css`
   margin-right: 20px;
   padding: 0;
   border-radius: 30%;
-  color: black;
+  color: ${(props) => props.theme.color.typography};
 
   &::before {
     content: '';

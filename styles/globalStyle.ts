@@ -41,6 +41,7 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
+    transition: all 0.5s;
   }
 
   body {

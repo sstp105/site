@@ -66,7 +66,8 @@ const style = {
 const StyledCard = styled.div<IProps>`
   display: flex;
   position: relative;
-  box-shadow: rgb(115 127 143 / 16%) 0px 6px 16px;
+  background-color: ${(props) => props.theme.color.surface};
+  /* box-shadow: rgb(115 127 143 / 16%) 0px 6px 16px; */
   width: 100%;
   transition: all 0.5s;
   ${(props) =>

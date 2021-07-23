@@ -10,7 +10,7 @@ const StyledPaper = styled.div<IProps>`
   width: 300px;
   min-height: 300px;
   padding: 40px 30px;
-  background-color: white;
+  background-color: ${(props) => props.theme.color.background};
   transition: all 0.3s ease 0s;
   border-radius: 20px;
   margin-bottom: 40px;

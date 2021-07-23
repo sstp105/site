@@ -45,7 +45,7 @@ export const StyledTimelineItem = styled.li<{ float: 'left' | 'right' }>`
     width: 10px;
     height: 10px;
     top: 24px;
-    background: #bbe4f9;
+    background: ${(props) => props.theme.color.background_primary};
     border-radius: 50%;
   }
 
@@ -86,7 +86,7 @@ export const StyledTimelineItem = styled.li<{ float: 'left' | 'right' }>`
 export const StyledContent = styled.div<{ float: 'left' | 'right' }>`
   padding: 20px;
   position: relative;
-  background: #ecf7fd;
+  background: ${(props) => props.theme.color.surface_variant};
   border-radius: 10px;
 
   &:after {
@@ -103,7 +103,7 @@ export const StyledContent = styled.div<{ float: 'left' | 'right' }>`
       props.float === 'left' &&
       css`
         right: 0;
-        border-left-color: #ecf7fd;
+        border-left-color: ${(props) => props.theme.color.surface_variant};
         border-right: 0;
         margin-right: -16px;
       `}
@@ -112,7 +112,7 @@ export const StyledContent = styled.div<{ float: 'left' | 'right' }>`
       props.float === 'right' &&
       css`
         left: 0;
-        border-right-color: #ecf7fd;
+        border-right-color: ${(props) => props.theme.color.surface_variant};
         border-left: 0;
         margin-left: -16px;
       `}
@@ -128,7 +128,7 @@ export const StyledDate = styled.div<{ float: 'left' | 'right' }>`
   position: absolute;
   top: 19px;
   padding: 8px 16px;
-  background: #bbe4f9;
+  background: ${(props) => props.theme.color.background_primary};
   border-radius: 18px;
 
   ${(props) =>

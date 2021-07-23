@@ -13,7 +13,7 @@ const MenuStyleOne = css<IProps>`
     position: absolute;
     height: 3px;
     width: 100%;
-    background: black;
+    background: ${(props) => props.theme.color.icon};
     border-radius: 9px;
     opacity: 1;
     left: 0;

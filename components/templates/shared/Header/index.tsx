@@ -16,7 +16,7 @@ const flexStyle = css`
   top: 0;
   left: 0;
   width: 100%;
-  background-color: white;
+  background-color: ${(props) => props.theme.color.surface};
   z-index: 3;
 `
 

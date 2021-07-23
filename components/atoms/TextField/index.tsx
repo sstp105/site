@@ -1,5 +1,8 @@
 import styled from 'styled-components'
-import { IDefaultProps, IProps } from 'components/atoms/TextField/type'
+import {
+  IDefaultProps,
+  IProps
+} from 'components/atoms/TextField/TextField.type'
 
 const StyledInput = styled.input`
   width: calc(100% - 42px); // minus the padding and border
@@ -10,7 +13,7 @@ const StyledInput = styled.input`
   font-size: 16px;
   font-family: ${(props) => props.theme.font.family.gilroy_regular};
   margin-bottom: 30px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid ${(props) => props.theme.color.border_base};
   transition: all 0.5s;
 
   &:focus {
