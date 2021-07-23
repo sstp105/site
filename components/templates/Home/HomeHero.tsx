@@ -10,10 +10,10 @@ import socialMediaData from 'data/socialMedia.json'
 import contractData from 'data/contract.json'
 
 const flexContainerStyle = css`
-  border: 1px solid blue;
-  height: 100vh;
+  height: calc(100vh - 75px);
+  margin-top: 75px;
   ${(props) => props.theme.media.tablet} {
-    padding-top: 150px;
+    padding-top: 75px;
     flex-direction: column;
     height: auto;
   }
@@ -27,7 +27,6 @@ const welcomeChipStyle = css`
   }
 `
 
-// component wrappers
 const StyledWrapper = styled.div`
   ${(props) => props.theme.media.tablet} {
     text-align: center;

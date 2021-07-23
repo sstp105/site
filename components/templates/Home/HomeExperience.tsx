@@ -3,11 +3,7 @@ import { SectionHeader } from 'components/molecules/SectionHeader'
 import { Timeline } from 'components/organisms/Timeline'
 import experienceData from 'data/experience.json'
 
-const Wrapper = styled.div`
-  border: 1px solid green;
-  margin: 0 auto;
-  max-width: 1440px;
-`
+const Wrapper = styled.div``
 
 export const HomeExperience: React.FC = () => {
   return (

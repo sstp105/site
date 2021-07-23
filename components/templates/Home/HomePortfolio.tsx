@@ -10,8 +10,6 @@ import { Flex } from 'components/atoms/Layout/Flex'
 
 const Wrapper = styled.div`
   border: 1px solid green;
-  margin: 0 auto;
-  max-width: 1440px;
 `
 
 export const HomePortfolio: React.FC = () => {

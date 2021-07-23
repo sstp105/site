@@ -7,8 +7,6 @@ import skillData from 'data/skill.json'
 
 const Wrapper = styled.div`
   border: 1px solid purple;
-  margin: 0 auto;
-  max-width: 1440px;
 `
 
 const StyledWrapper = styled.div`

@@ -11,9 +11,9 @@ import { SectionHeader } from 'components/molecules/SectionHeader'
 
 const Wrapper = styled.div`
   border: 1px solid red;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   position: relative;
-  max-width: 1440px;
+  /* max-width: 1440px; */
 `
 
 const StyledContentWrapper = styled.div`

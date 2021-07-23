@@ -10,6 +10,7 @@ import { HomeExperience } from 'components/templates/Home/HomeExperience'
 import { HomeContact } from 'components/templates/Home/HomeContact'
 import { HomePortfolio } from 'components/templates/Home/HomePortfolio'
 import { HomeBlog } from 'components/templates/Home/HomeBlog'
+import { Page } from 'components/atoms/Layout/Page'
 
 const homeComponents = [
   <HomeAbout />,
@@ -34,7 +35,7 @@ const Home: React.FC = () => {
       <Seo />
       <Header />
       <HomeHero />
-      {components}
+      <Page>{components}</Page>
       <Footer />
     </>
   )

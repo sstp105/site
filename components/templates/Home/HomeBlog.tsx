@@ -7,8 +7,6 @@ import blogData from 'data/blog.json'
 
 const StyledWrapper = styled.div`
   border: 1px solid red;
-  margin: 0 auto;
-  max-width: 1440px;
 `
 
 export const HomeBlog: React.FC = () => {
