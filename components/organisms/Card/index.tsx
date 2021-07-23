@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components'
 import { Image } from 'components/atoms/Image'
 
 export interface IThemeProps {
+  height: string
   variant: 'flex' | 'stack'
   float: 'left' | 'right'
 }
@@ -23,26 +24,31 @@ const style = {
     flex: css`
       flex-direction: row;
       img {
-        width: 60%;
+        width: 55%;
       }
 
       ${(props) => props.theme.media.desktop_sm} {
         flex-direction: column;
         width: 70%;
+        height: auto;
         img {
           width: 100%;
           order: -1;
         }
       }
       ${(props) => props.theme.media.tablet} {
-        width: 95%;
+        width: 90%;
       }
     `,
     stack: css`
       flex-direction: column;
       width: 100%;
+      height: 550px;
       img {
         height: 250px;
+      }
+      ${(props) => props.theme.media.desktop_sm} {
+        width: 70% !important;
       }
       ${(props) => props.theme.media.tablet} {
         width: 90% !important;
@@ -65,11 +71,13 @@ const style = {
 
 const StyledCard = styled.div<IProps>`
   display: flex;
+  margin: 0 auto;
   position: relative;
   background-color: ${(props) => props.theme.color.surface};
-  /* box-shadow: rgb(115 127 143 / 16%) 0px 6px 16px; */
-  width: 100%;
+  width: 85%;
+  height: ${(props) => props.height};
   transition: all 0.5s;
+
   ${(props) =>
     props.hoverable &&
     css`
@@ -110,7 +118,8 @@ export const Card: React.FC<IProps> = (props) => {
 const defaultProps: IDefaultProps = {
   variant: 'stack',
   float: 'left',
-  hoverable: false
+  hoverable: false,
+  height: '100%'
 }
 
 Card.defaultProps = defaultProps

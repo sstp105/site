@@ -10,7 +10,7 @@ import { Flex } from 'components/atoms/Layout/Flex'
 import { SectionHeader } from 'components/molecules/SectionHeader'
 
 const Wrapper = styled.div`
-  border: 1px solid red;
+  /* border: 1px solid red; */
   /* margin: 0 auto; */
   position: relative;
   /* max-width: 1440px; */

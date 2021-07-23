@@ -5,8 +5,6 @@ import { IDefaultProps, IProps } from 'components/atoms/Spacer/Spacer.type'
 const StyledSpacer = styled.div<IProps>`
   width: ${(props) => props.horizontalSpace};
   height: ${(props) => props.verticalSpace};
-
-  background-color: purple;
 `
 
 export const Spacer: React.FC<IProps> = (props) => {

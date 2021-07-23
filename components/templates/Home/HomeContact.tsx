@@ -7,7 +7,7 @@ import { IForm } from 'types/Input'
 import { initContactFormState } from 'data/contactForm'
 
 const Wrapper = styled.div`
-  border: 1px solid purple;
+  /* border: 1px solid purple; */
 `
 
 const StyledForm = styled.form`

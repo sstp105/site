@@ -6,7 +6,7 @@ import { SectionHeader } from 'components/molecules/SectionHeader'
 import skillData from 'data/skill.json'
 
 const Wrapper = styled.div`
-  border: 1px solid purple;
+  /* border: 1px solid purple; */
 `
 
 const StyledWrapper = styled.div`

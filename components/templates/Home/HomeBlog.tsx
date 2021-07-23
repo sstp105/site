@@ -6,7 +6,7 @@ import { Flex } from 'components/atoms/Layout/Flex'
 import blogData from 'data/blog.json'
 
 const StyledWrapper = styled.div`
-  border: 1px solid red;
+  /* border: 1px solid red; */
 `
 
 export const HomeBlog: React.FC = () => {
@@ -24,7 +24,8 @@ export const HomeBlog: React.FC = () => {
             variant="stack"
             hoverable
             css={css`
-              width: 400px;
+              width: 425px;
+              margin-bottom: 50px;
             `}
           >
             <Typography margin={false} variant="h5">
