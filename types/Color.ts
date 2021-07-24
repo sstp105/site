@@ -1,3 +1,7 @@
-import { color } from 'styles/theme/color'
-
-export type Colors = keyof typeof color
+export type Colors =
+  | 'default'
+  | 'primary'
+  | 'secondary'
+  | 'action'
+  | 'error'
+  | 'disabled'

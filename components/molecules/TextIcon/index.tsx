@@ -11,7 +11,7 @@ const FlexContainer = styled(Flex)<IProps>`
 
   // space between icon and text
   & > i {
-    color: ${(props) => props.theme.color.typography};
+    /* color: ${(props) => props.theme.color.typography}; */
     margin-right: ${(props) => props.space}px;
   }
 

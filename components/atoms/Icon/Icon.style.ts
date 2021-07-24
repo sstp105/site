@@ -1,20 +1,14 @@
-import { css } from 'styled-components'
+import styled, { css } from 'styled-components'
+import { IThemeProps } from 'components/atoms/Icon/Icon.type'
 
-export const style = {
-  color: {
-    inherit: css`
-      color: black;
-    `
-  },
-  size: {
-    s: css`
-      font-size: 16px;
-    `,
-    m: css`
-      font-size: 24px;
-    `,
-    l: css`
-      font-size: 32px;
-    `
-  }
+/* -------------------------------------------------------------------------- */
+/*                               Styled Elements                              */
+/* -------------------------------------------------------------------------- */
+const IconRoot = styled.i<Partial<IThemeProps>>`
+  color: ${(props) => props.theme.color[props.color]};
+  font-size: ${(props) => props.theme.font.size[props.size]};
+`
+
+export const Styled = {
+  IconRoot
 }

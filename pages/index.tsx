@@ -10,12 +10,12 @@ import { HomeBlog } from 'components/templates/Home/HomeBlog'
 import { Page } from 'components/atoms/Layout/Page'
 
 const homeComponents = [
-  <HomeAbout />,
-  <HomeSkill />,
-  <HomeExperience />,
-  <HomePortfolio />,
-  <HomeBlog />,
-  <HomeContact />
+  <HomeAbout key={1} />,
+  <HomeSkill key={2} />,
+  <HomeExperience key={3} />,
+  <HomePortfolio key={4} />,
+  <HomeBlog key={4} />,
+  <HomeContact key={5} />
 ]
 
 const components = homeComponents.map((c, index) => (

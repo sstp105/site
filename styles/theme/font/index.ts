@@ -12,7 +12,7 @@ const size: Record<SizeLarge, string> = {
   xxs: '16px',
   xs: '20px',
   s: '24px',
-  m: '34px',
+  m: '32px',
   l: '48px',
   xl: '65px',
   xxl: '96px'

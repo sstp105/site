@@ -1,4 +1,5 @@
 export const color = {
+  default: '#464646',
   primary: '#1190F5',
   secondary: '#FFFFFF',
   background: '#FFFFFF',
@@ -11,15 +12,18 @@ export const color = {
   surface_shadow: '#FFFFFF',
   surface_variant: '#ECF7FD',
   overlay: '#0000008A',
-  error: '#B00020',
   link: '#464646',
   border_base: '#CCCCCC',
   border_primary: '#1190F5',
+  action: '#1190F5',
+  error: '#B00020',
+  diabled: '#A7A7A7',
 
   /**
    * 浅色模式
    */
   light: {
+    default: '#464646',
     primary: '#1190F5',
     secondary: '#FFFFFF',
     background: '#FFFFFF',
@@ -32,16 +36,19 @@ export const color = {
     surface_shadow: '#FFFFFF',
     surface_variant: '#ECF7FD',
     overlay: '#0000008A',
-    error: '#B00020',
     link: '#464646',
     border_base: '#CCCCCC',
-    border_primary: '#1190F5'
+    border_primary: '#1190F5',
+    action: '#1190F5',
+    error: '#B00020',
+    diabled: '#A7A7A7'
   },
 
   /**
    * 黑夜模式
    */
   dark: {
+    default: '#FFFFFF',
     primary: '#1190F5',
     secondary: '#FFFFFF',
     background: '#22272E',
@@ -54,9 +61,11 @@ export const color = {
     surface_shadow: '#2D333B',
     surface_variant: '#2D333B',
     overlay: '#0000008A',
-    error: '#B00020',
     link: '#2EA6FF',
     border_base: '#6D6D6D',
-    border_primary: '#1190F5'
+    border_primary: '#1190F5',
+    action: '#1190F5',
+    error: '#B00020',
+    diabled: '#A7A7A7'
   }
 }

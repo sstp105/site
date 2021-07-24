@@ -4,7 +4,7 @@ import { ThemeContext } from 'context/ThemeContext'
 import { Button } from 'components/atoms/Button'
 import { Icon } from 'components/atoms/Icon'
 
-describe('<SearchInput /> component render tests', () => {
+describe('<Button /> component render tests', () => {
   test('should render a default Button component in the document', () => {
     render(
       <ThemeContext themeMode="light">
@@ -45,7 +45,7 @@ describe('<SearchInput /> component render tests', () => {
   })
 })
 
-describe('<SearchInput /> component event listener test', () => {
+describe('<Button /> component event listener test', () => {
   test('should invoke the onClick function', () => {
     const onClickMock = jest.fn()
 

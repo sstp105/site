@@ -1,20 +1,29 @@
-import { SizeBase } from 'types/Size'
+import { SizeLarge } from 'types/Size'
+import { Colors } from 'types/Color'
 
 /**
- * @interface IThemeProps Icon theme props
+ * @interface IThemeProps Icon component variant props
  */
 export interface IThemeProps {
-  color: 'inherit' | 'primary' | 'secondary' | 'action' | 'error' | 'disabled'
-  size: SizeBase
+  /**
+   * Icon color
+   * @type {Colors} default | primary | secondary | action | error | disabled
+   */
+  color: Colors
+
+  /**
+   * Icon size, match Typography font size
+   * @type {SizeLarge} xxs | xs | s | m | l | xl | xxl
+   */
+  size: SizeLarge
 }
 
 /**
- * @interface IDefaultProps Icon optional props
+ * @interface IDefaultProps Icon component optional props
  */
 export interface IDefaultProps extends IThemeProps {
   /**
    * data-testid attribute for Unit Test
-   * @type {string}
    */
   testId: string
 }
@@ -23,10 +32,13 @@ export interface IDefaultProps extends IThemeProps {
  * @interface IProps Icon required props
  */
 export interface IProps extends Partial<IDefaultProps> {
+  /**
+   * font-awesome supported icon name. e.g. fa-envelope
+   */
   iconName: string
 }
 
 /**
- * Button props that does not need to have default value
+ * Icon props that does not need to have default value
  */
-export type OmitDefaultProps = 'className' | 'testId'
+export type PropsToOmit = 'testId'
