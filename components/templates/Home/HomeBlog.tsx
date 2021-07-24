@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 import { SectionHeader } from 'components/molecules/SectionHeader'
 import { Card } from 'components/organisms/Card'
 import { Typography } from 'components/atoms/Typography'
-import { Flex } from 'components/atoms/Layout/Flex'
+import { Flex } from 'components/atoms/Layout'
 import blogData from 'data/blog.json'
 
 const StyledWrapper = styled.div`

@@ -1,7 +1,7 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 import { ThemeContext } from 'context/ThemeContext'
-import { Flex } from 'components/atoms/Layout/Flex'
+import { Flex } from 'components/atoms/Layout'
 
 describe('<Flex /> component render tests', () => {
   test('should render the flex container and children elements', () => {

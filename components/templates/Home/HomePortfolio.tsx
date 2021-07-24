@@ -6,7 +6,7 @@ import portfolioData from 'data/portfolio.json'
 import { Button } from 'components/atoms/Button'
 import { Typography } from 'components/atoms/Typography'
 import { Chip } from 'components/molecules/Chip'
-import { Flex } from 'components/atoms/Layout/Flex'
+import { Flex } from 'components/atoms/Layout'
 
 const Wrapper = styled.div`
   /* border: 1px solid green; */

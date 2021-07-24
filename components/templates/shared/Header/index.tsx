@@ -1,7 +1,7 @@
 import React from 'react'
 import dynamic from 'next/dynamic'
 import { NavigationList } from './NavigationList'
-import { Flex } from 'components/atoms/Layout/Flex'
+import { Flex } from 'components/atoms/Layout'
 import { useMediaQuery } from 'hooks/useMediaQuery'
 import { css } from 'styled-components'
 

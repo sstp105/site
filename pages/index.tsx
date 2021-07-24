@@ -7,7 +7,7 @@ import { HomeExperience } from 'components/templates/Home/HomeExperience'
 import { HomeContact } from 'components/templates/Home/HomeContact'
 import { HomePortfolio } from 'components/templates/Home/HomePortfolio'
 import { HomeBlog } from 'components/templates/Home/HomeBlog'
-import { Page } from 'components/atoms/Layout/Page'
+import { Page } from 'components/atoms/Layout'
 
 const homeComponents = [
   <HomeAbout key={1} />,
@@ -17,6 +17,8 @@ const homeComponents = [
   <HomeBlog key={4} />,
   <HomeContact key={5} />
 ]
+
+const sectionDivider = <Spacer verticalSpace="200px" />
 
 const components = homeComponents.map((c, index) => (
   <React.Fragment key={index}>

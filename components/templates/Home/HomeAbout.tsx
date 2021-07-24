@@ -6,7 +6,7 @@ import { Image } from 'components/atoms/Image'
 import { Chip } from 'components/molecules/Chip'
 import skillData from 'data/about.json'
 import { Button } from 'components/atoms/Button'
-import { Flex } from 'components/atoms/Layout/Flex'
+import { Flex } from 'components/atoms/Layout'
 import { SectionHeader } from 'components/molecules/SectionHeader'
 
 const Wrapper = styled.div`
