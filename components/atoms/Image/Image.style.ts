@@ -1,16 +1,34 @@
-import { css } from 'styled-components'
+import styled, { css } from 'styled-components'
+import { IThemeProps } from 'components/atoms/Image/Image.type'
 
-const roundedVariant = css`
-  border-radius: 15px;
+/* -------------------------------------------------------------------------- */
+/*                               Styled Elements                              */
+/* -------------------------------------------------------------------------- */
+const ImageRoot = styled.img<Partial<IThemeProps>>`
+  display: block;
+
+  width: ${(props) => props.width};
+  height: ${(props) => props.height};
+  object-fit: ${(props) => props.cover};
+
+  ${(props) => props.shadow && props.theme.shadow.normal}
+  ${(props) => styles.variant[props.variant]}
 `
 
-const circleVariant = css`
-  border-radius: 50%;
-`
+export const Styled = {
+  ImageRoot
+}
 
-export const styles = {
+/* -------------------------------------------------------------------------- */
+/*                                   Styles                                   */
+/* -------------------------------------------------------------------------- */
+const styles = {
   variant: {
-    rounded: roundedVariant,
-    circle: circleVariant
+    rounded: css`
+      border-radius: 15px;
+    `,
+    circle: css`
+      border-radius: 50%;
+    `
   }
 }
