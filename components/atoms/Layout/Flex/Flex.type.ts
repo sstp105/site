@@ -3,7 +3,8 @@
  */
 export interface IThemeProps {
   /**
-   * Reference: css flex layout justify
+   * CSS flex justify-content attribute
+   * https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content
    */
   justify:
     | 'center'
@@ -14,37 +15,45 @@ export interface IThemeProps {
     | 'space-evenly'
 
   /**
-   * Reference: css flex layout align
+   * CSS flex align-items attribute
+   * https://developer.mozilla.org/en-US/docs/Web/CSS/align-items
    */
   align: 'center' | 'flex-start' | 'flex-end' | 'stretch' | 'baseline'
 
   /**
-   * @type {boolean} Enable shadow for the sheet
+   * Enable shadow for the sheet
    */
   shadow: boolean
 
   /**
-   * @type {string} Height of the container
+   * Flex container height
    */
   height: string
 
   /**
-   * @type {string} Width of the container
+   * Flex container width
    */
   width: string
 }
 
 /**
- * @interface IDefaultProps Flex layout optional props
+ * @interface IDefaultProps Flex optional props
  */
-export interface IDefaultProps extends IThemeProps {}
+export interface IDefaultProps extends IThemeProps {
+  /**
+   * data-testid for unit test
+   */
+  testId: string
+}
 
 /**
  * @interface IProps Flex requried props
  */
 export interface IProps extends Partial<IDefaultProps> {
   /**
-   * @type {ReactNode} Need at least one element
+   * Flex container children elements
    */
   children: React.ReactNode
 }
+
+export type PropsToOmit = 'testId' | 'width' | 'height'
