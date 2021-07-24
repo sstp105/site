@@ -1,6 +1,16 @@
 import { useState } from 'react'
 import { GlobalStyle } from 'styles/globalStyle'
-import { Theme } from 'context/Theme'
+import { ThemeContext } from 'context/ThemeContext'
+import { Seo } from 'components/molecules/Seo'
+import { Header } from 'components/templates/shared/Header'
+import { Footer } from 'components/templates/shared/Footer'
+import styled from 'styled-components'
+
+const StyledToggler = styled.button`
+  position: fixed;
+  right: 25px;
+  top: 100px;
+`
 
 const App = ({ Component, pageProps }) => {
   const [themeMode, setThemeMode] = useState('light')
@@ -14,11 +24,14 @@ const App = ({ Component, pageProps }) => {
   }
 
   return (
-    <Theme themeMode={themeMode}>
+    <ThemeContext themeMode={themeMode}>
       <GlobalStyle />
+      <Seo />
+      <StyledToggler onClick={toggleTheme}>Toggle Theme</StyledToggler>
+      <Header />
       <Component {...pageProps} />
-      <button onClick={toggleTheme}>Toggle Theme</button>
-    </Theme>
+      <Footer />
+    </ThemeContext>
   )
 }
 

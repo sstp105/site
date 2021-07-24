@@ -3,7 +3,8 @@ import { style } from 'components/atoms/Icon/Icon.style'
 import {
   IThemeProps,
   IDefaultProps,
-  IProps
+  IProps,
+  OmitDefaultProps
 } from 'components/atoms/Icon/Icon.type'
 
 const StyledIcon = styled.i<Partial<IThemeProps>>`
@@ -12,12 +13,14 @@ const StyledIcon = styled.i<Partial<IThemeProps>>`
 `
 
 export const Icon: React.FC<IProps> = (props) => {
-  const { iconName, ...themeProps } = props
+  const { iconName, testId, ...themeProps } = props
 
-  return <StyledIcon className={iconName} {...themeProps} />
+  return (
+    <StyledIcon className={iconName} data-testid={testId} {...themeProps} />
+  )
 }
 
-const defaultProps: IDefaultProps = {
+const defaultProps: Omit<IDefaultProps, OmitDefaultProps> = {
   color: 'inherit',
   size: 's'
 }

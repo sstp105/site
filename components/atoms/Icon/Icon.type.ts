@@ -11,7 +11,13 @@ export interface IThemeProps {
 /**
  * @interface IDefaultProps Icon optional props
  */
-export interface IDefaultProps extends IThemeProps {}
+export interface IDefaultProps extends IThemeProps {
+  /**
+   * data-testid attribute for Unit Test
+   * @type {string}
+   */
+  testId: string
+}
 
 /**
  * @interface IProps Icon required props
@@ -19,3 +25,8 @@ export interface IDefaultProps extends IThemeProps {}
 export interface IProps extends Partial<IDefaultProps> {
   iconName: string
 }
+
+/**
+ * Button props that does not need to have default value
+ */
+export type OmitDefaultProps = 'className' | 'testId'

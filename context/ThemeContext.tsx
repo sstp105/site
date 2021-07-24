@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import { ThemeProvider } from 'styled-components'
 import { theme } from 'styles/theme'
 
@@ -9,7 +8,7 @@ const getTheme = (mode) => {
   }
 }
 
-export const Theme = (props) => {
+export const ThemeContext = (props) => {
   const { themeMode, children } = props
   const baseTheme = getTheme(themeMode)
 

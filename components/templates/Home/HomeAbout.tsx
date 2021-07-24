@@ -63,7 +63,7 @@ export const HomeAbout: React.FC = () => {
 
       <Flex justify="center" align="flex-start" css={flexStyle}>
         <Image
-          src="static/images/about.png"
+          src="images/about.png"
           alt="About me"
           width="400px"
           height="400px"

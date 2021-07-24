@@ -3,32 +3,32 @@ import { createGlobalStyle } from 'styled-components'
 export const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: 'Gilroy-Thin';
-    src: url('static/fonts/Gilroy-Thin.otf') format('opentype');
+    src: url('fonts/Gilroy-Thin.otf') format('opentype');
     font-display: swap;
   }
   @font-face {
     font-family: 'Gilroy-UltraLight';
-    src: url('static/fonts/Gilroy-UltraLight.otf') format('opentype');
+    src: url('fonts/Gilroy-UltraLight.otf') format('opentype');
     font-display: swap;
   }
   @font-face {
     font-family: 'Gilroy-Light';
-    src: url('static/fonts/Gilroy-Light.otf') format('opentype');
+    src: url('fonts/Gilroy-Light.otf') format('opentype');
     font-display: swap;
   }
   @font-face {
     font-family: 'Gilroy-Regular';
-    src: url('static/fonts/Gilroy-Regular.otf') format('opentype');
+    src: url('fonts/Gilroy-Regular.otf') format('opentype');
     font-display: swap;
   }
   @font-face {
     font-family: 'Gilroy-Medium';
-    src: url('static/fonts/Gilroy-Medium.woff') format('woff');
+    src: url('fonts/Gilroy-Medium.woff') format('woff');
     font-display: swap;
   }
   @font-face {
     font-family: 'Gilroy-SemiBold';
-    src: url('static/fonts/Gilroy-SemiBold.woff') format('woff');
+    src: url('fonts/Gilroy-SemiBold.woff') format('woff');
     font-display: swap;
   }
   @font-face {
@@ -41,11 +41,11 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
-    transition: all 0.5s;
+    transition: all ${({ theme }) => theme.animation.duration.normal};
   }
 
   body {
-    background-color: ${(props) => props.theme.color.background};
-    font-family: ${(props) => props.theme.font.family.gilroy_regular}, "system";
+    background-color: ${({ theme }) => theme.color.background};
+    font-family: ${({ theme }) => theme.font.family.gilroy_regular}, "system";
   }
 `

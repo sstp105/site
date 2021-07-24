@@ -1,7 +1,4 @@
 import React from 'react'
-import { Seo } from 'components/molecules/Seo'
-import { Header } from 'components/templates/shared/Header'
-import { Footer } from 'components/templates/shared/Footer'
 import { Spacer } from 'components/atoms/Spacer'
 import { HomeHero } from 'components/templates/Home/HomeHero'
 import { HomeAbout } from 'components/templates/Home/HomeAbout'
@@ -32,11 +29,8 @@ const components = homeComponents.map((c, index) => (
 const Home: React.FC = () => {
   return (
     <>
-      <Seo />
-      <Header />
       <HomeHero />
       <Page>{components}</Page>
-      <Footer />
     </>
   )
 }

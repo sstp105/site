@@ -1,4 +1,4 @@
-import { css, CSSProp, CSSObject } from 'styled-components'
+import { css } from 'styled-components'
 
 type ShadowVariant = 'light' | 'normal' | 'strong'
 

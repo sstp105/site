@@ -32,13 +32,13 @@ export const RotateAvater: React.FC = () => {
   return (
     <StyledWrapper>
       <Image
-        src="static/images/avatar.jpg"
+        src="images/avatar.jpg"
         alt="yang avatar"
         width="310px"
         variant="circle"
       />
       <Image
-        src="static/images/avatar-outline.png"
+        src="images/avatar-outline.png"
         alt="rotate animation avatar frame"
         width="310px"
         variant="circle"

@@ -60,6 +60,12 @@ export interface IDefaultProps extends IThemeProps {
    * @type {string}
    */
   testId: string
+
+  /**
+   * Pass className to DOM element (for styling component)
+   * @type {string}
+   */
+  className: string
 }
 
 /**
@@ -71,3 +77,8 @@ export interface IProps extends Partial<IDefaultProps> {
    */
   children: React.ReactNode
 }
+
+/**
+ * Props that does not need to have a default value
+ */
+export type PropsToOmit = 'className' | 'testId'
