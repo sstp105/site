@@ -1,43 +1,191 @@
-# Portfolio
+# Atomic Design
 
-Next.js SSR
-原子设计理论+styled components
-Typescript
+The front-end design uses atomic desgin principle. The folders are structured as
 
-## 功能
+- atoms
+- molecules
+- organisms
+- templates
+- pages
 
-- 侧边导航栏
-- 博客过滤菜单 搜索栏
+For pages, we will leverage the `next.js` page routes so all the pages are under the root folder.
 
-## 项目架构
+## Atoms
 
-> `data`之后应用 CMS 后端处理 前端不应该有 Hard Coded
-> 如果类文件夹的子文件也需要分级 (例如 theme 按边角, 字体分类)则应该用 index 格式.
+Atoms are the basic build block for the UI. For example, the HTML elements such as `<h1>`, `<button>`... etc.
 
-反之如果文件夹的子文件种类单一 例如 layout, hooks 则只需要到处该文件 并避免太多无意义的 index 因为也没有再分类
+## Component Folder Structure
 
-atoms, molecules, layout 为基础的 building block 应该尽可能的保证样式化可通用 避免 margin padding 影响位置的样式化
+```
+Button/
+├─ Button.component.tsx/
+├─ Button.style.ts
+├─ Button.test.tsx
+├─ Button.type.ts
+├─ index.ts
+```
 
-- `components` (next.js 自动配置路由 忽略 pages 就可以)
-  - `atoms` -> 最基础最核心的 building block prop 不应该有复杂结构
-  - `molecules`
-  - `organisms`
-  - `templates` -> template 即建立页面的组件 因此可以按页面路由分类更符合逻辑 除非 template 为 shared
-- `contexts` 全局变量
-- `hooks` 所有可重复利用的逻辑 状态(命名 useFunctionality)
-- `pages` 页面
-- `public` HTML meta
-- `static` 管理静态文件, fonts, images, lottie...
-- `types` 类型管理
-- `styles` -> `theme`整体样式, 其他一些 override
-- `utils` 一些函数 等
+### `Button.component.tsx`
 
-## 路由
+The component file is used for destructuring `props` and render the component.
 
-- index 主页面 landing 长滚动页面
-- portfolio
-  - /project/[id] -> 项目详情 动机, solutions
-  - /video/[id] -> 视频详情 (Youtube, 预览图, 评论)
-  - /packages/[id] -> npm how to use
-- blogs 全部博客 (CMS? 后台管理?)
-  - blogs/[id] 指定博客
+The component should also provide a `defaultProps` for initialized values. In case some props should not be rendered if not passed (e.g. `data-testid`), use `Omit` to filter these optional props.
+
+**Button.component.tsx example**
+
+```tsx
+import { Styled } from 'components/atoms/Button/Button.style'
+import {
+  IDefaultProps,
+  IProps,
+  PropsToOmit
+} from 'components/atoms/Button/Button.type'
+
+export const Button: React.FC<IProps> = (props) => {
+  const { children, startIcon, endIcon, testId, ...themeProps } = props
+
+  return (
+    <Styled.ButtonRoot {...themeProps} data-testid={testId}>
+      {children}
+    </Styled.ButtonRoot>
+  )
+}
+
+const defaultProps: Omit<IDefaultProps, PropsToOmit> = {
+  variant: 'contained',
+  size: 'm',
+  fullWidth: false,
+  onClick: () => {}
+}
+
+Button.defaultProps = defaultProps
+```
+
+### `Button.test.tsx`
+
+This project will use `jest` and `testing-library` to run unit tests for components.
+
+Test cases should be grouped with similar reasons. For example, testing if the button element and start icon are rendered in the DOM tree should be one test suite. Then testing the `onClick` event should be a different test suit.
+
+Make sure the test cases are scaleable. Most likely the component props will be changed in the future, and we should think about how to write the test cases without too much factoring in the future. For example, what are some edge cases or failed situations?
+
+**Button.test.tsx example**
+
+> As we need to render JSX/TSX element, the file type has to be `tsx` or `jsx`
+
+```tsx
+import React from 'react'
+import { render, screen } from '@testing-library/react'
+import { ThemeContext } from 'context/ThemeContext'
+import { Button } from 'components/atoms/Button'
+
+describe('<SearchInput /> component render tests', () => {
+  test('should render a default Button component in the document', () => {
+    render(
+      <ThemeContext themeMode="light">
+        <Button testId="submit-button">Submit</Button>
+      </ThemeContext>
+    )
+    const defaultButton = screen.getByTestId('submit-button')
+    expect(defaultButton).toBeInTheDocument()
+  })
+})
+```
+
+### `Button.style.ts`
+
+To make sure the component is scaleable and reusable, the style applied to the component should be **as generic as possible**. For example, avoiding margin and position style as these attributes are more layout specific.
+
+All the color, background, border..etc should used the color values from `theme` object. By doing so, we can easily handle the different theme with user's preference.
+
+Other shared styles should also use `theme` instead of hardcoded values to make sure consistency and future modification.
+
+For example, `border-raidus` can have `small`, `medium` and `large`.
+
+**Button.style.ts example**
+
+```ts
+import styled, { css } from 'styled-components'
+import { IThemeProps } from 'components/atoms/Button/Button.type'
+
+const ButtonRoot = styled.button<Partial<IThemeProps>>`
+  // base style
+  display: block;
+  cursor: pointer;
+  font-family: ${({ theme }) => theme.font.family.gilroy_regular};
+  background-color: transparent;
+  border: none;
+  transition: all ${({ theme }) => theme.animation.duration.normal};
+
+  // variant style
+  ${({ fullWidth }) =>
+    fullWidth &&
+    css`
+      width: 100%;
+    `}
+  ${({ size }) => style.size[size]}
+`
+
+const s = css`
+  font-size: 16px;
+  padding: 8px 30px;
+`
+const m = css`
+  font-size: 18px;
+  padding: 12px 20px;
+`
+const l = css`
+  font-size: 20px;
+  padding: 16px 50px;
+`
+
+const size = { s, m, l }
+
+const style = {
+  variant,
+  size
+}
+
+export const Styled = {
+  ButtonRoot
+}
+```
+
+### `Button.type.ts`
+
+Type file includes all the interfaces and types that the component needed.
+
+- `IThemeProps`: all the theme/style related props. e.g: size, fullWidth
+- `IDefaultProps`: optional props for the component, need default values
+- `IProps`: required props when declare the component
+- `PropsToOmit`: props to omit, mostly used for defaultProps
+
+**Button.type.ts example**
+
+```ts
+import { SizeBase } from 'types/Size'
+
+export interface IThemeProps {
+  variant: 'contained' | 'outlined' | 'text'
+  size: SizeBase
+  fullWidth: boolean
+}
+
+export interface IDefaultProps extends IThemeProps {
+  startIcon: React.ReactNode
+  endIcon: React.ReactNode
+  onClick: () => void
+  testId: string
+  className: string
+}
+
+export interface IProps extends Partial<IDefaultProps> {
+  children: React.ReactNode
+}
+
+export type PropsToOmit = 'className' | 'testId'
+```
+
+### `index.ts`
+
+`index.ts` will be used to export the component
