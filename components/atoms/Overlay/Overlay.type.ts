@@ -6,19 +6,21 @@ export interface IThemeProps {}
 /**
  * @interface IDefaultProps Overlay optional props
  */
-export interface IDefaultProps extends IThemeProps {}
+export interface IDefaultProps extends IThemeProps {
+  /**
+   * data-testid for unit test
+   */
+  testId: string
+}
 
 /**
  * @interface IProps Overlay requried props
  */
 export interface IProps extends Partial<IDefaultProps> {
   /**
-   * @type {boolean} Disply/Hide the overlay modal
-   */
-  open: boolean
-
-  /**
-   * @type {() => void} Overlay toggle handlder
+   * Overlay toggler
    */
   onClose: () => void
 }
+
+export type PropsToOmit = 'testId'

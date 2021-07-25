@@ -26,7 +26,7 @@ export const Drawer: React.FC<IProps> = (props) => {
   if (!open) return null
   return (
     <>
-      <Overlay open={open} onClose={onClose} />
+      <Overlay onClose={onClose} />
       <StyledDrawer {...props}>{children}</StyledDrawer>
     </>
   )
