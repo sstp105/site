@@ -22,7 +22,6 @@ export interface IThemeProps {
     | 'note'
 
   /**
-   * TODO: color应该match priamry, secondary, action等而不是所有可用的颜色
    * @type {Colors} The color for the typography
    */
   color: Colors
@@ -58,7 +57,12 @@ export interface IThemeProps {
 /**
  * @interface IDefaultProps Typography optional props
  */
-export interface IDefaultProps extends IThemeProps {}
+export interface IDefaultProps extends IThemeProps {
+  /**
+   * data-testid for unit  test
+   */
+  testId: string
+}
 
 /**
  * @interface IProps Typography required props
@@ -69,3 +73,5 @@ export interface IProps extends Partial<IDefaultProps> {
    */
   children: React.ReactNode
 }
+
+export type PropsToOmit = 'testId' | 'color'

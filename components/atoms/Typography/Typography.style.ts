@@ -1,82 +1,88 @@
-import { css } from 'styled-components'
+import styled, { css } from 'styled-components'
+import { IThemeProps } from 'components/atoms/Typography/Typography.types'
 
-const headline_one_variant = css`
-  font-family: Gilroy-Light;
-  font-size: 96px;
-  letter-spacing: -1.5px;
+/* -------------------------------------------------------------------------- */
+/*                               Styled Elements                              */
+/* -------------------------------------------------------------------------- */
+const TypographyRoot = styled.p<Partial<IThemeProps>>`
+  color: ${(props) =>
+    props.color
+      ? props.theme.color[props.color]
+      : props.theme.color.typography};
+  text-align: ${(props) => props.align};
+  display: ${(props) => props.display};
+  text-transform: ${(props) => props.transform};
+
+  ${(props) =>
+    props.margin &&
+    css`
+      margin: 20px 0;
+    `}
+  ${(props) => styles.variant[props.variant]}
 `
 
-const headline_two_variant = css`
-  font-family: ${({ theme }) => theme.font.family.gilroy_regular};
-  font-size: 65px;
-  letter-spacing: 4px;
-`
+export const Styled = {
+  TypographyRoot
+}
 
-const headline_three_variant = css`
-  font-family: Gilroy-Regular;
-  font-size: 48px;
-  letter-spacing: 0px;
-`
-
-const headline_four_variant = css`
-  font-family: Gilroy-Regular;
-  font-size: 34px;
-  letter-spacing: 0.25px;
-`
-
-const headline_five_variant = css`
-  font-family: Gilroy-Regular;
-  font-size: 24px;
-  letter-spacing: 0px;
-`
-
-const headline_six_variant = css`
-  font-family: Gilroy-Regular;
-  font-size: 20px;
-  letter-spacing: 0.15px;
-`
-
-const subtitle_variant = css`
-  font-family: Gilroy-Medium;
-  font-size: 18px;
-`
-
-const body_variant = css`
-  font-family: Gilroy-Regular;
-  font-size: 16px;
-  letter-spacing: 0.5px;
-  line-height: 1.7rem;
-`
-
-const overline_variant = css`
-  font-size: 18px;
-  text-transform: uppercase;
-  letter-spacing: 0.2rem;
-`
-
-const caption_variant = css`
-  font-family: Gilroy-Regular;
-  font-size: 18px;
-`
-
-const note_variant = css`
-  font-family: Gilroy-Regular;
-  font-size: 14px;
-  line-height: 1.3rem;
-`
-
-export const styles = {
+/* -------------------------------------------------------------------------- */
+/*                                   Styles                                   */
+/* -------------------------------------------------------------------------- */
+const styles = {
   variant: {
-    h1: headline_one_variant,
-    h2: headline_two_variant,
-    h3: headline_three_variant,
-    h4: headline_four_variant,
-    h5: headline_five_variant,
-    h6: headline_six_variant,
-    subtitle: subtitle_variant,
-    body: body_variant,
-    overline: overline_variant,
-    caption: caption_variant,
-    note: note_variant
+    h1: css`
+      font-family: Gilroy-Light;
+      font-size: 96px;
+      letter-spacing: -1.5px;
+    `,
+    h2: css`
+      font-family: ${({ theme }) => theme.font.family.gilroy_regular};
+      font-size: 65px;
+      letter-spacing: 4px;
+    `,
+    h3: css`
+      font-family: Gilroy-Regular;
+      font-size: 48px;
+      letter-spacing: 0px;
+    `,
+    h4: css`
+      font-family: Gilroy-Regular;
+      font-size: 34px;
+      letter-spacing: 0.25px;
+    `,
+    h5: css`
+      font-family: Gilroy-Regular;
+      font-size: 24px;
+      letter-spacing: 0px;
+    `,
+    h6: css`
+      font-family: Gilroy-Regular;
+      font-size: 20px;
+      letter-spacing: 0.15px;
+    `,
+    subtitle: css`
+      font-family: Gilroy-Medium;
+      font-size: 18px;
+    `,
+    body: css`
+      font-family: Gilroy-Regular;
+      font-size: 16px;
+      letter-spacing: 0.5px;
+      line-height: 1.7rem;
+    `,
+    overline: css`
+      font-size: 18px;
+      text-transform: uppercase;
+      letter-spacing: 0.2rem;
+    `,
+    caption: css`
+      font-family: Gilroy-Regular;
+      font-size: 18px;
+    `,
+    note: css`
+      font-family: Gilroy-Regular;
+      font-size: 14px;
+      line-height: 1.3rem;
+    `
   }
 }

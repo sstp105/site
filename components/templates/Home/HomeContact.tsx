@@ -6,11 +6,9 @@ import { Button } from 'components/atoms/Button'
 import { IForm } from 'types/Input'
 import { initContactFormState } from 'data/contactForm'
 
-const Wrapper = styled.div`
-  /* border: 1px solid purple; */
-`
+const Wrapper = styled.div``
 
-const StyledForm = styled.form`
+const StyledForm = styled.div`
   max-width: 768px;
   margin: 0 auto;
 `
@@ -59,7 +57,7 @@ export const HomeContact: React.FC = () => {
           variant="contained"
           size="l"
           fullWidth
-          onClick={handleSubmitForm}
+          onClick={() => handleSubmitForm()}
           verticalSpace={30}
         >
           Submit
