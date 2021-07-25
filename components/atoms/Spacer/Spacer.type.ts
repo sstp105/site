@@ -1,7 +1,4 @@
-/**
- * @interface IDefaultProps Spacer optional props
- */
-export interface IDefaultProps {
+export interface IThemeProps {
   /**
    * @type {verticalSpace} The height of the spacer
    */
@@ -13,4 +10,19 @@ export interface IDefaultProps {
   horizontalSpace: string
 }
 
+/**
+ * @interface IDefaultProps Spacer optional props
+ */
+export interface IDefaultProps extends IThemeProps {
+  /**
+   * data-testid for unit test
+   */
+  testId: string
+}
+
+/**
+ * @interface IProps Spacer required props
+ */
 export interface IProps extends Partial<IDefaultProps> {}
+
+export type PropsToOmit = 'testId'
