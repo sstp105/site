@@ -1,5 +1,23 @@
-import { css, keyframes } from 'styled-components'
+import styled, { css, keyframes } from 'styled-components'
+import { IThemeProps } from 'components/atoms/Link/Link.type'
 
+/* -------------------------------------------------------------------------- */
+/*                               Styled Elements                              */
+/* -------------------------------------------------------------------------- */
+const Link = styled.a<Partial<IThemeProps>>`
+  text-decoration: none;
+  color: ${(props) => props.theme.color.link};
+  cursor: pointer;
+
+  ${(props) => style.variant[props.variant]}
+`
+
+export const Styled = {
+  Link
+}
+/* -------------------------------------------------------------------------- */
+/*                                   Styles                                   */
+/* -------------------------------------------------------------------------- */
 /**
  * Navigation link style
  */
@@ -35,20 +53,6 @@ const navLinkStyle = css`
 /**
  * Social media hover animation
  */
-const scaleAnimation = keyframes`
- 0% {
-     left: -110%;
-     top: 90%;
- }
- 50% {
-     left: 10%;
-     top: -30%;
- }
- 100% {
-     top: -10%;
-     left: -10%;
- }
-`
 const socialLinkStyle = css`
   text-align: center;
   display: inline-block;
@@ -61,6 +65,21 @@ const socialLinkStyle = css`
   border-radius: 30%;
   color: ${(props) => props.theme.color.typography};
 
+  @keyframes scale {
+    0% {
+      left: -110%;
+      top: 90%;
+    }
+    50% {
+      left: 10%;
+      top: -30%;
+    }
+    100% {
+      top: -10%;
+      left: -10%;
+    }
+  }
+
   &::before {
     content: '';
     position: absolute;
@@ -72,7 +91,7 @@ const socialLinkStyle = css`
     top: 90%;
   }
   &:hover::before {
-    animation: ${scaleAnimation} 0.8s 1;
+    animation: scale 0.8s ease;
     top: -10%;
     left: -10%;
   }

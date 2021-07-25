@@ -13,7 +13,12 @@ export interface IThemeProps {
 /**
  * @interface IDefaultProps Link optional props
  */
-export interface IDefaultProps extends IThemeProps {}
+export interface IDefaultProps extends IThemeProps {
+  /**
+   * data-testid
+   */
+  testId: string
+}
 
 /**
  * @interface IProps Link requried props
@@ -29,3 +34,5 @@ export interface IProps extends Partial<IDefaultProps> {
    */
   children: React.ReactNode
 }
+
+export type PropsToOmit = 'testId'
