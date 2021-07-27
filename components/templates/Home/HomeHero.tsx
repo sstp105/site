@@ -3,7 +3,6 @@ import styled, { css } from 'styled-components'
 import { RotateAvater } from 'components/molecules/RotateAvatar'
 import { Typography } from 'components/atoms/Typography'
 import { Link } from 'components/atoms/Link'
-import { TextIcon } from 'components/molecules/TextIcon'
 import { Chip } from 'components/molecules/Chip'
 import { Flex } from 'components/atoms/Layout'
 import socialMediaData from 'data/socialMedia.json'
@@ -68,7 +67,13 @@ export const HomeHero: React.FC = () => {
         </Typography>
         <StyledContractList>
           {contractData.map((elem) => (
-            <TextIcon key={elem.text} icon={elem.icon} text={elem.text} />
+            <Chip
+              key={elem.text}
+              label={elem.text}
+              icon={elem.icon}
+              variant="default"
+              space={30}
+            />
           ))}
         </StyledContractList>
         <StyledSocialMediaList>
