@@ -8,11 +8,11 @@ import { Styled } from 'components/molecules/Chip/Chip.style'
 import { Icon } from 'components/atoms/Icon'
 
 export const Chip: React.FC<IProps> = (props) => {
-  const { testId, label, icon, ...themeProps } = props
+  const { testId, iconTestId, label, icon, ...themeProps } = props
 
   return (
     <Styled.Chip {...themeProps}>
-      {icon && <Icon iconName={icon} />}
+      {icon && <Icon testId={iconTestId} iconName={icon} />}
       <p>{label}</p>
     </Styled.Chip>
   )

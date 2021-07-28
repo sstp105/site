@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { Image } from 'components/atoms/Image'
 import { Typography } from 'components/atoms/Typography'
-import { Paper } from 'components/molecules/Paper'
+import { Paper } from 'components/atoms/Paper'
 import { SectionHeader } from 'components/molecules/SectionHeader'
 import skillData from 'data/skill.json'
 

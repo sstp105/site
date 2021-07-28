@@ -43,6 +43,11 @@ export interface IDefaultProps extends IThemeProps {
    * data-testid for unit test
    */
   testId: string
+
+  /**
+   * Chip icon test id
+   */
+  iconTestId: string
 }
 
 export interface IProps extends Partial<IDefaultProps> {
@@ -52,4 +57,4 @@ export interface IProps extends Partial<IDefaultProps> {
   label: string
 }
 
-export type PropsToOmit = 'testId' | 'icon'
+export type PropsToOmit = 'testId' | 'icon' | 'iconTestId'
