@@ -5,3 +5,4 @@ export type Colors =
   | 'action'
   | 'error'
   | 'disabled'
+  | 'caption'
