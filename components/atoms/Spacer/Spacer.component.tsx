@@ -8,7 +8,7 @@ import {
 
 export const Spacer: React.FC<IProps> = (props) => {
   const { testId, ...themeProps } = props
-  return <Styled.Spacer {...themeProps} data-testid={testId} />
+  return <Styled.Spacer data-testid={testId} {...themeProps} />
 }
 
 const defaultProps: Omit<IDefaultProps, PropsToOmit> = {

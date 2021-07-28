@@ -2,7 +2,7 @@ import React from 'react'
 import dynamic from 'next/dynamic'
 import styled from 'styled-components'
 import { Typography } from 'components/atoms/Typography'
-import { HamburgerMenu } from 'components/molecules/Gesture/HamburgerMenu'
+import { HamburgerMenu } from 'components/molecules/HamburgerMenu'
 import { NavigationList } from './NavigationList'
 import { useToggle } from 'hooks/useToggle'
 
@@ -15,9 +15,7 @@ export const StyledMobileHeader = styled.div`
 `
 
 const DynamicDrawer = dynamic(() =>
-  import('components/molecules/Gesture/Drawer').then(
-    (component) => component.Drawer
-  )
+  import('components/molecules/Drawer').then((component) => component.Drawer)
 )
 
 export const MobileHeader: React.FC = () => {

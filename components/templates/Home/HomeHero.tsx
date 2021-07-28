@@ -1,12 +1,77 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-import { RotateAvater } from 'components/molecules/RotateAvatar'
+import { Image } from 'components/atoms/Image'
 import { Typography } from 'components/atoms/Typography'
 import { Link } from 'components/atoms/Link'
 import { Chip } from 'components/molecules/Chip'
 import { Flex } from 'components/atoms/Layout'
 import socialMediaData from 'data/socialMedia.json'
 import contractData from 'data/contract.json'
+
+export const style = {
+  screen: {
+    tablet: css`
+      transform: translateX(0);
+      width: 250px;
+      order: -1;
+      img {
+        width: 250px;
+      }
+    `,
+    mobile: css`
+      width: 200px;
+      height: 250px;
+      img {
+        width: 200px;
+      }
+    `
+  }
+}
+
+const StyledRotateAvatar = styled.div`
+  position: relative;
+  width: 310px;
+  height: 310px;
+  transform: translateX(-45px);
+
+  ${(props) => props.theme.media.tablet} {
+    ${style.screen.tablet}
+  }
+
+  ${(props) => props.theme.media.mobile} {
+    ${style.screen.mobile}
+  }
+`
+
+const override = css`
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid ${(props) => props.theme.color.primary};
+
+  ${(props) => props.theme.animation.keyframes.wiggleRotate};
+  animation: wiggleRotate 4s infinite;
+`
+
+export const RotateAvatar: React.FC = () => {
+  return (
+    <StyledRotateAvatar>
+      <Image
+        src="images/avatar.jpg"
+        alt="yang avatar"
+        width="310px"
+        variant="circle"
+      />
+      <Image
+        src="images/avatar-outline.png"
+        alt="rotate animation avatar frame"
+        width="310px"
+        variant="circle"
+        css={override}
+      />
+    </StyledRotateAvatar>
+  )
+}
 
 const flexContainerStyle = css`
   height: calc(100vh - 75px);
@@ -84,7 +149,7 @@ export const HomeHero: React.FC = () => {
           ))}
         </StyledSocialMediaList>
       </StyledWrapper>
-      <RotateAvater />
+      <RotateAvatar />
     </Flex>
   )
 }

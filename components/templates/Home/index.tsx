@@ -1,0 +1,7 @@
+export { HomeHero } from 'components/templates/Home/HomeHero'
+export { HomeAbout } from 'components/templates/Home/HomeAbout'
+export { HomeSkill } from 'components/templates/Home/HomeSkill'
+export { HomeExperience } from 'components/templates/Home/HomeExperience'
+export { HomePortfolio } from 'components/templates/Home/HomePortfolio'
+export { HomeBlog } from 'components/templates/Home/HomeBlog'
+export { HomeContact } from 'components/templates/Home/HomeContact'

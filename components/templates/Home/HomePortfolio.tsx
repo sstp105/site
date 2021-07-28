@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled, { css } from 'styled-components'
 import { SectionHeader } from 'components/molecules/SectionHeader'
 import { Card } from 'components/organisms/Card'

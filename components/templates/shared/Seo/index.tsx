@@ -1,5 +1,10 @@
 import Head from 'next/head'
 
+export interface ISeo {
+  title: string
+  description: string
+}
+
 export const Seo: React.FC = () => {
   return (
     <Head>

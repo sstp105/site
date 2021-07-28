@@ -1,5 +1,5 @@
 import { css } from 'styled-components'
-import { IProps } from 'components/molecules/Gesture/HamburgerMenu/type'
+import { IProps } from 'components/molecules/HamburgerMenu/type'
 
 const MenuStyleOne = css<IProps>`
   width: 50px;

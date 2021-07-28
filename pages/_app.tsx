@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { GlobalStyle } from 'styles/globalStyle'
 import { ThemeContext } from 'context/ThemeContext'
-import { Seo } from 'components/molecules/Seo'
+import { Seo } from 'components/templates/shared/Seo'
 import { Header } from 'components/templates/shared/Header'
 import { Footer } from 'components/templates/shared/Footer'
 import styled from 'styled-components'

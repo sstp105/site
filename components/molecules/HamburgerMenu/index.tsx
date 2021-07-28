@@ -1,6 +1,6 @@
 import React from 'react'
-import { style } from 'components/molecules/Gesture/HamburgerMenu/style'
-import { IProps } from 'components/molecules/Gesture/HamburgerMenu/type'
+import { style } from 'components/molecules/HamburgerMenu/style'
+import { IProps } from 'components/molecules/HamburgerMenu/type'
 import styled from 'styled-components'
 
 const StyledHamburgerMenu = styled.div<IProps>`
