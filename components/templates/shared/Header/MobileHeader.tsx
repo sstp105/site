@@ -24,7 +24,7 @@ export const MobileHeader: React.FC = () => {
   return (
     <StyledMobileHeader>
       <Typography variant="overline">Hey! This is Yang</Typography>
-      <HamburgerMenu show={show} toggleShow={toggleShow} />
+      <HamburgerMenu active={show} onClick={toggleShow} />
       <DynamicDrawer open={show} onClose={toggleShow}>
         <NavigationList />
       </DynamicDrawer>

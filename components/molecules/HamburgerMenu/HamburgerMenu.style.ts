@@ -1,7 +1,10 @@
-import { css } from 'styled-components'
-import { IProps } from 'components/molecules/HamburgerMenu/type'
+import styled, { css } from 'styled-components'
+import { IThemeProps } from 'components/molecules/HamburgerMenu/HamburgerMenu.type'
 
-const MenuStyleOne = css<IProps>`
+/* -------------------------------------------------------------------------- */
+/*                               Styled Elements                              */
+/* -------------------------------------------------------------------------- */
+const HamburgerMenu = styled.div<IThemeProps>`
   width: 50px;
   height: 45px;
   transform: rotate(0deg) scale(0.6);
@@ -24,7 +27,7 @@ const MenuStyleOne = css<IProps>`
   & > span:nth-child(1) {
     top: 0px;
     ${(props) =>
-      props.show &&
+      props.active &&
       css`
         top: 18px;
         width: 0%;
@@ -34,7 +37,7 @@ const MenuStyleOne = css<IProps>`
   & > span:nth-child(2) {
     top: 18px;
     ${(props) =>
-      props.show &&
+      props.active &&
       css`
         transform: rotate(45deg);
       `}
@@ -42,7 +45,7 @@ const MenuStyleOne = css<IProps>`
   & > span:nth-child(3) {
     top: 18px;
     ${(props) =>
-      props.show &&
+      props.active &&
       css`
         transform: rotate(-45deg);
       `}
@@ -50,7 +53,7 @@ const MenuStyleOne = css<IProps>`
   & > span:nth-child(4) {
     top: 36px;
     ${(props) =>
-      props.show &&
+      props.active &&
       css`
         top: 18px;
         width: 0%;
@@ -59,6 +62,6 @@ const MenuStyleOne = css<IProps>`
   }
 `
 
-export const style = {
-  styleOne: MenuStyleOne
+export const Styled = {
+  HamburgerMenu
 }
