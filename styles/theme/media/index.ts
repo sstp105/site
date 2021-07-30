@@ -1,4 +1,4 @@
-import { customMediaQuery } from 'utils/customMediaQuery'
+import { customMediaQuery } from 'libs/utils/customMediaQuery'
 
 type Device =
   | 'mobile_sm'

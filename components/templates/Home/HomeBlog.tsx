@@ -17,7 +17,7 @@ export const HomeBlog: React.FC = () => {
         {blogData.map((elem) => (
           <Card
             key={elem.banner}
-            cardBanner={{
+            media={{
               url: `${elem.banner}`,
               alt: 'demo'
             }}

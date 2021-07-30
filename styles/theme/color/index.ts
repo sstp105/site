@@ -18,6 +18,7 @@ export const color = {
   action: '#1190F5',
   error: '#B00020',
   diabled: '#A7A7A7',
+  box_shadow: 'rgb(115 127 143 / 16%) 0px 6px 16px;',
 
   /**
    * 浅色模式
@@ -41,7 +42,8 @@ export const color = {
     border_primary: '#1190F5',
     action: '#1190F5',
     error: '#B00020',
-    diabled: '#A7A7A7'
+    diabled: '#A7A7A7',
+    box_shadow: 'rgb(115 127 143 / 16%) 0px 6px 16px;'
   },
 
   /**
@@ -66,6 +68,8 @@ export const color = {
     border_primary: '#1190F5',
     action: '#1190F5',
     error: '#B00020',
-    diabled: '#A7A7A7'
+    diabled: '#A7A7A7',
+    box_shadow:
+      '0px 4px 5px 0px hsla(0, 0%, 0%, 0.14),0px 1px 10px 0px hsla(0, 0%, 0%, 0.12),0px 2px 4px -1px hsla(0, 0%, 0%, 0.2);'
   }
 }

@@ -31,7 +31,7 @@ export const HomePortfolio: React.FC = () => {
       {portfolioData.map((elem, index) => (
         <Card
           key={elem.banner}
-          cardBanner={{ url: elem.banner, alt: elem.title }}
+          media={{ url: elem.banner, alt: elem.title }}
           variant="flex"
           float={index % 2 == 0 ? 'left' : 'right'}
           height="400px"
