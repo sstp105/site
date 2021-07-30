@@ -4,7 +4,7 @@
     "label": "About"
   },
   {
-    "href": "#skills",
+    "href": "#skill",
     "label": "Skills"
   },
   {
@@ -16,7 +16,11 @@
     "label": "Portfolio"
   },
   {
-    "href": "#blogs",
+    "href": "#blog",
     "label": "Blogs"
+  },
+  {
+    "href": "#contact",
+    "label": "Contact"
   }
 ]

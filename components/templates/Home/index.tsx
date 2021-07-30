@@ -1,7 +1,33 @@
-export { HomeHero } from 'components/templates/Home/HomeHero'
-export { HomeAbout } from 'components/templates/Home/HomeAbout'
-export { HomeSkill } from 'components/templates/Home/HomeSkill'
-export { HomeExperience } from 'components/templates/Home/HomeExperience'
-export { HomePortfolio } from 'components/templates/Home/HomePortfolio'
-export { HomeBlog } from 'components/templates/Home/HomeBlog'
-export { HomeContact } from 'components/templates/Home/HomeContact'
+import { HomeAbout } from 'components/templates/Home/HomeAbout'
+import { HomeSkill } from 'components/templates/Home/HomeSkill'
+import { HomeExperience } from 'components/templates/Home/HomeExperience'
+import { HomePortfolio } from 'components/templates/Home/HomePortfolio'
+import { HomeBlog } from 'components/templates/Home/HomeBlog'
+import { HomeContact } from 'components/templates/Home/HomeContact'
+
+export const homeComponents = [
+  {
+    id: 'about',
+    component: <HomeAbout />
+  },
+  {
+    id: 'skill',
+    component: <HomeSkill />
+  },
+  {
+    id: 'experience',
+    component: <HomeExperience />
+  },
+  {
+    id: 'portfolio',
+    component: <HomePortfolio />
+  },
+  {
+    id: 'blog',
+    component: <HomeBlog />
+  },
+  {
+    id: 'contact',
+    component: <HomeContact />
+  }
+]

@@ -121,7 +121,7 @@ export const HomeHero: React.FC = () => {
     <Flex justify="space-around" align="center" css={flexContainerStyle}>
       <StyledWrapper>
         <Chip
-          label="Hey There, I'm "
+          label="Hey There, I'm"
           size="normal"
           hoverable={false}
           css={welcomeChipStyle}

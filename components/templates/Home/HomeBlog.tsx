@@ -1,17 +1,13 @@
-import styled, { css } from 'styled-components'
+import { css } from 'styled-components'
 import { SectionHeader } from 'components/molecules/SectionHeader'
 import { Card } from 'components/organisms/Card'
 import { Typography } from 'components/atoms/Typography'
 import { Flex } from 'components/atoms/Layout'
 import blogData from 'data/blog.json'
 
-const StyledWrapper = styled.div`
-  /* border: 1px solid red; */
-`
-
 export const HomeBlog: React.FC = () => {
   return (
-    <StyledWrapper>
+    <>
       <SectionHeader title="Recent Blogs" subtitle="Sharing My Thoughts." />
       <Flex align="stretch" justify="space-evenly">
         {blogData.map((elem) => (
@@ -35,6 +31,6 @@ export const HomeBlog: React.FC = () => {
           </Card>
         ))}
       </Flex>
-    </StyledWrapper>
+    </>
   )
 }

@@ -5,10 +5,6 @@ import { Paper } from 'components/atoms/Paper'
 import { SectionHeader } from 'components/molecules/SectionHeader'
 import skillData from 'data/skill.json'
 
-const Wrapper = styled.div`
-  /* border: 1px solid purple; */
-`
-
 const StyledWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -27,9 +23,9 @@ const skillList = skillData.map((elem) => (
 
 export const HomeSkill: React.FC = () => {
   return (
-    <Wrapper id="skills">
+    <>
       <SectionHeader title="Skills" subtitle="Always Learning." />
       <StyledWrapper>{skillList}</StyledWrapper>
-    </Wrapper>
+    </>
   )
 }

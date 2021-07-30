@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import styled, { css } from 'styled-components'
 import { Typography } from 'components/atoms/Typography'
 import { Icon } from 'components/atoms/Icon'
@@ -8,13 +8,6 @@ import skillData from 'data/about.json'
 import { Button } from 'components/atoms/Button'
 import { Flex } from 'components/atoms/Layout'
 import { SectionHeader } from 'components/molecules/SectionHeader'
-
-const Wrapper = styled.div`
-  /* border: 1px solid red; */
-  /* margin: 0 auto; */
-  position: relative;
-  /* max-width: 1440px; */
-`
 
 const StyledContentWrapper = styled.div`
   width: 50%;
@@ -55,7 +48,7 @@ const aboutImgStyle = css`
 
 export const HomeAbout: React.FC = () => {
   return (
-    <Wrapper id="about">
+    <>
       <SectionHeader
         title="About Me"
         subtitle="Love Coding, Competitive Powerlifter, ACG fans."
@@ -105,6 +98,6 @@ export const HomeAbout: React.FC = () => {
           </Button>
         </StyledContentWrapper>
       </Flex>
-    </Wrapper>
+    </>
   )
 }

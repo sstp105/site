@@ -1,31 +1,23 @@
 import React from 'react'
-import {
-  HomeHero,
-  HomeAbout,
-  HomeSkill,
-  HomeExperience,
-  HomePortfolio,
-  HomeBlog,
-  HomeContact
-} from 'components/templates/Home'
+import styled from 'styled-components'
+import { homeComponents } from 'components/templates/Home'
 import { Spacer } from 'components/atoms/Spacer'
 import { Page } from 'components/atoms/Layout'
+import { HomeHero } from 'components/templates/Home/HomeHero'
 
-const homeComponents = [
-  <HomeAbout key={'home-about'} />,
-  <HomeSkill key={'home-skill'} />,
-  <HomeExperience key={'home-experience'} />,
-  <HomePortfolio key={'home-portfolio'} />,
-  <HomeBlog key={'home-blog'} />,
-  <HomeContact key={'home-contact'} />
-]
+const StyledWrapper = styled.div`
+  position: relative;
+`
+const components = Object.keys(homeComponents).map((key) => {
+  const { id, component } = homeComponents[key]
 
-const components = homeComponents.map((c, index) => (
-  <React.Fragment key={index}>
-    {c}
-    <Spacer verticalSpace="200px" />
-  </React.Fragment>
-))
+  return (
+    <React.Fragment key={id}>
+      <StyledWrapper id={id}>{component}</StyledWrapper>
+      <Spacer verticalSpace="200px" />
+    </React.Fragment>
+  )
+})
 
 const Home: React.FC = () => {
   return (

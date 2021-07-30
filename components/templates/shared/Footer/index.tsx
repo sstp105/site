@@ -5,9 +5,11 @@ const StyledFooter = styled.footer`
   padding: 30px;
   text-align: center;
   font-size: 12px;
-  color: rgb(237, 236, 236);
-  background-color: rgb(31, 31, 31);
+  color: ${(props) => props.theme.color.default};
+  background-color: ${(props) => props.theme.color.surface};
+  ${(props) => props.theme.shadow.normal};
 `
+
 export const Footer: React.FC = () => {
   return (
     <StyledFooter>

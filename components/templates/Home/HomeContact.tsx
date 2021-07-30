@@ -6,8 +6,6 @@ import { Button } from 'components/atoms/Button'
 import { IForm } from 'types/Input'
 import { initContactFormState } from 'data/contactForm'
 
-const Wrapper = styled.div``
-
 const StyledForm = styled.div`
   max-width: 768px;
   margin: 0 auto;
@@ -49,7 +47,7 @@ export const HomeContact: React.FC = () => {
   })
 
   return (
-    <Wrapper id="contact">
+    <>
       <SectionHeader title="Contact Me" subtitle="Talk with me." />
       <StyledForm>
         {inputList}
@@ -63,6 +61,6 @@ export const HomeContact: React.FC = () => {
           Submit
         </Button>
       </StyledForm>
-    </Wrapper>
+    </>
   )
 }

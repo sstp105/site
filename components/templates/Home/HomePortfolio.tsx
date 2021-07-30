@@ -1,5 +1,5 @@
 import React from 'react'
-import styled, { css } from 'styled-components'
+import { css } from 'styled-components'
 import { SectionHeader } from 'components/molecules/SectionHeader'
 import { Card } from 'components/organisms/Card'
 import portfolioData from 'data/portfolio.json'
@@ -7,10 +7,6 @@ import { Button } from 'components/atoms/Button'
 import { Typography } from 'components/atoms/Typography'
 import { Chip } from 'components/molecules/Chip'
 import { Flex } from 'components/atoms/Layout'
-
-const Wrapper = styled.div`
-  /* border: 1px solid green; */
-`
 
 const readMoreBtnStyle = css`
   position: absolute;
@@ -25,9 +21,8 @@ const readMoreBtnStyle = css`
 
 export const HomePortfolio: React.FC = () => {
   return (
-    <Wrapper id="portfolio">
+    <>
       <SectionHeader title="Portfolio" subtitle="Learn by Doing." />
-      {/* <div> */}
       {portfolioData.map((elem, index) => (
         <Card
           key={elem.banner}
@@ -66,7 +61,6 @@ export const HomePortfolio: React.FC = () => {
           </Button>
         </Card>
       ))}
-      {/* </div> */}
-    </Wrapper>
+    </>
   )
 }
