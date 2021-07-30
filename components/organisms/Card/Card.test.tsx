@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react'
 import { ThemeContext } from 'context/ThemeContext'
 import { Typography } from 'components/atoms/Typography'
 import { Card } from 'components/organisms/Card'
-import { CONSTANT } from 'libs/utils/constant'
+import { CONSTANT } from 'libs/constant'
 
 const media = CONSTANT.TESTING.image
 

@@ -1,3 +1,6 @@
+/**
+ * @interface IExperience
+ */
 export interface IExperience {
   title: string
   company: string
@@ -6,10 +9,16 @@ export interface IExperience {
   description: string
 }
 
+/**
+ * @interface IThemeProps
+ */
 export interface IThemeProps {
   float: 'left' | 'right'
 }
 
+/**
+ * @interface IProps Timeline data
+ */
 export interface IProps {
   data: Array<IExperience>
 }

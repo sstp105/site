@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 
 // Timeline container
-export const StyledTimeline = styled.div`
+export const Timeline = styled.div`
   position: relative;
   max-width: 1000px;
   margin: 0 auto;
@@ -30,7 +30,7 @@ export const StyledTimeline = styled.div`
 `
 
 // Timeline item block
-export const StyledTimelineItem = styled.li<{ float: 'left' | 'right' }>`
+export const TimelineItem = styled.li<{ float: 'left' | 'right' }>`
   list-style: none;
   position: relative;
   width: 50%;
@@ -83,7 +83,7 @@ export const StyledTimelineItem = styled.li<{ float: 'left' | 'right' }>`
 `
 
 // Timeline content: title, company, desc...
-export const StyledContent = styled.div<{ float: 'left' | 'right' }>`
+export const Content = styled.div<{ float: 'left' | 'right' }>`
   padding: 20px;
   position: relative;
   background: ${(props) => props.theme.color.surface_variant};
@@ -124,7 +124,7 @@ export const StyledContent = styled.div<{ float: 'left' | 'right' }>`
 `
 
 // Timeline date
-export const StyledDate = styled.div<{ float: 'left' | 'right' }>`
+export const Date = styled.div<{ float: 'left' | 'right' }>`
   position: absolute;
   top: 19px;
   padding: 8px 16px;
@@ -149,3 +149,10 @@ ${(props) => props.theme.media.tablet} {
     right: inherit;
   }
 `
+
+export const Styled = {
+  Timeline,
+  TimelineItem,
+  Content,
+  Date
+}
