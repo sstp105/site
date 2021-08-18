@@ -1,13 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled, { css } from 'styled-components'
 import { Image } from 'components/atoms/Image'
 import { Typography } from 'components/atoms/Typography'
 import { Link } from 'components/atoms/Link'
 import { Chip } from 'components/molecules/Chip'
 import { Flex } from 'components/atoms/Layout'
-import socialMediaData from 'data/socialMedia.json'
-import contractData from 'data/contract.json'
 import { IIconText, IImage } from 'types/Profile'
+import { ProfileContext } from 'context/ProfileContext'
 
 export const style = {
   screen: {
@@ -111,18 +110,12 @@ const StyledSocialMediaList = styled.div`
     }
   }
 `
-interface IHomeHeroProps {
-  avatar: IImage
-  firstName: string
-  lastName: string
-  jobTitle: string
-  contacts: Array<IIconText>
-  socialMedias: Array<IIconText>
-}
 
-export const HomeHero: React.FC<IHomeHeroProps> = (props) => {
+export const HomeHero: React.FC = () => {
+  const profile = useContext(ProfileContext)
+
   const { avatar, firstName, lastName, jobTitle, contacts, socialMedias } =
-    props
+    profile
 
   return (
     <Flex justify="space-around" align="center" css={flexContainerStyle}>
