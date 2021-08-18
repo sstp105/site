@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled, { css } from 'styled-components'
+import { ProfileContext } from 'context/ProfileContext'
 import { Typography } from 'components/atoms/Typography'
 import { Icon } from 'components/atoms/Icon'
 import { Image } from 'components/atoms/Image'
@@ -47,6 +48,9 @@ const aboutImgStyle = css`
 `
 
 export const HomeAbout: React.FC = () => {
+  const { albums, bio, resumeLink, tools } = useContext(ProfileContext)
+  const bios: Array<string> = bio.split('<br>')
+
   return (
     <>
       <SectionHeader
@@ -56,31 +60,26 @@ export const HomeAbout: React.FC = () => {
 
       <Flex justify="center" align="flex-start" css={flexStyle}>
         <Image
-          src="images/about.png"
-          alt="About me"
+          src={albums[0].url}
+          alt={albums[0].alt}
           width="400px"
           height="400px"
           css={aboutImgStyle}
         />
         <StyledContentWrapper>
-          <Typography variant="body" margin={false}>
-            A BCIT Computer System Technology graduate. I have extensive
-            knowledge and project experience of front-end development. I am
-            confident with React, Typescript, Material UI, Sass, UI/UX, and
-            RESTful API designs.
-          </Typography>
-          <Typography variant="body">
-            Beside my academic and career, I am a competitive powerlifter
-            competed at Provincial Champion. My dream is one day step into the
-            Canadian Powerlifting Union Stage and competed in national level.
-          </Typography>
+          {bios.map((p: string, index: number) => (
+            <Typography key={p} variant="body" margin={index !== 0}>
+              {p}
+            </Typography>
+          ))}
+
           <Flex>
-            {skillData.map((elem) => (
+            {tools.map((elem) => (
               <Chip
                 size="small"
                 variant="outlined"
-                key={elem.label}
-                label={elem.label}
+                key={elem._id}
+                label={elem.content}
                 icon={elem.icon}
                 css={css`
                   margin-right: 10px;
