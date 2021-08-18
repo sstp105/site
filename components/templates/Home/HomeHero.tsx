@@ -7,6 +7,7 @@ import { Chip } from 'components/molecules/Chip'
 import { Flex } from 'components/atoms/Layout'
 import socialMediaData from 'data/socialMedia.json'
 import contractData from 'data/contract.json'
+import { IIconText, IImage } from 'types/Profile'
 
 export const style = {
   screen: {
@@ -53,18 +54,13 @@ const override = css`
   animation: wiggleRotate 4s infinite;
 `
 
-export const RotateAvatar: React.FC = () => {
+export const RotateAvatar: React.FC<IImage> = ({ url, alt }) => {
   return (
     <StyledRotateAvatar>
-      <Image
-        src="images/avatar.jpg"
-        alt="yang avatar"
-        width="310px"
-        variant="circle"
-      />
+      <Image src={url} alt={alt} width="310px" variant="circle" />
       <Image
         src="images/avatar-outline.png"
-        alt="rotate animation avatar frame"
+        alt="frame"
         width="310px"
         variant="circle"
         css={override}
@@ -115,26 +111,39 @@ const StyledSocialMediaList = styled.div`
     }
   }
 `
+interface IHomeHeroProps {
+  avatar: IImage
+  firstName: string
+  lastName: string
+  jobTitle: string
+  contacts: Array<IIconText>
+  socialMedias: Array<IIconText>
+}
 
-export const HomeHero: React.FC = () => {
+export const HomeHero: React.FC<IHomeHeroProps> = (props) => {
+  const { avatar, firstName, lastName, jobTitle, contacts, socialMedias } =
+    props
+
   return (
     <Flex justify="space-around" align="center" css={flexContainerStyle}>
       <StyledWrapper>
         <Chip
-          label="Hey There, I'm"
+          label="👋 Hey There, I'm"
           size="normal"
           hoverable={false}
           css={welcomeChipStyle}
         />
-        <Typography variant="h2">YANG LI</Typography>
+        <Typography variant="h2" transform="uppercase">
+          {firstName} {lastName}
+        </Typography>
         <Typography variant="h5" color="primary">
-          Frontend Developer
+          {jobTitle}
         </Typography>
         <StyledContractList>
-          {contractData.map((elem) => (
+          {contacts.map((elem) => (
             <Chip
-              key={elem.text}
-              label={elem.text}
+              key={elem._id}
+              label={elem.content}
               icon={elem.icon}
               variant="default"
               space={30}
@@ -142,14 +151,14 @@ export const HomeHero: React.FC = () => {
           ))}
         </StyledContractList>
         <StyledSocialMediaList>
-          {socialMediaData.map((elem) => (
-            <Link key={elem.link} href={elem.link} variant="social">
+          {socialMedias.map((elem) => (
+            <Link key={elem._id} href={elem.content} variant="social">
               <i className={elem.icon} />
             </Link>
           ))}
         </StyledSocialMediaList>
       </StyledWrapper>
-      <RotateAvatar />
+      <RotateAvatar {...avatar} />
     </Flex>
   )
 }
