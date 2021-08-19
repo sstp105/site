@@ -2,12 +2,12 @@ import { css } from 'styled-components'
 import { Typography } from 'components/atoms/Typography'
 import { Styled } from 'components/organisms/Timeline/Timeline.style'
 import {
-  IExperience,
   IThemeProps,
   IProps
 } from 'components/organisms/Timeline/Timeline.type'
+import { IExperience } from 'types/Profile'
 
-export const Timeline: React.FC<IProps> = (props) => {
+export const Timeline: React.FC<IProps<IExperience>> = (props) => {
   const { data } = props
 
   return (
@@ -15,7 +15,7 @@ export const Timeline: React.FC<IProps> = (props) => {
       <ul>
         {data.map((elem, index) => {
           const float = index % 2 == 0 ? 'left' : 'right'
-          return <TimeLineItem key={elem.company} float={float} {...elem} />
+          return <TimeLineItem key={elem._id} float={float} {...elem} />
         })}
         <div style={{ clear: 'both' }}></div>
       </ul>
@@ -30,7 +30,7 @@ const TimeLineItem: React.FC<IExperience & IThemeProps> = (props) => {
     <Styled.TimelineItem float={float}>
       <Styled.Content float={float}>
         <Typography variant="subtitle" margin={false}>
-          {company}
+          {company.name}
         </Typography>
         <Typography
           variant="body"

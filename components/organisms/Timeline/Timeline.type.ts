@@ -1,15 +1,4 @@
 /**
- * @interface IExperience
- */
-export interface IExperience {
-  title: string
-  company: string
-  startDate: string
-  endDate: string
-  description: string
-}
-
-/**
  * @interface IThemeProps
  */
 export interface IThemeProps {
@@ -19,6 +8,6 @@ export interface IThemeProps {
 /**
  * @interface IProps Timeline data
  */
-export interface IProps {
-  data: Array<IExperience>
+export interface IProps<T> {
+  data: Array<T>
 }

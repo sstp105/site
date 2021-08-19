@@ -1,9 +1,10 @@
+import React, { useContext } from 'react'
 import styled from 'styled-components'
+import { ProfileContext } from 'context/ProfileContext'
 import { Image } from 'components/atoms/Image'
 import { Typography } from 'components/atoms/Typography'
 import { Paper } from 'components/atoms/Paper'
 import { SectionHeader } from 'components/molecules/SectionHeader'
-import skillData from 'data/skill.json'
 
 const StyledWrapper = styled.div`
   display: flex;
@@ -11,17 +12,24 @@ const StyledWrapper = styled.div`
   justify-content: space-evenly;
 `
 
-const skillList = skillData.map((elem) => (
-  <Paper key={elem.title}>
-    <Image src={elem.imgUrl} alt={elem.alt} width="70px" height="70px" />
-    <Typography variant="h6">{elem.title}</Typography>
-    <Typography variant="body" align="center" margin={false}>
-      {elem.subtitle}
-    </Typography>
-  </Paper>
-))
-
 export const HomeSkill: React.FC = () => {
+  const { skills } = useContext(ProfileContext)
+
+  const skillList = skills.map((elem) => (
+    <Paper key={elem._id}>
+      <Image
+        src={elem.image.url}
+        alt={elem.image.alt}
+        width="70px"
+        height="70px"
+      />
+      <Typography variant="h6">{elem.title}</Typography>
+      <Typography variant="body" align="center" margin={false}>
+        {elem.content}
+      </Typography>
+    </Paper>
+  ))
+
   return (
     <>
       <SectionHeader title="Skills" subtitle="Always Learning." />
