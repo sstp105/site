@@ -2,12 +2,21 @@ import React from 'react'
 import { Page } from 'components/atoms/Layout'
 import { HomeHero } from 'components/templates/Home/HomeHero'
 import { IProfile } from 'types/Profile'
+import { IBlogBase } from 'types/schema/Blog'
+import { IProjectBase } from 'types/schema/Project'
 import { ProfileContext } from 'context/ProfileContext'
 import { homeComponents } from 'components/templates/Home'
+import { API } from 'libs/config/vars'
 
-const Home: React.FC<{ profile: IProfile }> = ({ profile }) => {
+interface IHomeProps {
+  profile: IProfile
+  projects: Array<IProjectBase>
+  blogs: Array<IBlogBase>
+}
+
+const Home: React.FC<IHomeProps> = (props) => {
   return (
-    <ProfileContext.Provider value={profile}>
+    <ProfileContext.Provider value={props}>
       <HomeHero />
       <Page>{homeComponents}</Page>
     </ProfileContext.Provider>
@@ -15,12 +24,15 @@ const Home: React.FC<{ profile: IProfile }> = ({ profile }) => {
 }
 
 export async function getStaticProps() {
-  const res = await fetch(`${process.env.API}/profile`, {
-    headers: { Authorization: process.env.AUTHORIZATION_TOKEN }
-  })
+  const [profileData, projectData, blogData] = await Promise.all([
+    fetch(`${API.baseUrl}/profile`, API.headers).then((res) => res.json()),
+    fetch(`${API.baseUrl}/project`, API.headers).then((res) => res.json()),
+    fetch(`${API.baseUrl}/blog`, API.headers).then((res) => res.json())
+  ])
 
-  const data = await res.json()
-  const profile: IProfile = data.data
+  const profile: IProfile = profileData.data
+  const projects: Array<IProjectBase> = projectData.data
+  const blogs: Array<IBlogBase> = blogData.data
 
   if (!profile) {
     return {
@@ -29,7 +41,7 @@ export async function getStaticProps() {
   }
 
   return {
-    props: { profile }
+    props: { profile, projects, blogs }
   }
 }
 

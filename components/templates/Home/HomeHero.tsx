@@ -113,7 +113,7 @@ const StyledSocialMediaList = styled.div`
 
 export const HomeHero: React.FC = () => {
   const { avatar, firstName, lastName, jobTitle, contacts, socialMedias } =
-    useContext(ProfileContext)
+    useContext(ProfileContext).profile
 
   return (
     <Flex justify="space-around" align="center" css={flexContainerStyle}>

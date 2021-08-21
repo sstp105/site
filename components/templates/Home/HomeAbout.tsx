@@ -47,7 +47,7 @@ const aboutImgStyle = css`
 `
 
 export const HomeAbout: React.FC = () => {
-  const { albums, bio, resumeLink, tools } = useContext(ProfileContext)
+  const { albums, bio, resumeLink, tools } = useContext(ProfileContext).profile
   const bios: Array<string> = bio.split('<br>')
 
   return (

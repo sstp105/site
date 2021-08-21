@@ -4,7 +4,7 @@ import { SectionHeader } from 'components/molecules/SectionHeader'
 import { Timeline } from 'components/organisms/Timeline'
 
 export const HomeExperience: React.FC = () => {
-  const { experiences } = useContext(ProfileContext)
+  const { experiences } = useContext(ProfileContext).profile
 
   return (
     <>

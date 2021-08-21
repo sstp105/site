@@ -13,7 +13,7 @@ const StyledWrapper = styled.div`
 `
 
 export const HomeSkill: React.FC = () => {
-  const { skills } = useContext(ProfileContext)
+  const { skills } = useContext(ProfileContext).profile
 
   const skillList = skills.map((elem) => (
     <Paper key={elem._id}>
@@ -22,6 +22,7 @@ export const HomeSkill: React.FC = () => {
         alt={elem.image.alt}
         width="70px"
         height="70px"
+        variant="square"
       />
       <Typography variant="h6">{elem.title}</Typography>
       <Typography variant="body" align="center" margin={false}>
