@@ -5,7 +5,7 @@ import {
   IThemeProps,
   IProps
 } from 'components/organisms/Timeline/Timeline.type'
-import { IExperience } from 'types/Profile'
+import { IExperience } from 'types/schema/Profile'
 
 export const Timeline: React.FC<IProps<IExperience>> = (props) => {
   const { data } = props

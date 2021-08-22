@@ -1,5 +1,5 @@
 import { createContext } from 'react'
-import { IProfile } from 'types/Profile'
+import { IProfile } from 'types/schema/Profile'
 import { IProjectBase } from 'types/schema/Project'
 import { IBlogBase } from 'types/schema/Blog'
 

@@ -1,4 +1,4 @@
-import { HTMLElement } from 'types/HTMLElement'
+import { IImage } from 'types/shared/Image'
 
 /**
  * @interface IThemeProps Card component theme props
@@ -47,7 +47,7 @@ export interface IProps extends Partial<IDefaultProps> {
   /**
    * Card media
    */
-  media: HTMLElement.Image
+  media: IImage
 
   /**
    * Card children elements

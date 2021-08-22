@@ -1,4 +1,4 @@
-import { HTMLInputType } from 'types/Input'
+import { HTMLInputType } from 'types/html/Input'
 
 /**
  * @interface IThemeProps TextField component theme related props

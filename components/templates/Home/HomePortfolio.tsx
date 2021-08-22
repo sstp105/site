@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { css } from 'styled-components'
+import { ProfileContext } from 'context/ProfileContext'
 import { SectionHeader } from 'components/molecules/SectionHeader'
 import { Card } from 'components/organisms/Card'
-import portfolioData from 'data/portfolio.json'
 import { Button } from 'components/atoms/Button'
 import { Typography } from 'components/atoms/Typography'
 import { Chip } from 'components/molecules/Chip'
 import { Flex } from 'components/atoms/Layout'
+import { IProjectBase } from 'types/schema/Project'
 
 const readMoreBtnStyle = css`
   position: absolute;
@@ -20,13 +21,15 @@ const readMoreBtnStyle = css`
 `
 
 export const HomePortfolio: React.FC = () => {
+  const projects: Array<IProjectBase> = useContext(ProfileContext).projects
+
   return (
     <>
       <SectionHeader title="Portfolio" subtitle="Learn by Doing." />
-      {portfolioData.map((elem, index) => (
+      {projects.map((elem, index) => (
         <Card
-          key={elem.banner}
-          media={{ url: elem.banner, alt: elem.title }}
+          key={elem._id}
+          media={elem.banner}
           variant="flex"
           float={index % 2 == 0 ? 'left' : 'right'}
           height="400px"
@@ -37,7 +40,7 @@ export const HomePortfolio: React.FC = () => {
           <Typography variant="h5" margin={false}>
             {elem.title}
           </Typography>
-          <Typography variant="body">{elem.desc}</Typography>
+          <Typography variant="body">{elem.description}</Typography>
           <Flex
             css={css`
               margin: 20px 0;

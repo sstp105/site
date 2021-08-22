@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components'
 import { SectionHeader } from 'components/molecules/SectionHeader'
 import { TextField } from 'components/atoms/TextField'
 import { Button } from 'components/atoms/Button'
-import { IForm } from 'types/Input'
+import { IForm } from 'types/html/Input'
 import { initContactFormState } from 'data/contactForm'
 
 const StyledForm = styled.div`

@@ -1,5 +1,5 @@
-import { SizeLarge } from 'types/Size'
-import { Colors } from 'types/Color'
+import { SizeLarge } from 'types/style/Size'
+import { Colors } from 'types/style/Color'
 
 /**
  * @interface IThemeProps Icon component variant props

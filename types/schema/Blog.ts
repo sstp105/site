@@ -1,4 +1,4 @@
-import { IImage } from 'types/Image'
+import { IImage } from 'types/shared/Image'
 
 export interface IBlogBase {
   _id?: string

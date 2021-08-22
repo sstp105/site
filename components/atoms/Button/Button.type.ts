@@ -1,4 +1,4 @@
-import { SizeBase } from 'types/Size'
+import { SizeBase } from 'types/style/Size'
 
 /**
  * @interface IThemeProps Button component theme variant

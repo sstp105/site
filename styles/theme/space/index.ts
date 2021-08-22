@@ -1,4 +1,4 @@
-import { SizeLarge } from 'types/Size'
+import { SizeLarge } from 'types/style/Size'
 
 export const space: Record<SizeLarge, string> = {
   xxs: '5px',

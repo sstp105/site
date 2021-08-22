@@ -1,22 +1,23 @@
+import React, { useContext } from 'react'
 import { css } from 'styled-components'
+import { ProfileContext } from 'context/ProfileContext'
 import { SectionHeader } from 'components/molecules/SectionHeader'
 import { Card } from 'components/organisms/Card'
 import { Typography } from 'components/atoms/Typography'
 import { Flex } from 'components/atoms/Layout'
-import blogData from 'data/blog.json'
+import { IBlogBase } from 'types/schema/Blog'
 
 export const HomeBlog: React.FC = () => {
+  const blogs: Array<IBlogBase> = useContext(ProfileContext).blogs
+
   return (
     <>
       <SectionHeader title="Recent Blogs" subtitle="Sharing My Thoughts." />
       <Flex align="stretch" justify="space-evenly">
-        {blogData.map((elem) => (
+        {blogs.map((elem) => (
           <Card
-            key={elem.banner}
-            media={{
-              url: `${elem.banner}`,
-              alt: 'demo'
-            }}
+            key={elem._id}
+            media={elem.banner}
             variant="stack"
             hoverable
             css={css`
@@ -27,7 +28,9 @@ export const HomeBlog: React.FC = () => {
             <Typography margin={false} variant="h5">
               {elem.title}
             </Typography>
-            <Typography variant="body">{elem.desc}</Typography>
+            <Typography variant="body">
+              {elem.summary.substring(0, 150)}...
+            </Typography>
           </Card>
         ))}
       </Flex>

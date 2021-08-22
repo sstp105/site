@@ -1,4 +1,4 @@
-import { SizeLarge } from 'types/Size'
+import { SizeLarge } from 'types/style/Size'
 
 interface Radius {
   variant: SizeLarge | 'circle'

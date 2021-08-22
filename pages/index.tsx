@@ -1,7 +1,7 @@
 import React from 'react'
 import { Page } from 'components/atoms/Layout'
 import { HomeHero } from 'components/templates/Home/HomeHero'
-import { IProfile } from 'types/Profile'
+import { IProfile } from 'types/schema/Profile'
 import { IBlogBase } from 'types/schema/Blog'
 import { IProjectBase } from 'types/schema/Project'
 import { ProfileContext } from 'context/ProfileContext'

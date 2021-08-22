@@ -1,4 +1,4 @@
-import { SizeLarge } from 'types/Size'
+import { SizeLarge } from 'types/style/Size'
 
 type FontFamily =
   | 'gilroy_thin'

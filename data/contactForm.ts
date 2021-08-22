@@ -1,4 +1,4 @@
-import { IForm } from 'types/Input'
+import { IForm } from 'types/html/Input'
 
 export const initContactFormState: IForm = {
   firstName: {

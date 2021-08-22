@@ -5,7 +5,7 @@ import { Typography } from 'components/atoms/Typography'
 import { Link } from 'components/atoms/Link'
 import { Chip } from 'components/molecules/Chip'
 import { Flex } from 'components/atoms/Layout'
-import { IIconText, IImage } from 'types/Profile'
+import { IIconText, IImage } from 'types/schema/Profile'
 import { ProfileContext } from 'context/ProfileContext'
 
 export const style = {

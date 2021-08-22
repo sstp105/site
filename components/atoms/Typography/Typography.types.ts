@@ -1,4 +1,4 @@
-import { Colors } from 'types/Color'
+import { Colors } from 'types/style/Color'
 
 /**
  * @interface IThemeProps Typography theme props
