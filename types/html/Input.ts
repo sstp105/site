@@ -1,3 +1,5 @@
+import React from 'react'
+
 export type HTMLInputType =
   | 'text'
   | 'email'
@@ -9,8 +11,11 @@ export type HTMLInputType =
   | 'number'
   | 'password'
 
+export type onChangeEvent =
+  | React.ChangeEvent<HTMLInputElement>
+  | React.ChangeEvent<HTMLTextAreaElement>
+
 export interface IInputProps {
-  name: string
   label: string
   type: HTMLInputType
   required: boolean
