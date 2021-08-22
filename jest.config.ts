@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   roots: ['<rootDir>'],
   moduleDirectories: ['node_modules', './'],
   collectCoverageFrom: [
@@ -6,7 +6,7 @@ module.exports = {
     '!**/*.d.ts',
     '!**/node_modules/**'
   ],
-  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
   testEnvironment: 'jsdom',
   testPathIgnorePatterns: ['/node_modules/', '/.next/'],
   transform: {

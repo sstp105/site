@@ -2,13 +2,21 @@ import React from 'react'
 import { render, screen } from '@testing-library/react'
 import { ThemeContext } from 'context/ThemeContext'
 import { Timeline } from 'components/organisms/Timeline'
+import { IExperience } from 'types/schema/Profile'
 
-const timelineItem = {
-  title: 'Title Test',
-  company: 'Company Test',
-  startDate: '2021/05',
-  endDate: 'Present',
-  description: 'Job Description'
+const timelineItem: IExperience = {
+  title: 'SDE',
+  company: {
+    name: 'Company name',
+    logo: {
+      url: '',
+      alt: ''
+    },
+    location: 'Vancouver'
+  },
+  description: 'Some job description',
+  startDate: '2020-05',
+  endDate: 'present'
 }
 
 const timelineData = [timelineItem]
@@ -24,7 +32,7 @@ describe('<Timeline /> component render tests', () => {
     const title = screen.getByText(timelineItem.title)
     expect(title).toBeInTheDocument()
 
-    const company = screen.getByText(timelineItem.company)
+    const company = screen.getByText(timelineItem.company.name)
     expect(company).toBeInTheDocument()
 
     const date = screen.queryByText(

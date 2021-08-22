@@ -18,7 +18,7 @@ export interface ISkill {
 }
 
 export interface IExperience {
-  _id: string
+  _id?: string
   title: string
   company: {
     name: string
