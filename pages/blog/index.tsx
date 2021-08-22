@@ -1,6 +1,6 @@
 const Blog: React.FC = (props) => {
   return (
-    <div>
+    <div style={{ marginTop: '75px' }}>
       <h1>Blogs</h1>
     </div>
   )

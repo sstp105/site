@@ -26,7 +26,7 @@ const navLinkStyle = css`
   letter-spacing: 0.2rem;
   padding-bottom: 20px;
   position: relative;
-  font-size: 18px;
+  font-size: 16px;
   padding: 20px 0px;
   transition: opacity 0.5s, color 0.5s;
 
