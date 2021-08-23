@@ -7,6 +7,7 @@ import { IProjectBase } from 'types/schema/Project'
 import { ProfileContext } from 'context/ProfileContext'
 import { homeComponents } from 'components/templates/Home'
 import { API } from 'libs/config/vars'
+import { Spacer } from 'components/atoms/Spacer'
 
 interface IHomeProps {
   profile: IProfile
@@ -18,7 +19,19 @@ const Home: React.FC<IHomeProps> = (props) => {
   return (
     <ProfileContext.Provider value={props}>
       <HomeHero />
-      <Page>{homeComponents}</Page>
+      <Page>
+        {Object.keys(homeComponents).map((key) => {
+          const { id, component } = homeComponents[key]
+          return (
+            <React.Fragment key={id}>
+              <section id={id} style={{ position: 'relative' }}>
+                {component}
+              </section>
+              <Spacer verticalSpace="200px" />
+            </React.Fragment>
+          )
+        })}
+      </Page>
     </ProfileContext.Provider>
   )
 }

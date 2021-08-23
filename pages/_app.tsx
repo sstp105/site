@@ -5,6 +5,7 @@ import { Seo } from 'components/templates/shared/Seo'
 import { Header } from 'components/templates/shared/Header'
 import { Footer } from 'components/templates/shared/Footer'
 import styled from 'styled-components'
+import { useTheme } from 'libs/hooks/useTheme'
 
 const StyledToggler = styled.button`
   position: fixed;
@@ -13,18 +14,10 @@ const StyledToggler = styled.button`
 `
 
 const App = ({ Component, pageProps }) => {
-  const [themeMode, setThemeMode] = useState('light')
-
-  const toggleTheme = () => {
-    if (themeMode === 'light') {
-      setThemeMode('dark')
-    } else {
-      setThemeMode('light')
-    }
-  }
+  const { theme, toggleTheme } = useTheme()
 
   return (
-    <ThemeContext themeMode={themeMode}>
+    <ThemeContext themeMode={theme}>
       <GlobalStyle />
       <Seo />
       <StyledToggler onClick={toggleTheme}>Toggle Theme</StyledToggler>

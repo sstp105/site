@@ -47,14 +47,23 @@ export const styles = {
       color: ${({ theme }) => theme.color.default};
       padding-left: 0;
       padding-right: 0;
+      & > i {
+        color: ${({ theme }) => theme.color.default};
+      }
     `,
     outlined: css`
       border: 1px solid ${(props) => props.theme.color.primary};
       color: ${({ theme }) => theme.color.primary};
+      & > i {
+        color: ${({ theme }) => theme.color.primary};
+      }
     `,
     contained: css`
       color: ${({ theme }) => theme.color.secondary};
       background-color: ${({ theme }) => theme.color.primary};
+      & > i {
+        color: ${({ theme }) => theme.color.secondary};
+      }
     `
   },
   /**
