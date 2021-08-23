@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { GlobalStyle } from 'styles/globalStyle'
 import { ThemeContext } from 'context/ThemeContext'
 import { Seo } from 'components/templates/shared/Seo'

@@ -17,7 +17,7 @@ const flexStyle = css`
   top: 0;
   left: 0;
   width: 100%;
-  background-color: ${(props) => props.theme.color.surface_shadow};
+  background-color: ${(props) => props.theme.color.background};
   z-index: 3;
 `
 

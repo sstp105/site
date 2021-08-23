@@ -40,6 +40,9 @@ const ButtonRoot = styled.button<Partial<IThemeProps>>`
 const contained = css`
   background-color: ${({ theme }) => theme.color.primary};
   color: ${({ theme }) => theme.color.secondary};
+  & > i {
+    color: ${({ theme }) => theme.color.secondary};
+  }
   &:hover {
     opacity: 0.7;
   }
@@ -47,12 +50,18 @@ const contained = css`
 const outlined = css`
   border: 1px solid ${({ theme }) => theme.color.primary};
   color: ${({ theme }) => theme.color.primary};
+  & > i {
+    color: ${({ theme }) => theme.color.primary};
+  }
   &:hover {
     background-color: rgba(0, 0, 0, 0.05);
   }
 `
 const text = css`
   color: ${({ theme }) => theme.color.primary};
+  & > i {
+    color: ${({ theme }) => theme.color.primary};
+  }
   &:hover {
     background-color: #3da4d44b;
   }

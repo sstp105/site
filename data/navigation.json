@@ -1,26 +1,22 @@
 [
   {
-    "href": "#about",
-    "label": "About"
+    "href": "/",
+    "label": "Home"
   },
   {
-    "href": "#skill",
-    "label": "Skills"
+    "href": "/project",
+    "label": "Projects"
   },
   {
-    "href": "#experience",
-    "label": "Experience"
-  },
-  {
-    "href": "#portfolio",
-    "label": "Portfolio"
-  },
-  {
-    "href": "#blog",
+    "href": "/blog",
     "label": "Blogs"
   },
   {
-    "href": "#contact",
-    "label": "Contact"
+    "href": "/video",
+    "label": "Videos"
+  },
+  {
+    "href": "/about",
+    "label": "About"
   }
 ]
