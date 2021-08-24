@@ -1,6 +1,6 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
-import { ThemeContext } from 'context/ThemeContext'
+import { Theme } from 'styles'
 import { Timeline } from 'components/organisms/Timeline'
 import { IExperience } from 'types/schema/Profile'
 
@@ -25,9 +25,9 @@ const timelineData = [timelineItem]
 describe('<Timeline /> component render tests', () => {
   test('should render <Timeline /> component and its content', () => {
     render(
-      <ThemeContext themeMode="light">
+      <Theme themeMode="light">
         <Timeline data={timelineData} />
-      </ThemeContext>
+      </Theme>
     )
 
     const title = screen.getByText(timelineItem.title)

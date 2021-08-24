@@ -8,7 +8,7 @@ const getTheme = (mode) => {
   }
 }
 
-export const ThemeContext = (props) => {
+export const Theme = (props) => {
   const { themeMode, children } = props
   const baseTheme = getTheme(themeMode)
 

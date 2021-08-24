@@ -5,6 +5,7 @@ import { Flex } from 'components/atoms/Layout'
 import { useMediaQuery } from 'libs/hooks/useMediaQuery'
 import { css } from 'styled-components'
 import { useIntersectionObserver } from 'libs/hooks/useIntersectionObserver'
+import { Icon } from 'components/atoms/Icon'
 
 const DynamicMobileHeader = dynamic(() =>
   import('components/templates/shared/Header/MobileHeader').then(
@@ -29,7 +30,16 @@ export const Header: React.FC = () => {
   return (
     <div ref={headerRef}>
       <Flex height="75px" shadow={!isInView} justify="center" css={flexStyle}>
-        {width <= 768 ? <DynamicMobileHeader /> : <NavigationList />}
+        {width <= 768 ? (
+          <DynamicMobileHeader />
+        ) : (
+          <>
+            <NavigationList />
+            <div style={{ position: 'fixed', right: 150 }}>
+              <Icon iconName="fas fa-moon" />
+            </div>
+          </>
+        )}
       </Flex>
     </div>
   )

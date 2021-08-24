@@ -1,18 +1,18 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
-import { ThemeContext } from 'context/ThemeContext'
+import { Theme } from 'styles'
 import { Image } from 'components/atoms/Image'
 
 describe('<Image /> component render tests', () => {
   test('should render the image component', () => {
     render(
-      <ThemeContext themeMode="light">
+      <Theme themeMode="light">
         <Image
           src="https://avatarfiles.alphacoders.com/198/198678.png"
           alt="avatar"
           testId="default-image"
         />
-      </ThemeContext>
+      </Theme>
     )
     const defaultImage = screen.getByTestId('default-image')
     expect(defaultImage).toBeInTheDocument()

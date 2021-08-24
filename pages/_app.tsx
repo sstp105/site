@@ -1,5 +1,5 @@
 import { GlobalStyle } from 'styles/globalStyle'
-import { ThemeContext } from 'context/ThemeContext'
+import { Theme } from 'styles'
 import { Seo } from 'components/templates/shared/Seo'
 import { Header } from 'components/templates/shared/Header'
 import { Footer } from 'components/templates/shared/Footer'
@@ -16,14 +16,14 @@ const App = ({ Component, pageProps }) => {
   const { theme, toggleTheme } = useTheme()
 
   return (
-    <ThemeContext themeMode={theme}>
+    <Theme themeMode={theme}>
       <GlobalStyle />
       <Seo />
       <StyledToggler onClick={toggleTheme}>Toggle Theme</StyledToggler>
       <Header />
       <Component {...pageProps} />
       <Footer />
-    </ThemeContext>
+    </Theme>
   )
 }
 

@@ -1,16 +1,16 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
-import { ThemeContext } from 'context/ThemeContext'
+import { Theme } from 'styles'
 import { Flex } from 'components/atoms/Layout'
 
 describe('<Flex /> component render tests', () => {
   test('should render the flex container and children elements', () => {
     render(
-      <ThemeContext themeMode="light">
+      <Theme themeMode="light">
         <Flex testId="default-flex">
           <h1>Flex Container Test</h1>
         </Flex>
-      </ThemeContext>
+      </Theme>
     )
 
     const flexContainer = screen.getByTestId('default-flex')

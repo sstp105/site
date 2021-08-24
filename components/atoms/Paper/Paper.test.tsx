@@ -1,19 +1,19 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
-import { ThemeContext } from 'context/ThemeContext'
+import { Theme } from 'styles'
 import { Paper } from 'components/atoms/Paper'
 import { Typography } from 'components/atoms/Typography'
 
 describe('<Paper /> component render tests', () => {
   test('should render the Paper surface component and its content', () => {
     render(
-      <ThemeContext themeMode="light">
+      <Theme themeMode="light">
         <Paper testId="default-paper">
           <Typography testId="paper-children" variant="h1">
             Default Paper Surface
           </Typography>
         </Paper>
-      </ThemeContext>
+      </Theme>
     )
 
     const paper = screen.getByTestId('default-paper')

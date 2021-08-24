@@ -1,14 +1,14 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
-import { ThemeContext } from 'context/ThemeContext'
+import { Theme } from 'styles'
 import { Spacer } from 'components/atoms/Spacer'
 
 describe('<Spacer /> component render tests', () => {
   test('should render the Spacer component', () => {
     render(
-      <ThemeContext themeMode="light">
+      <Theme themeMode="light">
         <Spacer testId="default-spacer" />
-      </ThemeContext>
+      </Theme>
     )
 
     const spacer = screen.getByTestId('default-spacer')

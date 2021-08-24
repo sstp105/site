@@ -1,15 +1,15 @@
 import React from 'react'
 import { render, screen, fireEvent } from '@testing-library/react'
-import { ThemeContext } from 'context/ThemeContext'
+import { Theme } from 'styles'
 import { Button } from 'components/atoms/Button'
 import { Icon } from 'components/atoms/Icon'
 
 describe('<Button /> component render tests', () => {
   test('should render a default Button component in the document', () => {
     render(
-      <ThemeContext themeMode="light">
+      <Theme themeMode="light">
         <Button testId="submit-button">Submit</Button>
-      </ThemeContext>
+      </Theme>
     )
     const defaultButton = screen.getByTestId('submit-button')
     expect(defaultButton).toBeInTheDocument()
@@ -23,7 +23,7 @@ describe('<Button /> component render tests', () => {
     const RightIcon = <Icon iconName="fa-download" testId="right-icon" />
 
     render(
-      <ThemeContext themeMode="light">
+      <Theme themeMode="light">
         <Button
           testId="button-with-icon"
           startIcon={LeftIcon}
@@ -31,7 +31,7 @@ describe('<Button /> component render tests', () => {
         >
           Submit
         </Button>
-      </ThemeContext>
+      </Theme>
     )
 
     const buttonRoot = screen.getByTestId('button-with-icon')
@@ -50,11 +50,11 @@ describe('<Button /> component event listener test', () => {
     const onClickMock = jest.fn()
 
     render(
-      <ThemeContext themeMode="light">
+      <Theme themeMode="light">
         <Button testId="click-button" onClick={onClickMock}>
           Click
         </Button>
-      </ThemeContext>
+      </Theme>
     )
     const buttonRoot = screen.getByTestId('click-button')
     fireEvent.click(buttonRoot)
