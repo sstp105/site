@@ -48,4 +48,8 @@ export const GlobalStyle = createGlobalStyle`
     background-color: ${({ theme }) => theme.color.background};
     font-family: ${({ theme }) => theme.font.family.gilroy_regular}, "system";
   }
+
+  body::-webkit-scrollbar {
+    display: none;
+  }
 `

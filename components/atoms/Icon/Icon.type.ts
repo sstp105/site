@@ -26,6 +26,8 @@ export interface IDefaultProps extends IThemeProps {
    * data-testid attribute for Unit Test
    */
   testId: string
+
+  onClick: () => void
 }
 
 /**
@@ -41,4 +43,4 @@ export interface IProps extends Partial<IDefaultProps> {
 /**
  * Icon props that does not need to have default value
  */
-export type PropsToOmit = 'testId'
+export type PropsToOmit = 'testId' | 'onClick'
