@@ -9,7 +9,7 @@ export const DesktopHeader: React.FC = () => {
   return (
     <>
       <NavigationList />
-      <div style={{ position: 'fixed', right: 150 }}>
+      <div style={{ position: 'fixed', right: 50 }}>
         <Icon
           iconName={`fas fa-${theme === 'light' ? 'sun' : 'moon'}`}
           size="s"
