@@ -66,7 +66,7 @@ const styles = {
     `,
     body: css`
       font-family: Gilroy-Regular;
-      font-size: 16px;
+      font-size: 15px;
       letter-spacing: 0.5px;
       line-height: 1.7rem;
     `,

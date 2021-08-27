@@ -4,28 +4,16 @@ import { Banner } from 'components/organisms/Banner/Banner.component'
 import { SectionHeader } from 'components/molecules/SectionHeader'
 import { API } from 'libs/config/vars'
 import { IBlogBase } from 'types/schema/Blog'
+import { BlogList } from 'components/templates/BlogList'
 
 const MainSection = styled.div`
-  width: 710px;
-  height: 1000px;
+  width: 1140px;
   border-radius: 5px;
   color: ${(props) => props.theme.color.typography};
-  background-color: ${(props) => props.theme.color.surface};
   margin: 50px 0;
   margin-right: 20px;
   ${(props) => props.theme.media.desktop_sm} {
     width: 100%;
-  }
-`
-const SideSection = styled.div`
-  width: 350px;
-  height: 500px;
-  border-radius: 5px;
-  color: ${(props) => props.theme.color.typography};
-  background-color: ${(props) => props.theme.color.surface};
-  margin: 50px 0;
-  ${(props) => props.theme.media.desktop_sm} {
-    display: none;
   }
 `
 
@@ -38,8 +26,12 @@ const Wrapper = styled.div`
   }
 `
 
-const Blog: React.FC = (props) => {
-  console.log(props)
+interface IBlogPageProps {
+  blogs: Array<IBlogBase>
+}
+
+const Blog: React.FC<IBlogPageProps> = (props) => {
+  const { blogs } = props
 
   return (
     <>
@@ -47,8 +39,9 @@ const Blog: React.FC = (props) => {
         element={<SectionHeader title="Blog" subtitle="Sharing My Thoughts" />}
       />
       <Wrapper>
-        <MainSection>Lorem</MainSection>
-        <SideSection>Side bar</SideSection>
+        <MainSection>
+          <BlogList blogs={blogs} />
+        </MainSection>
       </Wrapper>
     </>
   )
