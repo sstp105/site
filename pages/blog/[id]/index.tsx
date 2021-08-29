@@ -1,8 +1,9 @@
 import { API } from 'libs/config/vars'
 import styled from 'styled-components'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { IBlog } from 'types/schema/Blog'
 import { BlogStyle } from 'styles/blogStyle'
+import hljs from 'highlight.js'
 
 const Container = styled.article`
   max-width: 800px;
@@ -16,6 +17,10 @@ const Container = styled.article`
 
 const BlogDetailPage: React.FC<IBlog> = (props) => {
   const { preview } = props
+
+  useEffect(() => {
+    hljs.initHighlightingOnLoad()
+  }, [])
 
   return (
     <Container>

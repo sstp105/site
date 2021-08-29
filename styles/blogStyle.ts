@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import { css } from 'styled-components'
 
 export const BlogStyle = css`
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
@@ -79,9 +79,10 @@ export const BlogStyle = css`
 
   pre {
     background-color: ${(props) => props.theme.color.surface};
-    padding: 16px;
     border-radius: 6px;
     line-height: 1.45;
     overflow: auto;
   }
+
+  ${(props) => props.theme.color.code_blocks}
 `
