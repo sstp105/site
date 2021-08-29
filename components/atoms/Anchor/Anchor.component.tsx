@@ -1,6 +1,6 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-import { Direction } from 'types/style/Direction'
+import { Direction } from 'types/design/Direction'
 
 const style = {
   directions: {

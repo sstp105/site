@@ -1,8 +1,8 @@
-import { API } from 'libs/config/vars'
-import styled from 'styled-components'
 import React, { useEffect } from 'react'
+import styled from 'styled-components'
+import { API } from 'libs/config/vars'
 import { IBlog } from 'types/schema/Blog'
-import { BlogStyle } from 'styles/blogStyle'
+import { markdown_style } from 'styles/markdown'
 import hljs from 'highlight.js'
 
 const Container = styled.article`
@@ -12,7 +12,7 @@ const Container = styled.article`
 
   padding-left: 20px;
   padding-right: 20px;
-  ${BlogStyle}
+  ${markdown_style}
 `
 
 const BlogDetailPage: React.FC<IBlog> = (props) => {

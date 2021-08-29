@@ -1,16 +1,25 @@
+import React from 'react'
 import { ThemeProvider } from 'styled-components'
 import { theme } from 'styles/theme'
+import { light_color } from 'styles/theme/color/light'
+import { dark_color } from 'styles/theme/color/dark'
+import { Themes } from 'libs/hooks/useTheme'
 
-const getTheme = (mode) => {
+const getTheme = (mode: Themes) => {
   return {
     ...theme,
-    color: theme.color[mode]
+    color: mode === 'light' ? light_color : dark_color
   }
 }
 
-export const Theme = (props) => {
-  const { themeMode, children } = props
-  const baseTheme = getTheme(themeMode)
+interface ThemeProps {
+  themeMode: Themes
+  children: React.ReactNode
+}
 
-  return <ThemeProvider theme={baseTheme}>{children}</ThemeProvider>
+export const Theme: React.FC<ThemeProps> = (props) => {
+  const { themeMode, children } = props
+  const appTheme = getTheme(themeMode)
+
+  return <ThemeProvider theme={appTheme}>{children}</ThemeProvider>
 }

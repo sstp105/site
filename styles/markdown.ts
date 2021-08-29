@@ -1,6 +1,6 @@
 import { css } from 'styled-components'
 
-export const BlogStyle = css`
+export const markdown_style = css`
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
@@ -84,5 +84,6 @@ export const BlogStyle = css`
     overflow: auto;
   }
 
+  /* 代码块高亮 */
   ${(props) => props.theme.color.code_blocks}
 `
