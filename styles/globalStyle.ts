@@ -32,6 +32,11 @@ export const GlobalStyle = createGlobalStyle`
     font-display: swap;
   }
   @font-face {
+    font-family: 'Menlo-Regular';
+    src: url('fonts/Menlo-Regular.ttf') format()('ttf');
+    font-style: swap;
+  }
+  @font-face {
     font-family: system;
     font-style: normal;
     src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");

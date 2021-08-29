@@ -7,6 +7,7 @@ type FontFamily =
   | 'gilroy_regular'
   | 'gilroy_medium'
   | 'gilroy_semi_bold'
+  | 'menlo_regular'
 
 const size: Record<SizeLarge, string> = {
   xxs: '16px',
@@ -24,7 +25,8 @@ const family: Record<FontFamily, string> = {
   gilroy_light: 'Gilroy-Light',
   gilroy_regular: 'Gilroy-Regular',
   gilroy_medium: 'Gilroy-Medium',
-  gilroy_semi_bold: 'Gilroy-SemiBold'
+  gilroy_semi_bold: 'Gilroy-SemiBold',
+  menlo_regular: 'Menlo-Regular'
 }
 
 export const font = {

@@ -2,11 +2,16 @@ import { API } from 'libs/config/vars'
 import styled from 'styled-components'
 import React from 'react'
 import { IBlog } from 'types/schema/Blog'
+import { BlogStyle } from 'styles/blogStyle'
 
-const Container = styled.div`
-  width: 800px;
+const Container = styled.article`
+  max-width: 800px;
   padding-top: 75px;
   margin: 50px auto;
+
+  padding-left: 20px;
+  padding-right: 20px;
+  ${BlogStyle}
 `
 
 const BlogDetailPage: React.FC<IBlog> = (props) => {
