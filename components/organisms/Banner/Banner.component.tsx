@@ -19,6 +19,11 @@ const ContentWrapper = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+
+  h3,
+  p {
+    color: #fff !important;
+  }
 `
 
 export interface IProps {
@@ -35,6 +40,7 @@ export const Banner: React.FC<IProps> = (props) => {
         fullSize={false}
         css={`
           z-index: 0;
+          background-color: rgba(0, 0, 0, 0);
         `}
       />
       <ContentWrapper>{element}</ContentWrapper>

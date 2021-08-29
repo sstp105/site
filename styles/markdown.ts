@@ -1,8 +1,7 @@
 import { css } from 'styled-components'
 
 export const markdown_style = css`
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: ${(props) => props.theme.font.family.gilroy_regular};
 
   h1,
   h2,

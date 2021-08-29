@@ -4,10 +4,11 @@ import { API } from 'libs/config/vars'
 import { IBlog } from 'types/schema/Blog'
 import { markdown_style } from 'styles/markdown'
 import hljs from 'highlight.js'
+import { Banner } from 'components/organisms/Banner/Banner.component'
+import { SectionHeader } from 'components/molecules/SectionHeader'
 
 const Container = styled.article`
   max-width: 800px;
-  padding-top: 75px;
   margin: 50px auto;
 
   padding-left: 20px;
@@ -16,16 +17,21 @@ const Container = styled.article`
 `
 
 const BlogDetailPage: React.FC<IBlog> = (props) => {
-  const { preview } = props
+  const { preview, title } = props
 
   useEffect(() => {
     hljs.initHighlightingOnLoad()
   }, [])
 
   return (
-    <Container>
-      <div dangerouslySetInnerHTML={{ __html: `${preview}` }} />
-    </Container>
+    <>
+      <Banner
+        element={<SectionHeader title={title} subtitle="Sharing My Thoughts" />}
+      />
+      <Container>
+        <div dangerouslySetInnerHTML={{ __html: `${preview}` }} />
+      </Container>
+    </>
   )
 }
 

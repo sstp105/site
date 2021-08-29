@@ -18,7 +18,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   @font-face {
     font-family: 'Gilroy-Regular';
-    src: url('fonts/Gilroy-Regular.otf') format('opentype');
+    src: url('../fonts/Gilroy-Regular.otf') format('opentype');
     font-display: swap;
   }
   @font-face {
