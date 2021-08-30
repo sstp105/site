@@ -17,7 +17,7 @@ const Container = styled.article`
 `
 
 const BlogDetailPage: React.FC<IBlog> = (props) => {
-  const { preview, title } = props
+  const { preview, title, banner } = props
 
   useEffect(() => {
     hljs.initHighlightingOnLoad()
@@ -26,6 +26,9 @@ const BlogDetailPage: React.FC<IBlog> = (props) => {
   return (
     <>
       <Banner
+        image={{
+          url: 'https://firebasestorage.googleapis.com/v0/b/yang-cms.appspot.com/o/friend_2.jpg?alt=media&token=4605a0dd-f5b1-47ed-915a-8ce2f7eb4c20'
+        }}
         element={<SectionHeader title={title} subtitle="Sharing My Thoughts" />}
       />
       <Container>

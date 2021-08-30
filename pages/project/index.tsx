@@ -3,8 +3,8 @@ import styled from 'styled-components'
 import { Banner } from 'components/organisms/Banner/Banner.component'
 import { SectionHeader } from 'components/molecules/SectionHeader'
 import { API } from 'libs/config/vars'
-import { IBlogBase } from 'types/schema/Blog'
-import { BlogList } from 'components/templates/BlogList'
+import { IProjectBase } from 'types/schema/Project'
+import { ProjectList } from 'components/templates/ProjectList'
 
 const Wrapper = styled.div`
   display: flex;
@@ -13,6 +13,7 @@ const Wrapper = styled.div`
   ${(props) => props.theme.media.desktop_sm} {
     display: block;
   }
+  height: 800px;
 `
 
 const MainSection = styled.div`
@@ -26,24 +27,26 @@ const MainSection = styled.div`
   }
 `
 
-interface IBlogPageProps {
-  blogs: Array<IBlogBase>
+interface IProjectPageProps {
+  projects: Array<IProjectBase>
 }
 
-const Blog: React.FC<IBlogPageProps> = (props) => {
-  const { blogs } = props
+const Project: React.FC<IProjectPageProps> = (props) => {
+  const { projects } = props
 
   return (
     <>
       <Banner
         image={{
-          url: 'https://firebasestorage.googleapis.com/v0/b/yang-cms.appspot.com/o/TEST.jpg?alt=media&token=2f1724e2-0233-44bd-8773-f1fa4ea74a30'
+          url: 'https://firebasestorage.googleapis.com/v0/b/yang-cms.appspot.com/o/archive.jpg?alt=media&token=a1668206-b86e-4d8d-941d-278ab83e44dc'
         }}
-        element={<SectionHeader title="Blog" subtitle="Sharing My Thoughts" />}
+        element={
+          <SectionHeader title="Projects" subtitle="Learning By Doing" />
+        }
       />
       <Wrapper>
         <MainSection>
-          <BlogList blogs={blogs} />
+          <ProjectList projects={projects} />
         </MainSection>
       </Wrapper>
     </>
@@ -51,21 +54,21 @@ const Blog: React.FC<IBlogPageProps> = (props) => {
 }
 
 export async function getStaticProps() {
-  const [blogData] = await Promise.all([
-    fetch(`${API.baseUrl}/blog`, API.headers).then((res) => res.json())
+  const [projectData] = await Promise.all([
+    fetch(`${API.baseUrl}/project`, API.headers).then((res) => res.json())
   ])
 
-  const blogs: Array<IBlogBase> = blogData.data
+  const projects: Array<IProjectBase> = projectData.data
 
-  if (!blogs) {
+  if (!projects) {
     return {
       notFound: true
     }
   }
 
   return {
-    props: { blogs }
+    props: { projects }
   }
 }
 
-export default Blog
+export default Project

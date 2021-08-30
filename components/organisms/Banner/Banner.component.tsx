@@ -1,10 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Overlay } from 'components/atoms/Overlay'
+import { IImage } from 'types/shared/Image'
 
-const BannerContainer = styled.div`
+const BannerContainer = styled.div<{ image: IImage }>`
   position: relative;
-  background-image: url('https://firebasestorage.googleapis.com/v0/b/yang-cms.appspot.com/o/TEST.jpg?alt=media&token=2f1724e2-0233-44bd-8773-f1fa4ea74a30');
+  background-image: url(${(props) => props.image.url});
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -25,17 +26,17 @@ const ContentWrapper = styled.div`
     color: #fff !important;
   }
 `
-
 export interface IProps {
+  image: IImage
   element: React.ReactNode
   childrens?: React.ReactNode
 }
 
 export const Banner: React.FC<IProps> = (props) => {
-  const { element, childrens } = props
+  const { element, childrens, image } = props
 
   return (
-    <BannerContainer>
+    <BannerContainer image={image}>
       <Overlay
         fullSize={false}
         css={`
