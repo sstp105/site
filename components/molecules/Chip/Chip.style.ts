@@ -5,6 +5,8 @@ import { IThemeProps } from 'components/molecules/Chip/Chip.type'
 /* -------------------------------------------------------------------------- */
 const Chip = styled.div<Partial<IThemeProps>>`
   display: flex;
+  min-width: 30px;
+  justify-content: center;
   align-items: center;
   width: fit-content;
   cursor: pointer;

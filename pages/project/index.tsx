@@ -17,7 +17,7 @@ const Wrapper = styled.div`
 `
 
 const MainSection = styled.div`
-  width: 1140px;
+  width: 1240px;
   border-radius: 5px;
   color: ${(props) => props.theme.color.typography};
   margin: 50px 0;

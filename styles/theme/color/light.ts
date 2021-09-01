@@ -102,7 +102,7 @@ export const light_color = {
   headline: '#242424',
   typography: '#464646',
   caption: '#A7A7A7',
-  surface: '#FFFFFF',
+  surface: '#F7F7F7',
   surface_shadow: '#FFFFFF',
   surface_variant: '#ECF7FD',
   overlay: '#0000008A',

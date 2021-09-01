@@ -50,6 +50,8 @@ export interface IDefaultProps extends IThemeProps {
    * className for additional styling
    */
   className: string
+
+  onClick: () => void
 }
 
 /**
@@ -70,4 +72,4 @@ export interface IProps extends Partial<IDefaultProps> {
 /**
  * Image component props to omit for defaultProps value init
  */
-export type PropsToOmit = 'testId' | 'className'
+export type PropsToOmit = 'testId' | 'className' | 'onClick'
