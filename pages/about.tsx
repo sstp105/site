@@ -4,8 +4,8 @@ import styled from 'styled-components'
 const Container = styled.div`
   color: ${(props) => props.theme.color.typography};
   background-color: ${(props) => props.theme.color.surface};
-  height: 500px;
-  width: 800px;
+  height: 600px;
+  width: 1140px;
   margin: 100px auto;
 `
 
