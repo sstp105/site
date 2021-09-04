@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import styled, { css } from 'styled-components'
 import { Banner } from 'components/organisms/Banner/Banner.component'
 import { SectionHeader } from 'components/molecules/SectionHeader'
@@ -6,6 +6,8 @@ import { API } from 'libs/config/vars'
 import { IVideo } from 'types/schema/Video'
 import { Image } from 'components/atoms/Image'
 import { Icon } from 'components/atoms/Icon'
+import { FONTAWESOME_ICONS } from 'libs/constants/icons'
+import { Typography } from 'components/atoms/Typography'
 
 const Wrapper = styled.div`
   display: flex;
@@ -26,10 +28,15 @@ const MainSection = styled.div`
     width: 100%;
   }
   display: flex;
+
+  ${(props) => props.theme.media.tablet} {
+    display: block;
+  }
 `
 
 const StyledVideo = styled.div`
   position: relative;
+  margin-bottom: 25px;
   width: 75%;
 
   video {
@@ -39,49 +46,72 @@ const StyledVideo = styled.div`
     width: 100%;
     border-radius: 15px;
   }
+
+  ${(props) => props.theme.media.tablet} {
+    width: 100%;
+  }
 `
 
 const StyledPlaylist = styled.div`
   width: 25%;
+  position: sticky;
+  top: 0;
   margin-left: 40px;
   img {
     border-radius: 5px;
     margin-bottom: 20px;
+  }
+
+  ${(props) => props.theme.media.tablet} {
+    width: 100%;
+    margin-left: 0px;
+    display: flex;
+    overflow-x: scroll;
+    ::-webkit-scrollbar {
+      height: 5px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent;
+      border-radius: 15px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 15px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+    img {
+      width: 200px;
+      margin-right: 20px;
+    }
   }
 `
 
 const Preview = styled.div<{ active: boolean }>`
   position: relative;
   z-index: 1;
+  opacity: 1;
+  transition: all 1s;
   ${(props) =>
     !props.active &&
     css`
       z-index: 0;
+      opacity: 0;
     `}
   img {
-    opacity: 1;
     border-radius: 15px;
-    transition: all 0.5s;
-    ${(props) =>
-      !props.active &&
-      css`
-        opacity: 0;
-      `}
   }
 
   i {
     position: absolute;
-    transition: all 0.5s;
-    opacity: 1;
     z-index: 2;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    ${(props) =>
-      !props.active &&
-      css`
-        opacity: 0;
-      `}
   }
 `
 
@@ -89,10 +119,8 @@ interface IVideoPage {
   videos: Array<IVideo>
 }
 
-// 剧场模式 关灯模式
 // replay
-// auto play
-// Play icon
+// auto play (right nav)
 const VideoPage: React.FC<IVideoPage> = (props) => {
   const { videos } = props
 
@@ -110,9 +138,12 @@ const VideoPage: React.FC<IVideoPage> = (props) => {
   }
 
   const switchVideo = (targetIndex: number) => {
+    if (targetIndex === playlistIndex) {
+      return
+    }
+
     // reset preview
     setShowBanner(true)
-
     setPlaylistIndex(targetIndex)
   }
 
@@ -133,17 +164,33 @@ const VideoPage: React.FC<IVideoPage> = (props) => {
         <MainSection>
           <StyledVideo>
             <Preview active={showBanner}>
-              <Icon iconName="fas fa-play-circle" size="xxl" />
-              <Image
-                src={videos[playlistIndex].banner.url}
-                alt=""
-                variant="square"
+              <Icon
+                iconName={FONTAWESOME_ICONS.play}
+                size="xxl"
                 onClick={play}
               />
+              <Image
+                src={videos[playlistIndex].banner.url}
+                alt={videos[playlistIndex].banner.alt}
+                variant="square"
+              />
             </Preview>
-            <video src={videos[playlistIndex].url} ref={curVideoRef} />
+            <video
+              src={videos[playlistIndex].url}
+              ref={curVideoRef}
+              poster={videos[playlistIndex].banner.url}
+            />
           </StyledVideo>
           <StyledPlaylist>
+            <Typography
+              variant="h5"
+              margin={false}
+              css={css`
+                margin-bottom: 20px;
+              `}
+            >
+              Playlist
+            </Typography>
             {videos.map((elem, index) => (
               <Image
                 key={elem._id}
