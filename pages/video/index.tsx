@@ -5,6 +5,7 @@ import { SectionHeader } from 'components/molecules/SectionHeader'
 import { API } from 'libs/config/vars'
 import { IVideo } from 'types/schema/Video'
 import { Image } from 'components/atoms/Image'
+import { Icon } from 'components/atoms/Icon'
 
 const Wrapper = styled.div`
   display: flex;
@@ -27,39 +28,60 @@ const MainSection = styled.div`
   display: flex;
 `
 
-const StyledVideo = styled.div<{ active: boolean }>`
+const StyledVideo = styled.div`
   position: relative;
-  img {
+  width: 75%;
+
+  video {
     position: absolute;
     top: 0;
     left: 0;
-    width: 55vw;
-    opacity: 1;
-    border-radius: 15px;
-    z-index: 1;
-    transition: all 0.5s;
-
-    ${(props) =>
-      !props.active &&
-      css`
-        opacity: 0;
-        z-index: 0;
-      `}
-  }
-  video {
-    width: 55vw;
+    width: 100%;
     border-radius: 15px;
   }
 `
 
 const StyledPlaylist = styled.div`
-  /* background-color: red; */
-  width: 350px;
+  width: 25%;
   margin-left: 40px;
-
   img {
     border-radius: 5px;
     margin-bottom: 20px;
+  }
+`
+
+const Preview = styled.div<{ active: boolean }>`
+  position: relative;
+  z-index: 1;
+  ${(props) =>
+    !props.active &&
+    css`
+      z-index: 0;
+    `}
+  img {
+    opacity: 1;
+    border-radius: 15px;
+    transition: all 0.5s;
+    ${(props) =>
+      !props.active &&
+      css`
+        opacity: 0;
+      `}
+  }
+
+  i {
+    position: absolute;
+    transition: all 0.5s;
+    opacity: 1;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    ${(props) =>
+      !props.active &&
+      css`
+        opacity: 0;
+      `}
   }
 `
 
@@ -109,13 +131,16 @@ const VideoPage: React.FC<IVideoPage> = (props) => {
       />
       <Wrapper>
         <MainSection>
-          <StyledVideo active={showBanner}>
-            <Image
-              src={videos[playlistIndex].banner.url}
-              alt=""
-              variant="square"
-              onClick={play}
-            />
+          <StyledVideo>
+            <Preview active={showBanner}>
+              <Icon iconName="fas fa-play-circle" size="xxl" />
+              <Image
+                src={videos[playlistIndex].banner.url}
+                alt=""
+                variant="square"
+                onClick={play}
+              />
+            </Preview>
             <video src={videos[playlistIndex].url} ref={curVideoRef} />
           </StyledVideo>
           <StyledPlaylist>
