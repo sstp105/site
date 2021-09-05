@@ -20,6 +20,7 @@ export const light_color = {
   action: '#1190F5',
   error: '#B00020',
   diabled: '#A7A7A7',
+  shadow: '#E5E9EF',
   box_shadow: 'rgb(115 127 143 / 16%) 0px 6px 16px;',
   code_blocks: code_light
 }
