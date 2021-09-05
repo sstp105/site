@@ -10,6 +10,7 @@ const BannerContainer = styled.div<{ image: IImage }>`
   background-position: center center;
   background-size: cover;
   margin-top: 75px;
+  margin-bottom: 50px;
   width: 100%;
   height: 350px;
 `
@@ -26,13 +27,13 @@ const ContentWrapper = styled.div`
     color: #fff !important;
   }
 `
-export interface IProps {
+export interface IBannerProps {
   image: IImage
   element: React.ReactNode
   childrens?: React.ReactNode
 }
 
-export const Banner: React.FC<IProps> = (props) => {
+export const Banner: React.FC<IBannerProps> = (props) => {
   const { element, childrens, image } = props
 
   return (

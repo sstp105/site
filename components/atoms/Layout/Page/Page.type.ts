@@ -6,6 +6,11 @@ export interface IThemeProps {
    * The max-width of the container
    */
   width: number
+
+  /**
+   * Apply margin-bottom
+   */
+  margin: number
 }
 
 /**

@@ -16,7 +16,8 @@ export const Page: React.FC<IProps> = (props) => {
 }
 
 const defaultProps: Omit<IDefaultProps, PropsToOmit> = {
-  width: 1440
+  width: 1440,
+  margin: 0
 }
 
 Page.defaultProps = defaultProps

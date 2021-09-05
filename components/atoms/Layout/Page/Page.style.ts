@@ -5,7 +5,7 @@ import { IThemeProps } from 'components/atoms/Layout/Page/Page.type'
 /*                               Styled Elements                              */
 /* -------------------------------------------------------------------------- */
 const PageRoot = styled.div<Partial<IThemeProps>>`
-  margin: 0 auto;
+  margin: 0 auto ${(props) => props.margin}px auto;
   max-width: ${(props) => props.width}px;
 `
 
