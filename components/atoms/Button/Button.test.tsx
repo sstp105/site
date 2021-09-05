@@ -3,6 +3,7 @@ import { render, screen, fireEvent } from '@testing-library/react'
 import { Theme } from 'styles'
 import { Button } from 'components/atoms/Button'
 import { Icon } from 'components/atoms/Icon'
+import { FONTAWESOME_ICONS } from 'libs/constants/icons'
 
 describe('<Button /> component render tests', () => {
   test('should render a default Button component in the document', () => {
@@ -19,8 +20,12 @@ describe('<Button /> component render tests', () => {
   })
 
   test('should startIcon and endIcon elements', () => {
-    const LeftIcon = <Icon iconName="fa-download" testId="left-icon" />
-    const RightIcon = <Icon iconName="fa-download" testId="right-icon" />
+    const LeftIcon = (
+      <Icon iconName={FONTAWESOME_ICONS.download} testId="left-icon" />
+    )
+    const RightIcon = (
+      <Icon iconName={FONTAWESOME_ICONS.download} testId="right-icon" />
+    )
 
     render(
       <Theme themeMode="light">

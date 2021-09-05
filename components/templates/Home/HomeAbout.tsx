@@ -8,6 +8,7 @@ import { Chip } from 'components/molecules/Chip'
 import { Button } from 'components/atoms/Button'
 import { Flex } from 'components/atoms/Layout'
 import { SectionHeader } from 'components/molecules/SectionHeader'
+import { FONTAWESOME_ICONS } from 'libs/constants/icons'
 
 const StyledContentWrapper = styled.div`
   width: 50%;
@@ -89,7 +90,7 @@ export const HomeAbout: React.FC = () => {
           </Flex>
           <Button
             variant="contained"
-            endIcon={<Icon iconName="fas fa-download" />}
+            endIcon={<Icon iconName={FONTAWESOME_ICONS.download} />}
             css={resumeBtnStyle}
           >
             Download Resume
