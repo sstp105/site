@@ -1,6 +1,6 @@
 import { customMediaQuery } from 'libs/utils/customMediaQuery'
 
-type Device =
+export type Device =
   | 'mobile_sm'
   | 'mobile'
   | 'tablet_sm'

@@ -19,7 +19,8 @@ export const Flex: React.FC<IProps> = (props) => {
 const defaultProps: Omit<IDefaultProps, PropsToOmit> = {
   justify: 'flex-start',
   align: 'center',
-  shadow: false
+  shadow: false,
+  autoWrap: true
 }
 
 Flex.defaultProps = defaultProps

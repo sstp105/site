@@ -1,3 +1,5 @@
+import { Device } from 'styles/theme/media'
+
 /**
  * @interface IThemeProps Flex layout theme props
  */
@@ -34,6 +36,11 @@ export interface IThemeProps {
    * Flex container width
    */
   width: string
+
+  /** True will enbale wrap for flex-wrap */
+  autoWrap: boolean
+
+  breakPoint: Device
 }
 
 /**
@@ -56,4 +63,4 @@ export interface IProps extends Partial<IDefaultProps> {
   children: React.ReactNode
 }
 
-export type PropsToOmit = 'testId' | 'width' | 'height'
+export type PropsToOmit = 'testId' | 'width' | 'height' | 'breakPoint'
