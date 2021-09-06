@@ -5,11 +5,23 @@ import { Typography } from 'components/atoms/Typography'
 import { Chip } from 'components/molecules/Chip'
 import { Card } from 'components/organisms/Card'
 import { IBlogBase } from 'types/schema/Blog'
+import { Link } from 'components/atoms/Link'
+import { Button } from 'components/atoms/Button'
 
 interface IBlogListProps {
   blogs: Array<IBlogBase>
 }
 
+const readMoreBtnStyle = css`
+  position: absolute;
+  bottom: 25px;
+  width: calc(100% - 50px);
+
+  ${(props) => props.theme.media.desktop_sm} {
+    width: 100%;
+    position: initial;
+  }
+`
 export const BlogList: React.FC<IBlogListProps> = (props) => {
   const { blogs } = props
 
@@ -24,7 +36,7 @@ export const BlogList: React.FC<IBlogListProps> = (props) => {
             media={banner}
             variant="flex"
             float={index % 2 === 0 ? 'left' : 'right'}
-            height="325px"
+            height="350px"
             css={css`
               margin-bottom: 25px;
             `}
@@ -72,6 +84,11 @@ export const BlogList: React.FC<IBlogListProps> = (props) => {
                 />
               ))}
             </Flex>
+            <Link href={`/blog/${blog._id}`}>
+              <Button variant="contained" fullWidth css={readMoreBtnStyle}>
+                Read More
+              </Button>
+            </Link>
           </Card>
         )
       })}

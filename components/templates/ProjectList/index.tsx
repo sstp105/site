@@ -6,6 +6,7 @@ import { Chip } from 'components/molecules/Chip'
 import { Card } from 'components/organisms/Card'
 import { IProjectBase } from 'types/schema/Project'
 import { Button } from 'components/atoms/Button'
+import { Link } from 'components/atoms/Link'
 
 interface IProjectListProps {
   projects: Array<IProjectBase>
@@ -76,9 +77,11 @@ export const ProjectList: React.FC<IProjectListProps> = (props) => {
                 />
               ))}
             </Flex>
-            <Button variant="contained" fullWidth css={readMoreBtnStyle}>
-              Read More
-            </Button>
+            <Link href={`/project/${project._id}`}>
+              <Button variant="contained" fullWidth css={readMoreBtnStyle}>
+                Read More
+              </Button>
+            </Link>
           </Card>
         )
       })}

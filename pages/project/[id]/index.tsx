@@ -1,14 +1,14 @@
 import React, { useRef, useEffect, useState } from 'react'
 import styled, { css } from 'styled-components'
 import { API } from 'libs/config/vars'
-import { IProject } from 'types/schema/Project'
+import { IProject, IProjectBase } from 'types/schema/Project'
 import { Image } from 'components/atoms/Image'
 import { Typography } from 'components/atoms/Typography'
 import { Chip } from 'components/molecules/Chip'
 import { Flex } from 'components/atoms/Layout'
-import { Icon } from 'components/atoms/Icon'
 import { Divider } from 'components/atoms/Divider'
 import { Breadcrumb } from 'components/molecules/Breadcrumb'
+import { GetStaticPaths, GetStaticProps } from 'next'
 
 const Container = styled.article`
   /* max-width: 800px; */
@@ -178,8 +178,28 @@ const ProjectDetailPage: React.FC<IProject> = (props) => {
   )
 }
 
-export async function getServerSideProps(context) {
+export const getStaticPaths: GetStaticPaths = async () => {
+  const [projectListData] = await Promise.all([
+    fetch(`${API.baseUrl}/project`, API.headers).then((res) => res.json())
+  ])
+
+  const projectList: Array<IProjectBase> = projectListData.data
+  const paths = projectList.map((elem) => {
+    return {
+      params: {
+        id: elem._id
+      }
+    }
+  })
+  return {
+    paths: paths,
+    fallback: false
+  }
+}
+
+export const getStaticProps: GetStaticProps = async (context) => {
   const { params } = context
+
   const [projectData] = await Promise.all([
     fetch(`${API.baseUrl}/project/${params.id}`, API.headers).then((res) =>
       res.json()
