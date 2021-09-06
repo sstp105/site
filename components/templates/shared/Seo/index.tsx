@@ -5,14 +5,13 @@ export interface ISeo {
   description: string
 }
 
-export const Seo: React.FC = () => {
+export const Seo: React.FC<ISeo> = (props) => {
+  const { title, description } = props
+
   return (
     <Head>
-      <title>Hey! This is Yang</title>
-      <meta
-        name="description"
-        content="Hey! This is Yang. A passion driven Front-end Developer"
-      />
+      <title>{title}</title>
+      <meta name="description" content={description} />
       <link
         rel="apple-touch-icon"
         sizes="180x180"

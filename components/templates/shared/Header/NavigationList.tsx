@@ -1,7 +1,7 @@
 import React from 'react'
 import { css } from 'styled-components'
 import { Link } from 'components/atoms/Link'
-import navigationData from 'data/navigation.json'
+import { navigation } from 'data/navigation'
 
 const navigationStyle = css`
   margin: 0 20px;
@@ -13,16 +13,16 @@ const navigationStyle = css`
 `
 
 export const NavigationList: React.FC = () => {
-  const navList = navigationData.map((elem) => (
-    <Link
-      key={elem.href}
-      variant="navigation"
-      href={elem.href}
-      css={navigationStyle}
-    >
-      {elem.label}
-    </Link>
-  ))
+  const navList = Object.keys(navigation).map((key) => {
+    const navigationItem = navigation[key]
+    const { _id, url, title } = navigationItem
+
+    return (
+      <Link key={_id} variant="navigation" href={url} css={navigationStyle}>
+        {title}
+      </Link>
+    )
+  })
 
   return <>{navList}</>
 }

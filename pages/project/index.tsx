@@ -1,29 +1,40 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { IBannerProps } from 'components/organisms/Banner/Banner.component'
 import { SectionHeader } from 'components/molecules/SectionHeader'
 import { API } from 'libs/config/vars'
 import { IProjectBase } from 'types/schema/Project'
 import { ProjectList } from 'components/templates/ProjectList'
 import { BannerPageTemplate } from 'components/templates/BannerPage'
+import { Seo } from 'components/templates/shared/Seo'
+import { NavigationContext } from 'context/NavigationContext'
 
 interface IProjectPageProps {
   projects: Array<IProjectBase>
 }
 
 const ProjectPage: React.FC<IProjectPageProps> = (props) => {
+  const { project } = useContext(NavigationContext)
   const { projects } = props
 
   const bannerProps: IBannerProps = {
     image: {
-      url: 'https://firebasestorage.googleapis.com/v0/b/yang-cms.appspot.com/o/archive.jpg?alt=media&token=a1668206-b86e-4d8d-941d-278ab83e44dc'
+      url: project.banner
     },
-    element: <SectionHeader title="Projects" subtitle="Learning By Doing" />
+    element: (
+      <SectionHeader
+        title={project.seo.title}
+        subtitle={project.seo.description}
+      />
+    )
   }
 
   return (
-    <BannerPageTemplate banner={bannerProps}>
-      <ProjectList projects={projects} />
-    </BannerPageTemplate>
+    <>
+      <Seo {...project.seo} />
+      <BannerPageTemplate banner={bannerProps}>
+        <ProjectList projects={projects} />
+      </BannerPageTemplate>
+    </>
   )
 }
 

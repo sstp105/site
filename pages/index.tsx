@@ -1,23 +1,27 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
+import AOS from 'aos'
+import { API } from 'libs/config/vars'
 import { Page } from 'components/atoms/Layout'
+import { Seo } from 'components/templates/shared/Seo'
 import { HomeHero } from 'components/templates/Home/HomeHero'
 import { IProfile } from 'types/schema/Profile'
 import { IBlogBase } from 'types/schema/Blog'
 import { IProjectBase } from 'types/schema/Project'
 import { ProfileContext } from 'context/ProfileContext'
 import { homeComponents } from 'components/templates/Home'
-import { API } from 'libs/config/vars'
 import { Spacer } from 'components/atoms/Spacer'
-import AOS from 'aos'
 import 'aos/dist/aos.css'
+import { NavigationContext } from 'context/NavigationContext'
 
-interface IHomeProps {
+interface IHomePageProps {
   profile: IProfile
   projects: Array<IProjectBase>
   blogs: Array<IBlogBase>
 }
 
-const Home: React.FC<IHomeProps> = (props) => {
+const HomePage: React.FC<IHomePageProps> = (props) => {
+  const { home } = useContext(NavigationContext)
+
   useEffect(() => {
     AOS.init({
       offset: 300,
@@ -28,26 +32,29 @@ const Home: React.FC<IHomeProps> = (props) => {
   }, [])
 
   return (
-    <ProfileContext.Provider value={props}>
-      <HomeHero />
-      <Page>
-        {Object.keys(homeComponents).map((key) => {
-          const { id, component } = homeComponents[key]
-          return (
-            <React.Fragment key={id}>
-              <section
-                id={id}
-                style={{ position: 'relative' }}
-                data-aos="fade-up"
-              >
-                {component}
-              </section>
-              <Spacer verticalSpace="200px" />
-            </React.Fragment>
-          )
-        })}
-      </Page>
-    </ProfileContext.Provider>
+    <>
+      <Seo {...home.seo} />
+      <ProfileContext.Provider value={props}>
+        <HomeHero />
+        <Page>
+          {Object.keys(homeComponents).map((key) => {
+            const { id, component } = homeComponents[key]
+            return (
+              <React.Fragment key={id}>
+                <section
+                  id={id}
+                  style={{ position: 'relative' }}
+                  data-aos="fade-up"
+                >
+                  {component}
+                </section>
+                <Spacer verticalSpace="200px" />
+              </React.Fragment>
+            )
+          })}
+        </Page>
+      </ProfileContext.Provider>
+    </>
   )
 }
 
@@ -73,4 +80,4 @@ export async function getStaticProps() {
   }
 }
 
-export default Home
+export default HomePage

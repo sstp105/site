@@ -1,29 +1,37 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { IBannerProps } from 'components/organisms/Banner/Banner.component'
 import { SectionHeader } from 'components/molecules/SectionHeader'
 import { API } from 'libs/config/vars'
 import { IBlogBase } from 'types/schema/Blog'
 import { BlogList } from 'components/templates/BlogList'
 import { BannerPageTemplate } from 'components/templates/BannerPage'
+import { Seo } from 'components/templates/shared/Seo'
+import { NavigationContext } from 'context/NavigationContext'
 
 interface IBlogPageProps {
   blogs: Array<IBlogBase>
 }
 
 const BlogPage: React.FC<IBlogPageProps> = (props) => {
+  const { blog } = useContext(NavigationContext)
   const { blogs } = props
 
   const bannerProps: IBannerProps = {
     image: {
-      url: 'https://firebasestorage.googleapis.com/v0/b/yang-cms.appspot.com/o/TEST.jpg?alt=media&token=2f1724e2-0233-44bd-8773-f1fa4ea74a30'
+      url: blog.banner
     },
-    element: <SectionHeader title="Blog" subtitle="Sharing My Thoughts" />
+    element: (
+      <SectionHeader title={blog.seo.title} subtitle={blog.seo.description} />
+    )
   }
 
   return (
-    <BannerPageTemplate banner={bannerProps}>
-      <BlogList blogs={blogs} />
-    </BannerPageTemplate>
+    <>
+      <Seo {...blog.seo} />
+      <BannerPageTemplate banner={bannerProps}>
+        <BlogList blogs={blogs} />
+      </BannerPageTemplate>
+    </>
   )
 }
 
