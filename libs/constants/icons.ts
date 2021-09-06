@@ -4,5 +4,9 @@ export const FONTAWESOME_ICONS = {
   github: 'fab fa-github',
   arrowLeft: 'fas fa-arrow-alt-circle-left',
   sun: 'fas fa-sun',
-  moon: 'fas fa-moon'
+  moon: 'fas fa-moon',
+  thumbsUp: 'fas fa-thumbs-up',
+  share: 'fas fa-share-alt',
+  desktop: 'fas fa-desktop',
+  bulb: 'fas fa-lightbulb'
 }

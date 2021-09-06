@@ -21,7 +21,7 @@ const ProjectPage: React.FC<IProjectPageProps> = (props) => {
   }
 
   return (
-    <BannerPageTemplate banner={bannerProps} pageWidth={1240}>
+    <BannerPageTemplate banner={bannerProps}>
       <ProjectList projects={projects} />
     </BannerPageTemplate>
   )

@@ -30,13 +30,13 @@ export const VideoPlayer = React.forwardRef<
       <Video {...videoProps} ref={ref} />
       <Control>
         <div>
-          <Icon iconName="fas fa-thumbs-up" size="xs" />
-          <Icon iconName="fas fa-share-alt" size="xs" />
+          <Icon iconName={FONTAWESOME_ICONS.thumbsUp} size="xs" />
+          <Icon iconName={FONTAWESOME_ICONS.share} size="xs" />
           <Icon iconName={FONTAWESOME_ICONS.download} size="xs" />
         </div>
         <div>
-          <Icon iconName="fas fa-desktop" size="xs" />
-          <Icon iconName="fas fa-lightbulb" size="xs" />
+          <Icon iconName={FONTAWESOME_ICONS.desktop} size="xs" />
+          <Icon iconName={FONTAWESOME_ICONS.bulb} size="xs" />
         </div>
       </Control>
     </>

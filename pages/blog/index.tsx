@@ -21,7 +21,7 @@ const BlogPage: React.FC<IBlogPageProps> = (props) => {
   }
 
   return (
-    <BannerPageTemplate banner={bannerProps} pageWidth={1240}>
+    <BannerPageTemplate banner={bannerProps}>
       <BlogList blogs={blogs} />
     </BannerPageTemplate>
   )

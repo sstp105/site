@@ -12,7 +12,6 @@ import { VideoDetail } from 'components/templates/VideoDetail'
 
 const Left = styled.div`
   width: 75%;
-  margin-bottom: 25px;
   margin-right: 40px;
   ${(props) => props.theme.media.desktop_sm} {
     width: 100%;
@@ -72,7 +71,7 @@ const VideoPage: React.FC<IVideoPage> = (props) => {
   }
 
   return (
-    <BannerPageTemplate banner={bannerProps} pageWidth={1240}>
+    <BannerPageTemplate banner={bannerProps}>
       <Flex
         autoWrap={false}
         align="flex-start"

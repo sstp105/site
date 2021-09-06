@@ -23,3 +23,7 @@ export const BannerPageTemplate: React.FC<IBannerPageTemplate> = (props) => {
     </>
   )
 }
+
+BannerPageTemplate.defaultProps = {
+  pageWidth: 1240
+}
