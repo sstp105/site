@@ -16,7 +16,7 @@ export const ChipList: React.FC<IChipListProps> = (props) => {
   return (
     <Flex
       css={css`
-        margin: 20px 0;
+        margin: 20px 0 0 0;
       `}
     >
       {items.map((t: string | IIconText, index: number) => {

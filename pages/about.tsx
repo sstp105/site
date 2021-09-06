@@ -1,19 +1,36 @@
-import React from 'react'
+import { SectionHeader } from 'components/molecules/SectionHeader'
+import { IBannerProps } from 'components/organisms/Banner/Banner.component'
+import { BannerPageTemplate } from 'components/templates/BannerPage'
+import { Seo } from 'components/templates/shared/Seo'
+import { NavigationContext } from 'context/NavigationContext'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 
-const Container = styled.div`
-  color: ${(props) => props.theme.color.typography};
-  background-color: ${(props) => props.theme.color.surface};
-  height: 600px;
-  width: 1140px;
-  margin: 100px auto;
+const Content = styled.div`
+  height: calc(100vh - 75px - 350px);
 `
 
 const AboutPage: React.FC = () => {
+  const { about } = useContext(NavigationContext)
+
+  const bannerProps: IBannerProps = {
+    image: {
+      url: about.banner
+    },
+    element: (
+      <SectionHeader title={about.seo.title} subtitle={about.seo.description} />
+    )
+  }
+
   return (
-    <Container>
-      <h1>Hello</h1>
-    </Container>
+    <>
+      <Seo {...about.seo} />
+      <BannerPageTemplate banner={bannerProps}>
+        <Content>
+          <h1>About Me</h1>
+        </Content>
+      </BannerPageTemplate>
+    </>
   )
 }
 

@@ -3,10 +3,11 @@ import { IBannerProps } from 'components/organisms/Banner/Banner.component'
 import { SectionHeader } from 'components/molecules/SectionHeader'
 import { API } from 'libs/config/vars'
 import { IBlogBase } from 'types/schema/Blog'
-import { BlogList } from 'components/templates/BlogList'
 import { BannerPageTemplate } from 'components/templates/BannerPage'
 import { Seo } from 'components/templates/shared/Seo'
 import { NavigationContext } from 'context/NavigationContext'
+import { PortfolioCard as BlogCard } from 'components/templates/PortfolioCard'
+import { IIconText } from 'types/schema/Profile'
 
 interface IBlogPageProps {
   blogs: Array<IBlogBase>
@@ -29,7 +30,39 @@ const BlogPage: React.FC<IBlogPageProps> = (props) => {
     <>
       <Seo {...blog.seo} />
       <BannerPageTemplate banner={bannerProps}>
-        <BlogList blogs={blogs} />
+        {blogs.map((elem, index: number) => {
+          const {
+            _id,
+            banner,
+            title,
+            summary,
+            category,
+            lastUpdatedDate,
+            tags
+          } = elem
+          const info: Array<IIconText> = [
+            {
+              icon: 'far fa-calendar-alt',
+              content: lastUpdatedDate.toString().split('T')[0]
+            },
+            {
+              icon: 'fas fa-inbox',
+              content: category
+            }
+          ]
+          return (
+            <BlogCard
+              key={_id}
+              banner={banner}
+              title={title}
+              description={summary}
+              tags={tags}
+              info={info}
+              pathTo={`/blog/${_id}`}
+              curIndex={index}
+            />
+          )
+        })}
       </BannerPageTemplate>
     </>
   )

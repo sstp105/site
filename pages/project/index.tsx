@@ -3,10 +3,11 @@ import { IBannerProps } from 'components/organisms/Banner/Banner.component'
 import { SectionHeader } from 'components/molecules/SectionHeader'
 import { API } from 'libs/config/vars'
 import { IProjectBase } from 'types/schema/Project'
-import { ProjectList } from 'components/templates/ProjectList'
 import { BannerPageTemplate } from 'components/templates/BannerPage'
 import { Seo } from 'components/templates/shared/Seo'
 import { NavigationContext } from 'context/NavigationContext'
+import { IIconText } from 'types/schema/Profile'
+import { PortfolioCard as ProjectCard } from 'components/templates/PortfolioCard'
 
 interface IProjectPageProps {
   projects: Array<IProjectBase>
@@ -32,7 +33,27 @@ const ProjectPage: React.FC<IProjectPageProps> = (props) => {
     <>
       <Seo {...project.seo} />
       <BannerPageTemplate banner={bannerProps}>
-        <ProjectList projects={projects} />
+        {projects.map((elem, index: number) => {
+          const { _id, banner, title, description, category, tags } = elem
+          const info: Array<IIconText> = [
+            {
+              icon: 'fas fa-inbox',
+              content: category
+            }
+          ]
+          return (
+            <ProjectCard
+              key={_id}
+              banner={banner}
+              title={title}
+              description={description}
+              tags={tags.slice(0, 3)}
+              info={info}
+              pathTo={`/project/${_id}`}
+              curIndex={index}
+            />
+          )
+        })}
       </BannerPageTemplate>
     </>
   )
