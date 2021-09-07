@@ -7,7 +7,7 @@ import { useIntersectionObserver } from 'libs/hooks/useIntersectionObserver'
 import { DesktopHeader } from './DesktopHeader'
 
 const DynamicMobileHeader = dynamic(() =>
-  import('components/templates/shared/Header/MobileHeader').then(
+  import('components/templates/Header/MobileHeader').then(
     (component) => component.MobileHeader
   )
 )

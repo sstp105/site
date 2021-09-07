@@ -1,7 +1,7 @@
 import { SectionHeader } from 'components/molecules/SectionHeader'
 import { IBannerProps } from 'components/organisms/Banner/Banner.component'
 import { BannerPageTemplate } from 'components/templates/BannerPage'
-import { Seo } from 'components/templates/shared/Seo'
+import { Seo } from 'components/templates/Seo'
 import { NavigationContext } from 'context/NavigationContext'
 import React, { useContext } from 'react'
 import styled from 'styled-components'

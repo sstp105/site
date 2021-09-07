@@ -9,7 +9,7 @@ import { Flex } from 'components/atoms/Layout/Flex'
 import { Playlist } from 'components/molecules/Playlist'
 import { BannerPageTemplate } from 'components/templates/BannerPage'
 import { VideoDetail } from 'components/templates/VideoDetail'
-import { Seo } from 'components/templates/shared/Seo'
+import { Seo } from 'components/templates/Seo'
 import { NavigationContext } from 'context/NavigationContext'
 
 const Left = styled.div`

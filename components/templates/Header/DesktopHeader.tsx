@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { NavigationList } from 'components/templates/shared/Header/NavigationList'
+import { NavigationList } from 'components/templates/Header/NavigationList'
 import { Icon } from 'components/atoms/Icon'
 import { ThemeContext } from 'context/ThemeContext'
 import { FONTAWESOME_ICONS } from 'libs/constants/icons'
