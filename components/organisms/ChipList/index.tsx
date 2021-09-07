@@ -1,6 +1,6 @@
 import React from 'react'
 import { css } from 'styled-components'
-import { Flex } from 'components/atoms/Layout'
+import { Flex } from 'components/atoms/Flex'
 import { Chip } from 'components/molecules/Chip'
 import { IIconText } from 'types/schema/Profile'
 import { IThemeProps } from 'components/molecules/Chip/Chip.type'

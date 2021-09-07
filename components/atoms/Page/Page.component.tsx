@@ -1,9 +1,9 @@
-import { Styled } from 'components/atoms/Layout/Page/Page.style'
+import { Styled } from 'components/atoms/Page/Page.style'
 import {
   IDefaultProps,
   IProps,
   PropsToOmit
-} from 'components/atoms/Layout/Page/Page.type'
+} from 'components/atoms/Page/Page.type'
 
 export const Page: React.FC<IProps> = (props) => {
   const { children, testId, ...themeProps } = props

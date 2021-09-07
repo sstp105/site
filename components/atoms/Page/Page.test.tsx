@@ -1,7 +1,7 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 import { Theme } from 'styles'
-import { Page } from 'components/atoms/Layout'
+import { Page } from 'components/atoms/Page'
 
 describe('<Page /> component render tests', () => {
   test('should render the Page container and children elements', () => {

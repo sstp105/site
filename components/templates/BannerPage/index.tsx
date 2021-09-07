@@ -1,4 +1,4 @@
-import { Page } from 'components/atoms/Layout'
+import { Page } from 'components/atoms/Page'
 import {
   Banner,
   IBannerProps

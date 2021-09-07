@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { IThemeProps } from 'components/atoms/Layout/Page/Page.type'
+import { IThemeProps } from 'components/atoms/Page/Page.type'
 
 /* -------------------------------------------------------------------------- */
 /*                               Styled Elements                              */

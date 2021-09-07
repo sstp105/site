@@ -4,7 +4,7 @@ import { ProfileContext } from 'context/ProfileContext'
 import { SectionHeader } from 'components/molecules/SectionHeader'
 import { Card } from 'components/organisms/Card'
 import { Typography } from 'components/atoms/Typography'
-import { Flex } from 'components/atoms/Layout'
+import { Flex } from 'components/atoms/Flex'
 import { IBlogBase } from 'types/schema/Blog'
 
 export const HomeBlog: React.FC = () => {

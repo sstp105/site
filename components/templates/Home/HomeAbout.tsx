@@ -6,7 +6,7 @@ import { Icon } from 'components/atoms/Icon'
 import { Image } from 'components/atoms/Image'
 import { Chip } from 'components/molecules/Chip'
 import { Button } from 'components/atoms/Button'
-import { Flex } from 'components/atoms/Layout'
+import { Flex } from 'components/atoms/Flex'
 import { SectionHeader } from 'components/molecules/SectionHeader'
 import { FONTAWESOME_ICONS } from 'libs/constants/icons'
 

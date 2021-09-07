@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import dynamic from 'next/dynamic'
-import { Flex } from 'components/atoms/Layout'
+import { Flex } from 'components/atoms/Flex'
 import { useMediaQuery } from 'libs/hooks/useMediaQuery'
 import { css } from 'styled-components'
 import { useIntersectionObserver } from 'libs/hooks/useIntersectionObserver'

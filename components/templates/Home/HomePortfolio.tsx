@@ -6,7 +6,7 @@ import { Card } from 'components/organisms/Card'
 import { Button } from 'components/atoms/Button'
 import { Typography } from 'components/atoms/Typography'
 import { Chip } from 'components/molecules/Chip'
-import { Flex } from 'components/atoms/Layout'
+import { Flex } from 'components/atoms/Flex'
 import { IProjectBase } from 'types/schema/Project'
 
 const readMoreBtnStyle = css`

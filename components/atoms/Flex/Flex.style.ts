@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { IThemeProps } from 'components/atoms/Layout/Flex/Flex.type'
+import { IThemeProps } from 'components/atoms/Flex/Flex.type'
 
 /* -------------------------------------------------------------------------- */
 /*                               Styled Elements                              */

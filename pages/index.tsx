@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import AOS from 'aos'
 import { API } from 'libs/config/vars'
-import { Page } from 'components/atoms/Layout'
+import { Page } from 'components/atoms/Page'
 import { Seo } from 'components/templates/Seo'
 import { HomeHero } from 'components/templates/Home/HomeHero'
 import { IProfile } from 'types/schema/Profile'
