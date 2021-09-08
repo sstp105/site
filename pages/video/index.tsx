@@ -16,24 +16,16 @@ const Left = styled.div`
   width: 75%;
   margin-right: 40px;
   ${(props) => props.theme.media.desktop_sm} {
+    order: 1;
     width: 100%;
     margin-right: 0;
+    margin-top: 25px;
   }
 `
 
 interface IVideoPage {
   videos: Array<IVideo>
 }
-
-const videoTags = [
-  '4K',
-  '动画综合',
-  '动漫',
-  '60FPS',
-  '辉夜大小姐想让我告白',
-  '藤原千花',
-  '书记舞'
-]
 
 const VideoPage: React.FC<IVideoPage> = (props) => {
   const { videos } = props
@@ -46,22 +38,6 @@ const VideoPage: React.FC<IVideoPage> = (props) => {
       return
     }
     setPlaylistIndex(targetIndex)
-  }
-
-  const videoProps = {
-    title: videos[playlistIndex].title,
-    publishedDate: '2021-08-28 18:26:00',
-    tags: videoTags,
-    banner: videos[playlistIndex].banner,
-    url: videos[playlistIndex].url,
-    description: `
-      http://steamworkshop.download/download/view/1807411209
-      转载自wallpaper engine的一款动态桌面壁纸 原作者名: 2825659998
-      原视频标题: 【书记舞】【4k】【60帧】【waifu2xLab图像处理】藤原千花
-      简介: 转载自wallpaper engine的一款动态桌面壁纸， 网盘链接: <br />
-      https://pan.baidu.com/s/17XnGy7mzXgEnfiN0MA735A 提取码: <br />
-      bgs2进行下载，不要忘了三连哦^_^
-    `
   }
 
   const bannerProps: IBannerProps = {
@@ -86,7 +62,7 @@ const VideoPage: React.FC<IVideoPage> = (props) => {
           `}
         >
           <Left>
-            <VideoDetail {...videoProps} />
+            <VideoDetail {...videos[playlistIndex]} />
           </Left>
           <Playlist title="Playlist">
             {videos.map((elem, index) => (

@@ -2,20 +2,41 @@ import React, { useState, useRef, useEffect } from 'react'
 import { Typography } from 'components/atoms/Typography'
 import { ChipList } from 'components/organisms/ChipList'
 import { VideoPlayer } from 'components/organisms/VideoPlayer'
-import { css } from 'styled-components'
+import styled, { css } from 'styled-components'
 import { IVideoProps } from 'components/molecules/Video'
-import { IImage } from 'types/shared/Image'
+import { IVideo } from 'types/schema/Video'
+import { Image } from 'components/atoms/Image'
+import { Divider } from 'components/atoms/Divider'
 
-export interface IVideoDetail {
-  title: string
-  description: string
-  publishedDate: string
-  tags: Array<string>
-  banner: IImage
-  url: string
-}
+const MusicContainer = styled.div`
+  position: relative;
+  width: 200px;
+  height: 200px;
+`
 
-export const VideoDetail: React.FC<IVideoDetail> = (props) => {
+const MusicBanner = styled.div`
+  position: absolute;
+  top: 20px;
+  left: 2px;
+  img {
+    border-radius: 5px;
+  }
+`
+
+const Subject = styled.div`
+  img {
+    border-radius: 5px;
+  }
+`
+
+const Demo = styled.div`
+  /* background-color: ${(props) => props.theme.color.surface}; */
+  box-shadow: 0 0 8px ${(props) => props.theme.color.shadow};
+  padding: 20px;
+  border-radius: 10px;
+`
+
+export const VideoDetail: React.FC<IVideo> = (props) => {
   const { title, description, publishedDate, tags, banner, url } = props
 
   const curVideoRef = useRef(null)
@@ -55,6 +76,40 @@ export const VideoDetail: React.FC<IVideoDetail> = (props) => {
       <VideoPlayer videoProps={videoProps} ref={curVideoRef} />
       <Typography variant="body">{description}</Typography>
       <ChipList items={tags} size="small" variant="outlined" />
+      <div>
+        <Typography variant="h6">关联条目</Typography>
+        <Subject>
+          <Image
+            src="https://lain.bgm.tv/pic/cover/l/48/9d/1424_q8FMQ.jpg"
+            alt=""
+            width="125"
+            variant="square"
+          />
+          <Typography margin={true}>K-ON 轻音少女</Typography>
+        </Subject>
+
+        <Typography variant="h6" margin={false}>
+          音乐
+        </Typography>
+        <MusicContainer>
+          <Image
+            src="images/music_frame.png"
+            alt=""
+            width="100%"
+            height="100%"
+            variant="square"
+          />
+          <MusicBanner>
+            <Image
+              src="https://i1.sndcdn.com/artworks-000037227702-kv2iqq-t500x500.jpg"
+              alt=""
+              width="165"
+              height="165"
+              variant="square"
+            />
+          </MusicBanner>
+        </MusicContainer>
+      </div>
     </>
   )
 }
