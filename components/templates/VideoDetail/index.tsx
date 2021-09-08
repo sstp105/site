@@ -7,6 +7,7 @@ import { IVideoProps } from 'components/molecules/Video'
 import { IVideo } from 'types/schema/Video'
 import { Image } from 'components/atoms/Image'
 import { Divider } from 'components/atoms/Divider'
+import { Album } from 'components/organisms/Album'
 
 const MusicContainer = styled.div`
   position: relative;
@@ -91,7 +92,7 @@ export const VideoDetail: React.FC<IVideo> = (props) => {
         <Typography variant="h6" margin={false}>
           音乐
         </Typography>
-        <MusicContainer>
+        {/* <MusicContainer>
           <Image
             src="images/music_frame.png"
             alt=""
@@ -108,7 +109,13 @@ export const VideoDetail: React.FC<IVideo> = (props) => {
               variant="square"
             />
           </MusicBanner>
-        </MusicContainer>
+        </MusicContainer> */}
+
+        <Album
+          banner={{
+            url: 'https://lain.bgm.tv/pic/cover/l/14/28/231883_eVji6.jpg'
+          }}
+        />
       </div>
     </>
   )
