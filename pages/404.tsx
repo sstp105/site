@@ -1,10 +1,13 @@
+import { ErrorPageTemplate } from 'components/templates/ErrorPage'
 import React from 'react'
 
 const NotFoundPage: React.FC = () => {
   return (
-    <div>
-      <h1>Not found</h1>
-    </div>
+    <ErrorPageTemplate
+      title="404 Not Found"
+      description="Oops! We can't seem to find the page you are looking for"
+      errorCode={404}
+    />
   )
 }
 
