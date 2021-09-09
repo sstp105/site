@@ -19,7 +19,6 @@ const readMoreBtnStyle = css`
   }
 `
 
-// should extend from PortfolioBase
 interface IPortfolioCard {
   banner: IImage
   title: string

@@ -1,3 +1,4 @@
+import { IThemeProps as ITypographyThemeProps } from 'components/atoms/Typography/Typography.types'
 /**
  * @interface IThemeProps SectionHeader theme props
  */
@@ -12,6 +13,7 @@ export interface IThemeProps {
  * @interface IDefaultProps SectionHeader optional props
  */
 export interface IDefaultProps extends IThemeProps {
+  transform: ITypographyThemeProps['transform']
   /**
    * data-testid
    */

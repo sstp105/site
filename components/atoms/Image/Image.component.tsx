@@ -17,7 +17,8 @@ const defaultProps: Omit<IDefaultProps, PropsToOmit> = {
   height: 'auto',
   cover: 'cover',
   variant: 'rounded',
-  shadow: false
+  shadow: false,
+  alt: ''
 }
 
 Image.defaultProps = defaultProps

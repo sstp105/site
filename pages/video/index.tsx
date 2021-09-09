@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import styled, { css } from 'styled-components'
 import { IBannerProps } from 'components/organisms/Banner/Banner.component'
 import { SectionHeader } from 'components/molecules/SectionHeader'
@@ -10,7 +10,7 @@ import { Playlist } from 'components/molecules/Playlist'
 import { BannerPageTemplate } from 'components/templates/BannerPage'
 import { VideoDetail } from 'components/templates/VideoDetail'
 import { Seo } from 'components/templates/Seo'
-import { NavigationContext } from 'context/NavigationContext'
+import { NAVIGATION } from 'libs/constants/navigation'
 
 const Left = styled.div`
   width: 75%;
@@ -29,29 +29,26 @@ interface IVideoPage {
 
 const VideoPage: React.FC<IVideoPage> = (props) => {
   const { videos } = props
-  const { video } = useContext(NavigationContext)
+  const { seo, banner } = NAVIGATION.video
 
   const [playlistIndex, setPlaylistIndex] = useState<number>(0)
 
   const switchVideo = (targetIndex: number) => {
-    if (targetIndex === playlistIndex) {
-      return
+    if (targetIndex !== playlistIndex) {
+      setPlaylistIndex(targetIndex)
     }
-    setPlaylistIndex(targetIndex)
   }
 
   const bannerProps: IBannerProps = {
     image: {
-      url: video.banner
+      url: banner
     },
-    element: (
-      <SectionHeader title={video.seo.title} subtitle={video.seo.description} />
-    )
+    element: <SectionHeader title={seo.title} subtitle={seo.description} />
   }
 
   return (
     <>
-      <Seo {...video.seo} />
+      <Seo {...seo} />
       <BannerPageTemplate banner={bannerProps}>
         <Flex
           autoWrap={false}
@@ -65,15 +62,18 @@ const VideoPage: React.FC<IVideoPage> = (props) => {
             <VideoDetail {...videos[playlistIndex]} />
           </Left>
           <Playlist title="Playlist">
-            {videos.map((elem, index) => (
-              <Image
-                key={elem._id}
-                src={elem.banner.url}
-                alt={elem.banner.alt}
-                variant="square"
-                onClick={() => switchVideo(index)}
-              />
-            ))}
+            {videos.map((elem, index) => {
+              const { _id, banner } = elem
+              return (
+                <Image
+                  key={_id}
+                  src={banner.url}
+                  alt={banner.alt}
+                  variant="square"
+                  onClick={() => switchVideo(index)}
+                />
+              )
+            })}
           </Playlist>
         </Flex>
       </BannerPageTemplate>

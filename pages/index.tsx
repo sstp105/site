@@ -1,17 +1,17 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import AOS from 'aos'
-import { API } from 'libs/config/vars'
 import { Page } from 'components/atoms/Page'
 import { Seo } from 'components/templates/Seo'
 import { HomeHero } from 'components/templates/Home/HomeHero'
-import { IProfile } from 'types/schema/Profile'
-import { IBlogBase } from 'types/schema/Blog'
-import { IProjectBase } from 'types/schema/Project'
 import { ProfileContext } from 'context/ProfileContext'
 import { homeComponents } from 'components/templates/Home'
 import { Spacer } from 'components/atoms/Spacer'
+import { IProfile } from 'types/schema/Profile'
+import { IBlogBase } from 'types/schema/Blog'
+import { IProjectBase } from 'types/schema/Project'
+import { NAVIGATION } from 'libs/constants/navigation'
+import { API } from 'libs/config/vars'
 import 'aos/dist/aos.css'
-import { NavigationContext } from 'context/NavigationContext'
 
 interface IHomePageProps {
   profile: IProfile
@@ -20,8 +20,7 @@ interface IHomePageProps {
 }
 
 const HomePage: React.FC<IHomePageProps> = (props) => {
-  const { home } = useContext(NavigationContext)
-
+  // Init AOS with custom settings (scroll animation)
   useEffect(() => {
     AOS.init({
       offset: 300,
@@ -33,7 +32,7 @@ const HomePage: React.FC<IHomePageProps> = (props) => {
 
   return (
     <>
-      <Seo {...home.seo} />
+      <Seo {...NAVIGATION.home.seo} />
       <ProfileContext.Provider value={props}>
         <HomeHero />
         <Page>

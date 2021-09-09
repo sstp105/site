@@ -3,16 +3,26 @@ import styled from 'styled-components'
 import { Image } from 'components/atoms/Image'
 import { getImagePath } from 'libs/constants/images'
 import { IImage } from 'types/shared/Image'
+import { SizeBase } from 'types/design/Size'
+import { Typography } from 'components/atoms/Typography'
 
-const AlbumContainer = styled.div<{ albumSize: number }>`
+const style = {
+  size: {
+    s: 0.8,
+    m: 1,
+    l: 1.2
+  }
+}
+
+const AlbumContainer = styled.div<{ size: SizeBase }>`
   position: relative;
-  width: ${(props) => props.albumSize}px;
-  height: ${(props) => props.albumSize}px;
-  transform: scale(0.8);
+  width: 200px;
+  height: 200px;
+  transform: ${(props) => `scale(${style.size[props.size]})`};
   transform-origin: top left;
 `
 
-const AlbumBanner = styled.div<{ albumSize: number }>`
+const AlbumBanner = styled.div`
   position: absolute;
   top: 20px;
   left: 2px;
@@ -22,15 +32,15 @@ const AlbumBanner = styled.div<{ albumSize: number }>`
 `
 
 export interface IAlbumProps {
-  albumSize?: number
+  size?: SizeBase
   banner: IImage
 }
 
 export const Album: React.FC<IAlbumProps> = (props) => {
-  const { albumSize, banner } = props
+  const { size, banner } = props
 
   return (
-    <AlbumContainer albumSize={albumSize}>
+    <AlbumContainer size={size}>
       <Image
         src={getImagePath('albumFrame')}
         alt=""
@@ -38,19 +48,22 @@ export const Album: React.FC<IAlbumProps> = (props) => {
         height="100%"
         variant="square"
       />
-      <AlbumBanner albumSize={albumSize}>
+      <AlbumBanner>
         <Image
           src={banner.url}
           alt={banner.alt}
-          width={`${albumSize / 1.21}px`}
-          height={`${albumSize / 1.21}px`}
+          width="163px"
+          height="163px"
           variant="square"
         />
       </AlbumBanner>
+      <Typography variant="caption" margin={false}>
+        Sincerely - 茅原実里
+      </Typography>
     </AlbumContainer>
   )
 }
 
 Album.defaultProps = {
-  albumSize: 200
+  size: 'm'
 }

@@ -8,13 +8,13 @@ import {
 } from 'components/molecules/SectionHeader/SectionHeader.type'
 
 export const SectionHeader: React.FC<IProps> = (props) => {
-  const { title, subtitle, testId, ...themeProps } = props
+  const { title, subtitle, testId, transform, ...themeProps } = props
 
   return (
     <Styled.SectionHeader data-testid={testId} {...themeProps}>
       <Typography
         variant="h3"
-        transform="uppercase"
+        transform={transform}
         align="center"
         margin={false}
       >
@@ -28,7 +28,8 @@ export const SectionHeader: React.FC<IProps> = (props) => {
 }
 
 const defaultProps: Omit<IDefaultProps, PropsToOmit> = {
-  margin: true
+  margin: true,
+  transform: 'uppercase'
 }
 
 SectionHeader.defaultProps = defaultProps

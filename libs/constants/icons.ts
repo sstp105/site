@@ -8,5 +8,7 @@ export const FONTAWESOME_ICONS = {
   thumbsUp: 'fas fa-thumbs-up',
   share: 'fas fa-share-alt',
   desktop: 'fas fa-desktop',
-  bulb: 'fas fa-lightbulb'
+  bulb: 'fas fa-lightbulb',
+  inbox: 'fas fa-inbox',
+  calendar: 'far fa-calendar-alt'
 }

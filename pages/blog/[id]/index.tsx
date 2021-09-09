@@ -7,26 +7,49 @@ import { SectionHeader } from 'components/molecules/SectionHeader'
 import { BannerPageTemplate } from 'components/templates/BannerPage'
 import { Article } from 'components/organisms/Article'
 import { GetStaticPaths, GetStaticProps } from 'next'
+import { ChipList } from 'components/organisms/ChipList'
+import { ISeo, Seo } from 'components/templates/Seo'
 
-// TODO: tags 添加到 SectionHeader中
 const BlogDetailPage: React.FC<IBlog> = (props) => {
-  const { preview, title, tags } = props
+  const { preview, title, tags, summary } = props
+
+  // Init Highlight.js for code block highlight
+  useEffect(() => {
+    hljs.initHighlightingOnLoad()
+  }, [])
 
   const bannerProps: IBannerProps = {
     image: {
       url: 'https://firebasestorage.googleapis.com/v0/b/yang-cms.appspot.com/o/friend_2.jpg?alt=media&token=4605a0dd-f5b1-47ed-915a-8ce2f7eb4c20'
     },
-    element: <SectionHeader title={title} subtitle="Sharing My Thoughts" />
+    element: (
+      <>
+        <SectionHeader
+          title={title}
+          subtitle="Sharing My Thoughts"
+          transform="capitalize"
+        />
+        <ChipList
+          items={tags}
+          variant="contained"
+          size="small"
+          justify="center"
+        />
+      </>
+    )
+  }
+  const seoProps: ISeo = {
+    title: title,
+    description: summary
   }
 
-  useEffect(() => {
-    hljs.initHighlightingOnLoad()
-  }, [])
-
   return (
-    <BannerPageTemplate banner={bannerProps} pageWidth={800}>
-      <Article article={preview} />
-    </BannerPageTemplate>
+    <>
+      <Seo {...seoProps} />
+      <BannerPageTemplate banner={bannerProps} pageWidth={800}>
+        <Article article={preview} />
+      </BannerPageTemplate>
+    </>
   )
 }
 

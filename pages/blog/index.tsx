@@ -1,65 +1,54 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { IBannerProps } from 'components/organisms/Banner/Banner.component'
 import { SectionHeader } from 'components/molecules/SectionHeader'
 import { API } from 'libs/config/vars'
 import { IBlogBase } from 'types/schema/Blog'
 import { BannerPageTemplate } from 'components/templates/BannerPage'
 import { Seo } from 'components/templates/Seo'
-import { NavigationContext } from 'context/NavigationContext'
 import { PortfolioCard as BlogCard } from 'components/templates/PortfolioCard'
 import { IIconText } from 'types/schema/Profile'
+import { NAVIGATION } from 'libs/constants/navigation'
+import { FONTAWESOME_ICONS } from 'libs/constants/icons'
 
 interface IBlogPageProps {
   blogs: Array<IBlogBase>
 }
 
 const BlogPage: React.FC<IBlogPageProps> = (props) => {
-  const { blog } = useContext(NavigationContext)
+  const { banner, seo } = NAVIGATION.blog
   const { blogs } = props
 
   const bannerProps: IBannerProps = {
     image: {
-      url: blog.banner
+      url: banner
     },
-    element: (
-      <SectionHeader title={blog.seo.title} subtitle={blog.seo.description} />
-    )
+    element: <SectionHeader title={seo.title} subtitle={seo.description} />
   }
 
   return (
     <>
-      <Seo {...blog.seo} />
+      <Seo {...seo} />
       <BannerPageTemplate banner={bannerProps}>
         {blogs.map((elem, index: number) => {
-          const {
-            _id,
-            banner,
-            title,
-            summary,
-            category,
-            lastUpdatedDate,
-            tags
-          } = elem
+          const { _id, summary, category, lastUpdatedDate, ...restProps } = elem
           const info: Array<IIconText> = [
             {
-              icon: 'far fa-calendar-alt',
+              icon: FONTAWESOME_ICONS.calendar,
               content: lastUpdatedDate.toString().split('T')[0]
             },
             {
-              icon: 'fas fa-inbox',
+              icon: FONTAWESOME_ICONS.inbox,
               content: category
             }
           ]
           return (
             <BlogCard
               key={_id}
-              banner={banner}
-              title={title}
-              description={summary}
-              tags={tags}
               info={info}
               pathTo={`/blog/${_id}`}
               curIndex={index}
+              description={summary}
+              {...restProps}
             />
           )
         })}

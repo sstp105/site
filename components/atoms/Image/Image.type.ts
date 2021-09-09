@@ -52,6 +52,11 @@ export interface IDefaultProps extends IThemeProps {
   className: string
 
   onClick: () => void
+
+  /**
+   * Image alt attribute value
+   */
+  alt: string
 }
 
 /**
@@ -62,11 +67,6 @@ export interface IProps extends Partial<IDefaultProps> {
    * Image source
    */
   src: string
-
-  /**
-   * Image alt attribute value
-   */
-  alt: string
 }
 
 /**

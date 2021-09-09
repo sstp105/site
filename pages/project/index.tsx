@@ -1,56 +1,49 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { IBannerProps } from 'components/organisms/Banner/Banner.component'
 import { SectionHeader } from 'components/molecules/SectionHeader'
 import { API } from 'libs/config/vars'
 import { IProjectBase } from 'types/schema/Project'
 import { BannerPageTemplate } from 'components/templates/BannerPage'
 import { Seo } from 'components/templates/Seo'
-import { NavigationContext } from 'context/NavigationContext'
 import { IIconText } from 'types/schema/Profile'
 import { PortfolioCard as ProjectCard } from 'components/templates/PortfolioCard'
+import { NAVIGATION } from 'libs/constants/navigation'
+import { FONTAWESOME_ICONS } from 'libs/constants/icons'
 
 interface IProjectPageProps {
   projects: Array<IProjectBase>
 }
 
 const ProjectPage: React.FC<IProjectPageProps> = (props) => {
-  const { project } = useContext(NavigationContext)
+  const { banner, seo } = NAVIGATION.project
   const { projects } = props
 
   const bannerProps: IBannerProps = {
     image: {
-      url: project.banner
+      url: banner
     },
-    element: (
-      <SectionHeader
-        title={project.seo.title}
-        subtitle={project.seo.description}
-      />
-    )
+    element: <SectionHeader title={seo.title} subtitle={seo.description} />
   }
 
   return (
     <>
-      <Seo {...project.seo} />
+      <Seo {...seo} />
       <BannerPageTemplate banner={bannerProps}>
         {projects.map((elem, index: number) => {
-          const { _id, banner, title, description, category, tags } = elem
+          const { _id, category, ...restProps } = elem
           const info: Array<IIconText> = [
             {
-              icon: 'fas fa-inbox',
+              icon: FONTAWESOME_ICONS.inbox,
               content: category
             }
           ]
           return (
             <ProjectCard
               key={_id}
-              banner={banner}
-              title={title}
-              description={description}
-              tags={tags.slice(0, 3)}
               info={info}
               pathTo={`/project/${_id}`}
               curIndex={index}
+              {...restProps}
             />
           )
         })}
