@@ -12,6 +12,9 @@ export const Seo: React.FC<ISeo> = (props) => {
     <Head>
       <title>{title}</title>
       <meta name="description" content={description} />
+      <meta name="msapplication-TileColor" content="#da532c" />
+      <meta name="theme-color" content="#ffffff" />
+      <link rel="manifest" href="/site.webmanifest" />
       <link
         rel="apple-touch-icon"
         sizes="180x180"
@@ -33,9 +36,6 @@ export const Seo: React.FC<ISeo> = (props) => {
         rel="stylesheet"
         href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
       />
-      <link rel="manifest" href="/site.webmanifest" />
-      <meta name="msapplication-TileColor" content="#da532c" />
-      <meta name="theme-color" content="#ffffff" />
     </Head>
   )
 }

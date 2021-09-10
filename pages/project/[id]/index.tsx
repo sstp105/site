@@ -10,15 +10,14 @@ import { ISeo, Seo } from 'components/templates/Seo'
 import { ChipList } from 'components/organisms/ChipList'
 import { Carousel } from 'components/organisms/Carousel'
 import { Page } from 'components/atoms/Page'
+import { Flex } from 'components/atoms/Flex'
 
-const TextContainer = styled.div`
-  display: flex;
-  margin: 20px 0;
-`
-
-const SubTextContainer = styled.div`
+const FeatureDetailContainer = styled.div`
   margin-left: auto;
   width: 70%;
+  ${(props) => props.theme.media.tablet_sm} {
+    width: 100%;
+  }
 `
 
 const ProjectDetailPage: React.FC<IProject> = (props) => {
@@ -45,17 +44,23 @@ const ProjectDetailPage: React.FC<IProject> = (props) => {
         <Typography variant="caption">{category}</Typography>
         <Typography>{description}</Typography>
         <ChipList items={tags} variant="outlined" size="small" />
-
         <Carousel images={previews} />
 
         <Divider />
+
         {features.map((elem) => {
-          const { title, previews, _id } = elem
+          const { title, _id } = elem
           const subfeatures = elem.features
           return (
-            <TextContainer key={_id}>
+            <Flex
+              key={_id}
+              align="flex-start"
+              css={css`
+                margin: 20px 0;
+              `}
+            >
               <Typography variant="h4">{title}</Typography>
-              <SubTextContainer>
+              <FeatureDetailContainer>
                 {subfeatures.map((item) => {
                   const { title, contents, _id } = item
                   return (
@@ -67,8 +72,8 @@ const ProjectDetailPage: React.FC<IProject> = (props) => {
                     </React.Fragment>
                   )
                 })}
-              </SubTextContainer>
-            </TextContainer>
+              </FeatureDetailContainer>
+            </Flex>
           )
         })}
       </Page>

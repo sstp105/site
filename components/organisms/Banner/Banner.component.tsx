@@ -5,10 +5,11 @@ import { IImage } from 'types/shared/Image'
 
 const BannerContainer = styled.div<{ image: IImage }>`
   position: relative;
-  background-image: url(${(props) => props.image.url});
+  background-image: url('https://wallpaper.dog/large/17057841.jpg');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+  background-attachment: fixed;
   margin-top: 75px;
   margin-bottom: 50px;
   width: 100%;
@@ -42,7 +43,7 @@ export const Banner: React.FC<IBannerProps> = (props) => {
         fullSize={false}
         css={`
           z-index: 0;
-          background-color: rgba(0, 0, 0, 0);
+          background-color: rgba(0, 0, 0, 0.5);
         `}
       />
       <ContentWrapper>{element}</ContentWrapper>
