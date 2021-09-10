@@ -5,7 +5,7 @@ import { Typography } from 'components/atoms/Typography'
 import { BannerPageTemplate } from 'components/templates/BannerPage'
 import { TESTCASE_1 } from 'components/templates/BannerPage/__mock__'
 
-describe('Templates: <BannerPage /> component render tests', () => {
+describe('Templates: <BannerPageTemplate /> component render tests', () => {
   test('Test case 1: should render its banner and content elements', () => {
     const { banner, content } = TESTCASE_1
     render(
