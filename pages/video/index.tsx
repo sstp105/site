@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 import styled, { css } from 'styled-components'
-import { IBannerProps } from 'components/organisms/Banner/Banner.component'
-import { SectionHeader } from 'components/molecules/SectionHeader'
 import { API } from 'libs/config/vars'
 import { IVideo } from 'types/schema/Video'
 import { Image } from 'components/atoms/Image'
@@ -39,17 +37,10 @@ const VideoPage: React.FC<IVideoPage> = (props) => {
     }
   }
 
-  const bannerProps: IBannerProps = {
-    image: {
-      url: banner
-    },
-    element: <SectionHeader title={seo.title} subtitle={seo.description} />
-  }
-
   return (
     <>
       <Seo {...seo} />
-      <BannerPageTemplate banner={bannerProps}>
+      <BannerPageTemplate banner={banner}>
         <Flex
           autoWrap={false}
           align="flex-start"

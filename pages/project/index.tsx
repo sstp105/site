@@ -1,6 +1,4 @@
 import React from 'react'
-import { IBannerProps } from 'components/organisms/Banner/Banner.component'
-import { SectionHeader } from 'components/molecules/SectionHeader'
 import { API } from 'libs/config/vars'
 import { IProjectBase } from 'types/schema/Project'
 import { BannerPageTemplate } from 'components/templates/BannerPage'
@@ -18,17 +16,10 @@ const ProjectPage: React.FC<IProjectPageProps> = (props) => {
   const { banner, seo } = NAVIGATION.project
   const { projects } = props
 
-  const bannerProps: IBannerProps = {
-    image: {
-      url: banner
-    },
-    element: <SectionHeader title={seo.title} subtitle={seo.description} />
-  }
-
   return (
     <>
       <Seo {...seo} />
-      <BannerPageTemplate banner={bannerProps}>
+      <BannerPageTemplate banner={banner}>
         {projects.map((elem, index: number) => {
           const { _id, category, ...restProps } = elem
           const info: Array<IIconText> = [

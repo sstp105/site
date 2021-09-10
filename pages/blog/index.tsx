@@ -1,6 +1,4 @@
 import React from 'react'
-import { IBannerProps } from 'components/organisms/Banner/Banner.component'
-import { SectionHeader } from 'components/molecules/SectionHeader'
 import { API } from 'libs/config/vars'
 import { IBlogBase } from 'types/schema/Blog'
 import { BannerPageTemplate } from 'components/templates/BannerPage'
@@ -18,17 +16,10 @@ const BlogPage: React.FC<IBlogPageProps> = (props) => {
   const { banner, seo } = NAVIGATION.blog
   const { blogs } = props
 
-  const bannerProps: IBannerProps = {
-    image: {
-      url: banner
-    },
-    element: <SectionHeader title={seo.title} subtitle={seo.description} />
-  }
-
   return (
     <>
       <Seo {...seo} />
-      <BannerPageTemplate banner={bannerProps}>
+      <BannerPageTemplate banner={banner}>
         {blogs.map((elem, index: number) => {
           const { _id, summary, category, lastUpdatedDate, ...restProps } = elem
           const info: Array<IIconText> = [
