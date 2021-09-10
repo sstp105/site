@@ -2,7 +2,7 @@ import React from 'react'
 import { render, screen } from '@testing-library/react'
 import { Theme } from 'styles'
 import { ERROR_PAGE } from 'libs/constants/error'
-import { ErrorPageTemplate } from '.'
+import { ErrorPageTemplate } from 'components/templates/ErrorPage'
 
 describe('Templates: <ErrorPageTemplate /> component render tests', () => {
   test('Test case 1: should render the error title and description', () => {

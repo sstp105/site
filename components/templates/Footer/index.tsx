@@ -1,4 +1,5 @@
 import { Typography } from 'components/atoms/Typography'
+import { FOOTER } from 'libs/constants/text'
 import styled from 'styled-components'
 
 const StyledFooter = styled.footer`
@@ -13,7 +14,7 @@ const StyledFooter = styled.footer`
 export const Footer: React.FC = () => {
   return (
     <StyledFooter>
-      <Typography margin={false}>DESIGNED BY YANG LI @ 2021-2021</Typography>
+      <Typography margin={false}>{FOOTER}</Typography>
     </StyledFooter>
   )
 }

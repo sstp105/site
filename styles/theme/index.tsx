@@ -5,6 +5,7 @@ import { shadow } from 'styles/theme/shadow'
 import { animation } from 'styles/theme/animation'
 import { radius } from 'styles/theme/radius'
 import { font } from 'styles/theme/font'
+import { global } from 'styles/theme/gloabl'
 
 export const theme = {
   color,
@@ -13,5 +14,6 @@ export const theme = {
   shadow,
   animation,
   radius,
-  font
+  font,
+  global
 }

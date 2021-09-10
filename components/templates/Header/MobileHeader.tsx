@@ -5,6 +5,7 @@ import { Typography } from 'components/atoms/Typography'
 import { HamburgerMenu } from 'components/molecules/HamburgerMenu'
 import { NavigationList } from './NavigationList'
 import { useToggle } from 'libs/hooks/useToggle'
+import { HOME } from 'libs/constants/text'
 
 export const StyledMobileHeader = styled.div`
   display: flex;
@@ -23,7 +24,7 @@ export const MobileHeader: React.FC = () => {
 
   return (
     <StyledMobileHeader>
-      <Typography variant="overline">Hey! This is Yang</Typography>
+      <Typography variant="overline">{HOME.WELCOME}</Typography>
       <HamburgerMenu active={show} onClick={toggleShow} />
       <DynamicDrawer open={show} onClose={toggleShow}>
         <NavigationList />
