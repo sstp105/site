@@ -4,18 +4,6 @@ import { FONTAWESOME_ICONS } from 'libs/constants/icons'
 import React from 'react'
 import styled from 'styled-components'
 
-const Control = styled.div`
-  height: auto;
-  padding: 15px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  i {
-    margin: 0 20px;
-  }
-  box-shadow: 0 0 8px ${(props) => props.theme.color.shadow};
-`
-
 export interface IVideoPlayerProps {
   videoProps: IVideoProps
 }
@@ -42,3 +30,15 @@ export const VideoPlayer = React.forwardRef<
     </>
   )
 })
+
+const Control = styled.div`
+  height: auto;
+  padding: 15px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  i {
+    margin: 0 20px;
+  }
+  box-shadow: 0 0 8px ${(props) => props.theme.color.shadow};
+`
