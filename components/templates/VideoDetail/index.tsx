@@ -6,10 +6,7 @@ import styled, { css } from 'styled-components'
 import { IVideoProps } from 'components/molecules/Video'
 import { IVideo } from 'types/schema/Video'
 import { Album } from 'components/organisms/Album'
-
-const MusicContainer = styled.div`
-  margin-top: 20px;
-`
+import { TITLE } from 'libs/constants/text'
 
 export const VideoDetail: React.FC<IVideo> = (props) => {
   const { title, description, publishedDate, tags, banner, url } = props
@@ -53,7 +50,7 @@ export const VideoDetail: React.FC<IVideo> = (props) => {
       <ChipList items={tags} size="small" variant="outlined" />
       <MusicContainer>
         <Typography variant="h6" margin={false}>
-          音乐
+          {TITLE.MUSIC}
         </Typography>
         <Album
           banner={{
@@ -65,3 +62,7 @@ export const VideoDetail: React.FC<IVideo> = (props) => {
     </>
   )
 }
+
+const MusicContainer = styled.div`
+  margin-top: 20px;
+`

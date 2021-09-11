@@ -1,0 +1,4 @@
+export const GLOBAL = {
+  HEADER_HEIGHT: 75,
+  FLEX_CARD_HEIGHT: 350
+}

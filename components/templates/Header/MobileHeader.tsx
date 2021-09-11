@@ -7,14 +7,6 @@ import { NavigationList } from './NavigationList'
 import { useToggle } from 'libs/hooks/useToggle'
 import { HOME } from 'libs/constants/text'
 
-export const StyledMobileHeader = styled.div`
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
-`
-
 const DynamicDrawer = dynamic(() =>
   import('components/molecules/Drawer').then((component) => component.Drawer)
 )
@@ -32,3 +24,11 @@ export const MobileHeader: React.FC = () => {
     </StyledMobileHeader>
   )
 }
+
+export const StyledMobileHeader = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+`

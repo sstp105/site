@@ -3,15 +3,6 @@ import { css } from 'styled-components'
 import { Link } from 'components/atoms/Link'
 import { NAVIGATION } from 'libs/constants/navigation'
 
-const navigationStyle = css`
-  margin: 0 20px;
-
-  ${(props) => props.theme.media.tablet} {
-    margin: 30px 0 0 30px;
-    display: block;
-  }
-`
-
 export const NavigationList: React.FC = () => {
   const navList = Object.keys(NAVIGATION).map((key) => {
     const navigationItem = NAVIGATION[key]
@@ -26,3 +17,12 @@ export const NavigationList: React.FC = () => {
 
   return <>{navList}</>
 }
+
+const navigationStyle = css`
+  margin: 0 20px;
+
+  ${(props) => props.theme.media.tablet} {
+    margin: 30px 0 0 30px;
+    display: block;
+  }
+`
