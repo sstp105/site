@@ -11,7 +11,7 @@ export const Chip: React.FC<IProps> = (props) => {
   const { testId, iconTestId, label, icon, ...themeProps } = props
 
   return (
-    <Styled.Chip {...themeProps}>
+    <Styled.Chip {...themeProps} data-testid={testId}>
       {icon && <Icon testId={iconTestId} iconName={icon} />}
       <p>{label}</p>
     </Styled.Chip>

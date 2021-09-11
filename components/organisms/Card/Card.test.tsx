@@ -3,9 +3,10 @@ import { render, screen } from '@testing-library/react'
 import { Theme } from 'styles'
 import { Typography } from 'components/atoms/Typography'
 import { Card } from 'components/organisms/Card'
-import { CONSTANT } from 'libs/constant'
 
-const media = CONSTANT.TESTING.image
+const media = {
+  url: 'media.jpg'
+}
 
 describe('<Card /> component render tests', () => {
   test('should render <Card /> component and its content', () => {

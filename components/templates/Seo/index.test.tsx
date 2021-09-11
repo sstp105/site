@@ -1,8 +1,9 @@
 import React from 'react'
 import { render, waitFor } from '@testing-library/react'
-import { ISeo, Seo } from 'components/templates/Seo'
+import { Seo } from 'components/templates/Seo'
 import { Theme } from 'styles'
 import { getHead, getMetaName } from 'libs/utils/domHelpers'
+import { TESTCASE_1 } from 'components/templates/Seo/__mock__'
 
 jest.mock('next/head', () => {
   return {
@@ -12,11 +13,6 @@ jest.mock('next/head', () => {
     }
   }
 })
-
-export const TESTCASE_1: ISeo = {
-  title: 'Hey! This is Yang',
-  description: 'Person site'
-}
 
 describe('Templates: <Seo /> component render tests', () => {
   test('Testcase 1: should render correct seo title and description', async () => {
