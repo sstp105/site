@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import { Image } from 'components/atoms/Image'
 
 // Timeline container
 export const Timeline = styled.div`
@@ -150,9 +151,29 @@ ${(props) => props.theme.media.tablet} {
   }
 `
 
+export const Logo = styled(Image)<{ float: 'left' | 'right' }>`
+  position: absolute;
+  ${(props) =>
+    props.float === 'left'
+      ? css`
+          top: 30px;
+          left: 60px;
+        `
+      : css`
+          top: 30px;
+          right: 60px;
+        `}
+
+  ${(props) => props.theme.media.tablet} {
+    right: 60px;
+    left: initial;
+  }
+`
+
 export const Styled = {
   Timeline,
   TimelineItem,
   Content,
-  Date
+  Date,
+  Logo
 }

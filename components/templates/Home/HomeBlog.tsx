@@ -23,13 +23,26 @@ export const HomeBlog: React.FC = () => {
             css={css`
               width: 425px;
               margin-bottom: 50px;
+              height: 500px;
             `}
           >
-            <Typography margin={false} variant="h5">
+            <Typography margin={false} variant="h6">
               {elem.title}
             </Typography>
             <Typography variant="body">
               {elem.summary.substring(0, 150)}...
+            </Typography>
+
+            <Typography
+              variant="note"
+              color="caption"
+              css={css`
+                position: absolute;
+                bottom: 10px;
+                height: 100%;
+              `}
+            >
+              Last updated on {elem.lastUpdatedDate.toString().split('T')[0]}
             </Typography>
           </Card>
         ))}
