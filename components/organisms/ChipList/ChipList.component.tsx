@@ -11,7 +11,7 @@ interface IChipListProps {
   variant?: IThemeProps['variant']
   size?: IThemeProps['size']
   justify?: IFlexThemeProps['justify']
-  itemTestId: string
+  itemTestId?: string
 }
 
 export const ChipList: React.FC<IChipListProps> = (props) => {
