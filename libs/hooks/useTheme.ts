@@ -10,6 +10,7 @@ export const useTheme = () => {
       const localThemeState = localStorage.getItem('theme') as Themes
       if (localThemeState === null) {
         setTheme('light')
+        localStorage.setItem('theme', 'light')
       } else {
         setTheme(localThemeState)
       }
