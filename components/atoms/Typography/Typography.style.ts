@@ -18,7 +18,13 @@ const TypographyRoot = styled.p<Partial<IThemeProps>>`
     css`
       margin: 20px 0;
     `}
-  ${(props) => styles.variant[props.variant]}
+  ${(props) => styles.variant[props.variant]} 
+  
+  ${(props) =>
+    props.variant.includes('h') &&
+    css`
+      color: ${props.theme.color.typography_primary};
+    `}
 `
 
 export const Styled = {

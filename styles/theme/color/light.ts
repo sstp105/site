@@ -8,6 +8,7 @@ export const light_color = {
   background_primary: '#BBE4F9',
   icon: '#464646',
   headline: '#242424',
+  typography_primary: '#464646',
   typography: '#464646',
   caption: '#A7A7A7',
   surface: '#F7F7F7',

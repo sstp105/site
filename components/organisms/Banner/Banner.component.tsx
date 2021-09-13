@@ -30,7 +30,8 @@ export const Banner: React.FC<IBannerProps> = (props) => {
 
 const BannerContainer = styled.div<{ image: IImage }>`
   position: relative;
-  background-image: url(${(props) => props.image.url});
+  /* background-image: url(${(props) => props.image.url}); */
+  background-image: url('https://firebasestorage.googleapis.com/v0/b/yang-cms.appspot.com/o/video_banner.webp?alt=media&token=7cc5af65-9906-4784-8470-8c85a9ff634c');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;

@@ -33,7 +33,7 @@ const ProjectDetailPage: React.FC<IProject> = (props) => {
     <>
       <Seo {...seoProps} />
       <Page
-        width={1140}
+        width="desktop_sm"
         css={css`
           margin-top: 100px;
           padding: 0 20px;
@@ -56,7 +56,7 @@ const ProjectDetailPage: React.FC<IProject> = (props) => {
               key={_id}
               align="flex-start"
               css={css`
-                margin: 20px 0;
+                margin: ${({ theme }) => theme.space.s} 0;
               `}
             >
               <Typography variant="h4">{title}</Typography>
