@@ -2,7 +2,7 @@ module.exports = {
   presets: ['next/babel'],
   plugins: [
     [
-      'styled-components',
+      'babel-plugin-styled-components',
       {
         fileName: false,
         displayName: true,
