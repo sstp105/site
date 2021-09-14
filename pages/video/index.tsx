@@ -12,12 +12,11 @@ import { NAVIGATION } from 'libs/constants/navigation'
 
 const Left = styled.div`
   width: 75%;
-  margin-right: 40px;
+  margin-right: ${({ theme }) => theme.space.l};
   ${(props) => props.theme.media.desktop_sm} {
     order: 1;
     width: 100%;
-    margin-right: 0;
-    margin-top: 25px;
+    margin: ${({ theme }) => theme.space.s} 0;
   }
 `
 
@@ -46,7 +45,7 @@ const VideoPage: React.FC<IVideoPage> = (props) => {
           align="flex-start"
           breakPoint="desktop_sm"
           css={css`
-            margin: 0 20px;
+            margin: 0 ${({ theme }) => theme.space.s};
           `}
         >
           <Left>

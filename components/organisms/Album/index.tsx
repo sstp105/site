@@ -6,6 +6,48 @@ import { IImage } from 'types/shared/Image'
 import { SizeBase } from 'types/design/Size'
 import { Typography } from 'components/atoms/Typography'
 
+export interface IAlbumProps {
+  banner: IImage
+  title?: string
+  artist?: string
+  size?: SizeBase
+}
+
+// TODO: refactor image constant with alt
+export const Album: React.FC<IAlbumProps> = (props) => {
+  const { size, banner, title, artist } = props
+
+  return (
+    <AlbumContainer size={size}>
+      <Image
+        src={getImagePath('albumFrame')}
+        alt="Album cover"
+        width="100%"
+        height="100%"
+        variant="square"
+      />
+      <AlbumBanner>
+        <Image
+          src={banner.url}
+          alt={banner.alt}
+          width="163px"
+          height="163px"
+          variant="square"
+        />
+      </AlbumBanner>
+      <Typography variant="caption" margin={false}>
+        {title} - {artist}
+      </Typography>
+    </AlbumContainer>
+  )
+}
+
+Album.defaultProps = {
+  size: 'm',
+  artist: '茅原実里',
+  title: 'Sincerely'
+}
+
 const style = {
   size: {
     s: 0.8,
@@ -30,40 +72,3 @@ const AlbumBanner = styled.div`
     border-radius: 5px;
   }
 `
-
-export interface IAlbumProps {
-  size?: SizeBase
-  banner: IImage
-}
-
-export const Album: React.FC<IAlbumProps> = (props) => {
-  const { size, banner } = props
-
-  return (
-    <AlbumContainer size={size}>
-      <Image
-        src={getImagePath('albumFrame')}
-        alt=""
-        width="100%"
-        height="100%"
-        variant="square"
-      />
-      <AlbumBanner>
-        <Image
-          src={banner.url}
-          alt={banner.alt}
-          width="163px"
-          height="163px"
-          variant="square"
-        />
-      </AlbumBanner>
-      <Typography variant="caption" margin={false}>
-        Sincerely - 茅原実里
-      </Typography>
-    </AlbumContainer>
-  )
-}
-
-Album.defaultProps = {
-  size: 'm'
-}

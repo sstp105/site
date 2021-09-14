@@ -7,6 +7,7 @@ import { PortfolioCard as BlogCard } from 'components/templates/PortfolioCard'
 import { IIconText } from 'types/schema/Profile'
 import { NAVIGATION } from 'libs/constants/navigation'
 import { FONTAWESOME_ICONS } from 'libs/constants/icons'
+import { formatDate } from 'libs/utils/stringHelper'
 
 interface IBlogPageProps {
   blogs: Array<IBlogBase>
@@ -25,7 +26,7 @@ const BlogPage: React.FC<IBlogPageProps> = (props) => {
           const info: Array<IIconText> = [
             {
               icon: FONTAWESOME_ICONS.calendar,
-              content: lastUpdatedDate.toString().split('T')[0]
+              content: formatDate(lastUpdatedDate)
             },
             {
               icon: FONTAWESOME_ICONS.inbox,

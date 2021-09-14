@@ -5,7 +5,7 @@ import { Typography } from 'components/atoms/Typography'
 import { Link } from 'components/atoms/Link'
 import { Chip } from 'components/molecules/Chip'
 import { Flex } from 'components/atoms/Flex'
-import { IIconText, IImage } from 'types/schema/Profile'
+import { IImage } from 'types/schema/Profile'
 import { ProfileContext } from 'context/ProfileContext'
 
 export const style = {
@@ -100,7 +100,7 @@ const StyledContractList = styled.div`
 `
 
 const StyledSocialMediaList = styled.div`
-  margin: ${(props) => props.theme.space.m} 0;
+  margin: ${(props) => props.theme.space.s} 0;
   transform: translateX(-20px);
 
   ${(props) => props.theme.media.tablet} {

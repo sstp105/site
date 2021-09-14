@@ -8,6 +8,7 @@ export const dark_color = {
   background_primary: '#4B5563',
   icon: '#CDD9E5',
   headline: '#CDD9E5',
+  typography_primary: '#FFFFFF',
   typography: '#CDD9E5',
   caption: '#FFFFFFB3',
   surface: '#2D333B',

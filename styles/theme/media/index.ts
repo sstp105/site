@@ -9,7 +9,6 @@ export type Device =
   | 'desktop_md'
   | 'desktop'
 
-// Return break points
 export const breakPoints: Record<Device, number> = {
   mobile_sm: 320,
   mobile: 480,
@@ -22,11 +21,11 @@ export const breakPoints: Record<Device, number> = {
 
 // Return media query css block
 export const media: Record<Device, string> = {
-  mobile_sm: customMediaQuery(320),
-  mobile: customMediaQuery(480),
-  tablet_sm: customMediaQuery(640),
-  tablet: customMediaQuery(768),
-  desktop_sm: customMediaQuery(1024),
-  desktop_md: customMediaQuery(1280),
-  desktop: customMediaQuery(1440)
+  mobile_sm: customMediaQuery(breakPoints.mobile_sm),
+  mobile: customMediaQuery(breakPoints.mobile),
+  tablet_sm: customMediaQuery(breakPoints.tablet_sm),
+  tablet: customMediaQuery(breakPoints.tablet),
+  desktop_sm: customMediaQuery(breakPoints.desktop_sm),
+  desktop_md: customMediaQuery(breakPoints.desktop_md),
+  desktop: customMediaQuery(breakPoints.desktop)
 }

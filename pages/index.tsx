@@ -12,6 +12,7 @@ import { IProjectBase } from 'types/schema/Project'
 import { NAVIGATION } from 'libs/constants/navigation'
 import { API } from 'libs/config/vars'
 import 'aos/dist/aos.css'
+import { AOS_INIT_CONFIG, createAOSAnimation } from 'libs/config/aos'
 
 interface IHomePageProps {
   profile: IProfile
@@ -20,14 +21,8 @@ interface IHomePageProps {
 }
 
 const HomePage: React.FC<IHomePageProps> = (props) => {
-  // Init AOS with custom settings (scroll animation)
   useEffect(() => {
-    AOS.init({
-      offset: 300,
-      duration: 1000,
-      easing: 'ease',
-      delay: 100
-    })
+    AOS.init(AOS_INIT_CONFIG)
   }, [])
 
   return (
@@ -43,7 +38,7 @@ const HomePage: React.FC<IHomePageProps> = (props) => {
                 <section
                   id={id}
                   style={{ position: 'relative' }}
-                  data-aos="fade-up"
+                  data-aos={createAOSAnimation('fade-up')}
                 >
                   {component}
                 </section>

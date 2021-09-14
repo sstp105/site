@@ -4,7 +4,8 @@ export const HOME = {
 export const FOOTER = 'DESIGNED BY YANG LI @ 2021-2021'
 
 export const TITLE = {
-  MUSIC: 'Music'
+  MUSIC: 'Music',
+  PLAYLIST: 'Playlist'
 }
 
 export const MESSAGE = {

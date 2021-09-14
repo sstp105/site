@@ -64,5 +64,5 @@ export const VideoDetail: React.FC<IVideo> = (props) => {
 }
 
 const MusicContainer = styled.div`
-  margin-top: 20px;
+  margin-top: ${({ theme }) => theme.space.s};
 `

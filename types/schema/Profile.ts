@@ -1,3 +1,6 @@
+import { FONTAWESOME_ICONS } from 'libs/constants/icons'
+import { FontAwesomeIcon } from 'types/design/Icon'
+
 export interface IIconText {
   _id?: string
   icon: string

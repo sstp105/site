@@ -4,10 +4,11 @@ import {
   IBannerProps
 } from 'components/organisms/Banner/Banner.component'
 import React from 'react'
+import { Device } from 'styles/theme/media'
 
 interface IBannerPageTemplate {
   banner: IBannerProps
-  pageWidth?: number
+  pageWidth?: Device
   children: React.ReactNode
 }
 
@@ -25,5 +26,5 @@ export const BannerPageTemplate: React.FC<IBannerPageTemplate> = (props) => {
 }
 
 BannerPageTemplate.defaultProps = {
-  pageWidth: 1240
+  pageWidth: 'desktop_md'
 }

@@ -19,7 +19,7 @@ export const NavigationList: React.FC = () => {
 }
 
 const navigationStyle = css`
-  margin: 0 20px;
+  margin: 0 ${({ theme }) => theme.space.s};
 
   ${(props) => props.theme.media.tablet} {
     margin: 30px 0 0 30px;

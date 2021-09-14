@@ -1,3 +1,5 @@
+import { Device } from 'styles/theme/media'
+
 /**
  * @interface IThemeProps Page container style props
  */
@@ -5,7 +7,7 @@ export interface IThemeProps {
   /**
    * The max-width of the container
    */
-  width: number
+  width: Device
 
   /**
    * Apply margin-bottom

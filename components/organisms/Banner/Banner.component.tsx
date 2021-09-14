@@ -3,9 +3,35 @@ import styled from 'styled-components'
 import { Overlay } from 'components/atoms/Overlay'
 import { IImage } from 'types/shared/Image'
 
+export interface IBannerProps {
+  image: IImage
+  element: React.ReactNode
+  childrens?: React.ReactNode
+  testId?: string
+}
+
+export const Banner: React.FC<IBannerProps> = (props) => {
+  const { element, childrens, image, testId } = props
+
+  return (
+    <BannerContainer image={image} data-testid={testId}>
+      <Overlay
+        fullSize={false}
+        css={`
+          z-index: 0;
+          background-color: rgba(0, 0, 0, 0.5);
+        `}
+      />
+      <ContentWrapper>{element}</ContentWrapper>
+      {childrens}
+    </BannerContainer>
+  )
+}
+
 const BannerContainer = styled.div<{ image: IImage }>`
   position: relative;
-  background-image: url('https://wallpaper.dog/large/17057841.jpg');
+  /* background-image: url(${(props) => props.image.url}); */
+  background-image: url('https://firebasestorage.googleapis.com/v0/b/yang-cms.appspot.com/o/video_banner.webp?alt=media&token=7cc5af65-9906-4784-8470-8c85a9ff634c');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -28,26 +54,3 @@ const ContentWrapper = styled.div`
     color: #fff !important;
   }
 `
-export interface IBannerProps {
-  image: IImage
-  element: React.ReactNode
-  childrens?: React.ReactNode
-}
-
-export const Banner: React.FC<IBannerProps> = (props) => {
-  const { element, childrens, image } = props
-
-  return (
-    <BannerContainer image={image}>
-      <Overlay
-        fullSize={false}
-        css={`
-          z-index: 0;
-          background-color: rgba(0, 0, 0, 0.5);
-        `}
-      />
-      <ContentWrapper>{element}</ContentWrapper>
-      {childrens}
-    </BannerContainer>
-  )
-}

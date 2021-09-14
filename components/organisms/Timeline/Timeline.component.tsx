@@ -6,6 +6,7 @@ import {
   IProps
 } from 'components/organisms/Timeline/Timeline.type'
 import { IExperience } from 'types/schema/Profile'
+import { Image } from 'components/atoms/Image'
 
 export const Timeline: React.FC<IProps<IExperience>> = (props) => {
   const { data } = props
@@ -51,6 +52,14 @@ const TimeLineItem: React.FC<IExperience & IThemeProps> = (props) => {
           {startDate} - {endDate}
         </Typography>
       </Styled.Date>
+
+      <Styled.Logo
+        src={company.logo.url}
+        alt={company.logo.alt}
+        width="50px"
+        height="50px"
+        float={float}
+      />
     </Styled.TimelineItem>
   )
 }

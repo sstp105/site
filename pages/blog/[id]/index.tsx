@@ -39,14 +39,14 @@ const BlogDetailPage: React.FC<IBlog> = (props) => {
     )
   }
   const seoProps: ISeo = {
-    title: title,
+    title,
     description: summary
   }
 
   return (
     <>
       <Seo {...seoProps} />
-      <BannerPageTemplate banner={bannerProps} pageWidth={800}>
+      <BannerPageTemplate banner={bannerProps} pageWidth="tablet">
         <Article article={preview} />
       </BannerPageTemplate>
     </>
