@@ -5,7 +5,7 @@ import { Card } from 'components/organisms/Card'
 import { ChipList } from 'components/organisms/ChipList'
 import { MESSAGE } from 'libs/constants/text'
 import React from 'react'
-import styled, { css } from 'styled-components'
+import { css } from 'styled-components'
 import { IIconText } from 'types/schema/Profile'
 import { IImage } from 'types/shared/Image'
 
@@ -30,19 +30,18 @@ const readMoreBtnStyle = css`
   }
 `
 
-const StyledCard = styled(Card)`
-  margin-bottom: 30px;
-`
-
 export const PortfolioCard: React.FC<IPortfolioCard> = (props) => {
   const { banner, title, description, info, tags, pathTo, curIndex } = props
 
   return (
-    <StyledCard
+    <Card
       media={banner}
       variant="flex"
       float={curIndex % 2 === 0 ? 'left' : 'right'}
       height="350px"
+      css={css`
+        margin-bottom: 30px;
+      `}
     >
       <Typography variant="h6" margin={false}>
         {title}
@@ -58,6 +57,6 @@ export const PortfolioCard: React.FC<IPortfolioCard> = (props) => {
           {MESSAGE.READMORE}
         </Button>
       </Link>
-    </StyledCard>
+    </Card>
   )
 }

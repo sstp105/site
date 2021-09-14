@@ -6,7 +6,7 @@ module.exports = {
       {
         fileName: false,
         displayName: true,
-        ssr: true
+        ssr: false
       }
     ],
     'macros',
