@@ -29,7 +29,7 @@ export const PortfolioCard: React.FC<IPortfolioCard> = (props) => {
       float={curIndex % 2 === 0 ? 'left' : 'right'}
       height="350px"
       css={css`
-        margin-bottom: ${({ theme }) => theme.space.m};
+        margin-bottom: 30px;
       `}
     >
       <Typography variant="h6" margin={false}>

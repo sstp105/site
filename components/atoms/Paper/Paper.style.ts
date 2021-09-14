@@ -13,7 +13,7 @@ const Paper = styled.div<Partial<IThemeProps>>`
   flex-direction: column;
   padding: 40px;
   background-color: ${(props) => props.theme.color.surface_shadow};
-  transition: all 0.3s ease 0s;
+  transition: all ${({ theme }) => theme.animation.duration.slow};
   border-radius: 20px;
   ${(props) => props.theme.media.desktop_sm} {
     margin-bottom: 40px;

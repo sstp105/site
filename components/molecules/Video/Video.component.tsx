@@ -7,7 +7,7 @@ import { IImage } from 'types/shared/Image'
 
 const StyledVideoContainer = styled.div`
   position: relative;
-  transition: all 1s;
+  transition: all ${({ theme }) => theme.animation.duration.slow};
 `
 
 const StyledPreview = styled.div<{ active: boolean }>`
