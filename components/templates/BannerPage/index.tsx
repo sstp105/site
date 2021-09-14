@@ -4,7 +4,7 @@ import {
   IBannerProps
 } from 'components/organisms/Banner/Banner.component'
 import React from 'react'
-import { breakPoints, Device } from 'styles/theme/media'
+import { Device } from 'styles/theme/media'
 
 interface IBannerPageTemplate {
   banner: IBannerProps

@@ -38,7 +38,7 @@ const Control = styled.div`
   justify-content: space-between;
   align-items: center;
   i {
-    margin: 0 20px;
+    margin: 0 ${({ theme }) => theme.space.s};
   }
   box-shadow: 0 0 8px ${(props) => props.theme.color.shadow};
 `
