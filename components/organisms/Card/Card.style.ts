@@ -6,7 +6,7 @@ import { IThemeProps } from 'components/organisms/Card/Card.type'
 /* -------------------------------------------------------------------------- */
 const Card = styled.div<Partial<IThemeProps>>`
   display: flex;
-  margin: 0 auto;
+  margin: 0 auto 30px auto;
   position: relative;
   background-color: ${(props) => props.theme.color.surface};
   width: 85%;

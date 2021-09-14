@@ -19,6 +19,17 @@ export interface IPortfolioCard {
   curIndex: number
 }
 
+const readMoreBtnStyle = css`
+  position: absolute;
+  bottom: 25px;
+  width: calc(100% - 50px);
+
+  ${(props) => props.theme.media.desktop_sm} {
+    width: 100%;
+    position: initial;
+  }
+`
+
 export const PortfolioCard: React.FC<IPortfolioCard> = (props) => {
   const { banner, title, description, info, tags, pathTo, curIndex } = props
 
@@ -28,9 +39,6 @@ export const PortfolioCard: React.FC<IPortfolioCard> = (props) => {
       variant="flex"
       float={curIndex % 2 === 0 ? 'left' : 'right'}
       height="350px"
-      css={css`
-        margin-bottom: 30px;
-      `}
     >
       <Typography variant="h6" margin={false}>
         {title}
@@ -49,14 +57,3 @@ export const PortfolioCard: React.FC<IPortfolioCard> = (props) => {
     </Card>
   )
 }
-
-const readMoreBtnStyle = css`
-  position: absolute;
-  bottom: 25px;
-  width: calc(100% - 50px);
-
-  ${(props) => props.theme.media.desktop_sm} {
-    width: 100%;
-    position: initial;
-  }
-`
