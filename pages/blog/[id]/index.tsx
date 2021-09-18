@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import hljs from 'highlight.js'
-import { API } from 'libs/config/vars'
+import { API } from 'libs/config/api'
 import { IBlog } from 'types/schema/Blog'
 import { IBannerProps } from 'components/organisms/Banner/Banner.component'
 import { SectionHeader } from 'components/molecules/SectionHeader'

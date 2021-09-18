@@ -1,6 +1,6 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-import { API } from 'libs/config/vars'
+import { API } from 'libs/config/api'
 import { IProject, IProjectBase } from 'types/schema/Project'
 import { Typography } from 'components/atoms/Typography'
 import { Divider } from 'components/atoms/Divider'

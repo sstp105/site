@@ -10,7 +10,7 @@ import { IProfile } from 'types/schema/Profile'
 import { IBlogBase } from 'types/schema/Blog'
 import { IProjectBase } from 'types/schema/Project'
 import { NAVIGATION } from 'libs/constants/navigation'
-import { API } from 'libs/config/vars'
+import { API } from 'libs/config/api'
 import 'aos/dist/aos.css'
 import { AOS_INIT_CONFIG, createAOSAnimation } from 'libs/config/aos'
 

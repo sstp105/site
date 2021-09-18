@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled, { css } from 'styled-components'
-import { API } from 'libs/config/vars'
+import { API } from 'libs/config/api'
 import { IVideo } from 'types/schema/Video'
 import { Image } from 'components/atoms/Image'
 import { Flex } from 'components/atoms/Flex'

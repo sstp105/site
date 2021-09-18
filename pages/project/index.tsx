@@ -1,5 +1,5 @@
 import React from 'react'
-import { API } from 'libs/config/vars'
+import { API } from 'libs/config/api'
 import { IProjectBase } from 'types/schema/Project'
 import { BannerPageTemplate } from 'components/templates/BannerPage'
 import { Seo } from 'components/templates/Seo'

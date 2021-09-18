@@ -3,9 +3,15 @@ import { BannerPageTemplate } from 'components/templates/BannerPage'
 import { Seo } from 'components/templates/Seo'
 import { NAVIGATION } from 'libs/constants/navigation'
 import { Typography } from 'components/atoms/Typography'
+import { VARS } from 'libs/config/vars'
+import ServerErrorPage from 'pages/500'
 
 const AboutPage: React.FC = () => {
   const { banner, seo } = NAVIGATION.about
+
+  if (VARS.isProd) {
+    return <ServerErrorPage />
+  }
 
   return (
     <>
