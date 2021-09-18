@@ -1,15 +1,18 @@
 import React from 'react'
 import { css } from 'styled-components'
 import { Link } from 'components/atoms/Link'
-import { NAVIGATION } from 'libs/constants/navigation'
+import { IHeaderProps } from 'types/schema/Navigation'
 
-export const NavigationList: React.FC = () => {
-  const navList = Object.keys(NAVIGATION).map((key) => {
-    const navigationItem = NAVIGATION[key]
-    const { _id, url, title } = navigationItem
-
+export const NavigationList: React.FC<IHeaderProps> = (props) => {
+  const navList = props.navigation.map((elem) => {
+    const { _id, pathname, title } = elem
     return (
-      <Link key={_id} variant="navigation" href={url} css={navigationStyle}>
+      <Link
+        key={_id}
+        variant="navigation"
+        href={`/${pathname === 'home' ? '' : pathname}`}
+        css={navigationStyle}
+      >
         {title}
       </Link>
     )

@@ -32,14 +32,14 @@ export const Seo: React.FC<ISeo> = (props) => {
         sizes="16x16"
         href="/favicon-16x16.png"
       />
-      <link
-        rel="stylesheet"
-        href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
-      />
       <link rel="preload" as="font" href="fonts/Gilroy-Light.woff2" />
       <link rel="preload" as="font" href="fonts/Gilroy-Regular.woff2" />
       <link rel="preload" as="font" href="fonts/Gilroy-Medium.woff2" />
       <link rel="preload" as="font" href="fonts/Menlo-Regular.woff2" />
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.4.1/css/all.min.css"
+      />
     </Head>
   )
 }

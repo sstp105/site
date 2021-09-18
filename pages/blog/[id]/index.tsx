@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import hljs from 'highlight.js'
 import { API } from 'libs/config/api'
 import { IBlog } from 'types/schema/Blog'
@@ -20,13 +20,13 @@ const BlogDetailPage: React.FC<IBlog> = (props) => {
 
   const bannerProps: IBannerProps = {
     image: {
-      url: 'https://firebasestorage.googleapis.com/v0/b/yang-cms.appspot.com/o/friend_2.jpg?alt=media&token=4605a0dd-f5b1-47ed-915a-8ce2f7eb4c20'
+      url: 'https://firebasestorage.googleapis.com/v0/b/yang-cms.appspot.com/o/blog_banner.webp?alt=media&token=fd2f5759-1c83-4383-ac54-7934d19d8a0b'
     },
     element: (
       <>
         <SectionHeader
           title={title}
-          subtitle="Sharing My Thoughts"
+          subtitle={summary}
           transform="capitalize"
         />
         <ChipList

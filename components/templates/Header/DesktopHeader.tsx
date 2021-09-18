@@ -2,11 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 import { NavigationList } from 'components/templates/Header/NavigationList'
 import { ThemeToggler } from 'components/molecules/ThemeToggler'
+import { IHeaderProps } from 'types/schema/Navigation'
 
-export const DesktopHeader: React.FC = () => {
+export const DesktopHeader: React.FC<IHeaderProps> = (props) => {
   return (
     <>
-      <NavigationList />
+      <NavigationList {...props} />
       <ThemeTogglerContainer>
         <ThemeToggler />
       </ThemeTogglerContainer>

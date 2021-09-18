@@ -8,7 +8,11 @@ import { Playlist } from 'components/molecules/Playlist'
 import { BannerPageTemplate } from 'components/templates/BannerPage'
 import { VideoDetail } from 'components/templates/VideoDetail'
 import { Seo } from 'components/templates/Seo'
-import { NAVIGATION } from 'libs/constants/navigation'
+import { INavigation } from 'types/schema/Navigation'
+import { SectionHeader } from 'components/molecules/SectionHeader'
+import { VARS } from 'libs/config/vars'
+import { ErrorPageTemplate } from 'components/templates/ErrorPage'
+import { ERROR_PAGE } from 'libs/constants/error'
 
 const Left = styled.div`
   width: 75%;
@@ -22,11 +26,12 @@ const Left = styled.div`
 
 interface IVideoPage {
   videos: Array<IVideo>
+  navigation: INavigation
 }
 
 const VideoPage: React.FC<IVideoPage> = (props) => {
-  const { videos } = props
-  const { seo, banner } = NAVIGATION.video
+  const { videos, navigation } = props
+  const { seo, banner } = navigation
 
   const [playlistIndex, setPlaylistIndex] = useState<number>(0)
 
@@ -36,10 +41,19 @@ const VideoPage: React.FC<IVideoPage> = (props) => {
     }
   }
 
+  const bannerProps = {
+    image: banner.image,
+    element: <SectionHeader title={banner.title} subtitle={banner.subtitle} />
+  }
+
+  if (VARS.isProd) {
+    return <ErrorPageTemplate {...ERROR_PAGE[204]} />
+  }
+
   return (
     <>
       <Seo {...seo} />
-      <BannerPageTemplate banner={banner}>
+      <BannerPageTemplate banner={bannerProps}>
         <Flex
           autoWrap={false}
           align="flex-start"
@@ -72,11 +86,15 @@ const VideoPage: React.FC<IVideoPage> = (props) => {
 }
 
 export async function getStaticProps() {
-  const [videoData] = await Promise.all([
-    fetch(`${API.baseUrl}/video`, API.headers).then((res) => res.json())
+  const [videoData, pageData] = await Promise.all([
+    fetch(`${API.baseUrl}/video`, API.headers).then((res) => res.json()),
+    fetch(`${API.baseUrl}/navigation/video`, API.headers).then((res) =>
+      res.json()
+    )
   ])
 
   const videos: Array<IVideo> = videoData.data
+  const navigation: INavigation = pageData.data
 
   if (!videos) {
     return {
@@ -85,7 +103,7 @@ export async function getStaticProps() {
   }
 
   return {
-    props: { videos }
+    props: { videos, navigation }
   }
 }
 

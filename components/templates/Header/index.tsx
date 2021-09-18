@@ -6,6 +6,7 @@ import { css } from 'styled-components'
 import { useIntersectionObserver } from 'libs/hooks/useIntersectionObserver'
 import { DesktopHeader } from './DesktopHeader'
 import { breakPoints } from 'styles/theme/media'
+import { IHeaderProps } from 'types/schema/Navigation'
 
 const DynamicMobileHeader = dynamic(() =>
   import('components/templates/Header/MobileHeader').then(
@@ -13,7 +14,7 @@ const DynamicMobileHeader = dynamic(() =>
   )
 )
 
-export const Header: React.FC = () => {
+export const Header: React.FC<IHeaderProps> = (props) => {
   const width = useMediaQuery()
   const headerRef = useRef(null)
   const isInView = useIntersectionObserver(headerRef)
@@ -22,9 +23,9 @@ export const Header: React.FC = () => {
     <div ref={headerRef}>
       <Flex shadow={!isInView} justify="center" css={flexStyle}>
         {width <= breakPoints.tablet ? (
-          <DynamicMobileHeader />
+          <DynamicMobileHeader {...props} />
         ) : (
-          <DesktopHeader />
+          <DesktopHeader {...props} />
         )}
       </Flex>
     </div>

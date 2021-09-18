@@ -2,11 +2,11 @@ module.exports = {
   presets: ['next/babel'],
   plugins: [
     [
-      'babel-plugin-styled-components',
+      'styled-components',
       {
         fileName: false,
         displayName: true,
-        ssr: false
+        ssr: true
       }
     ],
     'macros',

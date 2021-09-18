@@ -6,12 +6,13 @@ import { HamburgerMenu } from 'components/molecules/HamburgerMenu'
 import { NavigationList } from './NavigationList'
 import { useToggle } from 'libs/hooks/useToggle'
 import { HOME } from 'libs/constants/text'
+import { IHeaderProps } from 'types/schema/Navigation'
 
 const DynamicDrawer = dynamic(() =>
   import('components/molecules/Drawer').then((component) => component.Drawer)
 )
 
-export const MobileHeader: React.FC = () => {
+export const MobileHeader: React.FC<IHeaderProps> = (props) => {
   const [show, toggleShow] = useToggle(false)
 
   return (
@@ -19,7 +20,7 @@ export const MobileHeader: React.FC = () => {
       <Typography variant="overline">{HOME.WELCOME}</Typography>
       <HamburgerMenu active={show} onClick={toggleShow} />
       <DynamicDrawer open={show} onClose={toggleShow}>
-        <NavigationList />
+        <NavigationList {...props} />
       </DynamicDrawer>
     </StyledMobileHeader>
   )
