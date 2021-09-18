@@ -8,6 +8,8 @@ import { Typography } from 'components/atoms/Typography'
 import { Chip } from 'components/molecules/Chip'
 import { Flex } from 'components/atoms/Flex'
 import { IProjectBase } from 'types/schema/Project'
+import { Link } from 'components/atoms/Link'
+import { MESSAGE } from 'libs/constants/text'
 
 const readMoreBtnStyle = css`
   position: absolute;
@@ -59,9 +61,11 @@ export const HomePortfolio: React.FC = () => {
               />
             ))}
           </Flex>
-          <Button variant="contained" fullWidth css={readMoreBtnStyle}>
-            Read More
-          </Button>
+          <Link href={`/project/${elem._id}`}>
+            <Button variant="contained" fullWidth css={readMoreBtnStyle}>
+              {MESSAGE.READMORE}
+            </Button>
+          </Link>
         </Card>
       ))}
     </>
