@@ -16,6 +16,8 @@ export interface IThemeProps {
    * @type {SizeLarge} xxs | xs | s | m | l | xl | xxl
    */
   size: SizeLarge
+
+  hoverable: boolean
 }
 
 /**

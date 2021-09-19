@@ -19,7 +19,8 @@ export const Icon: React.FC<IProps> = (props) => {
 
 const defaultProps: Omit<IDefaultProps, PropsToOmit> = {
   color: 'default',
-  size: 'xxs'
+  size: 'xxs',
+  hoverable: false
 }
 
 Icon.defaultProps = defaultProps

@@ -5,3 +5,7 @@ export const GLOBAL = {
   ALBUM_CONTAINER_SIZE: 200,
   BANNER_HEIGHT: 350
 }
+
+export const ELEMENT_LAYER = {
+  video: 10
+}

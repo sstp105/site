@@ -20,7 +20,8 @@ const defaultProps: Omit<IDefaultProps, PropsToOmit> = {
   justify: 'flex-start',
   align: 'center',
   shadow: false,
-  autoWrap: true
+  autoWrap: true,
+  direction: 'row'
 }
 
 Flex.defaultProps = defaultProps

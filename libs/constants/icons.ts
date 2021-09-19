@@ -6,6 +6,7 @@ export const FONTAWESOME_ICONS = {
   sun: 'fas fa-sun',
   moon: 'fas fa-moon',
   thumbsUp: 'fas fa-thumbs-up',
+  thumbsUpStroke: 'far fa-thumbs-up',
   share: 'fas fa-share-alt',
   desktop: 'fas fa-desktop',
   bulb: 'fas fa-lightbulb',
