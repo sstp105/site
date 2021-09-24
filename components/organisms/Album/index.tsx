@@ -7,15 +7,15 @@ import { SizeBase } from 'types/design/Size'
 import { Typography } from 'components/atoms/Typography'
 
 export interface IAlbumProps {
-  banner: IImage
-  title?: string
-  artist?: string
+  cover: IImage
+  title: string
+  artist: string
   size?: SizeBase
 }
 
 // TODO: refactor image constant with alt
 export const Album: React.FC<IAlbumProps> = (props) => {
-  const { size, banner, title, artist } = props
+  const { size, cover, title, artist } = props
 
   return (
     <AlbumContainer size={size}>
@@ -28,8 +28,8 @@ export const Album: React.FC<IAlbumProps> = (props) => {
       />
       <AlbumBanner>
         <Image
-          src={banner.url}
-          alt={banner.alt}
+          src={cover.url}
+          alt={cover.alt}
           width="163px"
           height="163px"
           variant="square"
@@ -43,9 +43,7 @@ export const Album: React.FC<IAlbumProps> = (props) => {
 }
 
 Album.defaultProps = {
-  size: 'm',
-  artist: '茅原実里',
-  title: 'Sincerely'
+  size: 'm'
 }
 
 const style = {

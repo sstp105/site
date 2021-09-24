@@ -4,7 +4,7 @@ import { Theme } from 'styles'
 import { Album, IAlbumProps } from 'components/organisms/Album'
 
 export const TESTCASE_1: IAlbumProps = {
-  banner: {
+  cover: {
     url: 'album-banner.jpg',
     alt: 'Album banner'
   },
@@ -24,7 +24,7 @@ describe('Organisms: <Album /> component render tests', () => {
     const renderedAlbumInfo = screen.getByText(albumInfo)
     expect(renderedAlbumInfo).toBeInTheDocument()
 
-    const renderedAlbumBanner = screen.getByAltText(TESTCASE_1.banner.alt)
+    const renderedAlbumBanner = screen.getByAltText(TESTCASE_1.cover.alt)
     expect(renderedAlbumBanner).toBeInTheDocument()
   })
 

@@ -1,40 +1,80 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Typography } from 'components/atoms/Typography'
 import { ChipList } from 'components/organisms/ChipList'
-import { VideoPlayer } from 'components/organisms/VideoPlayer'
 import styled, { css } from 'styled-components'
-import { IVideoProps } from 'components/molecules/Video'
 import { IVideo } from 'types/schema/Video'
 import { Album } from 'components/organisms/Album'
 import { TITLE } from 'libs/constants/text'
+import { Video } from 'components/molecules/Video'
+import { Panel } from 'components/molecules/GestureBar'
+import { FONTAWESOME_ICONS } from 'libs/constants/icons'
+import { Overlay } from 'components/atoms/Overlay'
+import { useThumbsUp } from 'libs/hooks/useThumbsUp'
 
-export const VideoDetail: React.FC<IVideo> = (props) => {
-  const { title, description, publishedDate, tags, banner, url } = props
+export interface IVideoEnhaance extends IVideo {
+  switchTheaterMode: () => void
+}
 
-  const curVideoRef = useRef(null)
-  const [showBanner, setShowBanner] = useState<boolean>(true)
+export const VideoDetail: React.FC<IVideoEnhaance> = (props) => {
+  const {
+    _id,
+    title,
+    description,
+    publishedDate,
+    tags,
+    banner,
+    url,
+    music,
+    thumbsUp,
+    switchTheaterMode
+  } = props
 
-  useEffect(() => {
-    setShowBanner(true)
-  }, [url])
+  const [lightOn, setLightOn] = useState<boolean>(true)
+  const { hasVoted, toggleVote, curThumbsUp } = useThumbsUp(
+    title,
+    _id,
+    thumbsUp
+  )
 
-  const play = () => {
-    if (!curVideoRef) return
+  const leftIcons = [
+    {
+      iconName: hasVoted[title]
+        ? FONTAWESOME_ICONS.thumbsUp
+        : FONTAWESOME_ICONS.thumbsUpStroke,
+      text: curThumbsUp[title],
+      onClick: () => toggleVote()
+    },
+    {
+      iconName: FONTAWESOME_ICONS.share
+    },
+    {
+      iconName: FONTAWESOME_ICONS.download,
+      onClick: () => window.open(url, '_blank')
+    }
+  ]
 
-    setShowBanner(false)
-    curVideoRef.current.controls = true
-    curVideoRef.current.play()
-  }
-
-  const videoProps: IVideoProps = {
-    showBanner: showBanner,
-    onPlay: () => play(),
-    banner: banner,
-    src: url
-  }
-
+  const rightIcons = [
+    {
+      iconName: FONTAWESOME_ICONS.desktop,
+      onClick: () => switchTheaterMode()
+    },
+    {
+      iconName: FONTAWESOME_ICONS.bulb,
+      onClick: () => setLightOn((prevState) => !prevState)
+    }
+  ]
   return (
     <>
+      {!lightOn && (
+        <Overlay
+          fullSize
+          css={css`
+            z-index: 5 !important;
+            background-color: rgba(0, 0, 0, 0.9) !important;
+          `}
+        />
+      )}
+
       <Typography
         variant="h4"
         margin={false}
@@ -45,19 +85,15 @@ export const VideoDetail: React.FC<IVideo> = (props) => {
         {title}
       </Typography>
       <Typography variant="note">{publishedDate}</Typography>
-      <VideoPlayer videoProps={videoProps} ref={curVideoRef} />
+      <Video banner={banner} src={url} />
+      <Panel size="xs" leftIcons={leftIcons} rightIcons={rightIcons} />
       <Typography variant="body">{description}</Typography>
       <ChipList items={tags} size="small" variant="outlined" />
       <MusicContainer>
         <Typography variant="h6" margin={false}>
           {TITLE.MUSIC}
         </Typography>
-        <Album
-          banner={{
-            url: 'https://lain.bgm.tv/pic/cover/l/14/28/231883_eVji6.jpg'
-          }}
-          size="s"
-        />
+        <Album {...music} size="s" />
       </MusicContainer>
     </>
   )

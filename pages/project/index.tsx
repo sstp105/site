@@ -51,16 +51,14 @@ const ProjectPage: React.FC<IProjectPageProps> = (props) => {
 }
 
 export async function getStaticProps() {
-  const [projectData, pageData] = await Promise.all([
-    fetch(`${API.baseUrl}/project`, API.headers).then((res) => res.json()),
-    fetch(`${API.baseUrl}/navigation/project`, API.headers).then((res) =>
+  const [projects, navigation] = await Promise.all([
+    fetch(API.ROUTES('project'), API.HEADERS).then((res) => res.json()),
+    fetch(API.ROUTES('navigation/project'), API.HEADERS).then((res) =>
       res.json()
     )
   ])
-  const projects: Array<IProjectBase> = projectData.data
-  const navigation: INavigation = pageData.data
 
-  if (!projects) {
+  if (!projects || !navigation) {
     return {
       notFound: true
     }

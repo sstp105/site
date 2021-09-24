@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import hljs from 'highlight.js'
 import { API } from 'libs/config/api'
 import { IBlog } from 'types/schema/Blog'
@@ -54,11 +54,10 @@ const BlogDetailPage: React.FC<IBlog> = (props) => {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const [blogListData] = await Promise.all([
-    fetch(`${API.baseUrl}/blog`, API.headers).then((res) => res.json())
+  const [blogList] = await Promise.all([
+    fetch(API.ROUTES('blog'), API.HEADERS).then((res) => res.json())
   ])
 
-  const blogList: Array<IBlog> = blogListData.data
   const paths = blogList.map((elem) => {
     return {
       params: {
@@ -74,12 +73,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const { params } = context
-  const [blogData] = await Promise.all([
-    fetch(`${API.baseUrl}/blog/${params.id}`, API.headers).then((res) =>
+  const [blog] = await Promise.all([
+    fetch(API.ROUTES(`blog/${params.id}`), API.HEADERS).then((res) =>
       res.json()
     )
   ])
-  const blog: IBlog = blogData.data
 
   if (!blog) {
     return {

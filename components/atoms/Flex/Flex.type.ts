@@ -4,6 +4,7 @@ import { Device } from 'styles/theme/media'
  * @interface IThemeProps Flex layout theme props
  */
 export interface IThemeProps {
+  direction: 'row' | 'column'
   /**
    * CSS flex justify-content attribute
    * https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content

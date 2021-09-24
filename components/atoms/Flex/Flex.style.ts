@@ -6,7 +6,7 @@ import { IThemeProps } from 'components/atoms/Flex/Flex.type'
 /* -------------------------------------------------------------------------- */
 const FlexRoot = styled.div<Partial<IThemeProps>>`
   display: flex;
-  flex-direction: row;
+  flex-direction: ${(props) => props.direction};
   justify-content: ${(props) => props.justify};
   align-items: ${(props) => props.align};
 

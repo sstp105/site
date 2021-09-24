@@ -82,11 +82,10 @@ const ProjectDetailPage: React.FC<IProject> = (props) => {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const [projectListData] = await Promise.all([
-    fetch(`${API.baseUrl}/project`, API.headers).then((res) => res.json())
+  const [projectList] = await Promise.all([
+    fetch(API.ROUTES('project'), API.HEADERS).then((res) => res.json())
   ])
 
-  const projectList: Array<IProjectBase> = projectListData.data
   const paths = projectList.map((elem) => {
     return {
       params: {
@@ -103,13 +102,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async (context) => {
   const { params } = context
 
-  const [projectData] = await Promise.all([
-    fetch(`${API.baseUrl}/project/${params.id}`, API.headers).then((res) =>
+  const [project] = await Promise.all([
+    fetch(API.ROUTES(`project/${params.id}`), API.HEADERS).then((res) =>
       res.json()
     )
   ])
-
-  const project: IProject = projectData.data
 
   if (!project) {
     return {

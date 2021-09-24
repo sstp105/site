@@ -9,10 +9,10 @@ import { Spacer } from 'components/atoms/Spacer'
 import { IProfile } from 'types/schema/Profile'
 import { IBlogBase } from 'types/schema/Blog'
 import { IProjectBase } from 'types/schema/Project'
-import { API } from 'libs/config/api'
 import 'aos/dist/aos.css'
 import { AOS_INIT_CONFIG, createAOSAnimation } from 'libs/config/aos'
 import { INavigation } from 'types/schema/Navigation'
+import { API } from 'libs/config/api'
 
 interface IHomePageProps {
   profile: IProfile
@@ -56,22 +56,14 @@ const HomePage: React.FC<IHomePageProps> = (props) => {
 }
 
 export async function getStaticProps() {
-  const [profileData, projectData, blogData, navigationData] =
-    await Promise.all([
-      fetch(`${API.baseUrl}/profile`, API.headers).then((res) => res.json()),
-      fetch(`${API.baseUrl}/project`, API.headers).then((res) => res.json()),
-      fetch(`${API.baseUrl}/blog`, API.headers).then((res) => res.json()),
-      fetch(`${API.baseUrl}/navigation/home`, API.headers).then((res) =>
-        res.json()
-      )
-    ])
+  const [profile, projects, blogs, pageData] = await Promise.all([
+    fetch(API.ROUTES('profile'), API.HEADERS).then((res) => res.json()),
+    fetch(API.ROUTES('project'), API.HEADERS).then((res) => res.json()),
+    fetch(API.ROUTES('blog'), API.HEADERS).then((res) => res.json()),
+    fetch(API.ROUTES('navigation/home'), API.HEADERS).then((res) => res.json())
+  ])
 
-  const profile: IProfile = profileData.data
-  const projects: Array<IProjectBase> = projectData.data
-  const blogs: Array<IBlogBase> = blogData.data
-  const pageData: INavigation = navigationData.data
-
-  if (!profile) {
+  if (!profile || !projects || !blogs || !pageData) {
     return {
       notFound: true
     }

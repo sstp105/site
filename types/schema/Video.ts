@@ -9,4 +9,10 @@ export interface IVideo {
   tags: Array<string>
   url: string
   publishedDate: Date
+  thumbsUp: number
+  music: {
+    cover: IImage
+    title: string
+    artist: string
+  }
 }
