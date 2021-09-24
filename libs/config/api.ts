@@ -2,7 +2,9 @@ import { API_VARS } from './vars'
 
 const HEADERS = {
   headers: {
-    Authorization: process.env.AUTHORIZATION_TOKEN
+    Authorization: process.env.AUTHORIZATION_TOKEN,
+    'Content-Type': 'application/json',
+    Accept: 'application/json'
   }
 }
 
