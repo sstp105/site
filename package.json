@@ -9,6 +9,7 @@
     "start": "next start",
     "lint": "next lint",
     "test": "cross-env NODE_PATH=. jest --passWithNoTests",
+    "test:coverage": "cross-env NODE_PATH=. jest --passWithNoTests",
     "analyze": "cross-env ANALYZE=true next build",
     "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
     "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build"
@@ -16,6 +17,7 @@
   "dependencies": {
     "aos": "^3.0.0-beta.6",
     "highlight.js": "^11.2.0",
+    "mongodb": "^4.1.2",
     "next": "11.0.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
@@ -60,11 +62,11 @@
       "npm run test",
       "prettier --write"
     ],
-    "*.{js,jsx,ts,tsx}": [
+    "*.{ts,tsx}": [
       "eslint --fix",
       "prettier --write"
     ],
-    "*.{scss,css,md,json}": [
+    "*.{md,json}": [
       "prettier --write"
     ]
   }

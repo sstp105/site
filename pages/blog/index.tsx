@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { API } from 'libs/config/api'
 import { IBlogBase } from 'types/schema/Blog'
 import { BannerPageTemplate } from 'components/templates/BannerPage'
@@ -56,16 +56,12 @@ const BlogPage: React.FC<IBlogPageProps> = (props) => {
 }
 
 export async function getStaticProps() {
-  const [blogData, pageData] = await Promise.all([
-    fetch(`${API.baseUrl}/blog`, API.headers).then((res) => res.json()),
-    fetch(`${API.baseUrl}/navigation/blog`, API.headers).then((res) =>
-      res.json()
-    )
+  const [blogs, navigation] = await Promise.all([
+    fetch(API.ROUTES('blog'), API.HEADERS).then((res) => res.json()),
+    fetch(API.ROUTES('navigation/blog'), API.HEADERS).then((res) => res.json())
   ])
-  const blogs: Array<IBlogBase> = blogData.data
-  const navigation: INavigation = pageData.data
 
-  if (!blogs) {
+  if (!blogs || !navigation) {
     return {
       notFound: true
     }

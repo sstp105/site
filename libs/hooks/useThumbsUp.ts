@@ -1,3 +1,4 @@
+import { updateVideoVoteById } from 'libs/service/video'
 import { useState, useEffect } from 'react'
 
 export interface VideoCacheMap {
@@ -71,6 +72,7 @@ export const useThumbsUp = (
       ...prevState,
       [videoTitle]: prevState[videoTitle] + 1
     }))
+    updateVideoVoteById(_id, 'up')
   }
 
   // request call
@@ -91,6 +93,7 @@ export const useThumbsUp = (
       ...prevState,
       [videoTitle]: prevState[videoTitle] - 1
     }))
+    updateVideoVoteById(_id, 'down')
   }
 
   const toggleVote = () => {

@@ -9,10 +9,10 @@ import { VideoDetail } from 'components/templates/VideoDetail'
 import { Seo } from 'components/templates/Seo'
 import { INavigation } from 'types/schema/Navigation'
 import { SectionHeader } from 'components/molecules/SectionHeader'
-import { VARS } from 'libs/config/vars'
 import { ErrorPageTemplate } from 'components/templates/ErrorPage'
 import { ERROR_PAGE } from 'libs/constants/error'
 import { Typography } from 'components/atoms/Typography'
+import { isProd } from 'libs/config/vars'
 
 const Left = styled.div<{ theaterMode: boolean }>`
   width: 75%;
@@ -124,7 +124,7 @@ const VideoPage: React.FC<IVideoPage> = (props) => {
     element: <SectionHeader title={banner.title} subtitle={banner.subtitle} />
   }
 
-  if (VARS.isProd) {
+  if (isProd) {
     return <ErrorPageTemplate {...ERROR_PAGE[204]} />
   }
 
@@ -179,17 +179,12 @@ const VideoPage: React.FC<IVideoPage> = (props) => {
 }
 
 export async function getStaticProps() {
-  const [videoData, pageData] = await Promise.all([
-    fetch(`${API.baseUrl}/video`, API.headers).then((res) => res.json()),
-    fetch(`${API.baseUrl}/navigation/video`, API.headers).then((res) =>
-      res.json()
-    )
+  const [videos, navigation] = await Promise.all([
+    fetch(API.ROUTES('video'), API.HEADERS).then((res) => res.json()),
+    fetch(API.ROUTES('navigation/video'), API.HEADERS).then((res) => res.json())
   ])
 
-  const videos: Array<IVideo> = videoData.data
-  const navigation: INavigation = pageData.data
-
-  if (!videos) {
+  if (!videos || !navigation) {
     return {
       notFound: true
     }
