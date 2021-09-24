@@ -40,7 +40,7 @@ App.getInitialProps = async () => {
   navigationCache = navigationData
 
   return {
-    navigationProps: navigationData
+    navigationProps: navigationData.data
   }
 }
 
