@@ -37,7 +37,7 @@ App.getInitialProps = async () => {
 
   const res = await fetch(API.ROUTES('navigation'), API.HEADERS)
   const navigationData = await res.json()
-  navigationCache = navigationData
+  navigationCache = navigationData.data
 
   return {
     navigationProps: navigationData.data
