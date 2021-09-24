@@ -68,7 +68,7 @@ export async function getStaticProps() {
   }
 
   return {
-    props: { blogs: blogs.data, navigation: navigation.data }
+    props: { blogs, navigation }
   }
 }
 
