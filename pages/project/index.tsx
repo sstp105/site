@@ -65,7 +65,7 @@ export async function getStaticProps() {
   }
 
   return {
-    props: { projects, navigation }
+    props: { projects: projects.data, navigation: navigation.data }
   }
 }
 

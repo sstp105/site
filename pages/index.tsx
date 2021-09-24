@@ -70,7 +70,12 @@ export async function getStaticProps() {
   }
 
   return {
-    props: { profile, projects, blogs, pageData }
+    props: {
+      profile: profile.data,
+      projects: projects.data,
+      blogs: blogs.data,
+      pageData: pageData.data
+    }
   }
 }
 

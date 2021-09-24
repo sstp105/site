@@ -191,7 +191,7 @@ export async function getStaticProps() {
   }
 
   return {
-    props: { videos, navigation }
+    props: { videos: videos.data, navigation: navigation.data }
   }
 }
 

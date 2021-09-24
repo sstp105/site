@@ -58,7 +58,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     fetch(API.ROUTES('blog'), API.HEADERS).then((res) => res.json())
   ])
 
-  const paths = blogList.map((elem) => {
+  const paths = blogList.data.map((elem) => {
     return {
       params: {
         id: elem._id
@@ -86,7 +86,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   }
 
   return {
-    props: blog
+    props: blog.data
   }
 }
 
