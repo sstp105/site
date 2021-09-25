@@ -23,7 +23,7 @@ export const ChipList: React.FC<IChipListProps> = (props) => {
       `}
       justify={justify}
     >
-      {items.map((t: string | IIconText, index: number) => {
+      {items.slice(0, 5).map((t: string | IIconText, index: number) => {
         const label = typeof t === 'string' ? t : t.content
         const icon = typeof t === 'string' ? null : t.icon
 
