@@ -1,4 +1,4 @@
-import { updateVideoVoteById } from 'libs/service/video'
+import { updateVideoVoteById } from 'libs/service/db/video'
 import { useState, useEffect } from 'react'
 
 export interface VideoCacheMap {

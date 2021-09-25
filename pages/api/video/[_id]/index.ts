@@ -1,6 +1,12 @@
 import { ObjectId } from 'bson'
 import { connectToDatabase } from 'libs/config/mongodb'
 import { NextApiRequest, NextApiResponse } from 'next'
+import {
+  InternalServerError,
+  MethodNotAllowed,
+  Unauthorized
+} from 'libs/service/httpErrorHandler'
+import { updateVideoThumsUpById } from 'libs/service/db/video'
 
 /**
  * Get all API yaml documents
@@ -9,27 +15,21 @@ import { NextApiRequest, NextApiResponse } from 'next'
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   const { method, query } = req
   const { db } = await connectToDatabase()
+
   const _id = query._id as string
+  const voteType = query.voteType as 'up' | 'down'
 
   try {
     switch (method) {
       case 'PUT':
-        const voteType = query.voteType
-        const value = voteType === 'up' ? 1 : voteType === 'down' ? -1 : 0
-        await db
-          .collection('videos')
-          .updateOne({ _id: new ObjectId(_id) }, { $inc: { thumbsUp: value } })
+        await updateVideoThumsUpById(db, _id, voteType)
         return res.status(200).json({
           message: 'Update successfully'
         })
       default:
-        throw new Error('Invalid HTTP Request Method')
+        return MethodNotAllowed(res)
     }
   } catch (err) {
-    console.log(err)
-    return res.status(500).json({
-      message: '500 Internal Server Error',
-      error: err
-    })
+    return InternalServerError(res)
   }
 }

@@ -1,12 +1,21 @@
-import { ObjectId } from 'bson'
 import { connectToDatabase } from 'libs/config/mongodb'
 import { NextApiRequest, NextApiResponse } from 'next'
+import { isAuthorized } from 'libs/service/authorization'
+import {
+  InternalServerError,
+  MethodNotAllowed,
+  Unauthorized
+} from 'libs/service/httpErrorHandler'
+import { getNavigationByPathName } from 'libs/service/db/navigation'
 
 /**
- * Get all API yaml documents
- * @route /api/video
+ * @route /api/navigation/:_id
  */
 export default async (req: NextApiRequest, res: NextApiResponse) => {
+  if (!isAuthorized(req)) {
+    return Unauthorized(res)
+  }
+
   const { method, query } = req
   const { db } = await connectToDatabase()
   const _id = query._id as string
@@ -14,18 +23,12 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     switch (method) {
       case 'GET':
-        const navigationData = await db
-          .collection('navigations')
-          .findOne({ pathname: _id })
-        return res.status(200).json(navigationData)
+        const navigation = await getNavigationByPathName(db, _id)
+        return res.status(200).json(navigation)
       default:
-        throw new Error('Invalid HTTP Request Method')
+        return MethodNotAllowed(res)
     }
   } catch (err) {
-    console.log(err)
-    return res.status(500).json({
-      message: '500 Internal Server Error',
-      error: err
-    })
+    return InternalServerError(res)
   }
 }
