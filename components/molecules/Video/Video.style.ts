@@ -2,7 +2,6 @@ import styled, { css } from 'styled-components'
 
 const Container = styled.div`
   position: relative;
-  z-index: 10;
   transition: all ${({ theme }) => theme.animation.duration.slow};
 `
 

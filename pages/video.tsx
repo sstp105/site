@@ -124,10 +124,6 @@ const VideoPage: React.FC<IVideoPage> = (props) => {
     element: <SectionHeader title={banner.title} subtitle={banner.subtitle} />
   }
 
-  if (isProd) {
-    return <ErrorPageTemplate {...ERROR_PAGE[204]} />
-  }
-
   return (
     <>
       <Seo {...seo} />

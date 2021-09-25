@@ -44,9 +44,9 @@ export const VideoDetail: React.FC<IVideoEnhaance> = (props) => {
       text: curThumbsUp[title],
       onClick: () => toggleVote()
     },
-    {
-      iconName: FONTAWESOME_ICONS.share
-    },
+    // {
+    //   iconName: FONTAWESOME_ICONS.share
+    // },
     {
       iconName: FONTAWESOME_ICONS.download,
       onClick: () => window.open(url, '_blank')
@@ -85,8 +85,10 @@ export const VideoDetail: React.FC<IVideoEnhaance> = (props) => {
         {title}
       </Typography>
       <Typography variant="note">{publishedDate}</Typography>
-      <Video banner={banner} src={url} />
-      <Panel size="xs" leftIcons={leftIcons} rightIcons={rightIcons} />
+      <VideoPlayer lightOn={lightOn}>
+        <Video banner={banner} src={url} />
+        <Panel size="xs" leftIcons={leftIcons} rightIcons={rightIcons} />
+      </VideoPlayer>
       <Typography variant="body">{description}</Typography>
       <ChipList items={tags} size="small" variant="outlined" />
       <MusicContainer>
@@ -101,4 +103,9 @@ export const VideoDetail: React.FC<IVideoEnhaance> = (props) => {
 
 const MusicContainer = styled.div`
   margin-top: ${({ theme }) => theme.space.s};
+`
+
+const VideoPlayer = styled.div<{ lightOn: boolean }>`
+  position: relative;
+  z-index: ${(props) => (props.lightOn ? 0 : 6)};
 `

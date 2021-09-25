@@ -79,7 +79,6 @@ const Control = styled.div`
   position: relative;
   background-color: ${(props) => props.theme.color.background};
   padding: 15px 0;
-  z-index: 10;
   display: flex;
   justify-content: space-between;
   align-items: center;
