@@ -42,7 +42,7 @@ const styles = {
       letter-spacing: -1.5px;
     `,
     h2: css`
-      font-family: ${({ theme }) => theme.font.family.gilroy_regular};
+      font-family: Gilroy-Light;
       font-size: 65px;
       letter-spacing: 4px;
     `,

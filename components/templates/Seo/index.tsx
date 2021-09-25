@@ -15,6 +15,10 @@ export const Seo: React.FC<ISeo> = (props) => {
       <meta name="msapplication-TileColor" content="#da532c" />
       <meta name="theme-color" content="#ffffff" />
       <link rel="manifest" href="/site.webmanifest" />
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1"
+      />
       <link
         rel="apple-touch-icon"
         sizes="180x180"

@@ -2,38 +2,40 @@ import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
   @font-face {
-    font-family: 'Gilroy-Thin';
-    src: url('fonts/Gilroy-Thin.woff2') format('woff2');
-    font-display: swap;
-  }
-  @font-face {
-    font-family: 'Gilroy-UltraLight';
-    src: url('fonts/Gilroy-UltraLight.woff2') format('woff2');
-    font-display: swap;
-  }
-  @font-face {
     font-family: 'Gilroy-Light';
-    src: url('fonts/Gilroy-Light.woff2') format('woff2');
+    src: url('fonts/Gilroy-Light.eot');
+    src: url('fonts/Gilroy-Light.woff2') format('woff2'),
+         url('fonts/Gilroy-Light.woff') format('woff'),
+         url('fonts/Gilroy-Light.otf') format('opentype'),
+         url('fonts/Gilroy-Light.ttf') format('truetype');
     font-display: swap;
   }
   @font-face {
     font-family: 'Gilroy-Regular';
-    src: url('../fonts/Gilroy-Regular.woff2') format('woff2');
+    src: url('fonts/Gilroy-Regular.eot');
+    src: url('fonts/Gilroy-Regular.woff2') format('woff2'),
+         url('fonts/Gilroy-Regular.woff') format('woff'),
+         url('fonts/Gilroy-Regular.otf') format('opentype'),
+         url('fonts/Gilroy-Regular.ttf') format('truetype');
     font-display: swap;
   }
   @font-face {
     font-family: 'Gilroy-Medium';
-    src: url('fonts/Gilroy-Medium.woff2') format('woff2');
+    src: url('fonts/Gilroy-Medium.eot');
+    src: url('fonts/Gilroy-Medium.woff2') format('woff2'),
+         url('fonts/Gilroy-Medium.woff') format('woff'),
+         url('fonts/Gilroy-Medium.otf') format('opentype'),
+         url('fonts/Gilroy-Medium.ttf') format('truetype');
     font-display: swap;
   }
-  @font-face {
-    font-family: 'Gilroy-SemiBold';
-    src: url('fonts/Gilroy-SemiBold.woff2') format('woff2');
-    font-display: swap;
-  }
+
   @font-face {
     font-family: 'Menlo-Regular';
-    src: url('fonts/Menlo-Regular.woff2') format()('woff2');
+    src: url('fonts/Menlo-Regular.eot');
+    src: url('fonts/Menlo-Regular.woff2') format('woff2'),
+         url('fonts/Menlo-Regular.woff') format('woff'),
+         url('fonts/Menlo-Regular.otf') format('opentype'),
+         url('fonts/Menlo-Regular.ttf') format('truetype');
     font-style: swap;
   }
   @font-face {
