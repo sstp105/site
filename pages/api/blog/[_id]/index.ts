@@ -1,12 +1,22 @@
-import { ObjectId } from 'bson'
 import { connectToDatabase } from 'libs/config/mongodb'
+import { isAuthorized } from 'libs/service/authorization'
+import { getBlogById } from 'libs/service/db/blog'
+import {
+  InternalServerError,
+  MethodNotAllowed,
+  Unauthorized
+} from 'libs/service/httpErrorHandler'
 import { NextApiRequest, NextApiResponse } from 'next'
 
 /**
- * Get all API yaml documents
- * @route /api/video
+ * blog by _id API handler
+ * @route /api/blog/:_id
  */
 export default async (req: NextApiRequest, res: NextApiResponse) => {
+  if (!isAuthorized(req)) {
+    return Unauthorized(res)
+  }
+
   const { method, query } = req
   const { db } = await connectToDatabase()
   const _id = query._id as string
@@ -14,18 +24,13 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     switch (method) {
       case 'GET':
-        const navigationData = await db
-          .collection('blogs')
-          .findOne({ _id: new ObjectId(_id) })
-        return res.status(200).json(navigationData)
+        const blog = await getBlogById(db, _id)
+        return res.status(200).json(blog)
       default:
-        throw new Error('Invalid HTTP Request Method')
+        return MethodNotAllowed(res)
     }
   } catch (err) {
     console.log(err)
-    return res.status(500).json({
-      message: '500 Internal Server Error',
-      error: err
-    })
+    return InternalServerError(res)
   }
 }

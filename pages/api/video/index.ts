@@ -1,35 +1,34 @@
 import { connectToDatabase } from 'libs/config/mongodb'
 import { NextApiRequest, NextApiResponse } from 'next'
+import { isAuthorized } from 'libs/service/authorization'
+import {
+  InternalServerError,
+  MethodNotAllowed,
+  Unauthorized
+} from 'libs/service/httpErrorHandler'
+import { getAllVideos } from 'libs/service/db/video'
 
 /**
  * Get all API yaml documents
  * @route /api/video
  */
-export interface IVideoApiRequest extends NextApiRequest {
-  _id: string
-}
+export default async (req: NextApiRequest, res: NextApiResponse) => {
+  if (!isAuthorized(req)) {
+    return Unauthorized(res)
+  }
 
-export default async (req: IVideoApiRequest, res: NextApiResponse) => {
-  const { method, headers } = req
+  const { method } = req
   const { db } = await connectToDatabase()
 
   try {
     switch (method) {
       case 'GET':
-        if (headers.authorization !== process.env.AUTHORIZATION_TOKEN) {
-          return res.status(401).json({
-            message: 'Unauthorized'
-          })
-        }
-        const apiDoc = await db.collection('videos').find({}).toArray()
-        return res.status(200).json(apiDoc)
+        const videos = await getAllVideos(db)
+        return res.status(200).json(videos)
       default:
-        throw new Error('Invalid HTTP Request Method')
+        return MethodNotAllowed(res)
     }
   } catch (err) {
-    return res.status(500).json({
-      message: '500 Internal Server Error',
-      error: err
-    })
+    return InternalServerError(res)
   }
 }
