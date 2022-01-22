@@ -12,7 +12,7 @@ import { getAllNavigations } from 'libs/service/db/navigation'
  * @route /api/navigation
  */
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  if (!isAuthorized(req)) {
+  if (!(await isAuthorized(req))) {
     return Unauthorized(res)
   }
 

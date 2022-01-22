@@ -13,7 +13,7 @@ import { NextApiRequest, NextApiResponse } from 'next'
  * @route /api/blog/:_id
  */
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  if (!isAuthorized(req)) {
+  if (!(await isAuthorized(req))) {
     return Unauthorized(res)
   }
 

@@ -13,7 +13,7 @@ import { getProjectById } from 'libs/service/db/project'
  * @route /api/project/:_id
  */
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  if (!isAuthorized(req)) {
+  if (!(await isAuthorized(req))) {
     return Unauthorized(res)
   }
 

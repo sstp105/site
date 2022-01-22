@@ -9,7 +9,7 @@ import { IBlogBase } from 'types/schema/Blog'
 import { Link } from 'components/atoms/Link'
 
 export const HomeBlog: React.FC = () => {
-  const blogs: Array<IBlogBase> = useContext(ProfileContext).blogs
+  const blogs: Array<IBlogBase> = useContext(ProfileContext).blogs.slice(0, 3)
 
   return (
     <>

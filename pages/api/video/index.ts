@@ -13,7 +13,7 @@ import { getAllVideos } from 'libs/service/db/video'
  * @route /api/video
  */
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  if (!isAuthorized(req)) {
+  if (!(await isAuthorized(req))) {
     return Unauthorized(res)
   }
 

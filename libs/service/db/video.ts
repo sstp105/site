@@ -2,7 +2,7 @@ import { Db } from 'mongodb'
 import { ObjectId } from 'bson'
 
 export const getAllVideos = async (db: Db) => {
-  return db.collection('videos').find({}).toArray()
+  return db.collection('videos').find({}).sort({ _id: -1 }).toArray()
 }
 
 export const updateVideoThumsUpById = async (

@@ -13,13 +13,12 @@ import { NextApiRequest, NextApiResponse } from 'next'
  * @route /api/blog
  */
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  if (!isAuthorized(req)) {
+  if (!(await isAuthorized(req))) {
     return Unauthorized(res)
   }
 
   const { method } = req
   const { db } = await connectToDatabase()
-
   try {
     switch (method) {
       case 'GET':
