@@ -9,6 +9,7 @@ import { Button } from 'components/atoms/Button'
 import { Flex } from 'components/atoms/Flex'
 import { SectionHeader } from 'components/molecules/SectionHeader'
 import { FONTAWESOME_ICONS } from 'libs/constants/icons'
+import { Link } from 'components/atoms/Link'
 
 const StyledContentWrapper = styled.div`
   width: 50%;
@@ -88,13 +89,15 @@ export const HomeAbout: React.FC = () => {
               />
             ))}
           </Flex>
-          <Button
-            variant="contained"
-            endIcon={<Icon iconName={FONTAWESOME_ICONS.download} />}
-            css={resumeBtnStyle}
-          >
-            Download Resume
-          </Button>
+          <Link href={resumeLink}>
+            <Button
+              variant="contained"
+              endIcon={<Icon iconName={FONTAWESOME_ICONS.download} />}
+              css={resumeBtnStyle}
+            >
+              Linkedin Profile
+            </Button>
+          </Link>
         </StyledContentWrapper>
       </Flex>
     </>

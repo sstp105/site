@@ -14,10 +14,14 @@ export const Timeline: React.FC<IProps<IExperience>> = (props) => {
   return (
     <Styled.Timeline>
       <ul>
-        {data.map((elem, index) => {
-          const float = index % 2 == 0 ? 'left' : 'right'
-          return <TimeLineItem key={elem._id} float={float} {...elem} />
-        })}
+        {data
+          .sort((a, b) => {
+            return a.startDate > b.startDate ? -1 : 1
+          })
+          .map((elem, index) => {
+            const float = index % 2 == 0 ? 'left' : 'right'
+            return <TimeLineItem key={elem._id} float={float} {...elem} />
+          })}
         <div style={{ clear: 'both' }}></div>
       </ul>
     </Styled.Timeline>
