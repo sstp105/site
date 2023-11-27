@@ -27,7 +27,7 @@ export interface IThemeProps {
   variant: 'default' | 'outlined' | 'contained'
 
   /**
-   * Enable hover animation for the chip.
+   * Enable hover animation for the chip
    */
   hoverable: boolean
 }
