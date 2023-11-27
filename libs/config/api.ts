@@ -1,5 +1,6 @@
 import { API_VARS } from './vars'
 
+// Access APIs
 const HEADERS = {
   headers: {
     Authorization: process.env.AUTHORIZATION_TOKEN,
