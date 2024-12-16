@@ -30,7 +30,7 @@ export const HomePortfolio: React.FC = () => {
       <SectionHeader title="Portfolio" subtitle="Learn by Doing." />
       {projects.map((elem, index) => (
         <Card
-          key={elem._id}
+          key={elem.id}
           media={elem.banner}
           variant="flex"
           float={index % 2 == 0 ? 'left' : 'right'}
@@ -61,7 +61,7 @@ export const HomePortfolio: React.FC = () => {
               />
             ))}
           </Flex>
-          <Link href={`/project/${elem._id}`}>
+          <Link href={`/project/${elem.id}`}>
             <Button variant="contained" fullWidth css={readMoreBtnStyle}>
               {MESSAGE.READMORE}
             </Button>

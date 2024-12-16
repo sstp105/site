@@ -16,7 +16,7 @@ export const HomeBlog: React.FC = () => {
       <SectionHeader title="Recent Blogs" subtitle="Sharing My Thoughts." />
       <Flex align="stretch" justify="space-evenly">
         {blogs.map((elem) => (
-          <Link href={`/blog/${elem._id}`} key={elem._id}>
+          <Link href={`/blog/${elem.id}`} key={elem.id}>
             <Card
               media={elem.banner}
               variant="stack"

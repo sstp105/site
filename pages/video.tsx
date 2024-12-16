@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import styled, { css } from 'styled-components'
-import { API } from 'libs/config/api'
 import { IVideo } from 'types/schema/Video'
 import { Image } from 'components/atoms/Image'
 import { Flex } from 'components/atoms/Flex'
@@ -9,10 +8,9 @@ import { VideoDetail } from 'components/templates/VideoDetail'
 import { Seo } from 'components/templates/Seo'
 import { INavigation } from 'types/schema/Navigation'
 import { SectionHeader } from 'components/molecules/SectionHeader'
-import { ErrorPageTemplate } from 'components/templates/ErrorPage'
-import { ERROR_PAGE } from 'libs/constants/error'
 import { Typography } from 'components/atoms/Typography'
-import { isProd } from 'libs/config/vars'
+import path from 'path'
+import fs from 'fs/promises'
 
 const Left = styled.div<{ theaterMode: boolean }>`
   width: 75%;
@@ -97,14 +95,14 @@ const VideoList = styled.div<{ theaterMode: boolean }>`
     `}
 `
 
-interface IVideoPage {
+interface IVideoPageProps {
   videos: Array<IVideo>
-  navigation: INavigation
+  pageData: INavigation
 }
 
-const VideoPage: React.FC<IVideoPage> = (props) => {
-  const { videos, navigation } = props
-  const { seo, banner } = navigation
+const VideoPage: React.FC<IVideoPageProps> = (props) => {
+  const { videos, pageData } = props
+  const { seo, banner } = pageData
 
   const [playlistIndex, setPlaylistIndex] = useState<number>(0)
   const [theaterModeOn, setTheaterModeOn] = useState<boolean>(false)
@@ -155,10 +153,10 @@ const VideoPage: React.FC<IVideoPage> = (props) => {
             </Typography>
             <VideoList theaterMode={theaterModeOn}>
               {videos.map((elem, index) => {
-                const { _id, banner } = elem
+                const { id, banner } = elem
                 return (
                   <Image
-                    key={_id}
+                    key={id}
                     src={banner.url}
                     alt={banner.alt}
                     variant="square"
@@ -175,19 +173,18 @@ const VideoPage: React.FC<IVideoPage> = (props) => {
 }
 
 export async function getStaticProps() {
-  const [videos, navigation] = await Promise.all([
-    fetch(API.ROUTES('video'), API.HEADERS).then((res) => res.json()),
-    fetch(API.ROUTES('navigation/video'), API.HEADERS).then((res) => res.json())
-  ])
+  const navigations = JSON.parse(await fs.readFile(path.join(process.cwd(), 'public/data/navigations.json'), 'utf-8'))  
+  const pageData = navigations.find((p) => p.pathname === "video");
+  const videos = JSON.parse(await fs.readFile(path.join(process.cwd(), 'public/data/videos.json'), 'utf-8'))
 
-  if (!videos || !navigation) {
+  if (!videos || !navigations) {
     return {
       notFound: true
     }
   }
 
   return {
-    props: { videos, navigation }
+    props: { videos, pageData, navigations }
   }
 }
 

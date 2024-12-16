@@ -133,7 +133,7 @@ export const HomeHero: React.FC = () => {
         <StyledContractList>
           {contacts.map((elem) => (
             <Chip
-              key={elem._id}
+              key={elem.content}
               label={elem.content}
               icon={elem.icon}
               variant="default"
@@ -143,7 +143,7 @@ export const HomeHero: React.FC = () => {
         </StyledContractList>
         <StyledSocialMediaList>
           {socialMedias.map((elem) => (
-            <Link key={elem._id} href={elem.content} variant="social">
+            <Link key={elem.id} href={elem.content} variant="social">
               <i className={elem.icon} />
             </Link>
           ))}

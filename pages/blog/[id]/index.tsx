@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import hljs from 'highlight.js'
-import { API } from 'libs/config/api'
+import path from 'path'
+import fs from 'fs/promises'
 import { IBlog } from 'types/schema/Blog'
 import { IBannerProps } from 'components/organisms/Banner/Banner.component'
 import { SectionHeader } from 'components/molecules/SectionHeader'
@@ -10,8 +11,13 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import { ChipList } from 'components/organisms/ChipList'
 import { ISeo, Seo } from 'components/templates/Seo'
 
-const BlogDetailPage: React.FC<IBlog> = (props) => {
-  const { preview, title, tags, summary } = props
+interface IBlogDetailPageProps {
+  blog: IBlog
+}
+
+const BlogDetailPage: React.FC<IBlogDetailPageProps> = (props) => {
+  const { blog } = props
+  const { preview, title, tags, summary } = blog
 
   // Init Highlight.js for code block highlight
   useEffect(() => {
@@ -54,14 +60,12 @@ const BlogDetailPage: React.FC<IBlog> = (props) => {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const [blogList] = await Promise.all([
-    fetch(API.ROUTES('blog'), API.HEADERS).then((res) => res.json())
-  ])
+  const blogList = JSON.parse(await fs.readFile(path.join(process.cwd(), 'public/data/blogs.json'), 'utf-8'))
 
   const paths = blogList.map((elem) => {
     return {
       params: {
-        id: elem._id
+        id: elem.id
       }
     }
   })
@@ -73,11 +77,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const { params } = context
-  const [blog] = await Promise.all([
-    fetch(API.ROUTES(`blog/${params.id}`), API.HEADERS).then((res) =>
-      res.json()
-    )
-  ])
+
+  const navigations = JSON.parse(await fs.readFile(path.join(process.cwd(), 'public/data/navigations.json'), 'utf-8'))
+  const blogList = JSON.parse(await fs.readFile(path.join(process.cwd(), 'public/data/blogs.json'), 'utf-8'))
+  const blog = blogList.find((p) => p.id === params?.id);
 
   if (!blog) {
     return {
@@ -86,7 +89,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   }
 
   return {
-    props: blog
+    props: { blog, navigations }
   }
 }
 

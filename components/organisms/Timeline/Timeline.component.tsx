@@ -20,7 +20,7 @@ export const Timeline: React.FC<IProps<IExperience>> = (props) => {
           })
           .map((elem, index) => {
             const float = index % 2 == 0 ? 'left' : 'right'
-            return <TimeLineItem key={elem._id} float={float} {...elem} />
+            return <TimeLineItem key={elem.id} float={float} {...elem} />
           })}
         <div style={{ clear: 'both' }}></div>
       </ul>

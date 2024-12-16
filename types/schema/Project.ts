@@ -1,20 +1,20 @@
 import { IImage } from 'types/shared/Image'
 
 export interface ISectionOverview {
-  _id?: string
+  id?: string
   title?: string
   contents: Array<string>
 }
 
 export interface IFeature {
-  _id?: string
+  id?: string
   title: string
   features: Array<ISectionOverview>
   previews: Array<IImage>
 }
 
 export interface IProjectBase {
-  _id?: string
+  id?: string
   title: string
   category: string
   banner: IImage

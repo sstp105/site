@@ -82,7 +82,7 @@ export const Carousel: React.FC<ICarousel> = (props) => {
         {images.map((elem, index) => (
           <Image
             onClick={() => setCurSlideIndex(index)}
-            key={elem._id}
+            key={elem.id}
             className={index === curSlideIndex ? 'active' : 'slide'}
             src={elem.url}
             alt=""

@@ -8,19 +8,19 @@ describe('Organisms: <Carousel /> component render tests', () => {
   test('Test case 1: should render Carousel correct number of images (actual)', () => {
     const images: Array<IImage> = [
       {
-        _id: 'img-1',
+        id: 'img-1',
         url: 'image-1.jpg'
       },
       {
-        _id: 'img-2',
+        id: 'img-2',
         url: 'image-2.jpg'
       },
       {
-        _id: 'img-3',
+        id: 'img-3',
         url: 'image-3.jpg'
       },
       {
-        _id: 'img-4',
+        id: 'img-4',
         url: 'image-4.jpg'
       }
     ]

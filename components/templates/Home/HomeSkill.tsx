@@ -16,7 +16,7 @@ export const HomeSkill: React.FC = () => {
   const { skills } = useContext(ProfileContext).profile
 
   const skillList = skills.map((elem) => (
-    <Paper key={elem._id}>
+    <Paper key={elem.id}>
       <Image
         src={elem.image.url}
         alt={elem.image.alt}

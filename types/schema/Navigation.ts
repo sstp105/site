@@ -2,12 +2,12 @@ import { ISeo } from 'components/templates/Seo'
 import { IImage } from 'types/shared/Image'
 
 export interface INavigation {
-  _id: string
+  id: string
   pathname: string
   title: string
   seo: ISeo
   banner?: {
-    _id: string
+    id: string
     image: IImage
     title: string
     subtitle: string

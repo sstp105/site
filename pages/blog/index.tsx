@@ -1,5 +1,4 @@
 import React from 'react'
-import { API } from 'libs/config/api'
 import { IBlogBase } from 'types/schema/Blog'
 import { BannerPageTemplate } from 'components/templates/BannerPage'
 import { Seo } from 'components/templates/Seo'
@@ -9,15 +8,17 @@ import { FONTAWESOME_ICONS } from 'libs/constants/icons'
 import { formatDate } from 'libs/utils/stringHelper'
 import { SectionHeader } from 'components/molecules/SectionHeader'
 import { INavigation } from 'types/schema/Navigation'
+import path from 'path'
+import fs from 'fs/promises'
 
 interface IBlogPageProps {
   blogs: Array<IBlogBase>
-  navigation: INavigation
+  pageData: INavigation
 }
 
 const BlogPage: React.FC<IBlogPageProps> = (props) => {
-  const { blogs, navigation } = props
-  const { seo, banner } = navigation
+  const { blogs, pageData } = props
+  const { seo, banner } = pageData
 
   const bannerProps = {
     image: banner.image,
@@ -28,7 +29,7 @@ const BlogPage: React.FC<IBlogPageProps> = (props) => {
       <Seo {...seo} />
       <BannerPageTemplate banner={bannerProps}>
         {blogs.map((elem, index: number) => {
-          const { _id, summary, category, lastUpdatedDate, ...restProps } = elem
+          const { id, summary, category, lastUpdatedDate, ...restProps } = elem
           const info: Array<IIconText> = [
             {
               icon: FONTAWESOME_ICONS.calendar,
@@ -41,9 +42,9 @@ const BlogPage: React.FC<IBlogPageProps> = (props) => {
           ]
           return (
             <BlogCard
-              key={_id}
+              key={id}
               info={info}
-              pathTo={`/blog/${_id}`}
+              pathTo={`/blog/${id}`}
               curIndex={index}
               description={summary}
               {...restProps}
@@ -56,19 +57,19 @@ const BlogPage: React.FC<IBlogPageProps> = (props) => {
 }
 
 export async function getStaticProps() {
-  const [blogs, navigation] = await Promise.all([
-    fetch(API.ROUTES('blog'), API.HEADERS).then((res) => res.json()),
-    fetch(API.ROUTES('navigation/blog'), API.HEADERS).then((res) => res.json())
-  ])
+  const navigations = JSON.parse(await fs.readFile(path.join(process.cwd(), 'public/data/navigations.json'), 'utf-8'))
+  const pageData = navigations.find((p) => p.pathname === "blog");
 
-  if (!blogs || !navigation) {
+  const blogs = JSON.parse(await fs.readFile(path.join(process.cwd(), 'public/data/blogs.json'), 'utf-8'))
+
+  if (!blogs || !navigations || !pageData) {
     return {
       notFound: true
     }
   }
 
   return {
-    props: { blogs, navigation }
+    props: { blogs, navigations, pageData }
   }
 }
 

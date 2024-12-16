@@ -5,7 +5,7 @@ import { Timeline } from 'components/organisms/Timeline'
 import { IExperience } from 'types/schema/Profile'
 
 const timelineItem: IExperience = {
-  _id: 'ObjectId',
+  id: 'ObjectId',
   title: 'SDE',
   company: {
     name: 'Company name',
