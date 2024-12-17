@@ -26,7 +26,7 @@ const BlogDetailPage: React.FC<IBlogDetailPageProps> = (props) => {
 
   const bannerProps: IBannerProps = {
     image: {
-      url: 'https://firebasestorage.googleapis.com/v0/b/yang-cms.appspot.com/o/blog_banner.webp?alt=media&token=fd2f5759-1c83-4383-ac54-7934d19d8a0b'
+      url: '/images/blog_banner.png'
     },
     element: (
       <>

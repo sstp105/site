@@ -20,7 +20,7 @@
       "id": "6146380dfa3f4e001660401a",
       "image": {
         "id": "6146380dfa3f4e001660401b",
-        "url": "https://firebasestorage.googleapis.com/v0/b/yang-cms.appspot.com/o/project_banner.webp?alt=media&token=8bedbb0b-b83d-4d9d-a940-2a6e6d09308a"
+        "url": "/images/project_banner.png"
       },
       "title": "Projects",
       "subtitle": "Learning By Doing"
@@ -38,7 +38,7 @@
       "id": "61463937fa3f4e001660401e",
       "image": {
         "id": "61463937fa3f4e001660401f",
-        "url": "https://firebasestorage.googleapis.com/v0/b/yang-cms.appspot.com/o/blog_banner.webp?alt=media&token=fd2f5759-1c83-4383-ac54-7934d19d8a0b"
+        "url": "/images/blog_banner.png"
       },
       "title": "Blogs",
       "subtitle": "Sharing My Thoughts"
@@ -56,7 +56,7 @@
       "id": "61463a49fa3f4e0016604022",
       "image": {
         "id": "61463a49fa3f4e0016604023",
-        "url": "https://firebasestorage.googleapis.com/v0/b/yang-cms.appspot.com/o/video_banner.webp?alt=media&token=e2e17a5b-c40f-401e-aff3-b816ce3f8211"
+        "url": "/images/video_banner.png"
       },
       "title": "Videos",
       "subtitle": "AMV | MAD | Motion Graphics"

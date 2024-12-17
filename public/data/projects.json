@@ -15,36 +15,36 @@
     "category": "Web App",
     "description": "ProjectHub is a social networking application that brings aspirational developers together to collaborate and manage project progress.",
     "banner": {
-      "url": "https://firebasestorage.googleapis.com/v0/b/yang-cms.appspot.com/o/projecthub_banner.png?alt=media&token=6285a374-a99a-4ed5-a6dd-8b1bd4427002",
+      "url": "/images/project_projecthub_banner.png",
       "alt": "projecthub_banner.png"
     },
     "images": [
       {
-        "url": "https://firebasestorage.googleapis.com/v0/b/yang-cms.appspot.com/o/projecthub_analysis.png?alt=media&token=b5604b12-e163-4425-91e9-3f99d3ed34b5",
+        "url": "/images/projects/project_hub/projecthub_analysis.png",
         "alt": "projecthub_analysis.png"
       },
       {
-        "url": "https://firebasestorage.googleapis.com/v0/b/yang-cms.appspot.com/o/projecthub_explore.png?alt=media&token=7412bdd3-3bb2-4ddb-8d34-368ef5c95a6a",
+        "url": "/images/projects/project_hub/projecthub_explore.png",
         "alt": "projecthub_explore.png"
       },
       {
-        "url": "https://firebasestorage.googleapis.com/v0/b/yang-cms.appspot.com/o/projecthub_friend.png?alt=media&token=e5ca5d58-e8cf-4cd2-b6af-61b6d509a414",
+        "url": "/images/projects/project_hub/projecthub_friend.png",
         "alt": "projecthub_friend.png"
       },
       {
-        "url": "https://firebasestorage.googleapis.com/v0/b/yang-cms.appspot.com/o/projecthub_group.png?alt=media&token=b2a37ae7-43f7-4353-a005-c16cd2d65eeb",
+        "url": "/images/projects/project_hub/projecthub_group.png",
         "alt": "projecthub_group.png"
       },
       {
-        "url": "https://firebasestorage.googleapis.com/v0/b/yang-cms.appspot.com/o/projecthub_moment.png?alt=media&token=bb9d7841-2c42-4330-b067-8ec6b64dce28",
+        "url": "/images/projects/project_hub/projecthub_moment.png",
         "alt": "projecthub_moment.png"
       },
       {
-        "url": "https://firebasestorage.googleapis.com/v0/b/yang-cms.appspot.com/o/projecthub_profile.png?alt=media&token=9591ec3c-ba96-4fdd-9794-66cd9dcf707e",
+        "url": "/images/projects/project_hub/projecthub_profile.png",
         "alt": "projecthub_profile.png"
       },
       {
-        "url": "https://firebasestorage.googleapis.com/v0/b/yang-cms.appspot.com/o/projecthub_users.png?alt=media&token=03e9834c-7697-460f-b95d-bb23be96fcfa",
+        "url": "/images/projects/project_hub/projecthub_users.png",
         "alt": "projecthub_users.png"
       }
     ],
@@ -126,33 +126,33 @@
       "Portfolio Site",
       "SSR"
     ],
-    "url": "https://yangtk.com",
+    "url": "https://sstp105.com",
     "title": "Personal Website",
     "category": "Web App",
     "description": "My personal website built with Next.js and demonstrates some highlights of my previous projects. Sometimes I post leetcode notes and web development techniques.",
     "banner": {
-      "url": "https://firebasestorage.googleapis.com/v0/b/yang-cms.appspot.com/o/project_yangtk%2Fyangtk_banner.png?alt=media&token=e2f35c35-2be1-4920-8f18-21ae600e70d4",
-      "alt": "yangtk_banner.png"
+      "url": "/images/project_site_banner.png",
+      "alt": "site_banner.png"
     },
     "images": [
       {
-        "url": "https://firebasestorage.googleapis.com/v0/b/yang-cms.appspot.com/o/project_yangtk%2Fyangtk_preview_1.png?alt=media&token=88d58411-9672-48fa-a015-e9c64864ddac",
+        "url": "/images/projects/site/1.png",
         "alt": "about"
       },
       {
-        "url": "https://firebasestorage.googleapis.com/v0/b/yang-cms.appspot.com/o/project_yangtk%2Fyangtk_preview_2.png?alt=media&token=db109ed4-c417-4875-a16a-5b3e5f7022ba",
+        "url": "/images/projects/site/2.png",
         "alt": "experience"
       },
       {
-        "url": "https://firebasestorage.googleapis.com/v0/b/yang-cms.appspot.com/o/project_yangtk%2Fyangtk_preview_4.png?alt=media&token=977eefef-a3c1-4344-acb7-3d30ed2b8f95",
+        "url": "/images/projects/site/3.png",
         "alt": "project page demo"
       },
       {
-        "url": "https://firebasestorage.googleapis.com/v0/b/yang-cms.appspot.com/o/project_yangtk%2Fyangtk_banner.png?alt=media&token=dec80864-bcbd-41d3-905a-b2d9ab8cc691",
+        "url": "/images/projects/site/4.png",
         "alt": "blog page demo"
       },
       {
-        "url": "https://firebasestorage.googleapis.com/v0/b/yang-cms.appspot.com/o/project_yangtk%2Fyangtk_preview_7.png?alt=media&token=022d610d-f618-446a-9fe0-c7e2f3e1820b",
+        "url": "/images/projects/site/5.png",
         "alt": "video page demo"
       }
     ],

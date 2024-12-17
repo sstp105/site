@@ -4,7 +4,7 @@
     "url": "https://github.com/yangbot-tk/storage/raw/main/videos/sakura.mp4",
     "banner": {
       "id": "6131a80890135600160d6a4f",
-      "url": "https://firebasestorage.googleapis.com/v0/b/yang-cms.appspot.com/o/video%2FAMV_ISAKURASOU.png?alt=media&token=bfb6a836-63e1-44bc-8be4-cd93d766e19a",
+      "url": "/images/video/video_banner_isakurasou.png",
       "alt": "Sakura"
     },
     "title": "ISakura",
@@ -14,7 +14,7 @@
     "music": {
       "cover": {
         "id": "614622b92ae43a00162492a8",
-        "url": "https://firebasestorage.googleapis.com/v0/b/yang-cms.appspot.com/o/sakura_album.webp?alt=media&token=c76634dd-8e71-4deb-b70d-15632261d7f6",
+        "url": "/images/video/video_album_isakurasou.png",
         "alt": "Happy Album Cover"
       },
       "title": "我的未来式",
@@ -27,7 +27,7 @@
     "url": "https://github.com/yangbot-tk/storage/raw/main/videos/sky.mp4",
     "banner": {
       "id": "6131a85590135600160d6a52",
-      "url": "https://firebasestorage.googleapis.com/v0/b/yang-cms.appspot.com/o/video%2FMAD_AIR.png?alt=media&token=6e1ffda1-13ba-4ab3-a9ea-3b5beb7fc7cc",
+      "url": "/images/video/video_banner_air.png",
       "alt": "Air"
     },
     "title": "Air",
@@ -47,7 +47,7 @@
     "music": {
       "cover": {
         "id": "614624f92ae43a00162492b4",
-        "url": "https://firebasestorage.googleapis.com/v0/b/yang-cms.appspot.com/o/air_album.webp?alt=media&token=8b031e2e-4ee4-4edd-97c4-1857a35700c3",
+        "url": "/images/video/video_album_air.png",
         "alt": "Air Album Cover"
       },
       "title": "琉璃の空",
@@ -60,7 +60,7 @@
     "url": "https://github.com/yangbot-tk/storage/raw/main/videos/thisisme.mp4",
     "banner": {
       "id": "6131a88090135600160d6a55",
-      "url": "https://firebasestorage.googleapis.com/v0/b/yang-cms.appspot.com/o/video%2FMAD_This_Is_Me.png?alt=media&token=b53a4b7a-78a5-44a9-82e7-687ef354bb8a",
+      "url": "/images/video/video_banner_thisisme.png",
       "alt": "This is me."
     },
     "title": "This is me.",
@@ -78,7 +78,7 @@
     "music": {
       "cover": {
         "id": "614626b82ae43a00162492b8",
-        "url": "https://firebasestorage.googleapis.com/v0/b/yang-cms.appspot.com/o/thisisme_album.webp?alt=media&token=ed5041c3-7ee7-4b95-95e3-71e0c72c355c",
+        "url": "/images/video/video_album_thisisme.png",
         "alt": "This is Me Album Cover"
       },
       "title": "This is Me",
@@ -91,7 +91,7 @@
     "url": "https://github.com/yangbot-tk/storage/raw/main/videos/kon.mp4",
     "banner": {
       "id": "6131a8b790135600160d6a58",
-      "url": "https://firebasestorage.googleapis.com/v0/b/yang-cms.appspot.com/o/video%2FMAD_Team_Time.png?alt=media&token=a7037a1b-f0e9-4b82-aa53-ddac97275cfb",
+      "url": "/images/video/video_banner_goodtime.png",
       "alt": "Tea Time & Good Time"
     },
     "title": "Tea Time & Good Time",
@@ -109,7 +109,7 @@
     "music": {
       "cover": {
         "id": "6146278e2ae43a00162492bc",
-        "url": "https://firebasestorage.googleapis.com/v0/b/yang-cms.appspot.com/o/kon_album.webp?alt=media&token=b6753a5b-c004-44e0-9133-3df26a1d7a24",
+        "url": "/images/video/video_album_goodtime.png",
         "alt": "Good Time Album Cover"
       },
       "title": "Good Time",
@@ -122,7 +122,7 @@
     "url": "https://github.com/yangbot-tk/storage/raw/main/videos/magiclove.mp4",
     "banner": {
       "id": "6131a91090135600160d6a5b",
-      "url": "https://firebasestorage.googleapis.com/v0/b/yang-cms.appspot.com/o/video%2FAMV_Majic_Love.png?alt=media&token=67186526-11b3-44bf-b444-b3090601c0f8",
+      "url": "/images/video/video_banner_magiclove.png",
       "alt": "Chunibyo Love"
     },
     "title": "Chunibyo Love",
@@ -140,7 +140,7 @@
     "music": {
       "cover": {
         "id": "614628322ae43a00162492c0",
-        "url": "https://firebasestorage.googleapis.com/v0/b/yang-cms.appspot.com/o/magiclove_album.webp?alt=media&token=c1b9ccee-8e5e-4b1a-93c2-7c4f84d34af9",
+        "url": "/images/video/video_album_magiclove.png",
         "alt": "Magic Love Album Cover"
       },
       "title": "爱的魔法",
@@ -153,7 +153,7 @@
     "url": "https://github.com/yangbot-tk/storage/raw/main/videos/blackbox.mp4",
     "banner": {
       "id": "6131a93990135600160d6a5e",
-      "url": "https://firebasestorage.googleapis.com/v0/b/yang-cms.appspot.com/o/video%2FMAD_Black_Box.png?alt=media&token=6daeaded-1ece-40fa-b4c4-3c4eb28e2a75",
+      "url": "/images/video/video_banner_blackbox.png",
       "alt": "Black Box"
     },
     "title": "Black Box",
@@ -172,7 +172,7 @@
     "music": {
       "cover": {
         "id": "614629a32ae43a00162492c4",
-        "url": "https://firebasestorage.googleapis.com/v0/b/yang-cms.appspot.com/o/blackbox_album.webp?alt=media&token=b87625d7-6ef3-43b8-b5b6-b972a49fa2dd",
+        "url": "/images/video/video_album_blackbox.png",
         "alt": "Black Box Album Cover"
       },
       "title": "次回予告",
@@ -185,7 +185,7 @@
     "url": "https://github.com/yangbot-tk/storage/blob/main/videos/nopandemic.mp4?raw=true",
     "banner": {
       "id": "6131a80890135600160d6a4f",
-      "url": "https://firebasestorage.googleapis.com/v0/b/yang-cms.appspot.com/o/video%2FPV_NoPandemic.png?alt=media&token=58527c7b-862e-41c4-bbba-fe0aff6165e6",
+      "url": "/images/video/video_banner_nopandemic.png",
       "alt": "nopandemic"
     },
     "title": "NoPandemic",
@@ -195,7 +195,7 @@
     "music": {
       "cover": {
         "id": "614622b92ae43a00162492a8",
-        "url": "https://i9.ytimg.com/vi/EfFXwVA-2EQ/mq3.jpg?sqp=CPzZ040G&rs=AOn4CLCijF_QE1RdjjGrTc7xgNUDkqOezQ",
+        "url": "/images/video/video_album_nopandemic.png",
         "alt": "Energetic Indie Rock Album Cover"
       },
       "title": "Energetic Indie Rock (no vocals)",

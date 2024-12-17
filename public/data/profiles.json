@@ -4,12 +4,12 @@
     "jobTitle": "Software Engineer",
     "bio": "A BCIT Computer System Technology graduate. I have extensive knowledge and project experience of front-end development. I am confident with React, Typescript, Material UI, Sass, UI/UX, and RESTful API designs. <br> Beside my academic and career, I am a competitive powerlifter competed at Provincial Champion. My dream is one day step into the Canadian Powerlifting Union Stage and competed in national level.",
     "avatar": {
-      "url": "https://firebasestorage.googleapis.com/v0/b/yang-cms.appspot.com/o/avatar.png?alt=media&token=b205f767-9236-42fd-9036-eb8953d776e1",
+      "url": "/images/avatar.png",
       "alt": "avatar.jpeg"
     },
     "albums": [
       {
-        "url": "https://firebasestorage.googleapis.com/v0/b/yang-cms.appspot.com/o/about.png?alt=media&token=8191d276-dab2-4073-b61c-6e0d37120950",
+        "url": "/images/about.png",
         "alt": "about.png"
       }
     ],
@@ -42,7 +42,7 @@
     "skills": [
       {
         "image": {
-          "url": "https://firebasestorage.googleapis.com/v0/b/yang-cms.appspot.com/o/uidesign.png?alt=media&token=958b7b3b-bbf5-4498-ad5b-eee81a283920",
+          "url": "/images/skills_uiux.png",
           "alt": "uidesign.png"
         },
         "title": "UI/UX Design",
@@ -50,7 +50,7 @@
       },
       {
         "image": {
-          "url": "https://firebasestorage.googleapis.com/v0/b/yang-cms.appspot.com/o/webdesign.png?alt=media&token=1f5552ae-223a-44fe-9395-cd8eef007d4c",
+          "url":  "/images/skills_web.png",
           "alt": "webdesign.png"
         },
         "title": "Web Development",
@@ -58,7 +58,7 @@
       },
       {
         "image": {
-          "url": "https://firebasestorage.googleapis.com/v0/b/yang-cms.appspot.com/o/develop.png?alt=media&token=904b8aaa-9f6b-4355-9008-a5aea81051fe",
+          "url":  "/images/skills_mobile.png",
           "alt": "develop.png"
         },
         "title": "Mobile Development",
@@ -71,7 +71,7 @@
         "company": {
           "name": "fabric.inc",
           "logo": {
-            "url": "https://firebasestorage.googleapis.com/v0/b/yang-cms.appspot.com/o/fabric.jpeg?alt=media&token=bca3cbbd-85c6-4567-8898-f80dfa567a47",
+           "url": "/images/experience_fabric.png",
             "alt": "fabric.jpeg"
           },
           "location": "Vancouver"
@@ -85,7 +85,7 @@
         "company": {
           "name": "BCIT",
           "logo": {
-            "url": "https://firebasestorage.googleapis.com/v0/b/yang-cms.appspot.com/o/bcit.jpeg?alt=media&token=b0d581d8-2409-4e0b-aaad-d5441145d1cb",
+           "url": "/images/experience_bcit.png",
             "alt": "bcit.jpeg"
           },
           "location": "Vancouver"
@@ -99,7 +99,7 @@
         "company": {
           "name": "Simon Fraser University",
           "logo": {
-            "url": "https://firebasestorage.googleapis.com/v0/b/yang-cms.appspot.com/o/sfu.jpeg?alt=media&token=a2418f7a-3a40-4e44-8234-7c4355246bdb",
+           "url": "/images/experience_sfu.png",
             "alt": "sfu.jpeg"
           },
           "location": "Vancouver"
@@ -117,7 +117,7 @@
         "company": {
           "name": "GoDaddy",
           "logo": {
-            "url": "https://firebasestorage.googleapis.com/v0/b/yang-cms.appspot.com/o/W6nqVU4UN8SAoMeDtsLRCR.jpeg?alt=media&token=d50f9575-85ce-403b-930a-2dba86df653a",
+            "url": "/images/experience_godaddy.png",
             "alt": "W6nqVU4UN8SAoMeDtsLRCR.jpeg"
           },
           "location": "Vancouver"
