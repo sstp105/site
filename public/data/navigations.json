@@ -1,0 +1,65 @@
+[
+  {
+    "id": "61463582fa3f4e0016604017",
+    "title": "Home",
+    "pathname": "home",
+    "seo": {
+      "title": "Hey! This is Yang",
+      "description": "Hey! This is Yang. A passion driven software developer at Fabric. I have extensive knowledge and project experience of web development. I am confident with React, Typescript, SQL, Web Performance and Optimization, UI/UX, and RESTful API designs. Beside my academic and career, I am a competitive powerlifter competed at Provincial Champion. I am also a huge fan of Japanese Otaku. My favorite animation is Haikyuu series."
+    }
+  },
+  {
+    "id": "6146380dfa3f4e0016604019",
+    "title": "Project",
+    "pathname": "project",
+    "seo": {
+      "title": "Portfolio | Projects",
+      "description": "During my academic career at BCIT, I built a lot of projects including dynamic web applications and web crawler for data analysis. I started with basic HTML, CSS for static site. Later down the road, I learned JS and SQL and built some interactive web applications such as chat room and twitter clone. Afterwards, I spent most of my time on React philosophy, Design Pattern and Web Performance & Optimization. What I learned is that reading doc or watching video alone will never improve your coding skills, and you will always face new challenges during the development."
+    },
+    "banner": {
+      "id": "6146380dfa3f4e001660401a",
+      "image": {
+        "id": "6146380dfa3f4e001660401b",
+        "url": "/images/project_banner.png"
+      },
+      "title": "Projects",
+      "subtitle": "Learning By Doing"
+    }
+  },
+  {
+    "id": "61463937fa3f4e001660401d",
+    "title": "Blog",
+    "pathname": "blog",
+    "seo": {
+      "title": "Journey | Blogs",
+      "description": "Some tips and tricks for web development, including: React, Typescript, Styled-Components, Next.js, CSS3, HTML, Testing... and more. I also post some algorithm articles to summary some common solving patterns."
+    },
+    "banner": {
+      "id": "61463937fa3f4e001660401e",
+      "image": {
+        "id": "61463937fa3f4e001660401f",
+        "url": "/images/blog_banner.png"
+      },
+      "title": "Blogs",
+      "subtitle": "Sharing My Thoughts"
+    }
+  },
+  {
+    "id": "61463a49fa3f4e0016604021",
+    "title": "Video",
+    "pathname": "video",
+    "seo": {
+      "title": "Portfolio | Videos",
+      "description": "An amateur video maker. Most of my works are Anime Music Video and Motion Graphics. My tools are Adobe PR and After Effects."
+    },
+    "banner": {
+      "id": "61463a49fa3f4e0016604022",
+      "image": {
+        "id": "61463a49fa3f4e0016604023",
+        "url": "/images/video_banner.png"
+      },
+      "title": "Videos",
+      "subtitle": "AMV | MAD | Motion Graphics"
+    }
+  }
+]

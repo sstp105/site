@@ -1,7 +1,7 @@
 import { IImage } from 'types/shared/Image'
 
 export interface IBlogBase {
-  _id?: string
+  id?: string
   title: string
   summary: string
   banner: IImage

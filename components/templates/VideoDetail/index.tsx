@@ -9,7 +9,6 @@ import { Video } from 'components/molecules/Video'
 import { Panel } from 'components/molecules/GestureBar'
 import { FONTAWESOME_ICONS } from 'libs/constants/icons'
 import { Overlay } from 'components/atoms/Overlay'
-import { useThumbsUp } from 'libs/hooks/useThumbsUp'
 
 export interface IVideoEnhaance extends IVideo {
   switchTheaterMode: () => void
@@ -17,7 +16,7 @@ export interface IVideoEnhaance extends IVideo {
 
 export const VideoDetail: React.FC<IVideoEnhaance> = (props) => {
   const {
-    _id,
+    id,
     title,
     description,
     publishedDate,
@@ -30,23 +29,8 @@ export const VideoDetail: React.FC<IVideoEnhaance> = (props) => {
   } = props
 
   const [lightOn, setLightOn] = useState<boolean>(true)
-  const { hasVoted, toggleVote, curThumbsUp } = useThumbsUp(
-    title,
-    _id,
-    thumbsUp
-  )
 
   const leftIcons = [
-    {
-      iconName: hasVoted[title]
-        ? FONTAWESOME_ICONS.thumbsUp
-        : FONTAWESOME_ICONS.thumbsUpStroke,
-      text: curThumbsUp[title],
-      onClick: () => toggleVote()
-    },
-    // {
-    //   iconName: FONTAWESOME_ICONS.share
-    // },
     {
       iconName: FONTAWESOME_ICONS.download,
       onClick: () => window.open(url, '_blank')

@@ -1,26 +1,26 @@
 import { FONTAWESOME_ICONS } from 'libs/constants/icons'
 
 export interface IIconText {
-  _id?: string
+  id?: string
   icon: string
   content: string
 }
 
 export interface IImage {
-  _id?: string
+  id?: string
   url: string
   alt: string
 }
 
 export interface ISkill {
-  _id?: string
+  id?: string
   title: string
   content: string
   image: IImage
 }
 
 export interface IExperience {
-  _id?: string
+  id?: string
   title: string
   company: {
     name: string
@@ -33,7 +33,7 @@ export interface IExperience {
 }
 
 export interface IProfile {
-  _id?: string
+  id?: string
   firstName: string
   lastName: string
   jobTitle: string

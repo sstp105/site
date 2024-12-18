@@ -5,10 +5,10 @@ import { IHeaderProps } from 'types/schema/Navigation'
 
 export const NavigationList: React.FC<IHeaderProps> = (props) => {
   const navList = props.navigation.map((elem) => {
-    const { _id, pathname, title } = elem
+    const { id, pathname, title } = elem
     return (
       <Link
-        key={_id}
+        key={id}
         variant="navigation"
         href={`/${pathname === 'home' ? '' : pathname}`}
         css={navigationStyle}

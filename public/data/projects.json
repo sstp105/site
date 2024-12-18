@@ -1,0 +1,184 @@
+[
+  {
+    "id": "612153f798f135596b15892b",
+    "tags": [
+      "React",
+      "Typescript",
+      "Sass",
+      "D3",
+      "Sketch",
+      "Realtime Database",
+      "OAuth2"
+    ],
+    "url": "https://projecthub-yang.web.app/",
+    "title": "Projecthub",
+    "category": "Web App",
+    "description": "ProjectHub is a social networking application that brings aspirational developers together to collaborate and manage project progress.",
+    "banner": {
+      "url": "/images/project_projecthub_banner.png",
+      "alt": "projecthub_banner.png"
+    },
+    "images": [
+      {
+        "url": "/images/projects/project_hub/projecthub_analysis.png",
+        "alt": "projecthub_analysis.png"
+      },
+      {
+        "url": "/images/projects/project_hub/projecthub_explore.png",
+        "alt": "projecthub_explore.png"
+      },
+      {
+        "url": "/images/projects/project_hub/projecthub_friend.png",
+        "alt": "projecthub_friend.png"
+      },
+      {
+        "url": "/images/projects/project_hub/projecthub_group.png",
+        "alt": "projecthub_group.png"
+      },
+      {
+        "url": "/images/projects/project_hub/projecthub_moment.png",
+        "alt": "projecthub_moment.png"
+      },
+      {
+        "url": "/images/projects/project_hub/projecthub_profile.png",
+        "alt": "projecthub_profile.png"
+      },
+      {
+        "url": "/images/projects/project_hub/projecthub_users.png",
+        "alt": "projecthub_users.png"
+      }
+    ],
+    "features": [
+      {
+        "title": "Overview",
+        "features": [
+          {
+            "title": "",
+            "contents": [
+              "ProjectHub is a social networking application that brings aspirational developers together to collaborate and manage project progress."
+            ]
+          }
+        ],
+        "previews": []
+      },
+      {
+        "title": "Usage",
+        "features": [
+          {
+            "title": "Live Demo",
+            "contents": [
+              "Please checkout live demo at here https://projecthub-yang.web.app/"
+            ]
+          }
+        ],
+        "previews": []
+      },
+      {
+        "title": "Highlights",
+        "features": [
+          {
+            "title": "Dashboard",
+            "contents": [
+              "Mange your project based on built-in status and Kanban system",
+              "Multiple filters and sorting tools supported",
+              "Project card overview highlights all the necessary information for a quick view"
+            ]
+          },
+          {
+            "title": "Settings",
+            "contents": [
+              "Fully customized setting, includes app theme, opacity, and more",
+              "Multiple language support"
+            ]
+          }
+        ],
+        "previews": []
+      },
+      {
+        "title": "Tools",
+        "features": [
+          {
+            "title": "",
+            "contents": [
+              "React",
+              "Typescript",
+              "Sass",
+              "Firebase",
+              "Material UI",
+              "D3"
+            ]
+          }
+        ],
+        "previews": []
+      }
+    ]
+  },
+  {
+    "id": "612153f798f135596b15892c",
+    "tags": [
+      "Next.js",
+      "Atomic Design",
+      "Typescript",
+      "MongoDB",
+      "RESTful API",
+      "Jest",
+      "Styled Components",
+      "Portfolio Site",
+      "SSR"
+    ],
+    "url": "https://sstp105.com",
+    "title": "Personal Website",
+    "category": "Web App",
+    "description": "My personal website built with Next.js and demonstrates some highlights of my previous projects. Sometimes I post leetcode notes and web development techniques.",
+    "banner": {
+      "url": "/images/project_site_banner.png",
+      "alt": "site_banner.png"
+    },
+    "images": [
+      {
+        "url": "/images/projects/site/1.png",
+        "alt": "about"
+      },
+      {
+        "url": "/images/projects/site/2.png",
+        "alt": "experience"
+      },
+      {
+        "url": "/images/projects/site/3.png",
+        "alt": "project page demo"
+      },
+      {
+        "url": "/images/projects/site/4.png",
+        "alt": "blog page demo"
+      },
+      {
+        "url": "/images/projects/site/5.png",
+        "alt": "video page demo"
+      }
+    ],
+    "features": [
+      {
+        "title": "Overview",
+        "features": [
+          {
+            "title": "",
+            "contents": [
+              "This project aims to practice Atomic Design and general architecture."
+            ]
+          }
+        ],
+        "previews": []
+      },
+      {
+        "title": "Usage",
+        "features": [
+          {
+            "title": "Live Demo",
+            "contents": ["Please visit https://sstp105.com/"]
+          }
+        ],
+        "previews": []
+      }
+    ]
+  }
+]

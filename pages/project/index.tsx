@@ -1,5 +1,4 @@
 import React from 'react'
-import { API } from 'libs/config/api'
 import { IProjectBase } from 'types/schema/Project'
 import { BannerPageTemplate } from 'components/templates/BannerPage'
 import { Seo } from 'components/templates/Seo'
@@ -8,15 +7,17 @@ import { PortfolioCard as ProjectCard } from 'components/templates/PortfolioCard
 import { FONTAWESOME_ICONS } from 'libs/constants/icons'
 import { INavigation } from 'types/schema/Navigation'
 import { SectionHeader } from 'components/molecules/SectionHeader'
+import path from 'path'
+import fs from 'fs/promises'
 
 interface IProjectPageProps {
   projects: Array<IProjectBase>
-  navigation: INavigation
+  pageData: INavigation
 }
 
 const ProjectPage: React.FC<IProjectPageProps> = (props) => {
-  const { projects, navigation } = props
-  const { seo, banner } = navigation
+  const { projects, pageData } = props
+  const { seo, banner } = pageData
 
   const bannerProps = {
     image: banner.image,
@@ -28,7 +29,7 @@ const ProjectPage: React.FC<IProjectPageProps> = (props) => {
       <Seo {...seo} />
       <BannerPageTemplate banner={bannerProps}>
         {projects.map((elem, index: number) => {
-          const { _id, category, ...restProps } = elem
+          const { id, category, ...restProps } = elem
           const info: Array<IIconText> = [
             {
               icon: FONTAWESOME_ICONS.inbox,
@@ -37,9 +38,9 @@ const ProjectPage: React.FC<IProjectPageProps> = (props) => {
           ]
           return (
             <ProjectCard
-              key={_id}
+              key={id}
               info={info}
-              pathTo={`/project/${_id}`}
+              pathTo={`/project/${id}`}
               curIndex={index}
               {...restProps}
             />
@@ -51,21 +52,19 @@ const ProjectPage: React.FC<IProjectPageProps> = (props) => {
 }
 
 export async function getStaticProps() {
-  const [projects, navigation] = await Promise.all([
-    fetch(API.ROUTES('project'), API.HEADERS).then((res) => res.json()),
-    fetch(API.ROUTES('navigation/project'), API.HEADERS).then((res) =>
-      res.json()
-    )
-  ])
+  const navigations = JSON.parse(await fs.readFile(path.join(process.cwd(), 'public/data/navigations.json'), 'utf-8'))
+  const pageData = navigations.find((p) => p.pathname === "project");
 
-  if (!projects || !navigation) {
+  const projects = JSON.parse(await fs.readFile(path.join(process.cwd(), 'public/data/projects.json'), 'utf-8'))
+
+  if (!projects || !navigations) {
     return {
       notFound: true
     }
   }
 
   return {
-    props: { projects, navigation }
+    props: { projects, navigations, pageData }
   }
 }
 

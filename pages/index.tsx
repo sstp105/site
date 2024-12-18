@@ -1,3 +1,5 @@
+import path from 'path'
+import fs from 'fs/promises'
 import React, { useEffect } from 'react'
 import AOS from 'aos'
 import { Page } from 'components/atoms/Page'
@@ -12,7 +14,7 @@ import { IProjectBase } from 'types/schema/Project'
 import 'aos/dist/aos.css'
 import { AOS_INIT_CONFIG, createAOSAnimation } from 'libs/config/aos'
 import { INavigation } from 'types/schema/Navigation'
-import { API } from 'libs/config/api'
+
 
 interface IHomePageProps {
   profile: IProfile
@@ -56,21 +58,20 @@ const HomePage: React.FC<IHomePageProps> = (props) => {
 }
 
 export async function getStaticProps() {
-  const [profile, projects, blogs, pageData] = await Promise.all([
-    fetch(API.ROUTES('profile'), API.HEADERS).then((res) => res.json()),
-    fetch(API.ROUTES('project'), API.HEADERS).then((res) => res.json()),
-    fetch(API.ROUTES('blog'), API.HEADERS).then((res) => res.json()),
-    fetch(API.ROUTES('navigation/home'), API.HEADERS).then((res) => res.json())
-  ])
+  const navigations = JSON.parse(await fs.readFile(path.join(process.cwd(), 'public/data/navigations.json'), 'utf-8'))
+  const pageData = navigations.find((p) => p.pathname === "home");
+  const profile = JSON.parse(await fs.readFile(path.join(process.cwd(), 'public/data/profiles.json'), 'utf-8'))
+  const projects = JSON.parse(await fs.readFile(path.join(process.cwd(), 'public/data/projects.json'), 'utf-8'))
+  const blogs = JSON.parse(await fs.readFile(path.join(process.cwd(), 'public/data/blogs.json'), 'utf-8'))
 
-  if (!profile || !projects || !blogs || !pageData) {
+  if (!profile || !projects || !blogs || !navigations) {
     return {
       notFound: true
     }
   }
 
   return {
-    props: { profile, projects, blogs, pageData }
+    props: { profile, projects, blogs, pageData, navigations }
   }
 }
 

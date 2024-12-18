@@ -1,0 +1,129 @@
+{
+    "firstName": "Yang",
+    "lastName": "Li",
+    "jobTitle": "Software Engineer",
+    "bio": "A BCIT Computer System Technology graduate. I have extensive knowledge and project experience of front-end development. I am confident with React, Typescript, Material UI, Sass, UI/UX, and RESTful API designs. <br> Beside my academic and career, I am a competitive powerlifter competed at Provincial Champion. My dream is one day step into the Canadian Powerlifting Union Stage and competed in national level.",
+    "avatar": {
+      "url": "/images/avatar.png",
+      "alt": "avatar.jpeg"
+    },
+    "albums": [
+      {
+        "url": "/images/about.png",
+        "alt": "about.png"
+      }
+    ],
+    "contacts": [
+      { "icon": "fas fa-envelope-open", "content": "liyang0525.ly@gmail.com" },
+      { "icon": "fas fa-mobile-alt", "content": "+1 604-781-0561" },
+      { "icon": "fas fa-map-marker-alt", "content": "Vancouver, Canada" }
+    ],
+    "socialMedias": [
+      { "icon": "fab fa-github", "content": "https://github.com/yang-tk" },
+      { "icon": "fab fa-npm", "content": "https://www.npmjs.com/~yang052513" },
+      { "icon": "fab fa-linkedin-in", "content": "https://www.linkedin.com/in/yangliweb/" },
+      { "icon": "fab fa-instagram", "content": "https://www.instagram.com/yang_tsx/" }
+    ],
+    "tools": [
+      { "icon": "fab fa-html5", "content": "HTML5" },
+      { "icon": "fab fa-css3-alt", "content": "CSS3" },
+      { "icon": "fab fa-js", "content": "JavaScript" },
+      { "icon": "fab fa-node", "content": "Node" },
+      { "icon": "fab fa-react", "content": "React" },
+      { "icon": "fab fa-vuejs", "content": "Vue" },
+      { "icon": "fab fa-angular", "content": "Angular" },
+      { "icon": "fab fa-less", "content": "Less" },
+      { "icon": "fab fa-sass", "content": "Sass" },
+      { "icon": "fas fa-database", "content": "MongoDB" },
+      { "icon": "fas fa-code-branch", "content": "Git" },
+      { "icon": "fab fa-java", "content": "Java" },
+      { "icon": "fab fa-python", "content": "Python" }
+    ],
+    "skills": [
+      {
+        "image": {
+          "url": "/images/skills_uiux.png",
+          "alt": "uidesign.png"
+        },
+        "title": "UI/UX Design",
+        "content": "I am proficient with Adobe Illustrator, Photoshop, Xd to design elegent responsive layout. I also have a lot of music video project experience with Adobe Affects."
+      },
+      {
+        "image": {
+          "url":  "/images/skills_web.png",
+          "alt": "webdesign.png"
+        },
+        "title": "Web Development",
+        "content": "I am a full stack web developer with expereince of basic html, css, javascript, MySQL, MongoDB, React, and others tools to create dynamic websites."
+      },
+      {
+        "image": {
+          "url":  "/images/skills_mobile.png",
+          "alt": "develop.png"
+        },
+        "title": "Mobile Development",
+        "content": "I am familiar with React Natvie for cross-platform development, and also have some project experience with Android and Swift ios development"
+      }
+    ],
+    "resumeLink": "https://www.linkedin.com/feed/",
+    "experiences": [
+      {
+        "company": {
+          "name": "fabric.inc",
+          "logo": {
+           "url": "/images/experience_fabric.png",
+            "alt": "fabric.jpeg"
+          },
+          "location": "Vancouver"
+        },
+        "title": "Software Development Engineer",
+        "startDate": "2021/05",
+        "endDate": "2022/06",
+        "description": "Built large scale project with serverless compuation, collaborate with other teams to produce high quality code."
+      },
+      {
+        "company": {
+          "name": "BCIT",
+          "logo": {
+           "url": "/images/experience_bcit.png",
+            "alt": "bcit.jpeg"
+          },
+          "location": "Vancouver"
+        },
+        "title": "Computer System Technology Diploma",
+        "startDate": "2019/09",
+        "endDate": "2021/05",
+        "description": "Created multiple web porjects with peers by using html, css, and javascript. Proficient programming with C and Java."
+      },
+      {
+        "company": {
+          "name": "Simon Fraser University",
+          "logo": {
+           "url": "/images/experience_sfu.png",
+            "alt": "sfu.jpeg"
+          },
+          "location": "Vancouver"
+        },
+        "title": "Bachelor of Arts in Economics",
+        "startDate": "2015/09",
+        "endDate": "2018/06",
+        "description": "Achieved 3 times Dean's Honor Roll with excellent academic records. Enhanced my critical thinking by taking advance Economics courses."
+      },
+      {
+        "title": "Software Development Engineer",
+        "description": "Fullstack developer.",
+        "startDate": "2022/06",
+        "endDate": "Present",
+        "company": {
+          "name": "GoDaddy",
+          "logo": {
+            "url": "/images/experience_godaddy.png",
+            "alt": "W6nqVU4UN8SAoMeDtsLRCR.jpeg"
+          },
+          "location": "Vancouver"
+        }
+      }
+    ],
+    "lastUpdateDate": "1628653976347"
+  }
+  

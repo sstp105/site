@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import path from 'path'
+import fs from 'fs/promises'
 import { Image } from 'components/atoms/Image'
 import { Seo } from 'components/templates/Seo'
 import { Typography } from 'components/atoms/Typography'

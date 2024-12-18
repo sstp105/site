@@ -1,7 +1,6 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-import { API } from 'libs/config/api'
-import { IProject, IProjectBase } from 'types/schema/Project'
+import { IProject } from 'types/schema/Project'
 import { Typography } from 'components/atoms/Typography'
 import { Divider } from 'components/atoms/Divider'
 import { Breadcrumb } from 'components/molecules/Breadcrumb'
@@ -11,6 +10,8 @@ import { ChipList } from 'components/organisms/ChipList'
 import { Carousel } from 'components/organisms/Carousel'
 import { Page } from 'components/atoms/Page'
 import { Flex } from 'components/atoms/Flex'
+import path from 'path'
+import fs from 'fs/promises'
 
 const FeatureDetailContainer = styled.div`
   margin-left: auto;
@@ -20,9 +21,14 @@ const FeatureDetailContainer = styled.div`
   }
 `
 
-const ProjectDetailPage: React.FC<IProject> = (props) => {
+interface IProjectDetailPageProps {
+  project: IProject
+}
+
+const ProjectDetailPage: React.FC<IProjectDetailPageProps> = (props) => {
+  const { project } = props
   const { title, category, description, tags, url, images, features, banner } =
-    props
+    project
   const previews = [banner, ...images]
 
   const seoProps: ISeo = {
@@ -49,11 +55,11 @@ const ProjectDetailPage: React.FC<IProject> = (props) => {
         <Divider />
 
         {features.map((elem) => {
-          const { title, _id } = elem
+          const { title, id } = elem
           const subfeatures = elem.features
           return (
             <Flex
-              key={_id}
+              key={id}
               align="flex-start"
               css={css`
                 margin: ${({ theme }) => theme.space.s} 0;
@@ -62,9 +68,9 @@ const ProjectDetailPage: React.FC<IProject> = (props) => {
               <Typography variant="h4">{title}</Typography>
               <FeatureDetailContainer>
                 {subfeatures.map((item) => {
-                  const { title, contents, _id } = item
+                  const { title, contents, id } = item
                   return (
-                    <React.Fragment key={_id}>
+                    <React.Fragment key={id}>
                       <Typography variant="h5">{title}</Typography>
                       {contents.map((c) => (
                         <Typography key={c}>{c}</Typography>
@@ -82,14 +88,12 @@ const ProjectDetailPage: React.FC<IProject> = (props) => {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const [projectList] = await Promise.all([
-    fetch(API.ROUTES('project'), API.HEADERS).then((res) => res.json())
-  ])
+  const projectList = JSON.parse(await fs.readFile(path.join(process.cwd(), 'public/data/projects.json'), 'utf-8'))
 
   const paths = projectList.map((elem) => {
     return {
       params: {
-        id: elem._id
+        id: elem.id
       }
     }
   })
@@ -100,23 +104,21 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const { params } = context
+  const { params } = context;
 
-  const [project] = await Promise.all([
-    fetch(API.ROUTES(`project/${params.id}`), API.HEADERS).then((res) =>
-      res.json()
-    )
-  ])
+  const navigations = JSON.parse(await fs.readFile(path.join(process.cwd(), 'public/data/navigations.json'), 'utf-8'))
+  const projectList = JSON.parse(await fs.readFile(path.join(process.cwd(), 'public/data/projects.json'), 'utf-8'))
+  const project = projectList.find((p) => p.id === params?.id);
 
   if (!project) {
     return {
       notFound: true
-    }
+    };
   }
 
   return {
-    props: project
-  }
-}
+    props: { project, navigations }
+  };
+};
 
 export default ProjectDetailPage

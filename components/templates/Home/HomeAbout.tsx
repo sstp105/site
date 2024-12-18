@@ -79,7 +79,7 @@ export const HomeAbout: React.FC = () => {
               <Chip
                 size="small"
                 variant="outlined"
-                key={elem._id}
+                key={elem.id}
                 label={elem.content}
                 icon={elem.icon}
                 css={css`
