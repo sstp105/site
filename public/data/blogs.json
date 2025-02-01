@@ -2,7 +2,7 @@
   {
     "id": "61216e9bb000b35ca2c85d87",
     "title": "React Basics",
-    "summary": "本文介绍React基础, 例如JSX常用语法, 组件合成, 列表渲染以及动态CSS",
+    "summary": "This article introduces the basics of React, such as commonly used JSX syntax, component composition, list rendering, and dynamic CSS.",
     "banner": {
       "id": "61216e9bb000b35ca2c85d88",
       "url": "/images/blogs/react-logo.png",
@@ -17,8 +17,8 @@
   },
   {
     "id": "61ec4e2794c48a00165c01b1",
-    "title": "React Hooks 和表单应用",
-    "summary": "使用React Hooks 使得表单填写逻辑的封装更简易, 本文演示常用HTML表单与Hooks的应用",
+    "title": "React Hooks and HTML Form",
+    "summary": "Using React Hooks makes the encapsulation of form filling logic easier. This article demonstrates the application of common HTML forms with Hooks.",
     "banner": {
       "id": "61ec4e2794c48a00165c01b2",
       "url": "/images/blogs/react-logo.png",
@@ -34,7 +34,7 @@
   {
     "id": "61ec4e8b94c48a00165c01c3",
     "title": "React Hooks API",
-    "summary": "React 最常用 Hooks 介绍: useState, useEffect, useContext, useReducer",
+    "summary": "Most common React Hooks: useState, useEffect, useContext, useReducer",
     "banner": {
       "id": "61ec4e8b94c48a00165c01c4",
       "url": "/images/blogs/react-logo.png",

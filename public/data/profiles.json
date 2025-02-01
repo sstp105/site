@@ -1,8 +1,8 @@
 {
     "firstName": "Yang",
     "lastName": "Li",
-    "jobTitle": "Software Engineer",
-    "bio": "A BCIT Computer System Technology graduate. I have extensive knowledge and project experience of front-end development. I am confident with React, Typescript, Material UI, Sass, UI/UX, and RESTful API designs. <br> Beside my academic and career, I am a competitive powerlifter competed at Provincial Champion. My dream is one day step into the Canadian Powerlifting Union Stage and competed in national level.",
+    "jobTitle": "Senior Software Engineer",
+    "bio": "I have extensive knowledge and hands-on project experience in web development. My expertise includes React, TypeScript, Material UI, Sass, UI/UX design, and RESTful API design. <br> I have a proven track record of delivering scalable, user-focused web applications and collaborating effectively within cross-functional teams. Additionally, I stay updated with the latest industry trends and best practices, ensuring innovative and efficient solutions in all my projects.",
     "avatar": {
       "url": "/images/avatar.png",
       "alt": "avatar.jpeg"
@@ -19,9 +19,9 @@
       { "icon": "fas fa-map-marker-alt", "content": "Vancouver, Canada" }
     ],
     "socialMedias": [
-      { "icon": "fab fa-github", "content": "https://github.com/yang-tk" },
-      { "icon": "fab fa-npm", "content": "https://www.npmjs.com/~yang052513" },
+      { "icon": "fab fa-github", "content": "https://github.com/sstp105" },
       { "icon": "fab fa-linkedin-in", "content": "https://www.linkedin.com/in/yangliweb/" },
+      { "icon": "fab fa-npm", "content": "https://www.npmjs.com/~yang052513" },
       { "icon": "fab fa-instagram", "content": "https://www.instagram.com/yang_tsx/" }
     ],
     "tools": [
@@ -30,11 +30,9 @@
       { "icon": "fab fa-js", "content": "JavaScript" },
       { "icon": "fab fa-node", "content": "Node" },
       { "icon": "fab fa-react", "content": "React" },
-      { "icon": "fab fa-vuejs", "content": "Vue" },
-      { "icon": "fab fa-angular", "content": "Angular" },
-      { "icon": "fab fa-less", "content": "Less" },
-      { "icon": "fab fa-sass", "content": "Sass" },
-      { "icon": "fas fa-database", "content": "MongoDB" },
+      { "icon": "fa-brands fa-aws", "content": "AWS" },
+      { "icon": "fa-brands fa-golang", "content": "Go" },
+      { "icon": "fa-brands fa-docker", "content": "Docker" },
       { "icon": "fas fa-code-branch", "content": "Git" },
       { "icon": "fab fa-java", "content": "Java" },
       { "icon": "fab fa-python", "content": "Python" }
@@ -46,7 +44,7 @@
           "alt": "uidesign.png"
         },
         "title": "UI/UX Design",
-        "content": "I am proficient with Adobe Illustrator, Photoshop, Xd to design elegent responsive layout. I also have a lot of music video project experience with Adobe Affects."
+        "content": "I am proficient in using Adobe Illustrator, Photoshop, and XD to design elegant, and Adobe After Effects for complex visiual effects."
       },
       {
         "image": {
@@ -54,7 +52,7 @@
           "alt": "webdesign.png"
         },
         "title": "Web Development",
-        "content": "I am a full stack web developer with expereince of basic html, css, javascript, MySQL, MongoDB, React, and others tools to create dynamic websites."
+        "content": "I am an experienced software engineer with a strong focus on distributed systems and building scalable backend services."
       },
       {
         "image": {
@@ -62,10 +60,10 @@
           "alt": "develop.png"
         },
         "title": "Mobile Development",
-        "content": "I am familiar with React Natvie for cross-platform development, and also have some project experience with Android and Swift ios development"
+        "content": "I have knowledge of SwiftUI and React Native for mobile development, enabling me to design and build intuitive, responsive, and visually appealing iOS applications."
       }
     ],
-    "resumeLink": "https://www.linkedin.com/feed/",
+    "resumeLink": "https://www.linkedin.com/in/yangliweb/",
     "experiences": [
       {
         "company": {
@@ -76,7 +74,7 @@
           },
           "location": "Vancouver"
         },
-        "title": "Software Development Engineer",
+        "title": "Software Development Engineer I",
         "startDate": "2021/05",
         "endDate": "2022/06",
         "description": "Built large scale project with serverless compuation, collaborate with other teams to produce high quality code."
@@ -110,7 +108,7 @@
         "description": "Achieved 3 times Dean's Honor Roll with excellent academic records. Enhanced my critical thinking by taking advance Economics courses."
       },
       {
-        "title": "Software Development Engineer",
+        "title": "Software Development Engineer III",
         "description": "Fullstack developer.",
         "startDate": "2022/06",
         "endDate": "Present",

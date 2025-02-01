@@ -8,7 +8,7 @@ node -v
 
 sudo npm i
 
-next run build
+npm run build
 npm run start
 
 # Local development

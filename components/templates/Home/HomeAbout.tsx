@@ -56,7 +56,7 @@ export const HomeAbout: React.FC = () => {
     <>
       <SectionHeader
         title="About Me"
-        subtitle="Love Coding, Competitive Powerlifter, ACG fans."
+        subtitle="Love Coding & Learning New Things."
       />
 
       <Flex justify="center" align="flex-start" css={flexStyle}>
